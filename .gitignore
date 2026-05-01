@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# 開發工具
+.claude/
+.vscode/
+.idea/
+
+# 本地 HTTP server(只在本機使用)
+serve.py
+
+# Python 快取
+__pycache__/
+*.pyc
+
+# 上傳原稿(已複製到 assets/notices/，原稿不需進 repo)
+台北建安宮中元普渡法會.JPG
+台北建安宮點燈丙午年.JPG
+台北建安宮點燈祈福保平安天運丙午年.JPG
+笨港口宮農民曆.JPG
+１１４台北建安宮宮慶照片.JPG
+１１５建安宮委員表.jpg
+
+# 暫存
+*.log
+.tmp/
