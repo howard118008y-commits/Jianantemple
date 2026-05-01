@@ -4933,8 +4933,10 @@ img { display: block; max-width: 100%; }
   .hero-cta { flex-direction: column; }
 
   .info-strip { grid-template-columns: 1fr; }
-  .info-item { border-right: none; border-bottom: 1px solid rgba(212, 168, 75, 0.18); padding: 0.9rem; }
+  .info-item { border-right: none; border-bottom: 1px solid rgba(212, 168, 75, 0.18); padding: 0.7rem 0.6rem; }
   .info-item:last-child { border-bottom: none; }
+  .info-label { font-size: 0.68rem; letter-spacing: 0.3em; margin-bottom: 0.25rem; }
+  .info-value { font-size: 0.82rem; line-height: 1.4; }
 
   .page-banner { height: 50vh; min-height: 320px; }
   .banner-title { font-size: 2.6rem; letter-spacing: 0.22em; margin-left: 0.22em; }
