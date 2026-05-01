@@ -4901,6 +4901,17 @@ img { display: block; max-width: 100%; }
    RWD
    ============================================ */
 @media (max-width: 900px) {
+  /* 首頁手機版:取消 fixed 高度與 fixed 底條，讓頁面可正常滾動 */
+  body.page-home { height: auto; overflow: auto; min-height: 100vh; }
+  .info-strip { position: static; }
+  .hero-notice {
+    position: static;
+    transform: none;
+    margin: 1rem auto 0;
+    max-width: calc(100% - 2rem);
+    animation: none;
+  }
+
   .site-header {
     padding: 0.9rem 1.2rem;
     flex-direction: column;
@@ -4911,7 +4922,7 @@ img { display: block; max-width: 100%; }
   .site-nav { gap: 1rem; flex-wrap: wrap; justify-content: center; }
   .site-nav a { font-size: 0.78rem; letter-spacing: 0.1em; }
 
-  .hero { padding: 7rem 1.2rem 5rem; }
+  .hero { min-height: auto; padding: 7rem 1.2rem 2rem; }
   .hero-title { font-size: 2.8rem; letter-spacing: 0.22em; margin-left: 0.22em; }
   .hero-subtitle { font-size: 0.95rem; letter-spacing: 0.3em; margin-left: 0.3em; }
   .hero-tagline { font-size: 0.78rem; letter-spacing: 0.35em; }
