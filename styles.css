@@ -24,10 +24,12 @@ body {
   background: var(--ink);
 }
 
-/* page-home 採用全畫面 hero，不出現一般滾動條 */
-body.page-home {
-  height: 100vh;
-  overflow: hidden;
+/* page-home 採用全畫面 hero（僅桌面），手機版可滾動 */
+@media (min-width: 901px) {
+  body.page-home {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 img { display: block; max-width: 100%; }
