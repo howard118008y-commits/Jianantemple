@@ -634,6 +634,27 @@
       document.getElementById('zdTitle').textContent = '屬' + data.name + '流年';
       document.getElementById('zdSub').textContent = data.relation;
       document.title = '屬' + data.name + '流年｜十二生肖 ・ 台北建安宮';
+      // SEO ・ 動態同步分享 meta（FB/LINE 分享卡 + 瀏覽器分頁）
+      (function syncSeo() {
+        const updates = [
+          ['meta[property="og:title"]',       'content', document.title],
+          ['meta[name="twitter:title"]',      'content', document.title],
+          ['meta[property="og:url"]',         'content', window.location.href],
+          ['meta[name="twitter:url"]',        'content', window.location.href],
+          ['link[rel="canonical"]',           'href',    window.location.href]
+        ];
+        updates.forEach(([sel, attr, val]) => {
+          const el = document.querySelector(sel);
+          if (el) el.setAttribute(attr, val);
+        });
+        // 同步 description（讀 summary/desc 元素內容若有）
+        const descEl = document.querySelector('#summaryDesc, #ldDesc, .ld-summary-desc, .zd-summary-desc');
+        if (descEl && descEl.textContent.trim()) {
+          const desc = descEl.textContent.trim().slice(0, 155);
+          ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']
+            .forEach(s => { const e = document.querySelector(s); if (e) e.setAttribute('content', desc); });
+        }
+      })();
 
       // 概覽
       document.getElementById('summaryIcon').innerHTML =
