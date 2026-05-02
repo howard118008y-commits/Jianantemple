@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /serve.py
+
+Sitemap: https://howard118008y-commits.github.io/Jianantemple/sitemap.xml
