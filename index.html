@@ -211,6 +211,25 @@
     </div>
   </section>
 
+  <!-- 最新動態（即將舉辦的活動，從 events.html 自動抓取）-->
+  <section class="latest-news" id="latestNews">
+    <div class="ln-inner">
+      <div class="ln-head">
+        <div class="ln-tag">最 ・ 新 ・ 動 ・ 態</div>
+        <h2 class="ln-title">即將舉辦</h2>
+        <div class="ln-divider"></div>
+        <p class="ln-sub">誠邀十方信眾蒞臨參拜 ・ 共沐神光</p>
+      </div>
+      <div class="ln-grid" id="latestNewsGrid">
+        <div class="ln-card ln-skeleton"><div class="ln-skel-img"></div><div class="ln-skel-body"><div class="ln-skel-bar ln-skel-bar-s"></div><div class="ln-skel-bar"></div><div class="ln-skel-bar ln-skel-bar-m"></div></div></div>
+        <div class="ln-card ln-skeleton"><div class="ln-skel-img"></div><div class="ln-skel-body"><div class="ln-skel-bar ln-skel-bar-s"></div><div class="ln-skel-bar"></div><div class="ln-skel-bar ln-skel-bar-m"></div></div></div>
+      </div>
+      <div class="ln-foot">
+        <a href="events.html" class="btn btn-secondary">查看完整時間軸 →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="info-strip">
     <div class="info-item">
       <div class="info-label">廟 址</div>
@@ -251,6 +270,79 @@
       v.addEventListener('error', () => console.error('背景影片載入失敗', v.error));
       fb.addEventListener('click', () => { v.muted = true; tryPlay(); });
       window.addEventListener('load', tryPlay);
+    })();
+
+    // 最新動態：從 events.html 抓取即將舉辦活動
+    (function () {
+      const grid = document.getElementById('latestNewsGrid');
+      const section = document.getElementById('latestNews');
+      if (!grid) return;
+
+      function formatDateParts(raw) {
+        // "2026 ・ 05 ・ 09" → { md: "05 / 09", year: "2026" }
+        // "2026 ・ 04 ・ 25-26" → { md: "04 / 25-26", year: "2026" }
+        // "2026 ・ 七月" → { md: "七月", year: "2026" }
+        // "2025 ・ 114年度" → { md: "114年度", year: "2025" }
+        const parts = raw.split('・').map(s => s.trim()).filter(Boolean);
+        if (parts.length >= 3) return { md: parts[1] + ' / ' + parts[2], year: parts[0] };
+        if (parts.length === 2) return { md: parts[1], year: parts[0] };
+        return { md: raw, year: '' };
+      }
+
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+      }
+
+      fetch('events.html', { credentials: 'same-origin' })
+        .then(r => r.ok ? r.text() : Promise.reject(r.status))
+        .then(html => {
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const futures = Array.from(doc.querySelectorAll('.th-event.th-future'));
+          const upcoming = futures.slice(0, 2);
+
+          if (upcoming.length === 0) {
+            // 無即將舉辦活動 → 隱藏整區
+            section.style.display = 'none';
+            return;
+          }
+
+          grid.innerHTML = upcoming.map(ev => {
+            const imgEl = ev.querySelector('.th-img img');
+            const imgSrc = imgEl ? imgEl.getAttribute('src') : '';
+            const imgAlt = imgEl ? (imgEl.getAttribute('alt') || '') : '';
+            const dateRaw = (ev.querySelector('.th-date')?.textContent || '').trim();
+            const lunar = (ev.querySelector('.th-lunar')?.textContent || '').trim();
+            const title = (ev.querySelector('.th-title')?.textContent || '').trim();
+            const desc = (ev.querySelector('.th-desc')?.textContent || '').trim();
+            const id = ev.id;
+            const tagFeature = ev.querySelector('.th-tag-feature')?.textContent.trim();
+            const linkInner = ev.querySelector('.th-link');
+            const link = linkInner ? linkInner.getAttribute('href') : (id ? `events.html#${id}` : 'events.html');
+            const linkText = linkInner ? linkInner.textContent.trim() : '查看詳情 →';
+            const { md, year } = formatDateParts(dateRaw);
+
+            return `
+              <a class="ln-card${tagFeature ? ' ln-feature' : ''}" href="${escapeHtml(link)}">
+                ${tagFeature ? `<div class="ln-feature-tag">${escapeHtml(tagFeature)}</div>` : ''}
+                ${imgSrc ? `<div class="ln-img"><img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" loading="lazy"></div>` : ''}
+                <div class="ln-body">
+                  <div class="ln-date-row">
+                    <span class="ln-md">${escapeHtml(md)}</span>
+                    ${year ? `<span class="ln-year">${escapeHtml(year)}</span>` : ''}
+                  </div>
+                  ${lunar ? `<div class="ln-lunar">${escapeHtml(lunar)}</div>` : ''}
+                  <h3 class="ln-name">${escapeHtml(title)}</h3>
+                  <p class="ln-desc">${escapeHtml(desc)}</p>
+                  <span class="ln-cta">${escapeHtml(linkText)}</span>
+                </div>
+              </a>
+            `;
+          }).join('');
+        })
+        .catch(() => {
+          // 抓取失敗 → 隱藏整區（避免顯示空白 skeleton）
+          section.style.display = 'none';
+        });
     })();
 
     // 媽祖聖誕倒數計時
