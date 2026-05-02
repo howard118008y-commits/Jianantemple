@@ -303,6 +303,34 @@ img { display: block; max-width: 100%; }
 }
 .info-item:last-child { border-right: none; }
 
+.info-item-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block;
+  position: relative;
+}
+.info-item-link:hover {
+  background: rgba(212, 168, 75, 0.1);
+}
+.info-link-cta {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-top: 0.5rem;
+  font-weight: 700;
+  padding: 0.18rem 0.6rem;
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  transition: all 0.3s ease;
+}
+.info-item-link:hover .info-link-cta {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+
 .info-label {
   font-size: 0.78rem;
   color: var(--gold-light);
