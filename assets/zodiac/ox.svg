@@ -1,0 +1,24 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="牛">
+  <g fill="none" stroke="#f1d990" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- horns -->
+    <path d="M36 38 Q 24 30 18 22 Q 24 16 32 22 Q 40 30 44 40"/>
+    <path d="M84 38 Q 96 30 102 22 Q 96 16 88 22 Q 80 30 76 40"/>
+    <!-- head top -->
+    <path d="M40 42 Q 60 24 80 42"/>
+    <!-- face outline -->
+    <path d="M40 42 Q 30 60 38 80 Q 50 96 60 96 Q 70 96 82 80 Q 90 60 80 42"/>
+    <!-- snout -->
+    <ellipse cx="60" cy="80" rx="14" ry="9"/>
+    <!-- nostrils -->
+    <circle cx="55" cy="80" r="1.8" fill="#f1d990"/>
+    <circle cx="65" cy="80" r="1.8" fill="#f1d990"/>
+    <!-- nose ring -->
+    <ellipse cx="60" cy="86" rx="5" ry="3"/>
+    <!-- eyes -->
+    <circle cx="48" cy="62" r="2" fill="#f1d990"/>
+    <circle cx="72" cy="62" r="2" fill="#f1d990"/>
+    <!-- ears -->
+    <ellipse cx="32" cy="48" rx="6" ry="4" transform="rotate(-30 32 48)"/>
+    <ellipse cx="88" cy="48" rx="6" ry="4" transform="rotate(30 88 48)"/>
+  </g>
+</svg>

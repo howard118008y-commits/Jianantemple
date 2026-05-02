@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>十二生肖流年｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮 中華民國115年 天運歲次丙午年 十二生肖流年運勢、太歲關係、開運化煞建議與安太歲指南。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/brand-back.js" defer></script>
+  <style>
+    /* zodiac-detail 專用補強樣式（沿用 ld-* 既有版型） */
+    .zd-banner-num {
+      font-family: "Noto Serif TC", serif;
+      font-size: 5.6rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0;
+      text-shadow: 0 6px 24px rgba(0,0,0,0.55);
+    }
+    .zd-summary-icon {
+      font-family: "Noto Serif TC", serif;
+      font-size: 4.4rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      padding: 1rem;
+    }
+    .zd-icon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .zd-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem 1.6rem;
+    }
+    .zd-meta-grid .ld-meta-item { min-width: 0; }
+    .zd-years {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.7rem;
+      margin-top: 0.4rem;
+    }
+    .zd-year-pill {
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      padding: 0.18rem 0.7rem;
+      border: 1px solid rgba(212, 168, 75, 0.4);
+      color: var(--gold-light);
+      background: rgba(212, 168, 75, 0.06);
+    }
+    .zd-meaning-content p {
+      font-size: 1rem;
+      line-height: 2;
+      color: rgba(248, 243, 233, 0.86);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .zd-meaning-content p:last-child { margin-bottom: 0; }
+    .zd-others-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.9rem;
+    }
+    .zd-other-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 1.1rem 0.6rem;
+      background: rgba(31, 20, 20, 0.6);
+      border: 1px solid rgba(212, 168, 75, 0.25);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .zd-other-card:hover {
+      border-color: var(--gold);
+      background: rgba(31, 20, 20, 0.9);
+      transform: translateY(-2px);
+    }
+    .zd-other-card.is-current {
+      border-color: var(--gold);
+      background: rgba(212, 168, 75, 0.12);
+    }
+    .zd-other-num {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .zd-other-relation {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+    }
+    .zd-other-card.is-warning .zd-other-relation { color: #f1d990; }
+    @media (max-width: 768px) {
+      .zd-banner-num { font-size: 4rem; }
+      .zd-summary-icon { font-size: 3.2rem; }
+      .zd-meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .zd-others-grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+      .zd-meaning-content p { font-size: 0.92rem; line-height: 1.9; }
+    }
+  </style>
+</head>
+<body class="page-zodiac-detail">
+
+  <header class="site-header site-header-solid">
+    <a class="brand" href="index.html" aria-label="返回上一頁" title="返回上一頁">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html">香客服務</a>
+      <a href="almanac.html" class="active">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner ritual-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag">十 二 生 肖 ・ 丙 午 流 年</div>
+      <div class="zd-banner-num" id="zdBannerNum">馬</div>
+      <h1 class="banner-title" id="zdTitle">屬馬流年</h1>
+      <div class="banner-sub" id="zdSub">值太歲 ・ 自刑</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="almanac.html#zodiac">← 返回 年曆 ・ 十二生肖流年</a>
+    </div>
+  </div>
+
+  <!-- 流年概覽 -->
+  <section class="content-section ld-summary-section">
+    <div class="section-inner">
+      <div class="ld-summary-card rd-summary-card">
+        <div class="ld-summary-icon zd-summary-icon" id="summaryIcon">馬</div>
+        <div class="ld-summary-body">
+          <h2 class="ld-summary-name" id="summaryName">屬馬</h2>
+          <div class="ld-summary-bless" id="summaryRelation">值太歲 ・ 自刑</div>
+          <p class="ld-summary-desc" id="summaryDesc"></p>
+          <div class="ld-summary-meta zd-meta-grid">
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">地 支</div>
+              <div class="ld-meta-value" id="metaBranch">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">五 行</div>
+              <div class="ld-meta-value" id="metaElement">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">運 勢 級 別</div>
+              <div class="ld-meta-value" id="metaLevel">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">本 年 建 議</div>
+              <div class="ld-meta-value ld-meta-price" id="metaSuggest">—</div>
+            </div>
+          </div>
+          <div class="ld-summary-meta" style="margin-top: 1.2rem;">
+            <div class="ld-meta-item" style="flex: 1; min-width: 100%;">
+              <div class="ld-meta-label">生 年 對 照（民國/西元）</div>
+              <div class="zd-years" id="metaYears"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 流年運勢分項 -->
+  <section class="content-section ld-purpose-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">流 年 ・ 各 面 向</div>
+        <h2 class="section-title">事業 ・ 財運 ・ 感情 ・ 健康 ・ 家庭</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead" id="fortuneLead">流年運勢以丙午年地支對照，僅供參考。</p>
+      </div>
+      <div class="ld-purpose-grid" id="fortuneGrid"></div>
+    </div>
+  </section>
+
+  <!-- 化解 / 開運建議 -->
+  <section class="content-section ld-howto-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label" id="tipsLabel">化 解 ・ 開 運</div>
+        <h2 class="section-title" id="tipsTitle">流年趨吉避凶之道</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-howto-grid" id="tipsGrid"></div>
+    </div>
+  </section>
+
+  <!-- 太歲關係意義 -->
+  <section class="content-section ld-story-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">太 歲 ・ 意 涵</div>
+        <h2 class="section-title" id="meaningTitle">何謂「值太歲 ・ 自刑」</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="zd-meaning-content" id="meaningContent"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="content-section ld-cta-section">
+    <div class="section-inner">
+      <div class="ld-cta-card">
+        <div class="ld-cta-tag" id="ctaTag">點 燈 ・ 安 太 歲</div>
+        <h3 class="ld-cta-title" id="ctaTitle">誠邀屬馬信眾 ・ 安太歲祈平安</h3>
+        <p class="ld-cta-text" id="ctaText">本宮提供安太歲、點光明燈、太歲燈等服務，可線上登記，由本宮代為禮拜祈福。</p>
+        <div class="ld-cta-actions">
+          <a href="services.html" class="btn btn-primary btn-large">前往香客服務 ・ 線上登記</a>
+          <a href="tel:0981142292" class="btn btn-secondary">致電 0981-142-292</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他生肖 -->
+  <section class="content-section ld-others-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">其 他 生 肖</div>
+        <h2 class="section-title">十二生肖一覽</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead">點選查看各生肖丙午年流年運勢</p>
+      </div>
+      <div class="zd-others-grid" id="othersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      // 共用太歲意義說明
+      const MEANING = {
+        zhi: [
+          '「值太歲」即生肖地支與當年地支相同，俗稱「本命年」、「犯太歲」。本年丙午年地支為「午」，故屬馬者為值太歲。',
+          '古云：「太歲當頭坐，無喜恐有禍。」並非真有災禍降臨，而是本命年氣場與太歲相疊，磁場波動較大，行事易有起伏；故宜安太歲以化解磁場衝擊、求平安順遂。',
+          '本年另逢「自刑」之象──午午自刑，意指自我牽絆、內耗較多。應減少衝動決策、避免與自身過不去，凡事三思而後行。',
+          '建議：開春至本宮安太歲、點光明燈，並可於日常隨身配掛吉祥小物（如紅繩、平安符），以鎮靜本命氣場。'
+        ],
+        chong: [
+          '「沖太歲」即生肖地支與當年地支正對相沖。本年丙午，子午相沖，故屬鼠者為沖太歲。',
+          '相沖之年，主動盪、變化、移動，諸事易有突發狀況。古訣云：「沖則動」，工作變動、搬家、出行、投資等變化機率較高，應預先規劃、謹慎應對。',
+          '此年凡事多防：行車安全、健康保養、人際口舌、合約細節皆宜謹慎。重大決策前可請示神明、慎思而行。',
+          '建議：開春至本宮安太歲、點光明燈以化解沖煞，並於行車、出差時隨身配掛平安符。'
+        ],
+        po: [
+          '「破太歲」即生肖地支與當年地支相破。本年丙午，卯午相破，故屬兔者為破太歲。',
+          '相破之年，主破耗、損失、阻礙，事業財運上易有波折，舊有計畫易遇變數。然「破而後立」，亦是調整方向、重整旗鼓的時機。',
+          '此年宜守不宜攻，避免大額投資、避免衝動冒進；同時收斂鋒芒、低調行事，反能化險為夷。',
+          '建議：開春至本宮安太歲、點光明燈以化解破煞；於財務上保守、於人事上謙和。'
+        ],
+        hai: [
+          '「害太歲」即生肖地支與當年地支相害。本年丙午，丑午相害，故屬牛者為害太歲。',
+          '相害之年，主小人、口舌、暗中阻礙，人際間易有嫌隙、合作易生變數。此非明面衝突，而是潛在的拉扯與不協調。',
+          '應對之道在於「以和為貴、以靜制動」──多溝通少爭執、多包容少計較，遠離是非場合，自能化害為祥。',
+          '建議：開春至本宮安太歲、點光明燈以化解害煞；日常修養心性，廣結善緣，自然遠離小人。'
+        ],
+        sanhe: [
+          '「三合」即三個地支彼此相合，氣場相生。本年丙午年，寅午戌三合火局，故屬虎、屬狗者皆為三合貴人之年。',
+          '三合主貴人扶持、合作順遂、事業開展。此年得天時地利，重大計畫、合作、開拓皆有助力，應把握良機、勇於前行。',
+          '雖然氣場順暢，仍宜行善修身、不可恃強而驕。「順境積德，方能福長綿延」，把握當下機緣，亦為未來積攢福報。',
+          '建議：可至本宮點光明燈、太歲燈以順勢加持，讓貴人運與事業運再上一層。'
+        ],
+        liuhe: [
+          '「六合」即兩個地支兩兩相合。本年丙午年，午未六合，故屬羊者為六合貴人之年。',
+          '六合主穩定、和諧、人際助力。此年事業漸進、感情和合、家庭安寧，貴人多在身邊，宜穩紮穩打、循序漸進。',
+          '六合並非大紅大紫之運，而是「水到渠成」之象。耐心經營、細節用功，本年所種之因，將於來年開花結果。',
+          '建議：可至本宮點光明燈祈福，並於家中、辦公室保持整潔，氣場流通則福氣自來。'
+        ],
+        ping: [
+          '「平和之年」即生肖地支與當年地支既無沖刑、亦非三合六合，運勢處於中性、平穩。',
+          '平和之年無大起大落，反而是「修身養性、累積實力」的好時機。古訓云：「平和之歲，靜以修身。」靜則有所守、靜則有所進。',
+          '此年宜：步步為營、循序漸進，把握既有資源做精做深；忌：盲目跟風、貿然轉換跑道。',
+          '建議：可至本宮點光明燈祈求闔家平安、諸事順遂，並把握平穩之歲，調養身心、深耕本業。'
+        ]
+      };
+
+      const ITEMS = {
+        horse: {
+          name: '馬', branch: '午', element: '陽火',
+          relation: '值太歲 ・ 自刑',
+          relationKey: 'zhi',
+          level: '需 ・ 安太歲',
+          suggest: '建議 ・ 安太歲',
+          mood: 'warning',
+          desc: '丙午年地支為午，屬馬者本命值年（俗稱本命年），且午午自刑，主自我牽絆、內耗較多。本年務必開春安太歲、點光明燈，化解流年沖煞、安定身心。',
+          years: ['民國43年（1954）', '民國55年（1966）', '民國67年（1978）', '民國79年（1990）', '民國91年（2002）', '民國103年（2014）', '民國115年（2026）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 起伏多變', desc: '本命年氣場波動，事業上易有起伏與壓力。重大決策宜緩不宜急，現有崗位先穩固，新計畫待下半年再評估。' },
+            { tag: '財運', title: '財運 ・ 守成為宜', desc: '財運起伏較大，宜守不宜攻。避免大額投資、避免為他人作保，量入為出、預留備用金為上策。' },
+            { tag: '感情', title: '感情 ・ 慎口慎心', desc: '已婚者宜多包容、避免無謂爭執；未婚者本年情緒起伏較大，宜先安頓自我，再論姻緣。' },
+            { tag: '健康', title: '健康 ・ 留意舊疾', desc: '本命年氣場易擾，作息宜規律；舊疾、慢性病宜定期追蹤；行車外出更要小心，可配掛平安符。' },
+            { tag: '家庭', title: '家庭 ・ 以和為貴', desc: '家中長輩宜多關心；家內裝修、搬遷如非必要可延後。一家和睦，自然百事興旺。' }
+          ],
+          tips: [
+            { num: '壹', title: '安太歲', desc: '至本宮登記安太歲，由本宮代為禮拜歲星，化解本命年氣場衝擊。' },
+            { num: '貳', title: '點光明燈', desc: '光明燈代表光明照路，化解本命年陰晦之氣，使心明事順。' },
+            { num: '參', title: '隨身平安符', desc: '可配掛本宮敕符之平安符，鎮靜氣場、護身平安。' },
+            { num: '肆', title: '行善修身', desc: '本命年宜廣結善緣、行善積德，反能化煞為福、轉危為安。' }
+          ]
+        },
+        rat: {
+          name: '鼠', branch: '子', element: '陽水',
+          relation: '沖太歲',
+          relationKey: 'chong',
+          level: '需 ・ 安太歲',
+          suggest: '建議 ・ 安太歲',
+          mood: 'warning',
+          desc: '丙午年地支為午，子午相沖，屬鼠者本年為「沖太歲」。沖則動，主變化、移動、波折較多，凡事宜謹慎、預先規劃，並務必開春安太歲、化解流年沖煞。',
+          years: ['民國37年（1948）', '民國49年（1960）', '民國61年（1972）', '民國73年（1984）', '民國85年（1996）', '民國97年（2008）', '民國109年（2020）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 變動之年', desc: '工作上易有變動：升遷、調職、轉換跑道機率較高。如非必要勿主動求變，順勢而為較佳。' },
+            { tag: '財運', title: '財運 ・ 大進大出', desc: '財運起伏明顯，正財尚可，但偏財、投資易有損失。合約、保證等事宜詳閱再簽。' },
+            { tag: '感情', title: '感情 ・ 多溝通', desc: '已婚者宜多溝通、避免冷戰；未婚者桃花有變，新感情宜慢觀察、勿閃婚閃定。' },
+            { tag: '健康', title: '健康 ・ 行車謹慎', desc: '沖太歲之年最忌交通意外、跌撞損傷。行車駕駛、出國旅遊皆宜配掛平安符、注意安全。' },
+            { tag: '家庭', title: '家庭 ・ 預防口角', desc: '家中事務宜多商量、少獨斷。長輩健康可多關心，家中重大決定宜全家共議。' }
+          ],
+          tips: [
+            { num: '壹', title: '安太歲', desc: '沖太歲之年務必至本宮安太歲，化解相沖磁場、求平安順遂。' },
+            { num: '貳', title: '點光明燈', desc: '光明燈鎮靜氣場、明照前路，是沖太歲之年最重要之護持。' },
+            { num: '參', title: '行車護身符', desc: '配掛本宮敕符之平安符於車內或隨身，行車外出多一份庇佑。' },
+            { num: '肆', title: '謹言慎行', desc: '凡事三思而後行，少參與是非、少作高風險決策，自然平安度年。' }
+          ]
+        },
+        rabbit: {
+          name: '兔', branch: '卯', element: '陰木',
+          relation: '破太歲',
+          relationKey: 'po',
+          level: '需 ・ 安太歲',
+          suggest: '建議 ・ 安太歲',
+          mood: 'warning',
+          desc: '丙午年地支為午，卯午相破，屬兔者本年為「破太歲」。破主破耗、阻礙、舊計畫多變數，宜守不宜攻、低調行事，並開春安太歲化解流年破煞。',
+          years: ['民國40年（1951）', '民國52年（1963）', '民國64年（1975）', '民國76年（1987）', '民國88年（1999）', '民國100年（2011）', '民國112年（2023）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 守舊為宜', desc: '事業上舊有計畫易遇變數，新案推進緩慢。宜先鞏固現有業務，避免貿然擴張或跳槽。' },
+            { tag: '財運', title: '財運 ・ 防破耗', desc: '本年最忌大額支出、衝動投資。家電維修、合約糾紛、人情借貸皆需特別留心。' },
+            { tag: '感情', title: '感情 ・ 經營不易', desc: '感情上易有摩擦、距離感，已婚者宜常陪伴、未婚者勿急於確定關係。' },
+            { tag: '健康', title: '健康 ・ 規律作息', desc: '免疫力與精神狀態易受影響，作息宜規律、定期健檢，舊疾尤其要留意。' },
+            { tag: '家庭', title: '家庭 ・ 安內為先', desc: '家中事務宜先安頓再向外發展。長輩健康、子女學業皆宜投入更多關心。' }
+          ],
+          tips: [
+            { num: '壹', title: '安太歲', desc: '破太歲之年至本宮安太歲，化解破煞、減少阻礙。' },
+            { num: '貳', title: '點光明燈', desc: '光明燈助運、明路，使破煞之年仍有貴人指引、方向清明。' },
+            { num: '參', title: '謙和低調', desc: '本年宜收斂鋒芒、行事低調，自然減少口舌與阻力。' },
+            { num: '肆', title: '行善積德', desc: '多布施、多行善，藉福報化解破耗，是最根本之化煞之道。' }
+          ]
+        },
+        ox: {
+          name: '牛', branch: '丑', element: '陰土',
+          relation: '害太歲',
+          relationKey: 'hai',
+          level: '需 ・ 安太歲',
+          suggest: '建議 ・ 安太歲',
+          mood: 'warning',
+          desc: '丙午年地支為午，丑午相害，屬牛者本年為「害太歲」。害主小人、口舌、暗中阻礙，人際間易生嫌隙；以和為貴、以靜制動為上策，並開春安太歲化解相害磁場。',
+          years: ['民國38年（1949）', '民國50年（1961）', '民國62年（1973）', '民國74年（1985）', '民國86年（1997）', '民國98年（2009）', '民國110年（2021）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 防小人', desc: '工作上易遇暗箭、被誤解或被搶功，宜留書面紀錄、低調處事，避免捲入辦公室是非。' },
+            { tag: '財運', title: '財運 ・ 防口舌損財', desc: '正財平穩，惟易因人際糾紛而損財，合約、借貸、合夥皆宜謹慎，留書面為證。' },
+            { tag: '感情', title: '感情 ・ 多包容', desc: '感情上易因小事生嫌隙，宜多溝通、少冷戰，已婚者尤忌第三者介入。' },
+            { tag: '健康', title: '健康 ・ 情緒調適', desc: '害太歲易致心情鬱悶、睡眠品質下降，宜多運動、靜坐、調適情緒。' },
+            { tag: '家庭', title: '家庭 ・ 和為貴', desc: '家中宜多包容、少抱怨。一家和睦則小人遠離，凡事自然順遂。' }
+          ],
+          tips: [
+            { num: '壹', title: '安太歲', desc: '至本宮安太歲，化解相害磁場、減少小人侵擾。' },
+            { num: '貳', title: '點光明燈', desc: '光明燈祈福，使心境明朗、磁場清淨、自然遠離是非。' },
+            { num: '參', title: '隨身平安符', desc: '配掛本宮敕符之平安符，護身擋煞、化解暗箭。' },
+            { num: '肆', title: '廣結善緣', desc: '本年宜廣結善緣、不結惡緣，自能將「害」化作「善」、轉危為安。' }
+          ]
+        },
+        tiger: {
+          name: '虎', branch: '寅', element: '陽木',
+          relation: '三合',
+          relationKey: 'sanhe',
+          level: '吉 ・ 順遂',
+          suggest: '運勢 ・ 順遂',
+          mood: 'favor',
+          desc: '丙午年地支為午，寅午戌三合火局，屬虎者本年為「三合貴人之年」。氣場順暢、貴人扶持、事業開展，宜把握良機、勇於前行，並可至本宮點光明燈、太歲燈順勢加持。',
+          years: ['民國39年（1950）', '民國51年（1962）', '民國63年（1974）', '民國75年（1986）', '民國87年（1998）', '民國99年（2010）', '民國111年（2022）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 開展之年', desc: '三合助力下事業大有開展，新計畫、轉職、創業皆可考量；惟仍需腳踏實地、不可恃寵而驕。' },
+            { tag: '財運', title: '財運 ・ 正財旺', desc: '正財豐盈，工作收入有望提升；偏財需審慎，仍宜以勞力所得為主。' },
+            { tag: '感情', title: '感情 ・ 桃花順利', desc: '已婚者夫妻和合、家運興旺；未婚者桃花暢旺，是論及婚嫁的好時機。' },
+            { tag: '健康', title: '健康 ・ 精神煥發', desc: '整體健康狀況良好，惟事業繁忙易過勞，宜留意作息平衡、勿透支精力。' },
+            { tag: '家庭', title: '家庭 ・ 喜事多', desc: '家庭和樂、易有添丁、結婚、購屋等喜事，宜把握良機共享天倫。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '至本宮點光明燈順勢加持，使三合之年事業財運更上一層。' },
+            { num: '貳', title: '點太歲燈', desc: '太歲燈祈求歲星護佑、貴人扶持，把握三合機緣。' },
+            { num: '參', title: '把握機緣', desc: '本年順勢而為，重大計畫宜及早規劃、勇於執行，過時不候。' },
+            { num: '肆', title: '行善積德', desc: '順境之中亦不忘修身行善，福澤方能綿延後世。' }
+          ]
+        },
+        dog: {
+          name: '狗', branch: '戌', element: '陽土',
+          relation: '三合',
+          relationKey: 'sanhe',
+          level: '吉 ・ 順遂',
+          suggest: '運勢 ・ 順遂',
+          mood: 'favor',
+          desc: '丙午年地支為午，寅午戌三合火局，屬狗者本年為「三合貴人之年」。貴人多助、合作順遂、事業漸入佳境，宜順勢開展、廣結善緣，並可至本宮點光明燈、太歲燈順勢加持。',
+          years: ['民國47年（1958）', '民國59年（1970）', '民國71年（1982）', '民國83年（1994）', '民國95年（2006）', '民國107年（2018）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 貴人多助', desc: '工作上多得貴人提攜、合作機會增多，是擴展人脈、開拓版圖的好時機。' },
+            { tag: '財運', title: '財運 ・ 漸入佳境', desc: '正財穩定增長，合作或合夥之事業皆有助益；惟投資仍宜分散風險、量力而為。' },
+            { tag: '感情', title: '感情 ・ 和合美滿', desc: '感情和合、家庭和樂；未婚者透過朋友、貴人介紹，易遇心儀對象。' },
+            { tag: '健康', title: '健康 ・ 整體平穩', desc: '健康狀況平穩，惟應酬聚會增多，宜節制飲食、留意肝胃保養。' },
+            { tag: '家庭', title: '家庭 ・ 親朋齊聚', desc: '家庭與親友間往來頻繁，宜多參與聚會、共享和樂時光。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '光明燈助運、明路，使三合之年事業財運更為順遂。' },
+            { num: '貳', title: '點太歲燈', desc: '太歲燈祈求歲星護佑，貴人運更旺、合作更穩。' },
+            { num: '參', title: '廣結善緣', desc: '貴人之年最忌驕傲，謙和待人、廣結善緣，福報自然累積。' },
+            { num: '肆', title: '行善修身', desc: '順境亦修身，多布施、多行善，福澤綿延、家門興旺。' }
+          ]
+        },
+        sheep: {
+          name: '羊', branch: '未', element: '陰土',
+          relation: '六合',
+          relationKey: 'liuhe',
+          level: '吉 ・ 平和',
+          suggest: '運勢 ・ 平和',
+          mood: 'favor',
+          desc: '丙午年地支為午，午未六合，屬羊者本年為「六合貴人之年」。氣場和諧、人際助力多、事業漸進，宜穩紮穩打、循序漸進，並可至本宮點光明燈祈福加持。',
+          years: ['民國44年（1955）', '民國56年（1967）', '民國68年（1979）', '民國80年（1991）', '民國92年（2003）', '民國104年（2015）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 穩定向前', desc: '事業循序漸進、貴人現身相助，宜深耕本業、把握既有資源做精做深，不宜貪快。' },
+            { tag: '財運', title: '財運 ・ 穩中有進', desc: '正財穩定、偶有額外收入；偏財不宜過度期待，理財宜穩健保守。' },
+            { tag: '感情', title: '感情 ・ 和合美滿', desc: '感情上和諧美滿，已婚者家庭融洽，未婚者本年是論婚嫁之佳期。' },
+            { tag: '健康', title: '健康 ・ 平穩有恆', desc: '健康整體平穩，宜保持規律運動，留意慢性病保養與心情調適。' },
+            { tag: '家庭', title: '家庭 ・ 闔家和樂', desc: '家庭氛圍和樂、長輩安康、子女順遂，是經營家庭關係的好時機。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '至本宮點光明燈祈福，順勢加持、貴人運更旺。' },
+            { num: '貳', title: '深耕本業', desc: '六合之年宜穩紮穩打，深耕現有事業、不貪求快速擴張。' },
+            { num: '參', title: '把握姻緣', desc: '感情和合之年，未婚者宜把握桃花、論及婚嫁。' },
+            { num: '肆', title: '行善修身', desc: '順境之中行善積德，使福報延續來年、家門興旺。' }
+          ]
+        },
+        dragon: {
+          name: '龍', branch: '辰', element: '陽土',
+          relation: '平 和',
+          relationKey: 'ping',
+          level: '中 ・ 平和',
+          suggest: '運勢 ・ 平和',
+          mood: 'normal',
+          desc: '丙午年地支為午，辰與午既無沖刑、亦非三合六合，屬龍者本年運勢平和、循序漸進、穩健發展。宜把握平穩之歲，調養身心、深耕本業，並可至本宮點光明燈祈求闔家平安。',
+          years: ['民國41年（1952）', '民國53年（1964）', '民國65年（1976）', '民國77年（1988）', '民國89年（2000）', '民國101年（2012）', '民國113年（2024）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 穩健前行', desc: '事業無大波瀾，按部就班、深耕本業最為相宜。新計畫宜先評估再行動。' },
+            { tag: '財運', title: '財運 ・ 量入為出', desc: '正財平穩，偏財不旺，理財以保守為宜，避免盲目跟風投資。' },
+            { tag: '感情', title: '感情 ・ 平淡溫馨', desc: '感情平淡而溫馨，已婚者宜多用心經營，未婚者順其自然、不必強求。' },
+            { tag: '健康', title: '健康 ・ 規律作息', desc: '健康狀況平穩，惟應留意作息規律與飲食均衡，預防勝於治療。' },
+            { tag: '家庭', title: '家庭 ・ 安寧和睦', desc: '家庭氛圍安寧，宜多陪伴長輩、關心子女，享受日常的小確幸。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '至本宮點光明燈祈求闔家平安、諸事順遂。' },
+            { num: '貳', title: '深耕本業', desc: '平穩之年最適深耕，把握現有資源做精做深，為來年蓄勢。' },
+            { num: '參', title: '修身養性', desc: '靜以修身、儉以養德，調養身心、累積實力。' },
+            { num: '肆', title: '行善積福', desc: '日常行善、廣結善緣，為自己與家人累積福報。' }
+          ]
+        },
+        snake: {
+          name: '蛇', branch: '巳', element: '陰火',
+          relation: '平 和',
+          relationKey: 'ping',
+          level: '中 ・ 平和',
+          suggest: '運勢 ・ 平和',
+          mood: 'normal',
+          desc: '丙午年地支為午，巳與午既無沖刑、亦非三合六合，屬蛇者本年宜守成、蓄積實力、伺機而動。可至本宮點光明燈祈求闔家平安、諸事順遂。',
+          years: ['民國42年（1953）', '民國54年（1965）', '民國66年（1977）', '民國78年（1989）', '民國90年（2001）', '民國102年（2013）', '民國114年（2025）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 守成蓄勢', desc: '事業上宜守不宜攻，把握現有業務做精做穩，新案宜謹慎評估、伺機而動。' },
+            { tag: '財運', title: '財運 ・ 穩健為宜', desc: '正財平穩，理財宜保守、避免高風險投資。可規劃儲蓄與保險，為未來預作準備。' },
+            { tag: '感情', title: '感情 ・ 細水長流', desc: '感情上不宜衝動、不宜表白過急，已婚者注重日常陪伴，未婚者順緣而行。' },
+            { tag: '健康', title: '健康 ・ 養精蓄銳', desc: '宜留意休息與睡眠品質，避免熬夜，多運動、多曬太陽以提升精神。' },
+            { tag: '家庭', title: '家庭 ・ 平靜溫和', desc: '家中氛圍平和，宜減少口角、多溝通，建立穩定的家庭節奏。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '至本宮點光明燈祈求闔家平安、明照前路。' },
+            { num: '貳', title: '守成蓄勢', desc: '平穩之年宜守、宜蓄，等待來年三合貴人之機。' },
+            { num: '參', title: '修身養德', desc: '靜以修身、儉以養德，是蓄積實力的最佳時機。' },
+            { num: '肆', title: '行善積福', desc: '日常多行善、多布施，為自己與家人累積無形福報。' }
+          ]
+        },
+        monkey: {
+          name: '猴', branch: '申', element: '陽金',
+          relation: '平 和',
+          relationKey: 'ping',
+          level: '中 ・ 平和',
+          suggest: '運勢 ・ 平和',
+          mood: 'normal',
+          desc: '丙午年地支為午，申與午既無沖刑、亦非三合六合，屬猴者本年宜凡事多思考、謹慎決策、平穩前行。可至本宮點光明燈祈求闔家平安、諸事順遂。',
+          years: ['民國45年（1956）', '民國57年（1968）', '民國69年（1980）', '民國81年（1992）', '民國93年（2004）', '民國105年（2016）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 謹慎決策', desc: '事業上凡事宜深思熟慮，新案、轉職前多方評估；現有崗位深耕為宜。' },
+            { tag: '財運', title: '財運 ・ 量力而為', desc: '正財平穩，偏財與投資宜量力而為，避免聽信他人之言而冒進。' },
+            { tag: '感情', title: '感情 ・ 真誠溝通', desc: '感情上宜真誠溝通、減少猜疑，已婚者多陪伴，未婚者勿以條件衡量緣分。' },
+            { tag: '健康', title: '健康 ・ 心情調適', desc: '宜留意精神壓力與睡眠品質，多戶外活動、釋放壓力。' },
+            { tag: '家庭', title: '家庭 ・ 共商共議', desc: '家中重大決策宜全家共商，避免獨斷；多陪伴長輩，享受家庭時光。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '至本宮點光明燈祈求闔家平安、明照前路。' },
+            { num: '貳', title: '謹慎決策', desc: '凡事三思而後行，避免衝動決定、避免聽信片面之言。' },
+            { num: '參', title: '深耕本業', desc: '平穩之年宜深耕，現有資源做精做深，為下波機緣蓄勢。' },
+            { num: '肆', title: '修身行善', desc: '行善積德、調養身心，福報自然累積。' }
+          ]
+        },
+        rooster: {
+          name: '雞', branch: '酉', element: '陰金',
+          relation: '平 和',
+          relationKey: 'ping',
+          level: '中 ・ 平和',
+          suggest: '運勢 ・ 平和',
+          mood: 'normal',
+          desc: '丙午年地支為午，酉與午既無沖刑、亦非三合六合，屬雞者本年宜平和守成、穩紮穩打、誠心積德。可至本宮點光明燈祈求闔家平安、諸事順遂。',
+          years: ['民國46年（1957）', '民國58年（1969）', '民國70年（1981）', '民國82年（1993）', '民國94年（2005）', '民國106年（2017）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 穩紮穩打', desc: '事業循序漸進，宜把握現有業務、深耕細節，不宜大刀闊斧的轉變。' },
+            { tag: '財運', title: '財運 ・ 穩中求進', desc: '正財穩定，理財宜保守踏實；可規劃長期儲蓄、避免高風險投機。' },
+            { tag: '感情', title: '感情 ・ 平淡溫馨', desc: '感情平淡而溫馨，已婚者珍惜日常相處，未婚者順緣而行、不必強求。' },
+            { tag: '健康', title: '健康 ・ 留意呼吸道', desc: '酉屬金，本年宜留意呼吸道、皮膚保養；作息規律、適度運動。' },
+            { tag: '家庭', title: '家庭 ・ 親情和睦', desc: '家庭氛圍和睦，宜多關心長輩、陪伴子女，享受平淡家庭幸福。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '至本宮點光明燈祈求闔家平安、運途明朗。' },
+            { num: '貳', title: '誠心積德', desc: '平和之歲，誠心行善積德，是累積無形資糧之最佳時機。' },
+            { num: '參', title: '穩紮穩打', desc: '凡事按部就班、不貪求快速，反能穩中有進、福壽綿延。' },
+            { num: '肆', title: '修身養性', desc: '靜以修身、儉以養德，調養身心、迎接來年新運。' }
+          ]
+        },
+        pig: {
+          name: '豬', branch: '亥', element: '陰水',
+          relation: '平 和',
+          relationKey: 'ping',
+          level: '中 ・ 平和',
+          suggest: '運勢 ・ 平和',
+          mood: 'normal',
+          desc: '丙午年地支為午，亥與午既無沖刑、亦非三合六合，屬豬者本年穩健發展、行善修身、家庭和樂。可至本宮點光明燈祈求闔家平安、諸事順遂。',
+          years: ['民國48年（1959）', '民國60年（1971）', '民國72年（1983）', '民國84年（1995）', '民國96年（2007）', '民國108年（2019）'],
+          fortunes: [
+            { tag: '事業', title: '事業 ・ 穩健發展', desc: '事業循序漸進，宜守成、深耕；新計畫宜謹慎評估、不貿然出擊。' },
+            { tag: '財運', title: '財運 ・ 量入為出', desc: '正財穩定，宜量入為出；可規劃儲蓄、保險與長期理財，少做投機。' },
+            { tag: '感情', title: '感情 ・ 和睦溫馨', desc: '感情和睦溫馨，已婚者夫妻和合，未婚者順緣而行、自然發展。' },
+            { tag: '健康', title: '健康 ・ 飲食節制', desc: '亥屬水，本年宜留意腎、膀胱保養；飲食節制、避免過勞、規律運動。' },
+            { tag: '家庭', title: '家庭 ・ 闔家和樂', desc: '家庭和樂、長輩安康，宜多陪伴家人、享受日常溫馨時光。' }
+          ],
+          tips: [
+            { num: '壹', title: '點光明燈', desc: '至本宮點光明燈祈求闔家平安、運途光明。' },
+            { num: '貳', title: '行善修身', desc: '平和之年宜廣行善事、修身養性，福報自然累積。' },
+            { num: '參', title: '深耕家庭', desc: '本年宜把握家庭時光，多陪伴長輩、子女，建立和睦家風。' },
+            { num: '肆', title: '量入為出', desc: '理財宜保守、量入為出，預留備用金以應不時之需。' }
+          ]
+        }
+      };
+
+      const ORDER = ['rat', 'ox', 'tiger', 'rabbit', 'dragon', 'snake', 'horse', 'sheep', 'monkey', 'rooster', 'dog', 'pig'];
+
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('zodiac');
+      if (!ITEMS[key]) key = 'horse';
+      const data = ITEMS[key];
+
+      // Banner
+      document.getElementById('zdBannerNum').textContent = data.name;
+      document.getElementById('zdTitle').textContent = '屬' + data.name + '流年';
+      document.getElementById('zdSub').textContent = data.relation;
+      document.title = '屬' + data.name + '流年｜十二生肖 ・ 台北建安宮';
+
+      // 概覽
+      document.getElementById('summaryIcon').innerHTML =
+        `<img src="assets/zodiac/${key}.svg" alt="${data.name}" class="zd-icon-img">`;
+      document.getElementById('summaryName').textContent = '屬' + data.name;
+      document.getElementById('summaryRelation').textContent = data.relation;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('metaBranch').textContent = data.branch;
+      document.getElementById('metaElement').textContent = data.element;
+      document.getElementById('metaLevel').textContent = data.level;
+      document.getElementById('metaSuggest').textContent = data.suggest;
+      document.getElementById('metaYears').innerHTML = data.years
+        .map(y => `<span class="zd-year-pill">${y}</span>`).join('');
+
+      // 流年運勢
+      document.getElementById('fortuneLead').textContent =
+        '丙午年屬' + data.name + '者「' + data.relation + '」，以下為事業、財運、感情、健康、家庭五大面向之流年參考。';
+      document.getElementById('fortuneGrid').innerHTML = data.fortunes.map(f => `
+        <div class="ld-purpose-card">
+          <div class="ld-purpose-tag">${f.tag}</div>
+          <h3 class="ld-purpose-title">${f.title}</h3>
+          <p class="ld-purpose-desc">${f.desc}</p>
+        </div>
+      `).join('');
+
+      // 化解 / 開運建議（warning 類顯示「化解」、其他顯示「開運」）
+      const isWarn = data.mood === 'warning';
+      document.getElementById('tipsLabel').textContent = isWarn ? '化 解 ・ 安 太 歲' : '開 運 ・ 加 持';
+      document.getElementById('tipsTitle').textContent = isWarn ? '流年化煞之道' : '流年開運之道';
+      document.getElementById('tipsGrid').innerHTML = data.tips.map(t => `
+        <div class="ld-howto-card">
+          <div class="ld-howto-num">${t.num}</div>
+          <div class="ld-howto-title">${t.title}</div>
+          <p class="ld-howto-desc">${t.desc}</p>
+        </div>
+      `).join('');
+
+      // 太歲意涵
+      document.getElementById('meaningTitle').textContent = '何謂「' + data.relation + '」';
+      document.getElementById('meaningContent').innerHTML =
+        MEANING[data.relationKey].map(p => `<p>${p}</p>`).join('');
+
+      // CTA
+      document.getElementById('ctaTitle').textContent =
+        '誠邀屬' + data.name + '信眾 ・ ' + (isWarn ? '安太歲祈平安' : '點燈祈福加持');
+      document.getElementById('ctaTag').textContent = isWarn ? '安 太 歲 ・ 點 光 明 燈' : '點 光 明 燈 ・ 祈 福 加 持';
+
+      // 其他生肖
+      document.getElementById('othersGrid').innerHTML = ORDER.map(k => {
+        const o = ITEMS[k];
+        const cls = [
+          'zd-other-card',
+          k === key ? 'is-current' : '',
+          o.mood === 'warning' ? 'is-warning' : ''
+        ].filter(Boolean).join(' ');
+        return `
+          <a class="${cls}" href="zodiac-detail.html?zodiac=${k}">
+            <div class="zd-other-num">${o.name}</div>
+            <div class="zd-other-relation">${o.relation}</div>
+          </a>
+        `;
+      }).join('');
+
+      // 回到頂部
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="水">
+  <g fill="none" stroke="#f1d990" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- big water droplet -->
+    <path d="M60 14
+             Q 44 38 38 56
+             Q 36 76 60 78
+             Q 84 76 82 56
+             Q 76 38 60 14 Z"/>
+    <!-- inner highlight in droplet -->
+    <path d="M52 40 Q 48 50 52 60" stroke-width="2"/>
+    <!-- water ripples below -->
+    <path d="M14 92 Q 24 86 34 92 Q 44 98 54 92 Q 64 86 74 92 Q 84 98 94 92 Q 104 86 110 90"/>
+    <path d="M14 102 Q 24 96 34 102 Q 44 108 54 102 Q 64 96 74 102 Q 84 108 94 102 Q 104 96 110 100"/>
+    <path d="M14 112 Q 24 106 34 112 Q 44 118 54 112 Q 64 106 74 112 Q 84 118 94 112 Q 104 106 110 110"/>
+    <!-- small splash droplets near base of big drop -->
+    <circle cx="36" cy="84" r="2" fill="#f1d990"/>
+    <circle cx="84" cy="84" r="2" fill="#f1d990"/>
+    <circle cx="46" cy="88" r="1.4"/>
+    <circle cx="74" cy="88" r="1.4"/>
+  </g>
+</svg>

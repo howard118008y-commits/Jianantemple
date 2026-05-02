@@ -1,0 +1,33 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="金">
+  <g fill="none" stroke="#f1d990" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 元寶 (gold ingot) outer shape -->
+    <path d="M22 86
+             Q 18 70 26 64
+             L 40 56
+             Q 50 50 60 50
+             Q 70 50 80 56
+             L 94 64
+             Q 102 70 98 86
+             Z"/>
+    <!-- middle band -->
+    <path d="M30 70 Q 60 64 90 70"/>
+    <!-- top of ingot (curved opening) -->
+    <path d="M40 56 Q 50 60 60 60 Q 70 60 80 56"/>
+    <!-- decoration on body -->
+    <path d="M45 78 L 75 78"/>
+    <!-- shine highlights -->
+    <path d="M40 66 L 36 64"/>
+    <path d="M80 66 L 84 64"/>
+    <!-- aura sparkles around -->
+    <g stroke-width="2">
+      <path d="M28 36 L 28 44 M 24 40 L 32 40"/>
+      <path d="M60 18 L 60 26 M 56 22 L 64 22"/>
+      <path d="M92 36 L 92 44 M 88 40 L 96 40"/>
+      <path d="M14 56 L 14 62"/>
+      <path d="M106 56 L 106 62"/>
+    </g>
+    <circle cx="28" cy="40" r="1.2" fill="#f1d990"/>
+    <circle cx="60" cy="22" r="1.4" fill="#f1d990"/>
+    <circle cx="92" cy="40" r="1.2" fill="#f1d990"/>
+  </g>
+</svg>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>丙午年度概要｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮 中華民國115年 丙午年 年度概要：天干地支、五行、納音、值年太歲、春節節氣。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/brand-back.js" defer></script>
+  <style>
+    /* overview-detail 專用補強樣式 */
+    .ov-banner-num {
+      font-family: "Noto Serif TC", serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 6px 24px rgba(0,0,0,0.55);
+    }
+    .ov-summary-icon {
+      font-family: "Noto Serif TC", serif;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      padding: 1rem;
+    }
+    .ov-icon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .ov-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem 1.6rem;
+    }
+    .ov-meta-grid .ld-meta-item { min-width: 0; }
+    .ov-content p {
+      font-size: 1rem;
+      line-height: 2;
+      color: rgba(248, 243, 233, 0.86);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .ov-content p:last-child { margin-bottom: 0; }
+
+    /* 春節重要日期表 */
+    .ov-date-table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .ov-date-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1.2fr 1.5fr 2.5fr;
+      gap: 1rem;
+      padding: 1.1rem 1.2rem;
+      background: rgba(31, 20, 20, 0.6);
+      border: 1px solid rgba(212, 168, 75, 0.25);
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .ov-date-row:hover {
+      border-color: var(--gold);
+      background: rgba(31, 20, 20, 0.85);
+    }
+    .ov-date-row-head {
+      background: rgba(212, 168, 75, 0.08);
+      border-color: rgba(212, 168, 75, 0.4);
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+    .ov-date-row-head:hover {
+      background: rgba(212, 168, 75, 0.08);
+      border-color: rgba(212, 168, 75, 0.4);
+    }
+    .ov-date-cell-day {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+    }
+    .ov-date-cell-date {
+      font-size: 0.95rem;
+      color: rgba(248, 243, 233, 0.85);
+      letter-spacing: 0.05em;
+    }
+    .ov-date-cell-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--paper);
+      letter-spacing: 0.08em;
+    }
+    .ov-date-cell-desc {
+      font-size: 0.88rem;
+      color: rgba(248, 243, 233, 0.75);
+      line-height: 1.7;
+    }
+
+    /* 五行表格 */
+    .ov-wuxing-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .ov-wuxing-card {
+      padding: 1.4rem 0.8rem;
+      background: rgba(31, 20, 20, 0.55);
+      border: 1px solid rgba(212, 168, 75, 0.25);
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .ov-wuxing-card:hover {
+      border-color: var(--gold);
+      background: rgba(31, 20, 20, 0.85);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+    .ov-wuxing-card.is-hot {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.32) 0%, rgba(31, 20, 20, 0.85) 100%);
+    }
+    .ov-wuxing-card.is-hot:hover {
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.45) 0%, rgba(31, 20, 20, 0.95) 100%);
+    }
+    .ov-wuxing-icon {
+      width: 56px;
+      height: 56px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .ov-wuxing-card:hover .ov-wuxing-icon {
+      transform: scale(1.1) rotate(-4deg);
+    }
+    .ov-wuxing-name {
+      font-family: "Noto Serif TC", serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .ov-wuxing-attr {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      color: rgba(248, 243, 233, 0.7);
+      line-height: 1.7;
+    }
+
+    /* 其他項目 */
+    .ov-others-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.9rem;
+    }
+    .ov-other-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 1.3rem 0.7rem;
+      background: rgba(31, 20, 20, 0.6);
+      border: 1px solid rgba(212, 168, 75, 0.25);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .ov-other-card:hover {
+      border-color: var(--gold);
+      background: rgba(31, 20, 20, 0.9);
+      transform: translateY(-2px);
+    }
+    .ov-other-card.is-current {
+      border-color: var(--gold);
+      background: rgba(212, 168, 75, 0.12);
+    }
+    .ov-other-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+    .ov-other-name {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 768px) {
+      .ov-banner-num { font-size: 3.6rem; }
+      .ov-summary-icon { font-size: 3rem; }
+      .ov-meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .ov-content p { font-size: 0.92rem; line-height: 1.9; }
+      .ov-date-row { grid-template-columns: 1fr 1fr; gap: 0.5rem; padding: 0.9rem 1rem; }
+      .ov-date-row-head { display: none; }
+      .ov-date-cell-desc { grid-column: span 2; }
+      .ov-wuxing-grid { grid-template-columns: repeat(5, 1fr); gap: 0.4rem; }
+      .ov-wuxing-card { padding: 0.9rem 0.3rem; gap: 0.3rem; }
+      .ov-wuxing-icon { width: 36px; height: 36px; }
+      .ov-wuxing-name { font-size: 1.4rem; }
+      .ov-wuxing-attr { font-size: 0.68rem; letter-spacing: 0.1em; }
+      .ov-others-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="page-overview-detail">
+
+  <header class="site-header site-header-solid">
+    <a class="brand" href="index.html" aria-label="返回上一頁" title="返回上一頁">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html">香客服務</a>
+      <a href="almanac.html" class="active">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner ritual-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag" id="ovTag">年 度 概 要</div>
+      <div class="ov-banner-num" id="ovBannerNum">丙 午</div>
+      <h1 class="banner-title" id="ovTitle">天干地支</h1>
+      <div class="banner-sub" id="ovSub">中華民國 115 年</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="almanac.html#overview">← 返回 年曆 ・ 丙午紀元</a>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  <section class="content-section ld-summary-section">
+    <div class="section-inner">
+      <div class="ld-summary-card rd-summary-card">
+        <div class="ld-summary-icon ov-summary-icon" id="summaryIcon">丙午</div>
+        <div class="ld-summary-body">
+          <h2 class="ld-summary-name" id="summaryName">天干地支</h2>
+          <div class="ld-summary-bless" id="summarySub">中華民國 115 年</div>
+          <p class="ld-summary-desc" id="summaryDesc"></p>
+          <div class="ld-summary-meta ov-meta-grid" id="metaGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 知識點 grid -->
+  <section class="content-section ld-purpose-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label" id="knowLabel">概 念 ・ 解 析</div>
+        <h2 class="section-title" id="knowTitle">基本知識</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead" id="knowLead"></p>
+      </div>
+      <div class="ld-purpose-grid" id="knowGrid"></div>
+    </div>
+  </section>
+
+  <!-- 由來故事 / 詳細解析 -->
+  <section class="content-section ld-story-section" id="storySection">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label" id="storyLabel">由 來 ・ 解 析</div>
+        <h2 class="section-title" id="storyTitle">深入了解</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ov-content" id="storyContent"></div>
+    </div>
+  </section>
+
+  <!-- 客製內容區（春節日期表 / 五行相生剋等）-->
+  <section class="content-section ld-howto-section" id="extraSection" style="display:none;">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label" id="extraLabel"></div>
+        <h2 class="section-title" id="extraTitle"></h2>
+        <div class="title-divider"></div>
+        <p class="section-lead" id="extraLead"></p>
+      </div>
+      <div id="extraBody"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="content-section ld-cta-section">
+    <div class="section-inner">
+      <div class="ld-cta-card">
+        <div class="ld-cta-tag" id="ctaTag">點 燈 ・ 安 太 歲</div>
+        <h3 class="ld-cta-title" id="ctaTitle"></h3>
+        <p class="ld-cta-text" id="ctaText"></p>
+        <div class="ld-cta-actions">
+          <a href="services.html" class="btn btn-primary btn-large">前往香客服務 ・ 線上登記</a>
+          <a href="tel:0981142292" class="btn btn-secondary">致電 0981-142-292</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他年度概要 -->
+  <section class="content-section ld-others-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">其 他 項 目</div>
+        <h2 class="section-title">年度概要一覽</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ov-others-grid" id="othersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      const ITEMS = {
+        ganzhi: {
+          tag: '天 干 地 支',
+          title: '丙午年',
+          sub: '中華民國 115 年',
+          bannerNum: '丙 午',
+          summaryIcon: '丙午',
+          summaryName: '天干地支 ・ 丙午',
+          summarySub: '六十甲子之第 43 位',
+          desc: '丙午年為六十甲子循環之第四十三位。「丙」為天干第三位，五行屬陽火；「午」為地支第七位，五行亦屬陽火。丙午年「火上加火」，全年火氣最為旺盛，主光明、向上、開創、亦主躁動。',
+          meta: [
+            { label: '天 干', value: '丙（陽火）' },
+            { label: '地 支', value: '午（陽火）' },
+            { label: '甲 子 序', value: '第 43 / 60' },
+            { label: '上一丙午', value: '民國 55 年（1966）' }
+          ],
+          knowLabel: '概 念 ・ 解 析',
+          knowTitle: '何謂天干地支',
+          knowLead: '天干地支是中國古代曆法核心，由 10 天干與 12 地支搭配，組成 60 年一循環之「六十甲子」。',
+          knowGrid: [
+            { tag: '天干', title: '十天干', desc: '甲乙丙丁戊己庚辛壬癸，依序對應陽木、陰木、陽火、陰火、陽土、陰土、陽金、陰金、陽水、陰水。' },
+            { tag: '地支', title: '十二地支', desc: '子丑寅卯辰巳午未申酉戌亥，配生肖鼠牛虎兔龍蛇馬羊猴雞狗豬，亦對應每日十二時辰。' },
+            { tag: '甲子', title: '六十甲子', desc: '天干與地支兩兩相配，每 60 年完成一輪，俗稱「六十甲子」或「六十花甲子」，是傳統紀年根本。' },
+            { tag: '丙午', title: '丙午之象', desc: '丙、午皆為陽火，火上加火、烈陽當空。象徵光明、文明、向上之氣，亦主躁動、衝動、宜以靜制動。' }
+          ],
+          storyLabel: '由 來 ・ 歷 史',
+          storyTitle: '丙午年之歷史',
+          story: [
+            '六十甲子紀年之制，源自商代，盛於周漢，沿用至今逾三千年。古人觀天察時，將天地之氣以干支表之，遂成中華曆法之根本。',
+            '丙午年於史上多為「火氣旺盛、變局興作」之年。如：',
+            '・ 民國 55 年（1966）丙午——時局轉折、社會劇變之年。',
+            '・ 民國前 6 年（1906）丙午——清末變法、新政推行之年。',
+            '・ 道光 26 年（1846）丙午——鴉片戰爭後西學東漸之始。',
+            '丙午年雖火氣旺、易有躁動，然「火生土」，亦是奠基立業、播種文明之年。古云：「丙午之歲，天行健，君子以自強不息。」',
+            '本年宜順火氣之勢、把握光明開創之機，但行事需「以靜制動、以柔克剛」，方能轉躁動為動能，使全年運勢趨吉避凶。'
+          ],
+          ctaTag: '安 太 歲 ・ 點 光 明 燈',
+          ctaTitle: '丙午年運轉新局 ・ 點燈安歲祈平安',
+          ctaText: '丙午火氣旺盛之年，本宮提供安太歲、點光明燈服務，使全年磁場安定、運勢順遂。'
+        },
+
+        wuxing: {
+          tag: '五 行 ・ 火',
+          title: '五行屬火',
+          sub: '丙午 ・ 火上加火',
+          bannerNum: '火',
+          summaryIcon: '火',
+          summaryName: '五行 ・ 火',
+          summarySub: '丙午 ・ 火氣最旺之年',
+          desc: '五行為金、木、水、火、土，乃中國古代解釋萬物構成與運行之五種基本元素。丙午年天干「丙」為陽火、地支「午」亦為陽火，火上加火，五行格局以「火」為最旺。',
+          meta: [
+            { label: '本 年 五 行', value: '火（陽火）' },
+            { label: '對 應 方 位', value: '南 方' },
+            { label: '對 應 季 節', value: '夏 季' },
+            { label: '對 應 顏 色', value: '紅 色' }
+          ],
+          knowLabel: '五 行 ・ 學 說',
+          knowTitle: '五行相生相剋',
+          knowLead: '五行之間有「相生」與「相剋」兩大關係，互為動力與制衡，構成宇宙運行之大道。',
+          knowGrid: [
+            { tag: '相生', title: '木火土金水', desc: '木生火、火生土、土生金、金生水、水生木——五行依序相生，如循環不息之大道。' },
+            { tag: '相剋', title: '木土水火金', desc: '木剋土、土剋水、水剋火、火剋金、金剋木——五行相剋以為制衡，免得偏盛之患。' },
+            { tag: '火德', title: '火之德', desc: '火主光明、向上、文明、禮儀。對應人體之心臟、小腸、舌；對應五味之苦。' },
+            { tag: '丙午', title: '丙午火局', desc: '丙午為純陽之火，火氣最旺。寅午戌三合火局者（屬虎、馬、狗）順勢而強，宜順火氣開展。' }
+          ],
+          storyLabel: '由 來 ・ 學 說',
+          storyTitle: '五行學說源流',
+          story: [
+            '五行學說源自上古，最早見於《尚書‧洪範》：「五行：一曰水，二曰火，三曰木，四曰金，五曰土。」此即五行最早之記載。',
+            '戰國時期陰陽家鄒衍集大成，提出「五德終始」之說；至漢代董仲舒、班固等儒者進一步發展，使五行學說與天文、曆法、醫學、命理融為一體，成為傳統文化之核心架構。',
+            '在道教信仰中，五行各對應一位星君：',
+            '・ 東方 ・ 青帝（木）',
+            '・ 南方 ・ 赤帝（火）',
+            '・ 西方 ・ 白帝（金）',
+            '・ 北方 ・ 黑帝（水）',
+            '・ 中央 ・ 黃帝（土）',
+            '丙午年五行屬火，南方丙丁火神當令，火德星君護持。本宮信眾若於本年祈福，可特別祈請南方火德星君，加持光明、文運、貴氣。'
+          ],
+          extra: {
+            kind: 'wuxing',
+            label: '五 行 ・ 對 照',
+            title: '五行屬性一覽',
+            lead: '丙午年火當令，火行屬性將特別顯著。'
+          },
+          ctaTag: '點 光 明 燈 ・ 加 持 火 運',
+          ctaTitle: '丙午火旺之年 ・ 點光明燈順勢加持',
+          ctaText: '本宮設有光明燈、文昌燈，加持火行光明文明之氣，使全年事業學業、文運貴氣皆有助力。'
+        },
+
+        nayin: {
+          tag: '納 音 ・ 天 河 水',
+          title: '納音天河水',
+          sub: '丙午丁未 ・ 天上之水',
+          bannerNum: '天 河 水',
+          summaryIcon: '天河水',
+          summaryName: '納音 ・ 天河水',
+          summarySub: '六十甲子納音 ・ 第 22 位',
+          desc: '納音為六十甲子兩兩配對之五行屬性，自古為命理、擇吉之要。丙午、丁未配對之納音為「天河水」——天上之水、銀河之雨，澤被萬物、潤物無聲。',
+          meta: [
+            { label: '配 對 干 支', value: '丙午 ・ 丁未' },
+            { label: '納 音 五 行', value: '水（天河水）' },
+            { label: '納 音 序', value: '第 22 / 30' },
+            { label: '象 徵', value: '銀河 ・ 甘霖' }
+          ],
+          knowLabel: '納 音 ・ 概 念',
+          knowTitle: '何謂「納音」',
+          knowLead: '六十甲子兩兩相配，得三十納音，各有其五行屬性，是命理推算之重要依據。',
+          knowGrid: [
+            { tag: '納音', title: '甲子納音', desc: '古人以五音（宮商角徵羽）配五行，將六十甲子歸納為三十種納音。每一納音皆有獨特意象。' },
+            { tag: '配對', title: '兩兩成對', desc: '相鄰兩干支共一納音，如甲子乙丑為「海中金」、丙午丁未為「天河水」，意義深遠。' },
+            { tag: '天河', title: '天河之水', desc: '「天河水」即天上之水、銀河、雨水，澤被萬物、無聲滋潤。象徵清淨、慈悲、無私。' },
+            { tag: '水火', title: '水火既濟', desc: '丙午為火氣最旺之年，納音卻為天河水，火中見水、水火既濟，乃「平衡調和」之吉象。' }
+          ],
+          storyLabel: '解 析 ・ 意 涵',
+          storyTitle: '丙午丁未天河水',
+          story: [
+            '《三命通會》云：「丙午丁未天河水者，丙丁屬火，午為火帝，未為火庫，兩家有火炎之意；木臨而妒之，嫉之；於斯時也而推水。水居火位，水火既濟，故曰天河水。」',
+            '此意為：丙丁皆火，午為火之最旺、未為火之餘氣，兩相結合本應燥烈無比；然天地之間自有調和之機——火氣升騰至極，則化為雲雨、降下甘霖，遂成「天河之水」。',
+            '故「天河水」非地上江湖之水，而是天上銀河、雲端甘霖。此水雖無形可見，卻能潤澤萬物、化解燥熱、滋養文明。',
+            '丙午年雖火氣旺，得天河水納音之調和，反成「水火既濟」之吉象。古訣云：「水火既濟之歲，宜廣施善德、廣結善緣，福報如天河之水、源源不絕。」',
+            '本年信眾把握此「水火既濟」之機，於事業上順火勢開展、於人事上以水德謙和，自能化燥為和、轉烈為慈，全年運勢圓融順遂。'
+          ],
+          ctaTag: '點 光 明 燈 ・ 廣 施 善 德',
+          ctaTitle: '丙午水火既濟 ・ 點燈祈福廣結善緣',
+          ctaText: '丙午年得「天河水」之調和，宜廣施善德、廣結善緣。本宮設有光明燈、平安燈，誠邀信眾共沐法益。'
+        },
+
+        taisui: {
+          tag: '值 年 太 歲',
+          title: '文哲大將軍',
+          sub: '丙午年 ・ 值年太歲星君',
+          bannerNum: '文 哲 大 將 軍',
+          summaryIcon: '文哲',
+          summaryName: '文哲大將軍',
+          summarySub: '丙午年 ・ 值年太歲',
+          desc: '六十甲子，各有一位值年太歲星君，輪值掌管當年人間吉凶禍福、民間運勢。丙午年值年太歲為「文哲大將軍」——文德治世、武略安邦，主管丙午年信眾之流年運勢。',
+          meta: [
+            { label: '值 年', value: '丙 午（115 年）' },
+            { label: '名 諱', value: '文 哲' },
+            { label: '敕 封', value: '大 將 軍' },
+            { label: '本 年 影 響', value: '凡 値 沖 破 害 者' }
+          ],
+          knowLabel: '太 歲 ・ 概 念',
+          knowTitle: '何謂「值年太歲」',
+          knowLead: '太歲為道教神祇，統領人間年運之吉凶。六十甲子各有專司之太歲將軍，輪值執掌當年世運。',
+          knowGrid: [
+            { tag: '太歲', title: '六十太歲', desc: '六十甲子各有一位太歲星君，共六十位太歲將軍，輪值人間每一個甲子年。' },
+            { tag: '輪值', title: '當值將軍', desc: '丙午年由「文哲大將軍」當值。值年太歲掌管當年世運，並庇佑安太歲之信眾。' },
+            { tag: '安歲', title: '安太歲', desc: '凡屬馬（值）、鼠（沖）、兔（破）、牛（害）者，宜安太歲，由本宮代為禮拜文哲大將軍。' },
+            { tag: '化煞', title: '化解流年', desc: '安太歲非為驅災，而是請太歲將軍鎮守自身磁場、化解流年沖煞、安定身心。' }
+          ],
+          storyLabel: '事 蹟 ・ 由 來',
+          storyTitle: '文哲大將軍其人',
+          story: [
+            '文哲大將軍，名「文哲」，字「子明」，相傳為宋朝人士。據道教典籍《六十甲子神籙》、民間《太歲會考》所載：',
+            '文哲將軍生前文武雙全：以文德著稱，曾任翰林、博通典籍；以武略安邦，曾統兵衛國、退敵安民。為人忠直明哲、遇事果斷而不妄為，深得朝野敬重。',
+            '其辭世後，因「文德」與「武略」兼備之德行，玉皇大帝敕封為太歲星君，職司六十甲子之「丙午」年世運，每六十年輪值一次人間。',
+            '文哲大將軍當值之年，宜行端正、忌行邪偏；信眾若於本年安太歲，將軍將護佑其家宅安寧、行止平安、避免無端是非。',
+            '本宮安太歲科儀，由執事人員依古制備辦：文哲大將軍金身、太歲符、紅燈、香花茗果。法會中代為宣疏、誠心禮拜，使信眾之名諱呈於太歲將軍御前，蒙其護佑。',
+            '※ 註：六十甲子太歲名諱因典籍版本與地區傳統略有差異，本宮依台灣道教傳統及《太歲會考》供奉文哲大將軍。'
+          ],
+          ctaTag: '安 太 歲 ・ 線 上 登 記',
+          ctaTitle: '文哲大將軍護佑 ・ 安太歲祈一年平安',
+          ctaText: '本宮提供安太歲服務，由執事人員代為禮拜文哲大將軍，凡屬馬、鼠、兔、牛者尤宜誠心安歲。'
+        },
+
+        chunjie: {
+          tag: '春 節 ・ 開 正',
+          title: '春節 ・ 大年初一',
+          sub: '2026 / 02 / 17（週二）',
+          bannerNum: '2 0 2 6',
+          summaryIcon: '正月初一',
+          summaryName: '春節 ・ 開正',
+          summarySub: '農曆正月初一 ・ 國曆 2026/02/17',
+          desc: '春節即農曆正月初一，是華人最重要之傳統節日。丙午年春節落於國曆 2026 年 2 月 17 日（週二），象徵舊歲已退、新春初啟、開正納福。本宮春節期間照常開放，誠邀十方信眾走春、安太歲、點光明燈。',
+          meta: [
+            { label: '農 曆', value: '正月 初一' },
+            { label: '國 曆', value: '2026 / 02 / 17' },
+            { label: '星 期', value: '星 期 二' },
+            { label: '節 氣', value: '雨 水 前' }
+          ],
+          knowLabel: '春 節 ・ 習 俗',
+          knowTitle: '春節傳統習俗',
+          knowLead: '春節由除夕至正月十五，整整半個月，是華人最為盛大之歲時節慶。',
+          knowGrid: [
+            { tag: '辭年', title: '除夕辭歲', desc: '除夕日全家團圓、拜祖先、吃年夜飯、發紅包、守歲。為一年最重要之團聚日。' },
+            { tag: '開正', title: '初一走春', desc: '正月初一開正、迎新、走春拜年。本宮初一開門起香，誠邀信眾上香祈福。' },
+            { tag: '拜公', title: '初九拜天公', desc: '正月初九為玉皇大帝聖誕，民間稱「拜天公」。本宮備辦法會、誠邀信眾共襄。' },
+            { tag: '上元', title: '十五元宵', desc: '正月十五為上元節、天官大帝聖誕、亦是元宵佳節。賞燈、吃元宵、闔家團圓。' }
+          ],
+          storyLabel: '由 來 ・ 故 事',
+          storyTitle: '春節源流',
+          story: [
+            '春節由「年」之傳說演化而來。相傳遠古有怪獸名「年」，每於除夕出沒侵擾百姓。後人發現「年」懼怕紅色、火光、巨響，遂以紅紙、燈火、爆竹驅之——此即貼春聯、放鞭炮之由來。',
+            '至漢武帝太初元年（西元前 104 年），定夏曆正月初一為歲首，從此「春節」即為一年之始，沿用至今逾兩千年。',
+            '丙午年春節落於國曆 2 月 17 日，立春之後、雨水之前。是萬物復甦、陽氣初生之時。古云：「一年之計在於春」——春節期間立志、發願、走春祈福，皆為一年之根基。',
+            '本宮春節期間照常開放，並備辦下列服務：',
+            '・ 安太歲 ・ 點光明燈 ・ 線上登記',
+            '・ 初九拜天公法會（玉皇大帝聖誕）',
+            '・ 十五元宵 ・ 開燈安斗（天官大帝聖誕）',
+            '誠邀十方信眾，於丙午新春，至本宮上香、點燈、安歲，迎接一年之福。'
+          ],
+          extra: {
+            kind: 'dates',
+            label: '重 要 日 期',
+            title: '丙午年春節重要日',
+            lead: '春節期間本宮重要日期一覽，誠邀信眾蒞臨參與。'
+          },
+          ctaTag: '走 春 ・ 點 燈 ・ 安 歲',
+          ctaTitle: '丙午新春 ・ 蒞臨建安宮走春祈福',
+          ctaText: '本宮春節期間照常開放，安太歲、點光明燈即日起接受線上登記，誠邀十方信眾闔家走春。'
+        }
+      };
+
+      const ORDER = ['ganzhi', 'wuxing', 'nayin', 'taisui', 'chunjie'];
+      const LABELS = {
+        ganzhi: { label: '天 干 地 支', name: '丙 午' },
+        wuxing: { label: '五 行', name: '火' },
+        nayin: { label: '納 音', name: '天河水' },
+        taisui: { label: '值 年 太 歲', name: '文哲大將軍' },
+        chunjie: { label: '春 節', name: '2026/02/17' }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('item');
+      if (!ITEMS[key]) key = 'ganzhi';
+      const data = ITEMS[key];
+
+      // Banner
+      document.getElementById('ovTag').textContent = data.tag;
+      document.getElementById('ovBannerNum').textContent = data.bannerNum;
+      document.getElementById('ovTitle').textContent = data.title;
+      document.getElementById('ovSub').textContent = data.sub;
+      document.title = data.title + '｜丙午紀元 ・ 台北建安宮';
+
+      // 摘要
+      document.getElementById('summaryIcon').innerHTML =
+        `<img src="assets/overview/${key}.svg" alt="${data.summaryName}" class="ov-icon-img">`;
+      document.getElementById('summaryName').textContent = data.summaryName;
+      document.getElementById('summarySub').textContent = data.summarySub;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('metaGrid').innerHTML = data.meta.map(m => `
+        <div class="ld-meta-item">
+          <div class="ld-meta-label">${m.label}</div>
+          <div class="ld-meta-value">${m.value}</div>
+        </div>
+      `).join('');
+
+      // 知識點
+      document.getElementById('knowLabel').textContent = data.knowLabel;
+      document.getElementById('knowTitle').textContent = data.knowTitle;
+      document.getElementById('knowLead').textContent = data.knowLead || '';
+      document.getElementById('knowGrid').innerHTML = data.knowGrid.map(k => `
+        <div class="ld-purpose-card">
+          <div class="ld-purpose-tag">${k.tag}</div>
+          <h3 class="ld-purpose-title">${k.title}</h3>
+          <p class="ld-purpose-desc">${k.desc}</p>
+        </div>
+      `).join('');
+
+      // 故事 / 解析
+      document.getElementById('storyLabel').textContent = data.storyLabel;
+      document.getElementById('storyTitle').textContent = data.storyTitle;
+      document.getElementById('storyContent').innerHTML = data.story.map(p => `<p>${p}</p>`).join('');
+
+      // 客製內容區
+      if (data.extra) {
+        document.getElementById('extraSection').style.display = '';
+        document.getElementById('extraLabel').textContent = data.extra.label;
+        document.getElementById('extraTitle').textContent = data.extra.title;
+        document.getElementById('extraLead').textContent = data.extra.lead || '';
+        document.getElementById('extraBody').innerHTML = renderExtra(data.extra.kind);
+      }
+
+      // CTA
+      document.getElementById('ctaTag').textContent = data.ctaTag;
+      document.getElementById('ctaTitle').textContent = data.ctaTitle;
+      document.getElementById('ctaText').textContent = data.ctaText;
+
+      // 其他項目
+      document.getElementById('othersGrid').innerHTML = ORDER.map(k => {
+        const o = LABELS[k];
+        const cls = 'ov-other-card' + (k === key ? ' is-current' : '');
+        return `
+          <a class="${cls}" href="overview-detail.html?item=${k}">
+            <div class="ov-other-label">${o.label}</div>
+            <div class="ov-other-name">${o.name}</div>
+          </a>
+        `;
+      }).join('');
+
+      // 回到頂部
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      function renderExtra(kind) {
+        if (kind === 'dates') {
+          const dates = [
+            { day: '除 夕',   date: '02 / 16（一）', name: '辭歲拜祖',     desc: '辭年、團圓飯、發紅包、守歲；本宮備辦辭年金。' },
+            { day: '初 一',   date: '02 / 17（二）', name: '開正走春',     desc: '本宮起香迎新，誠邀信眾上香祈福、走春納吉。' },
+            { day: '初 二',   date: '02 / 18（三）', name: '回娘家',       desc: '出嫁女兒回娘家拜年，闔家團聚。' },
+            { day: '初 四',   date: '02 / 20（五）', name: '接神',         desc: '送神後再迎神，恭迎眾神返回人間庇佑。' },
+            { day: '初 五',   date: '02 / 21（六）', name: '開市迎財',     desc: '商家開市、迎財神。可至本宮補財庫。' },
+            { day: '初 九',   date: '02 / 25（三）', name: '玉皇大帝聖誕', desc: '俗稱「拜天公」。本宮備辦法會，誠邀信眾。' },
+            { day: '十 二',   date: '02 / 28（六）', name: '開燈安斗',     desc: '本宮舉行開燈安斗法會，誠邀點燈信眾。' },
+            { day: '十 五',   date: '03 / 03（二）', name: '元宵 ・ 上元', desc: '天官大帝聖誕，賞燈、吃元宵、闔家團圓。' }
+          ];
+          return `
+            <div class="ov-date-table">
+              <div class="ov-date-row ov-date-row-head">
+                <div>農 曆</div>
+                <div>國 曆</div>
+                <div>事 由</div>
+                <div>說 明</div>
+              </div>
+              ${dates.map(d => `
+                <div class="ov-date-row">
+                  <div class="ov-date-cell-day">${d.day}</div>
+                  <div class="ov-date-cell-date">${d.date}</div>
+                  <div class="ov-date-cell-name">${d.name}</div>
+                  <div class="ov-date-cell-desc">${d.desc}</div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+        if (kind === 'wuxing') {
+          const five = [
+            { key: 'mu',   name: '木', attr: '東 ・ 春<br>青 ・ 酸', hot: false },
+            { key: 'huo',  name: '火', attr: '南 ・ 夏<br>紅 ・ 苦', hot: true },
+            { key: 'tu',   name: '土', attr: '中 ・ 季夏<br>黃 ・ 甘', hot: false },
+            { key: 'jin',  name: '金', attr: '西 ・ 秋<br>白 ・ 辛', hot: false },
+            { key: 'shui', name: '水', attr: '北 ・ 冬<br>黑 ・ 鹹', hot: false }
+          ];
+          return `
+            <div class="ov-wuxing-grid">
+              ${five.map(w => `
+                <a class="ov-wuxing-card${w.hot ? ' is-hot' : ''}" href="wuxing-detail.html?element=${w.key}">
+                  <img class="ov-wuxing-icon" src="assets/wuxing/${w.key}.svg" alt="">
+                  <div class="ov-wuxing-name">${w.name}</div>
+                  <div class="ov-wuxing-attr">${w.attr}</div>
+                </a>
+              `).join('')}
+            </div>
+            <p style="text-align:center; font-size:0.85rem; letter-spacing:0.18em; color:rgba(248,243,233,0.65); margin-top:1rem;">※ 丙午年「火」當令，火行屬性將特別顯著。點選任一元素查看詳細解析。</p>
+          `;
+        }
+        return '';
+      }
+    })();
+  </script>
+</body>
+</html>

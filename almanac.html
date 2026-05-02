@@ -45,7 +45,7 @@
   </section>
 
   <!-- 年度概要 -->
-  <section class="content-section section-almanac-overview">
+  <section class="content-section section-almanac-overview" id="overview">
     <div class="section-inner">
       <div class="section-head">
         <div class="section-label">年 度 概 要</div>
@@ -53,31 +53,37 @@
         <div class="title-divider"></div>
       </div>
       <div class="overview-grid">
-        <div class="overview-card overview-card-feature">
+        <a class="overview-card overview-card-feature" href="overview-detail.html?item=ganzhi">
+          <img class="ov-card-icon" src="assets/overview/ganzhi.svg" alt="">
           <div class="ov-label">天 干 地 支</div>
           <div class="ov-value-large">丙 午</div>
           <div class="ov-sub">中華民國 115 年</div>
-        </div>
-        <div class="overview-card">
+        </a>
+        <a class="overview-card" href="zodiac-detail.html?zodiac=horse">
+          <img class="ov-card-icon" src="assets/zodiac/horse.svg" alt="">
           <div class="ov-label">生 肖</div>
           <div class="ov-value">馬</div>
-        </div>
-        <div class="overview-card">
+        </a>
+        <a class="overview-card" href="overview-detail.html?item=wuxing">
+          <img class="ov-card-icon" src="assets/overview/wuxing.svg" alt="">
           <div class="ov-label">五 行</div>
           <div class="ov-value">火</div>
-        </div>
-        <div class="overview-card">
+        </a>
+        <a class="overview-card" href="overview-detail.html?item=nayin">
+          <img class="ov-card-icon" src="assets/overview/nayin.svg" alt="">
           <div class="ov-label">納 音</div>
           <div class="ov-value">天河水</div>
-        </div>
-        <div class="overview-card">
+        </a>
+        <a class="overview-card" href="overview-detail.html?item=taisui">
+          <img class="ov-card-icon" src="assets/overview/taisui.svg" alt="">
           <div class="ov-label">值 年 太 歲</div>
           <div class="ov-value">文哲大將軍</div>
-        </div>
-        <div class="overview-card">
+        </a>
+        <a class="overview-card" href="overview-detail.html?item=chunjie">
+          <img class="ov-card-icon" src="assets/overview/chunjie.svg" alt="">
           <div class="ov-label">春 節</div>
           <div class="ov-value">2026 / 02 / 17</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -334,7 +340,7 @@
   </section>
 
   <!-- 12 生肖流年 -->
-  <section class="content-section section-zodiac">
+  <section class="content-section section-zodiac" id="zodiac">
     <div class="section-inner">
       <div class="section-head">
         <div class="section-label">十 二 生 肖</div>
@@ -347,80 +353,116 @@
       </div>
 
       <div class="zodiac-grid">
-        <article class="zodiac-card zodiac-warning">
-          <div class="zodiac-num">馬</div>
+        <a class="zodiac-card zodiac-warning" href="zodiac-detail.html?zodiac=horse">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/horse.svg" alt="">
+            <div class="zodiac-num">馬</div>
+          </div>
           <div class="zodiac-relation">值太歲 ・ 自刑</div>
           <p>當值太歲且午午自刑，本年務必安太歲、化解流年沖煞。</p>
           <div class="zodiac-suggest">建議 ・ 安太歲</div>
-        </article>
-        <article class="zodiac-card zodiac-warning">
-          <div class="zodiac-num">鼠</div>
+        </a>
+        <a class="zodiac-card zodiac-warning" href="zodiac-detail.html?zodiac=rat">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/rat.svg" alt="">
+            <div class="zodiac-num">鼠</div>
+          </div>
           <div class="zodiac-relation">沖太歲</div>
           <p>子午相沖，本年凡事多謹慎，宜安太歲、求平安。</p>
           <div class="zodiac-suggest">建議 ・ 安太歲</div>
-        </article>
-        <article class="zodiac-card zodiac-warning">
-          <div class="zodiac-num">兔</div>
+        </a>
+        <a class="zodiac-card zodiac-warning" href="zodiac-detail.html?zodiac=rabbit">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/rabbit.svg" alt="">
+            <div class="zodiac-num">兔</div>
+          </div>
           <div class="zodiac-relation">破太歲</div>
           <p>卯午相破，本年宜行事低調、避免衝動，可安太歲化解。</p>
           <div class="zodiac-suggest">建議 ・ 安太歲</div>
-        </article>
-        <article class="zodiac-card zodiac-warning">
-          <div class="zodiac-num">牛</div>
+        </a>
+        <a class="zodiac-card zodiac-warning" href="zodiac-detail.html?zodiac=ox">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/ox.svg" alt="">
+            <div class="zodiac-num">牛</div>
+          </div>
           <div class="zodiac-relation">害太歲</div>
           <p>丑午相害，本年人際間易生小嫌隙，多和為貴，可安太歲。</p>
           <div class="zodiac-suggest">建議 ・ 安太歲</div>
-        </article>
+        </a>
 
-        <article class="zodiac-card zodiac-favor">
-          <div class="zodiac-num">虎</div>
+        <a class="zodiac-card zodiac-favor" href="zodiac-detail.html?zodiac=tiger">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/tiger.svg" alt="">
+            <div class="zodiac-num">虎</div>
+          </div>
           <div class="zodiac-relation">三合</div>
           <p>寅午戌三合火局，本年諸事順遂，可把握時機開展。</p>
           <div class="zodiac-suggest">運勢 ・ 順遂</div>
-        </article>
-        <article class="zodiac-card zodiac-favor">
-          <div class="zodiac-num">狗</div>
+        </a>
+        <a class="zodiac-card zodiac-favor" href="zodiac-detail.html?zodiac=dog">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/dog.svg" alt="">
+            <div class="zodiac-num">狗</div>
+          </div>
           <div class="zodiac-relation">三合</div>
           <p>寅午戌三合火局，本年諸事順遂，貴人扶助。</p>
           <div class="zodiac-suggest">運勢 ・ 順遂</div>
-        </article>
-        <article class="zodiac-card zodiac-favor">
-          <div class="zodiac-num">羊</div>
+        </a>
+        <a class="zodiac-card zodiac-favor" href="zodiac-detail.html?zodiac=sheep">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/sheep.svg" alt="">
+            <div class="zodiac-num">羊</div>
+          </div>
           <div class="zodiac-relation">六合</div>
           <p>午未六合，本年穩定向前，貴人現、事業有助。</p>
           <div class="zodiac-suggest">運勢 ・ 平和</div>
-        </article>
+        </a>
 
-        <article class="zodiac-card">
-          <div class="zodiac-num">龍</div>
+        <a class="zodiac-card" href="zodiac-detail.html?zodiac=dragon">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/dragon.svg" alt="">
+            <div class="zodiac-num">龍</div>
+          </div>
           <div class="zodiac-relation">平 和</div>
           <p>本年運勢平和，循序漸進、穩健發展。</p>
           <div class="zodiac-suggest">運勢 ・ 平和</div>
-        </article>
-        <article class="zodiac-card">
-          <div class="zodiac-num">蛇</div>
+        </a>
+        <a class="zodiac-card" href="zodiac-detail.html?zodiac=snake">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/snake.svg" alt="">
+            <div class="zodiac-num">蛇</div>
+          </div>
           <div class="zodiac-relation">平 和</div>
           <p>本年宜守成，蓄積實力、伺機而動。</p>
           <div class="zodiac-suggest">運勢 ・ 平和</div>
-        </article>
-        <article class="zodiac-card">
-          <div class="zodiac-num">猴</div>
+        </a>
+        <a class="zodiac-card" href="zodiac-detail.html?zodiac=monkey">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/monkey.svg" alt="">
+            <div class="zodiac-num">猴</div>
+          </div>
           <div class="zodiac-relation">平 和</div>
           <p>本年凡事多思考，謹慎決策，平穩前行。</p>
           <div class="zodiac-suggest">運勢 ・ 平和</div>
-        </article>
-        <article class="zodiac-card">
-          <div class="zodiac-num">雞</div>
+        </a>
+        <a class="zodiac-card" href="zodiac-detail.html?zodiac=rooster">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/rooster.svg" alt="">
+            <div class="zodiac-num">雞</div>
+          </div>
           <div class="zodiac-relation">平 和</div>
           <p>本年平和守成，穩紮穩打、誠心積德。</p>
           <div class="zodiac-suggest">運勢 ・ 平和</div>
-        </article>
-        <article class="zodiac-card">
-          <div class="zodiac-num">豬</div>
+        </a>
+        <a class="zodiac-card" href="zodiac-detail.html?zodiac=pig">
+          <div class="zodiac-icon-row">
+            <img class="zodiac-card-icon" src="assets/zodiac/pig.svg" alt="">
+            <div class="zodiac-num">豬</div>
+          </div>
           <div class="zodiac-relation">平 和</div>
           <p>本年穩健發展，行善修身、家庭和樂。</p>
           <div class="zodiac-suggest">運勢 ・ 平和</div>
-        </article>
+        </a>
       </div>
 
       <p class="almanac-note-line">

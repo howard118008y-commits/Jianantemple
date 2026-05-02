@@ -1,0 +1,36 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="兔">
+  <g fill="none" stroke="#f1d990" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- left ear -->
+    <path d="M48 16 Q 42 30 44 50 Q 48 54 54 50 Q 56 30 54 18 Q 51 14 48 16 Z"/>
+    <!-- right ear -->
+    <path d="M72 16 Q 78 30 76 50 Q 72 54 66 50 Q 64 30 66 18 Q 69 14 72 16 Z"/>
+    <!-- inner ears -->
+    <path d="M50 26 Q 49 38 51 46"/>
+    <path d="M70 26 Q 71 38 69 46"/>
+    <!-- head -->
+    <ellipse cx="60" cy="60" rx="20" ry="18"/>
+    <!-- eyes -->
+    <circle cx="50" cy="58" r="1.8" fill="#f1d990"/>
+    <circle cx="70" cy="58" r="1.8" fill="#f1d990"/>
+    <!-- nose -->
+    <path d="M58 66 Q 60 68 62 66 Q 62 64 60 64 Q 58 64 58 66 Z" fill="#f1d990"/>
+    <!-- mouth -->
+    <path d="M60 68 L 60 72"/>
+    <path d="M60 72 Q 56 74 54 73"/>
+    <path d="M60 72 Q 64 74 66 73"/>
+    <!-- whiskers -->
+    <path d="M52 70 L 42 68"/>
+    <path d="M52 72 L 42 74"/>
+    <path d="M68 70 L 78 68"/>
+    <path d="M68 72 L 78 74"/>
+    <!-- body -->
+    <path d="M44 76 Q 36 90 44 100 Q 60 106 76 100 Q 84 90 76 76"/>
+    <!-- front paws -->
+    <path d="M50 96 L 50 102"/>
+    <path d="M58 98 L 58 104"/>
+    <path d="M62 98 L 62 104"/>
+    <path d="M70 96 L 70 102"/>
+    <!-- fluffy tail -->
+    <circle cx="84" cy="86" r="5"/>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="值年太歲 文哲大將軍">
+  <g fill="none" stroke="#f1d990" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- helmet top crest / 帥盔 -->
+    <path d="M60 8 L 56 18 L 64 18 Z" fill="#f1d990"/>
+    <path d="M52 18 L 68 18"/>
+    <!-- helmet body -->
+    <path d="M40 22 Q 36 30 38 38 L 82 38 Q 84 30 80 22 Q 60 16 40 22 Z"/>
+    <!-- helmet brim -->
+    <path d="M34 38 L 86 38"/>
+    <!-- ear flaps / 護耳 -->
+    <path d="M38 38 Q 32 44 32 54 L 38 54"/>
+    <path d="M82 38 Q 88 44 88 54 L 82 54"/>
+    <!-- face -->
+    <path d="M44 38 Q 42 56 50 66 Q 60 70 70 66 Q 78 56 76 38"/>
+    <!-- eyes (fierce) -->
+    <path d="M48 50 L 54 48"/>
+    <path d="M66 48 L 72 50"/>
+    <circle cx="51" cy="51" r="1.6" fill="#f1d990"/>
+    <circle cx="69" cy="51" r="1.6" fill="#f1d990"/>
+    <!-- mustache -->
+    <path d="M48 60 Q 54 62 60 60 Q 66 62 72 60"/>
+    <!-- beard (長鬚) -->
+    <path d="M52 66 Q 50 76 56 82"/>
+    <path d="M60 70 L 60 86"/>
+    <path d="M68 66 Q 70 76 64 82"/>
+    <!-- shoulder armor / 肩甲 -->
+    <path d="M28 60 Q 22 70 28 80 L 40 78 Q 38 70 40 64"/>
+    <path d="M92 60 Q 98 70 92 80 L 80 78 Q 82 70 80 64"/>
+    <!-- chest armor plate -->
+    <path d="M40 78 Q 38 92 44 102 L 76 102 Q 82 92 80 78"/>
+    <!-- center medallion (帥) -->
+    <circle cx="60" cy="92" r="8"/>
+    <path d="M56 90 L 64 90 M 60 86 L 60 96 M 58 94 L 62 94"/>
+    <!-- side ribbons -->
+    <path d="M28 80 Q 22 96 28 110"/>
+    <path d="M92 80 Q 98 96 92 110"/>
+  </g>
+</svg>

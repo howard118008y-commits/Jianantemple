@@ -1,0 +1,27 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="蛇">
+  <g fill="none" stroke="#f1d990" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- coiled body (large outer S) -->
+    <path d="M28 92 Q 16 86 16 72 Q 16 56 32 52 Q 50 48 60 56 Q 70 64 84 60 Q 100 56 100 42 Q 100 28 84 26"/>
+    <!-- inner coil details -->
+    <path d="M32 76 Q 30 70 36 68"/>
+    <path d="M48 60 Q 50 56 56 58"/>
+    <path d="M70 60 Q 74 64 80 60"/>
+    <path d="M90 38 Q 92 34 88 32"/>
+    <!-- head (diamond shape, top right) -->
+    <path d="M84 26 Q 76 22 76 14 Q 84 8 92 14 Q 92 22 84 26 Z"/>
+    <!-- eyes -->
+    <circle cx="82" cy="16" r="1.4" fill="#f1d990"/>
+    <circle cx="88" cy="16" r="1.4" fill="#f1d990"/>
+    <!-- forked tongue -->
+    <path d="M84 26 L 82 32"/>
+    <path d="M84 26 L 86 32"/>
+    <path d="M82 32 L 80 36"/>
+    <path d="M86 32 L 88 36"/>
+    <!-- belly scale lines -->
+    <path d="M22 90 L 26 86"/>
+    <path d="M28 92 L 32 88"/>
+    <path d="M36 94 L 40 90"/>
+    <!-- tail tip -->
+    <path d="M28 92 Q 22 100 14 100"/>
+  </g>
+</svg>

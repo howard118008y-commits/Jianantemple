@@ -1,0 +1,37 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="虎">
+  <g fill="none" stroke="#f1d990" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- ears -->
+    <path d="M28 38 Q 22 22 32 20 Q 38 26 40 36"/>
+    <path d="M92 38 Q 98 22 88 20 Q 82 26 80 36"/>
+    <!-- inner ears -->
+    <path d="M30 30 Q 32 26 36 30"/>
+    <path d="M90 30 Q 88 26 84 30"/>
+    <!-- head outline -->
+    <path d="M30 38 Q 22 56 28 78 Q 38 96 60 98 Q 82 96 92 78 Q 98 56 90 38"/>
+    <!-- 王 stripe pattern on forehead -->
+    <path d="M52 36 L 68 36"/>
+    <path d="M54 44 L 66 44"/>
+    <path d="M60 36 L 60 52"/>
+    <!-- side stripes -->
+    <path d="M32 56 L 26 60"/>
+    <path d="M32 66 L 26 70"/>
+    <path d="M88 56 L 94 60"/>
+    <path d="M88 66 L 94 70"/>
+    <!-- eyes -->
+    <ellipse cx="46" cy="60" rx="3.5" ry="2.5"/>
+    <ellipse cx="74" cy="60" rx="3.5" ry="2.5"/>
+    <circle cx="46" cy="60" r="1.4" fill="#f1d990"/>
+    <circle cx="74" cy="60" r="1.4" fill="#f1d990"/>
+    <!-- nose -->
+    <path d="M56 74 Q 60 78 64 74 Q 64 70 60 70 Q 56 70 56 74 Z"/>
+    <!-- mouth -->
+    <path d="M60 78 L 60 84"/>
+    <path d="M60 84 Q 54 88 50 86"/>
+    <path d="M60 84 Q 66 88 70 86"/>
+    <!-- whiskers -->
+    <path d="M44 80 L 30 80"/>
+    <path d="M44 84 L 30 86"/>
+    <path d="M76 80 L 90 80"/>
+    <path d="M76 84 L 90 86"/>
+  </g>
+</svg>

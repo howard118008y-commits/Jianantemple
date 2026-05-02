@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>五行屬性詳解｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮 五行學說：木、火、土、金、水，各行之方位、季節、顏色、味道、相生相剋與對應星君。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/brand-back.js" defer></script>
+  <style>
+    .wx-banner-num {
+      font-family: "Noto Serif TC", serif;
+      font-size: 5.6rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0;
+      text-shadow: 0 6px 24px rgba(0,0,0,0.55);
+    }
+    .wx-summary-icon {
+      padding: 1rem;
+    }
+    .wx-icon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .wx-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem 1.6rem;
+    }
+    .wx-meta-grid .ld-meta-item { min-width: 0; }
+    .wx-content p {
+      font-size: 1rem;
+      line-height: 2;
+      color: rgba(248, 243, 233, 0.86);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .wx-content p:last-child { margin-bottom: 0; }
+
+    /* 相生相剋圖 */
+    .wx-cycle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .wx-cycle-card {
+      padding: 1.6rem 1.4rem;
+      background: rgba(31, 20, 20, 0.6);
+      border: 1px solid rgba(212, 168, 75, 0.3);
+    }
+    .wx-cycle-tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .wx-cycle-formula {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      letter-spacing: 0.18em;
+      margin-bottom: 0.8rem;
+      line-height: 1.7;
+    }
+    .wx-cycle-formula .arrow {
+      color: rgba(212, 168, 75, 0.55);
+      font-size: 0.9rem;
+      margin: 0 0.2em;
+    }
+    .wx-cycle-formula .self {
+      color: var(--paper);
+      padding: 0 0.18em;
+      border-bottom: 2px solid var(--gold);
+    }
+    .wx-cycle-desc {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: rgba(248, 243, 233, 0.82);
+    }
+
+    /* 其他元素 */
+    .wx-others-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.9rem;
+    }
+    .wx-other-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.4rem 0.7rem;
+      background: rgba(31, 20, 20, 0.6);
+      border: 1px solid rgba(212, 168, 75, 0.25);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .wx-other-card:hover {
+      border-color: var(--gold);
+      background: rgba(31, 20, 20, 0.9);
+      transform: translateY(-2px);
+    }
+    .wx-other-card.is-current {
+      border-color: var(--gold);
+      background: rgba(212, 168, 75, 0.12);
+    }
+    .wx-other-icon {
+      width: 44px;
+      height: 44px;
+    }
+    .wx-other-name {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .wx-other-attr {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: rgba(248, 243, 233, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .wx-banner-num { font-size: 4rem; }
+      .wx-meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .wx-content p { font-size: 0.92rem; line-height: 1.9; }
+      .wx-cycle-grid { grid-template-columns: 1fr; gap: 0.7rem; }
+      .wx-cycle-card { padding: 1.2rem 1rem; }
+      .wx-cycle-formula { font-size: 1.1rem; letter-spacing: 0.12em; }
+      .wx-others-grid { grid-template-columns: repeat(5, 1fr); gap: 0.4rem; }
+      .wx-other-card { padding: 0.8rem 0.3rem; gap: 0.3rem; }
+      .wx-other-icon { width: 32px; height: 32px; }
+      .wx-other-name { font-size: 1.1rem; }
+      .wx-other-attr { font-size: 0.62rem; letter-spacing: 0.08em; }
+    }
+  </style>
+</head>
+<body class="page-wuxing-detail">
+
+  <header class="site-header site-header-solid">
+    <a class="brand" href="index.html" aria-label="返回上一頁" title="返回上一頁">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html">香客服務</a>
+      <a href="almanac.html" class="active">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner ritual-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag" id="wxTag">五 行 ・ 木</div>
+      <div class="wx-banner-num" id="wxBannerNum">木</div>
+      <h1 class="banner-title" id="wxTitle">五行 ・ 木</h1>
+      <div class="banner-sub" id="wxSub">東 ・ 春 ・ 青 ・ 酸</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="overview-detail.html?item=wuxing">← 返回 五行屬性一覽</a>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  <section class="content-section ld-summary-section">
+    <div class="section-inner">
+      <div class="ld-summary-card rd-summary-card">
+        <div class="ld-summary-icon wx-summary-icon" id="summaryIcon"></div>
+        <div class="ld-summary-body">
+          <h2 class="ld-summary-name" id="summaryName">五行 ・ 木</h2>
+          <div class="ld-summary-bless" id="summarySub">東方 ・ 春季 ・ 仁德</div>
+          <p class="ld-summary-desc" id="summaryDesc"></p>
+          <div class="ld-summary-meta wx-meta-grid">
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">方 位</div>
+              <div class="ld-meta-value" id="metaDir">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">季 節</div>
+              <div class="ld-meta-value" id="metaSeason">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">顏 色</div>
+              <div class="ld-meta-value" id="metaColor">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">味 道</div>
+              <div class="ld-meta-value" id="metaTaste">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">對應臟腑</div>
+              <div class="ld-meta-value" id="metaOrgan">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">對應星君</div>
+              <div class="ld-meta-value" id="metaGod">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">五 德</div>
+              <div class="ld-meta-value" id="metaVirtue">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">天 干</div>
+              <div class="ld-meta-value" id="metaTian">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 知識點 grid -->
+  <section class="content-section ld-purpose-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">五 行 ・ 特 性</div>
+        <h2 class="section-title" id="natureTitle">本性與象徵</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead" id="natureLead"></p>
+      </div>
+      <div class="ld-purpose-grid" id="natureGrid"></div>
+    </div>
+  </section>
+
+  <!-- 相生相剋 -->
+  <section class="content-section ld-howto-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">相 生 ・ 相 剋</div>
+        <h2 class="section-title">五行循環之理</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="wx-cycle-grid" id="cycleGrid"></div>
+    </div>
+  </section>
+
+  <!-- 詳細解析 -->
+  <section class="content-section ld-story-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">深 入 ・ 解 析</div>
+        <h2 class="section-title" id="storyTitle"></h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="wx-content" id="storyContent"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="content-section ld-cta-section">
+    <div class="section-inner">
+      <div class="ld-cta-card">
+        <div class="ld-cta-tag" id="ctaTag">點 燈 ・ 祈 福</div>
+        <h3 class="ld-cta-title" id="ctaTitle"></h3>
+        <p class="ld-cta-text" id="ctaText"></p>
+        <div class="ld-cta-actions">
+          <a href="services.html" class="btn btn-primary btn-large">前往香客服務 ・ 線上登記</a>
+          <a href="tel:0981142292" class="btn btn-secondary">致電 0981-142-292</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他元素 -->
+  <section class="content-section ld-others-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">五 行 ・ 一 覽</div>
+        <h2 class="section-title">其他元素</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead">點選查看各元素詳細解析</p>
+      </div>
+      <div class="wx-others-grid" id="othersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      const ITEMS = {
+        mu: {
+          name: '木', tag: '五 行 ・ 木',
+          sub: '東 ・ 春 ・ 青 ・ 酸',
+          summarySub: '東方 ・ 春季 ・ 仁德',
+          desc: '五行之首為「木」。木主生發、向上、舒展，象徵生命之初萌、萬物之始發。對應東方、春季、青色、酸味；於人主仁德，於體應肝膽，於性主生長與創造。',
+          meta: { dir: '東 方', season: '春 季', color: '青（綠）', taste: '酸 味', organ: '肝 ・ 膽', god: '東方青帝', virtue: '仁', tian: '甲（陽）・ 乙（陰）' },
+          natureLead: '木性曲直、向上而舒展，如春日之新芽——柔軟而有力量、彎而能伸。',
+          nature: [
+            { tag: '生發', title: '萬物之始', desc: '木為五行之首，主春之氣，象徵生命萌發、舊去新來。一切創造、新事業之始，皆秉木氣。' },
+            { tag: '向上', title: '直上之勢', desc: '木性向上、向天而生。人秉此氣者，多有向上之心、進取之志、不甘平庸。' },
+            { tag: '舒展', title: '柔中有剛', desc: '木性曲直，遇強則彎、遇弱則直。柔軟而不脆弱，是「以柔克剛」之德。' },
+            { tag: '仁德', title: '仁者愛人', desc: '木德為「仁」，主慈愛、惻隱、護生。人秉木氣盛者，性情寬厚仁慈、樂於助人。' }
+          ],
+          cycles: [
+            { tag: '相 生', formula: '<span>水</span><span class="arrow">→</span><span class="self">木</span><span class="arrow">→</span><span>火</span>', desc: '水滋養木使其茁壯（水生木）；木燃燒釋放能量化為火（木生火）。木為水火之間之轉化樞紐。' },
+            { tag: '相 剋', formula: '<span class="self">木</span><span class="arrow">剋</span><span>土</span><span class="arrow">／</span><span>金</span><span class="arrow">剋</span><span class="self">木</span>', desc: '樹根盤踞土壤、奪取地力（木剋土）；金屬刀斧可斬伐木（金剋木）。木以柔制剛，亦受金之利刃所制。' }
+          ],
+          storyTitle: '木德 ・ 春之始',
+          story: [
+            '《尚書‧洪範》云：「木曰曲直。」古人觀木之性，能屈能伸——彎而不折，是其大德。故以「木」象徵柔中有剛、進退得宜之品格。',
+            '木屬東方、春季——一年之始、一日之朝。古云：「東方青龍，主春之氣，主生發、主仁德。」凡欲開創新事業、迎接新階段者，皆可秉木氣為始。',
+            '在道教信仰中，東方青帝主木德，敕封「靈威仰」，掌春令、護生靈。本宮信眾若於春季祈福，可特別禮敬東方青帝、祈求一年木氣充盛、家業興旺。',
+            '於中醫，木對應肝膽。肝主疏泄、調暢氣機；膽主決斷、勇於進取。肝膽相照，是性情爽朗之徵。春季養肝、清肝明目，正合木氣升發之理。',
+            '丙午年雖以「火」為當令五行，然「木生火」——木為火之母。屬虎、屬兔者本年得木氣助火運，事業生機勃發；木德星君護持，凡欲於本年有所開創者，宜秉仁德、行寬厚，方能如春木茁壯、節節向上。'
+          ],
+          ctaTag: '點 光 明 燈 ・ 祈 木 德',
+          ctaTitle: '木德東方青帝 ・ 點燈祈仁德春發',
+          ctaText: '本宮設有光明燈、文昌燈，可祈求木德東方青帝護佑，使一年生機勃發、仁德昭彰、事業興旺。'
+        },
+
+        huo: {
+          name: '火', tag: '五 行 ・ 火',
+          sub: '南 ・ 夏 ・ 紅 ・ 苦',
+          summarySub: '南方 ・ 夏季 ・ 禮德',
+          desc: '五行之第二為「火」。火主升騰、明亮、文明，象徵光明熱情、文化禮儀。對應南方、夏季、紅色、苦味；於人主禮德，於體應心與小腸，於性主熱情與光明。丙午年火當令，天干丙午皆屬陽火，火氣最盛。',
+          meta: { dir: '南 方', season: '夏 季', color: '紅 色', taste: '苦 味', organ: '心 ・ 小 腸', god: '南方赤帝', virtue: '禮', tian: '丙（陽）・ 丁（陰）' },
+          natureLead: '火性炎上、明亮而向上，如夏日之烈陽——熱情奔放、光明照人。',
+          nature: [
+            { tag: '炎上', title: '向上之勢', desc: '火性向上、不受束縛。象徵向上之志、超越之心。人秉火氣旺者，多有抱負、不甘平庸。' },
+            { tag: '明亮', title: '光明照路', desc: '火為光明之源，能驅散黑暗。象徵心中之明、智慧之光，亦是文明之始。' },
+            { tag: '熱情', title: '生命之熱', desc: '火主熱情、主動、感染力。秉火氣者，多熱情大方、有領導魅力、樂於分享。' },
+            { tag: '禮德', title: '禮儀文明', desc: '火德為「禮」，主秩序、規範、文明。人秉火氣者，重禮節、講規矩、有大家風範。' }
+          ],
+          cycles: [
+            { tag: '相 生', formula: '<span>木</span><span class="arrow">→</span><span class="self">火</span><span class="arrow">→</span><span>土</span>', desc: '木材燃燒生火（木生火）；火燃盡化為灰燼成土（火生土）。火承木之精華、化為土之厚實。' },
+            { tag: '相 剋', formula: '<span class="self">火</span><span class="arrow">剋</span><span>金</span><span class="arrow">／</span><span>水</span><span class="arrow">剋</span><span class="self">火</span>', desc: '烈火能熔煉金屬（火剋金）；江河之水可澆滅火焰（水剋火）。火克剛強之金，卻為水所制。' }
+          ],
+          storyTitle: '火德 ・ 夏之盛',
+          story: [
+            '《尚書‧洪範》云：「火曰炎上。」古人觀火之性，向上而明亮——無物不能燒、無暗不能照。故以「火」象徵光明、文明、熱情、向上之志。',
+            '火屬南方、夏季——一年之盛、萬物之長。古云：「南方朱雀，主夏之氣，主明禮、主文明。」華夏文明以「炎黃子孫」自稱，「炎」即火德——文明之始，正源於火。',
+            '在道教信仰中，南方赤帝主火德，敕封「赤熛怒」，掌夏令、明禮儀。本宮信眾若於本年祈求文運、考試、事業光明，可特別禮敬南方赤帝。',
+            '於中醫，火對應心與小腸。心主神明、藏神；小腸主吸收、分清濁。火氣旺則心明智、情緒朗；火氣過盛則心煩、失眠、口舌生瘡。',
+            '丙午年「火上加火」——天干丙為陽火、地支午亦為陽火。是六十甲子中火氣最旺之年。故本年宜：',
+            '・ 順火氣之勢——把握光明開創之機',
+            '・ 制火氣之燥——以靜制動、以柔克剛',
+            '・ 通火氣之化——廣施善德、廣結善緣',
+            '本宮提供光明燈、太歲燈、文昌燈，順丙午火當令之勢加持，使全年事業學業、文運貴氣皆有助力。'
+          ],
+          ctaTag: '點 光 明 燈 ・ 順 火 運',
+          ctaTitle: '丙午火旺之年 ・ 點光明燈順勢加持',
+          ctaText: '丙午年火氣最旺，本宮設有光明燈、文昌燈、太歲燈，可祈求南方赤帝護佑，使全年文運貴氣、事業光明。'
+        },
+
+        tu: {
+          name: '土', tag: '五 行 ・ 土',
+          sub: '中 ・ 季夏 ・ 黃 ・ 甘',
+          summarySub: '中央 ・ 長夏 ・ 信德',
+          desc: '五行之中為「土」。土主厚實、承載、穩重，象徵大地承載萬物、化育生靈之德。對應中央、長夏（季夏）、黃色、甘味；於人主信德，於體應脾胃，於性主穩重與包容。',
+          meta: { dir: '中 央', season: '長 夏（季夏）', color: '黃 色', taste: '甘 味', organ: '脾 ・ 胃', god: '中央黃帝', virtue: '信', tian: '戊（陽）・ 己（陰）' },
+          natureLead: '土性厚重、靜以承載，如大地之德——默默化育、滋養萬物。',
+          nature: [
+            { tag: '厚實', title: '大地之德', desc: '土為萬物之母，承載一切。象徵厚重、穩定、可靠。秉土氣者，多沉穩可信、不浮不躁。' },
+            { tag: '化育', title: '滋養萬物', desc: '土能容木、能受水、能藏金、能載火。象徵包容、化育、生長之大德。' },
+            { tag: '穩重', title: '不動如山', desc: '土性靜定，能於動中守靜、於變中守恆。秉土氣者，遇事不慌、處變不驚。' },
+            { tag: '信德', title: '言出必行', desc: '土德為「信」，主誠實、守信、不欺。人秉土氣者，言而有信、行而有恆，是可託付之輩。' }
+          ],
+          cycles: [
+            { tag: '相 生', formula: '<span>火</span><span class="arrow">→</span><span class="self">土</span><span class="arrow">→</span><span>金</span>', desc: '火燒物成灰、灰即為土（火生土）；土中蘊藏金屬礦脈（土生金）。土為火金之間之承轉之地。' },
+            { tag: '相 剋', formula: '<span class="self">土</span><span class="arrow">剋</span><span>水</span><span class="arrow">／</span><span>木</span><span class="arrow">剋</span><span class="self">土</span>', desc: '堤壩可阻擋洪水（土剋水）；樹根盤踞奪取地力（木剋土）。土能制水之氾濫，亦受木之穿掘所損。' }
+          ],
+          storyTitle: '土德 ・ 中央之厚',
+          story: [
+            '《尚書‧洪範》云：「土爰稼穡。」古人觀土之性，能種能收——萬物受其化育、賴其承載。故以「土」象徵厚重、穩定、信實、化育之德。',
+            '土屬中央、長夏——五季之中、四時之樞。古云：「中央黃帝，主季夏之氣，主信德、主化育。」黃帝為華夏始祖，正取其「土德」——厚重而仁信、化育而不爭。',
+            '在道教信仰中，中央黃帝主土德，敕封「含樞紐」，掌長夏、化萬物。本宮信眾若於本年祈求家業穩固、人事和合、事業根基紮實，可特別禮敬中央黃帝。',
+            '於中醫，土對應脾胃。脾主運化、胃主受納，乃後天之本——人之精氣血皆由脾胃化生。土氣健旺則飲食安、精神足；土氣衰弱則食欲差、倦怠少氣。',
+            '丙午年雖以「火」為當令——然「火生土」——火為土之母。本年屬龍、屬羊、屬狗、屬牛者皆秉土氣，得火氣相生，事業根基日漸厚實。',
+            '黃帝化育萬物之德，正是丙午火旺之年最需之氣。火氣過旺易躁——若能以土德承之，使熱情化為踏實、使衝動化為穩重，方為「火生土」之圓融之道。'
+          ],
+          ctaTag: '點 光 明 燈 ・ 厚 土 德',
+          ctaTitle: '中央黃帝土德 ・ 點燈祈家業穩固',
+          ctaText: '本宮設有光明燈、太歲燈，可祈求中央黃帝護佑，使家業穩固、事業根基厚實、為人信實。'
+        },
+
+        jin: {
+          name: '金', tag: '五 行 ・ 金',
+          sub: '西 ・ 秋 ・ 白 ・ 辛',
+          summarySub: '西方 ・ 秋季 ・ 義德',
+          desc: '五行之第四為「金」。金主收斂、剛健、義氣，象徵秋之肅殺、義之凜然、剛之果斷。對應西方、秋季、白色、辛味；於人主義德，於體應肺與大腸，於性主果決與義氣。',
+          meta: { dir: '西 方', season: '秋 季', color: '白 色', taste: '辛 味', organ: '肺 ・ 大 腸', god: '西方白帝', virtue: '義', tian: '庚（陽）・ 辛（陰）' },
+          natureLead: '金性剛硬、收斂而義氣，如秋之白露——肅殺中見清明、剛烈中藏義理。',
+          nature: [
+            { tag: '剛健', title: '剛而能斷', desc: '金性剛硬，能斷能割。象徵果決、不拖泥帶水。秉金氣者，遇事果斷、不猶豫不前。' },
+            { tag: '收斂', title: '秋收之氣', desc: '金主秋收、主結束。萬物經春夏之發長，至秋而成熟、收斂歸藏。是「成」之氣。' },
+            { tag: '義氣', title: '俠肝義膽', desc: '金德為「義」，主公正、主守信、主仗義。秉金氣者，重情義、扶弱鋤強、有俠者風範。' },
+            { tag: '清白', title: '潔淨無瑕', desc: '金色為白，象徵清白、純粹、不染。秉金氣者，行事光明磊落、不藏私心、有君子之風。' }
+          ],
+          cycles: [
+            { tag: '相 生', formula: '<span>土</span><span class="arrow">→</span><span class="self">金</span><span class="arrow">→</span><span>水</span>', desc: '土中蘊藏金屬礦脈（土生金）；金屬遇冷凝水珠（金生水）。金為土水之間之中介。' },
+            { tag: '相 剋', formula: '<span class="self">金</span><span class="arrow">剋</span><span>木</span><span class="arrow">／</span><span>火</span><span class="arrow">剋</span><span class="self">金</span>', desc: '金屬刀斧可斬伐樹木（金剋木）；烈火可熔金為液（火剋金）。金之剛能制木，卻為火所煉。' }
+          ],
+          storyTitle: '金德 ・ 秋之肅',
+          story: [
+            '《尚書‧洪範》云：「金曰從革。」古人觀金之性，能熔能鑄、可鍛可改——堅硬而有可塑性，是為「從革」之義。故以「金」象徵剛健、變革、果決、義理。',
+            '金屬西方、秋季——一年之收、萬物之成。古云：「西方白虎，主秋之氣，主義德、主肅殺。」秋天萬物凋零，看似肅殺，實為「成熟」與「收藏」——是另一形式之圓滿。',
+            '在道教信仰中，西方白帝主金德，敕封「白招拒」，掌秋令、主義氣。本宮信眾若於本年祈求公正、義氣、果斷力，可特別禮敬西方白帝。',
+            '於中醫，金對應肺與大腸。肺主呼吸、主一身之氣；大腸主傳導、主排泄。金氣健旺則呼吸順暢、排毒順利；金氣衰弱則易感冒、便秘、皮膚乾燥。',
+            '丙午年火當令——「火剋金」之象明顯。屬猴、屬雞者本年金氣受抑，宜：',
+            '・ 多飲水、潤肺、養大腸（水剋火、緩解火氣）',
+            '・ 注意呼吸道與皮膚保養',
+            '・ 行事勿過剛，以柔濟剛',
+            '・ 點光明燈祈求白帝護佑，使金氣不衰、義德昭彰',
+            '丙午火旺之年，正是磨煉金性之時——古云：「真金不怕火煉。」經歷此年之火煉，方能更顯金之純粹與剛健。'
+          ],
+          ctaTag: '點 光 明 燈 ・ 護 金 氣',
+          ctaTitle: '西方白帝金德 ・ 點燈祈義氣果決',
+          ctaText: '丙午火當令、金氣易抑，本宮設有光明燈、太歲燈，可祈求西方白帝護佑、使金氣不衰、義德昭彰、果決有方。'
+        },
+
+        shui: {
+          name: '水', tag: '五 行 ・ 水',
+          sub: '北 ・ 冬 ・ 黑 ・ 鹹',
+          summarySub: '北方 ・ 冬季 ・ 智德',
+          desc: '五行之末為「水」。水主滋潤、向下、智慧，象徵深沉、靈活、藏伏。對應北方、冬季、黑色、鹹味；於人主智德，於體應腎與膀胱，於性主智慧與靈動。',
+          meta: { dir: '北 方', season: '冬 季', color: '黑 色', taste: '鹹 味', organ: '腎 ・ 膀 胱', god: '北方黑帝', virtue: '智', tian: '壬（陽）・ 癸（陰）' },
+          natureLead: '水性柔弱、潤下而藏伏，如冬之深淵——靜而有勢、柔而能久。',
+          nature: [
+            { tag: '潤下', title: '柔以致勝', desc: '水性向下、柔弱無形，然滴水能穿石。象徵以柔克剛、以靜制動之大智慧。' },
+            { tag: '藏伏', title: '冬藏之德', desc: '水主冬之氣、主藏。萬物經春生、夏長、秋收，至冬而藏伏歸根，是為「藏」。' },
+            { tag: '靈活', title: '隨形變化', desc: '水無固定之形，遇方則方、遇圓則圓。秉水氣者，思維靈活、隨機應變、不拘一格。' },
+            { tag: '智德', title: '深沉智慧', desc: '水德為「智」，主謀慮、主深思、主洞察。秉水氣者，多智慧深沉、思慮周密、洞悉幽微。' }
+          ],
+          cycles: [
+            { tag: '相 生', formula: '<span>金</span><span class="arrow">→</span><span class="self">水</span><span class="arrow">→</span><span>木</span>', desc: '金屬遇冷凝水珠（金生水）；水滋潤木使其茁壯（水生木）。水為金木之間之養育之源。' },
+            { tag: '相 剋', formula: '<span class="self">水</span><span class="arrow">剋</span><span>火</span><span class="arrow">／</span><span>土</span><span class="arrow">剋</span><span class="self">水</span>', desc: '江河之水可澆滅火焰（水剋火）；堤壩可阻擋洪水（土剋水）。水能制火之熾烈，卻為土之厚重所制。' }
+          ],
+          storyTitle: '水德 ・ 冬之藏',
+          story: [
+            '《尚書‧洪範》云：「水曰潤下。」《道德經》亦云：「上善若水，水善利萬物而不爭。」古人觀水之性——柔弱無爭，卻能滋養萬物、能穿堅石。故以「水」象徵智慧、謙下、深沉、不爭之大德。',
+            '水屬北方、冬季——一年之終、萬物之歸。古云：「北方玄武，主冬之氣，主智德、主藏伏。」冬天萬物收藏，看似沉寂，實為「歸根」與「養精」——是來年生機之蓄積。',
+            '在道教信仰中，北方黑帝主水德，敕封「葉光紀」，掌冬令、主智慧。本宮信眾若於本年祈求智慧開啟、思路清明、學業精進，可特別禮敬北方黑帝。',
+            '於中醫，水對應腎與膀胱。腎為「先天之本」，藏精納氣、主骨生髓；膀胱主水液代謝。水氣健旺則精力充沛、思慮敏捷；水氣衰弱則腰膝酸軟、記憶力減退、聽力下降。',
+            '丙午年火當令、納音為「天河水」——雖火旺但有水之納音調和，是「水火既濟」之吉象。屬鼠、屬豬者本年得水氣納音之助，雖屬太歲沖（鼠）、平和（豬），但智慧靈活、能於變局中尋機。',
+            '《周易》既濟卦云：「水火既濟，定也。」丙午之年，火為陽顯、水為陰藏，陰陽相濟、剛柔並用，方能於火旺之歲行藏伏之智、於熱烈之中守清涼之心，使全年運勢圓融順遂。'
+          ],
+          ctaTag: '點 光 明 燈 ・ 通 水 智',
+          ctaTitle: '北方黑帝水德 ・ 點燈祈智慧開啟',
+          ctaText: '本宮設有光明燈、文昌燈，可祈求北方黑帝護佑，使智慧開啟、思路清明、學業事業精進。'
+        }
+      };
+
+      const ORDER = ['mu', 'huo', 'tu', 'jin', 'shui'];
+      const SHORT = {
+        mu:   { dir: '東', season: '春' },
+        huo:  { dir: '南', season: '夏' },
+        tu:   { dir: '中', season: '季夏' },
+        jin:  { dir: '西', season: '秋' },
+        shui: { dir: '北', season: '冬' }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('element');
+      if (!ITEMS[key]) key = 'mu';
+      const data = ITEMS[key];
+
+      // Banner
+      document.getElementById('wxTag').textContent = data.tag;
+      document.getElementById('wxBannerNum').textContent = data.name;
+      document.getElementById('wxTitle').textContent = '五行 ・ ' + data.name;
+      document.getElementById('wxSub').textContent = data.sub;
+      document.title = '五行 ・ ' + data.name + '｜五行屬性 ・ 台北建安宮';
+
+      // 摘要
+      document.getElementById('summaryIcon').innerHTML =
+        `<img src="assets/wuxing/${key}.svg" alt="${data.name}" class="wx-icon-img">`;
+      document.getElementById('summaryName').textContent = '五行 ・ ' + data.name;
+      document.getElementById('summarySub').textContent = data.summarySub;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('metaDir').textContent = data.meta.dir;
+      document.getElementById('metaSeason').textContent = data.meta.season;
+      document.getElementById('metaColor').textContent = data.meta.color;
+      document.getElementById('metaTaste').textContent = data.meta.taste;
+      document.getElementById('metaOrgan').textContent = data.meta.organ;
+      document.getElementById('metaGod').textContent = data.meta.god;
+      document.getElementById('metaVirtue').textContent = data.meta.virtue;
+      document.getElementById('metaTian').textContent = data.meta.tian;
+
+      // 特性
+      document.getElementById('natureLead').textContent = data.natureLead;
+      document.getElementById('natureGrid').innerHTML = data.nature.map(n => `
+        <div class="ld-purpose-card">
+          <div class="ld-purpose-tag">${n.tag}</div>
+          <h3 class="ld-purpose-title">${n.title}</h3>
+          <p class="ld-purpose-desc">${n.desc}</p>
+        </div>
+      `).join('');
+
+      // 相生相剋
+      document.getElementById('cycleGrid').innerHTML = data.cycles.map(c => `
+        <div class="wx-cycle-card">
+          <div class="wx-cycle-tag">${c.tag}</div>
+          <div class="wx-cycle-formula">${c.formula}</div>
+          <p class="wx-cycle-desc">${c.desc}</p>
+        </div>
+      `).join('');
+
+      // 詳細解析
+      document.getElementById('storyTitle').textContent = data.storyTitle;
+      document.getElementById('storyContent').innerHTML = data.story.map(p => `<p>${p}</p>`).join('');
+
+      // CTA
+      document.getElementById('ctaTag').textContent = data.ctaTag;
+      document.getElementById('ctaTitle').textContent = data.ctaTitle;
+      document.getElementById('ctaText').textContent = data.ctaText;
+
+      // 其他元素
+      document.getElementById('othersGrid').innerHTML = ORDER.map(k => {
+        const o = ITEMS[k];
+        const s = SHORT[k];
+        const cls = 'wx-other-card' + (k === key ? ' is-current' : '');
+        return `
+          <a class="${cls}" href="wuxing-detail.html?element=${k}">
+            <img class="wx-other-icon" src="assets/wuxing/${k}.svg" alt="">
+            <div class="wx-other-name">${o.name}</div>
+            <div class="wx-other-attr">${s.dir} ・ ${s.season}</div>
+          </a>
+        `;
+      }).join('');
+
+      // 回到頂部
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>
