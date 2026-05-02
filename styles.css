@@ -5121,6 +5121,15 @@ img { display: block; max-width: 100%; }
     flex-direction: column;
     gap: 0.6rem;
   }
+  /* 手機版加大 brand 觸控區，避免誤點 */
+  .brand {
+    padding: 0.4rem 1rem;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .brand-name-zh { font-size: 1.4rem; }
   .brand-name-sub { font-size: 0.7rem; }
   .site-nav { gap: 1rem; flex-wrap: wrap; justify-content: center; }
