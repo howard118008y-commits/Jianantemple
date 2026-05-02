@@ -647,6 +647,9 @@ img { display: block; max-width: 100%; }
   gap: 0.7rem;
   transition: all 0.4s ease;
   position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .news-card:hover {
@@ -1107,6 +1110,19 @@ img { display: block; max-width: 100%; }
   align-items: center;
 }
 
+.main-deity-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.main-deity-link:hover {
+  transform: translateY(-4px);
+}
+.main-deity-link:hover .image-frame {
+  box-shadow: 0 20px 50px rgba(212, 168, 75, 0.18);
+}
+
 .main-deity-image {
   display: flex;
   flex-direction: column;
@@ -1222,12 +1238,30 @@ img { display: block; max-width: 100%; }
   border: 1px solid rgba(212, 168, 75, 0.3);
   overflow: hidden;
   transition: all 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: block;
 }
 
 .deity-detail-card:hover {
   border-color: var(--gold);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
   transform: translateY(-4px);
+}
+
+.deity-more {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(212, 168, 75, 0.18);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  color: rgba(212, 168, 75, 0.7);
+  transition: color 0.3s ease;
+}
+.deity-detail-card:hover .deity-more,
+.main-deity-link:hover .deity-more {
+  color: var(--gold-light);
 }
 
 .deity-detail-image {
@@ -1314,6 +1348,32 @@ img { display: block; max-width: 100%; }
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+.deity-card::after {
+  content: '深入了解 →';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 28, 28, 0.6) 100%);
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-align: right;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+.deity-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .deity-card:hover {
@@ -3797,6 +3857,9 @@ img { display: block; max-width: 100%; }
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .light-card:hover {
@@ -3804,6 +3867,20 @@ img { display: block; max-width: 100%; }
   background: rgba(31, 20, 20, 0.85);
   transform: translateY(-4px);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+}
+
+.light-more {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: rgba(212, 168, 75, 0.7);
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed rgba(212, 168, 75, 0.18);
+  transition: color 0.3s ease;
+}
+
+.light-card:hover .light-more {
+  color: var(--gold-light);
 }
 
 .light-card-center {
@@ -4213,12 +4290,30 @@ img { display: block; max-width: 100%; }
   padding: 2.2rem 2rem;
   position: relative;
   transition: all 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 .ritual-card:hover {
   border-color: var(--gold);
   transform: translateY(-3px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ritual-more {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(212, 168, 75, 0.18);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: rgba(212, 168, 75, 0.7);
+  transition: color 0.3s ease;
+}
+
+.ritual-card:hover .ritual-more {
+  color: var(--gold-light);
 }
 
 .ritual-card-feature {
@@ -5261,4 +5356,1387 @@ img { display: block; max-width: 100%; }
   .deities-grid { grid-template-columns: 1fr; }
   .calendar-grid { grid-template-columns: 1fr; }
   .transport-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================
+   燈品詳情頁 (light-detail.html)
+   ========================================================== */
+
+/* Banner 背景 */
+.light-banner {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(212, 168, 75, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(139, 28, 28, 0.25) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
+}
+
+/* 麵包屑 */
+.ld-breadcrumb {
+  background: rgba(31, 20, 20, 0.6);
+  border-bottom: 1px solid rgba(212, 168, 75, 0.15);
+  padding: 1rem 0;
+}
+.ld-breadcrumb a {
+  color: rgba(248, 243, 233, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+.ld-breadcrumb a:hover { color: var(--gold-light); }
+
+/* === Summary card === */
+.ld-summary-section { padding-top: 4rem; padding-bottom: 2rem; }
+
+.ld-summary-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.18) 0%, rgba(31, 20, 20, 0.85) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  padding: 3rem 3rem;
+  position: relative;
+}
+.ld-summary-card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212, 168, 75, 0.18);
+  pointer-events: none;
+}
+
+.ld-summary-icon {
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  font-family: "Noto Serif TC", serif;
+  background: rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+}
+
+.ld-summary-name {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  margin-left: 0.22em;
+  color: var(--paper);
+  margin-bottom: 0.5rem;
+}
+.ld-summary-bless {
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  margin-bottom: 1.4rem;
+}
+.ld-summary-desc {
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.85);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.8rem;
+}
+
+.ld-summary-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid rgba(212, 168, 75, 0.25);
+  padding-top: 1.4rem;
+}
+.ld-meta-item { text-align: center; }
+.ld-meta-label {
+  font-size: 0.78rem;
+  color: rgba(248, 243, 233, 0.55);
+  letter-spacing: 0.25em;
+  margin-bottom: 0.5rem;
+}
+.ld-meta-value {
+  font-size: 1.05rem;
+  color: var(--paper);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+.ld-meta-price {
+  color: var(--gold);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* === 功用 === */
+.ld-purpose-section { padding-top: 4rem; padding-bottom: 4rem; }
+
+.ld-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.ld-purpose-card {
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  padding: 1.8rem 1.8rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.ld-purpose-card:hover {
+  border-color: var(--gold);
+  background: rgba(31, 20, 20, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+.ld-purpose-tag {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+.ld-purpose-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin-left: 0.18em;
+  color: var(--paper);
+  margin-bottom: 0.7rem;
+}
+.ld-purpose-desc {
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: rgba(248, 243, 233, 0.78);
+  letter-spacing: 0.04em;
+}
+
+/* === 由來故事 === */
+.ld-story-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 28, 28, 0.06) 50%, transparent 100%);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.ld-story-content {
+  max-width: 820px;
+  margin: 2.5rem auto 0;
+  background: rgba(31, 20, 20, 0.5);
+  border: 1px solid rgba(212, 168, 75, 0.2);
+  padding: 3rem 3rem;
+  position: relative;
+}
+.ld-story-content::before,
+.ld-story-content::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+.ld-story-content::before {
+  top: 12px;
+  left: 12px;
+  border-width: 1px 0 0 1px;
+}
+.ld-story-content::after {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 1px 1px 0;
+}
+.ld-story-content p {
+  font-size: 1.02rem;
+  line-height: 2.15;
+  color: rgba(248, 243, 233, 0.88);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.4rem;
+  text-indent: 2em;
+}
+.ld-story-content p:last-child { margin-bottom: 0; }
+.ld-story-content p:first-child::first-letter {
+  font-size: 1.6em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 0.05em;
+}
+
+/* === 點燈方式 === */
+.ld-howto-section { padding-top: 4rem; padding-bottom: 4rem; }
+.ld-howto-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+}
+.ld-howto-card {
+  background: rgba(31, 20, 20, 0.6);
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  padding: 2rem 1.4rem;
+  text-align: center;
+}
+.ld-howto-num {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  font-weight: 900;
+}
+.ld-howto-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin-left: 0.18em;
+  color: var(--paper);
+  margin-bottom: 0.7rem;
+}
+.ld-howto-desc {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.72);
+  letter-spacing: 0.03em;
+}
+
+/* === CTA === */
+.ld-cta-section { padding-top: 2rem; padding-bottom: 4rem; }
+.ld-cta-card {
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.3) 0%, rgba(31, 20, 20, 0.9) 100%);
+  border: 1px solid var(--gold);
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.ld-cta-tag {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid rgba(212, 168, 75, 0.5);
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  letter-spacing: 0.32em;
+  margin-bottom: 1.5rem;
+}
+.ld-cta-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-left: 0.15em;
+  color: var(--paper);
+  margin-bottom: 0.8rem;
+}
+.ld-cta-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: rgba(248, 243, 233, 0.78);
+  letter-spacing: 0.06em;
+  margin-bottom: 2rem;
+}
+.ld-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === 其他燈品 === */
+.ld-others-section { padding-top: 3rem; padding-bottom: 4rem; }
+.ld-others-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.ld-other-card {
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  padding: 1.8rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ld-other-card:hover {
+  border-color: var(--gold);
+  background: rgba(31, 20, 20, 0.85);
+  transform: translateY(-3px);
+}
+.ld-other-icon {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  font-weight: 900;
+  margin-bottom: 0.9rem;
+}
+.ld-other-name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--paper);
+  margin-bottom: 0.4rem;
+}
+.ld-other-bless {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(248, 243, 233, 0.6);
+}
+
+/* === 燈品詳情頁 RWD === */
+@media (max-width: 900px) {
+  .ld-summary-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .ld-summary-icon { width: 130px; height: 130px; font-size: 4rem; }
+  .ld-summary-name { font-size: 1.6rem; letter-spacing: 0.18em; }
+  .ld-summary-meta { grid-template-columns: 1fr; gap: 0.8rem; padding-top: 1rem; }
+  .ld-meta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(212, 168, 75, 0.2);
+  }
+  .ld-meta-item:last-child { border-bottom: none; }
+  .ld-meta-label { margin-bottom: 0; }
+
+  .ld-purpose-grid { grid-template-columns: 1fr; }
+  .ld-howto-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .ld-others-grid { grid-template-columns: repeat(2, 1fr); }
+  .ld-story-content { padding: 2rem 1.4rem; }
+  .ld-story-content p { font-size: 0.95rem; line-height: 2; }
+  .ld-cta-title { font-size: 1.2rem; letter-spacing: 0.1em; }
+  .ld-cta-actions .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .ld-summary-section { padding-top: 2.5rem; }
+  .ld-summary-card { padding: 1.5rem 1rem; }
+  .ld-summary-icon { width: 100px; height: 100px; font-size: 3rem; }
+  .ld-summary-name { font-size: 1.35rem; letter-spacing: 0.15em; }
+  .ld-summary-bless { font-size: 0.85rem; letter-spacing: 0.22em; }
+  .ld-summary-desc { font-size: 0.92rem; line-height: 1.95; }
+  .ld-howto-grid { grid-template-columns: 1fr; }
+  .ld-others-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================
+   法會詳情頁 (ritual-detail.html)
+   ========================================================== */
+
+/* Banner */
+.ritual-banner {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(212, 168, 75, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(139, 28, 28, 0.30) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
+}
+
+/* 法會 summary 與 light 共用，僅微調 */
+.rd-summary-card {
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.22) 0%, rgba(31, 20, 20, 0.85) 100%);
+}
+
+/* === 疏文 / 祈文 區 === */
+.rd-prayer-section {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(139, 28, 28, 0.05) 50%, transparent 100%);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.rd-prayer-frame {
+  max-width: 720px;
+  margin: 2.5rem auto 1.4rem;
+  padding: 1.5rem;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(212, 168, 75, 0.04) 0,
+      rgba(212, 168, 75, 0.04) 1px,
+      transparent 1px,
+      transparent 16px
+    ),
+    linear-gradient(135deg, rgba(248, 243, 233, 0.04) 0%, rgba(31, 20, 20, 0.5) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  position: relative;
+}
+
+.rd-prayer-frame::before,
+.rd-prayer-frame::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(212, 168, 75, 0.55) 20%,
+    rgba(212, 168, 75, 0.55) 80%,
+    transparent 100%);
+}
+.rd-prayer-frame::before { top: 8px; }
+.rd-prayer-frame::after { bottom: 8px; }
+
+.rd-prayer-inner {
+  background: linear-gradient(180deg, rgba(31, 20, 20, 0.4) 0%, rgba(31, 20, 20, 0.7) 100%);
+  padding: 3rem 2.5rem;
+  position: relative;
+  border: 1px solid rgba(212, 168, 75, 0.18);
+}
+
+.rd-prayer-deco {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+.rd-prayer-deco-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.rd-prayer-deco-tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.rd-prayer-deco-bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+.rd-prayer-deco-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+.rd-prayer-text {
+  font-family: "Noto Serif TC", serif;
+  color: rgba(248, 243, 233, 0.92);
+  font-size: 1.05rem;
+  line-height: 2.3;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+.rd-prayer-line {
+  white-space: pre-wrap;
+}
+.rd-prayer-line:first-child {
+  font-size: 1rem;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.18em;
+}
+.rd-prayer-line:nth-child(2),
+.rd-prayer-line:nth-child(3) {
+  color: var(--gold-light);
+  font-size: 0.98rem;
+  letter-spacing: 0.15em;
+}
+
+.rd-prayer-spacer {
+  height: 1.2em;
+}
+
+.rd-prayer-stamp {
+  position: absolute;
+  right: 2.4rem;
+  bottom: 2rem;
+  width: 70px;
+  height: 70px;
+  border: 2px solid var(--red);
+  background: rgba(139, 28, 28, 0.18);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-align: center;
+  line-height: 1.4;
+  transform: rotate(-8deg);
+  font-family: "Noto Serif TC", serif;
+  box-shadow: 0 0 0 1px rgba(139, 28, 28, 0.3);
+}
+
+.rd-prayer-foot {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(248, 243, 233, 0.55);
+  letter-spacing: 0.15em;
+  margin-top: 0.8rem;
+}
+
+/* 法會「其他法會」改為 4 欄（總共 3 個） */
+.rd-others-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .rd-prayer-inner { padding: 2.2rem 1.5rem 4rem; }
+  .rd-prayer-text { font-size: 0.96rem; line-height: 2.1; letter-spacing: 0.08em; }
+  .rd-prayer-stamp { right: 1.2rem; bottom: 1.2rem; width: 56px; height: 56px; font-size: 0.7rem; }
+  .rd-others-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .rd-prayer-frame { padding: 0.8rem; }
+  .rd-prayer-inner { padding: 1.6rem 1rem 3.5rem; }
+  .rd-prayer-text { font-size: 0.9rem; letter-spacing: 0.05em; line-height: 2; }
+  .rd-prayer-stamp { width: 48px; height: 48px; font-size: 0.62rem; right: 0.8rem; bottom: 0.8rem; }
+  .rd-others-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================
+   公告詳情頁 (news-detail.html)
+   ========================================================== */
+
+/* Banner */
+.news-banner {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(212, 168, 75, 0.20) 0%, transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(139, 28, 28, 0.28) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
+}
+
+/* === 公告摘要 === */
+.nd-summary-section { padding-top: 4rem; padding-bottom: 2rem; }
+
+.nd-summary-card {
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.18) 0%, rgba(31, 20, 20, 0.85) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  padding: 3rem 3rem;
+  position: relative;
+}
+.nd-summary-card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212, 168, 75, 0.18);
+  pointer-events: none;
+}
+
+.nd-summary-status {
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+}
+.nd-summary-status.nd-status-urgent {
+  background: var(--red);
+  color: var(--gold-light);
+  animation: ndPulse 2.4s ease-in-out infinite;
+}
+.nd-summary-status.nd-status-feature {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+}
+
+@keyframes ndPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 168, 75, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(212, 168, 75, 0); }
+}
+
+.nd-summary-date {
+  font-size: 1.6rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.nd-summary-lunar {
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  color: rgba(248, 243, 233, 0.65);
+  margin-bottom: 1rem;
+}
+
+.nd-summary-name {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  margin-left: 0.18em;
+  color: var(--paper);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.nd-summary-desc {
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.85);
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+.nd-summary-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-top: 1px solid rgba(212, 168, 75, 0.25);
+  padding-top: 1.4rem;
+}
+.nd-meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.5rem;
+  padding: 0.4rem 0;
+}
+.nd-meta-label {
+  font-size: 0.8rem;
+  color: rgba(248, 243, 233, 0.55);
+  letter-spacing: 0.25em;
+}
+.nd-meta-value {
+  font-size: 0.95rem;
+  color: var(--paper);
+  letter-spacing: 0.06em;
+}
+
+/* === 詳細介紹（重用 ld-story-content 樣式） === */
+.nd-intro-section { padding-top: 3rem; padding-bottom: 3rem; }
+.nd-intro-content { max-width: 820px; }
+
+/* === 活動重點 === */
+.nd-highlight-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 28, 28, 0.05) 50%, transparent 100%);
+}
+.nd-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+}
+.nd-highlight-card {
+  background: rgba(31, 20, 20, 0.6);
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  padding: 2rem 1.4rem;
+  text-align: center;
+}
+.nd-highlight-num {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  font-weight: 900;
+}
+.nd-highlight-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--paper);
+  margin-bottom: 0.6rem;
+}
+.nd-highlight-desc {
+  font-size: 0.86rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.72);
+  letter-spacing: 0.03em;
+}
+
+/* === 影像紀實 === */
+.nd-photos-section { padding-top: 3rem; padding-bottom: 3rem; }
+.nd-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-top: 2.5rem;
+}
+.nd-photo-frame {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  background: var(--ink-soft);
+  transition: all 0.4s ease;
+}
+.nd-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.nd-photo-frame:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.nd-photo-frame:hover img {
+  transform: scale(1.06);
+}
+
+/* === Actions === */
+.nd-actions-section { padding-top: 2rem; padding-bottom: 4rem; }
+.nd-actions-card {
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.25) 0%, rgba(31, 20, 20, 0.9) 100%);
+  border: 1px solid var(--gold);
+  padding: 2.8rem 2rem;
+  text-align: center;
+}
+.nd-actions-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--paper);
+  margin-bottom: 0.6rem;
+}
+.nd-actions-text {
+  font-size: 0.95rem;
+  color: rgba(248, 243, 233, 0.78);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.8rem;
+}
+.nd-actions-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* === 其他公告 === */
+.nd-others-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.nd-other-card {
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  padding: 1.4rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nd-other-card:hover {
+  border-color: var(--gold);
+  background: rgba(31, 20, 20, 0.85);
+  transform: translateY(-3px);
+}
+.nd-other-status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  color: var(--gold-light);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  align-self: flex-start;
+}
+.nd-other-date {
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+}
+.nd-other-name {
+  font-size: 1rem;
+  color: var(--paper);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* === RWD === */
+@media (max-width: 900px) {
+  .nd-summary-card { padding: 2rem 1.5rem; }
+  .nd-summary-name { font-size: 1.6rem; letter-spacing: 0.12em; }
+  .nd-summary-date { font-size: 1.3rem; }
+  .nd-meta-row { grid-template-columns: 1fr; gap: 0.2rem; padding: 0.6rem 0; border-bottom: 1px dashed rgba(212, 168, 75, 0.15); }
+  .nd-meta-row:last-child { border-bottom: none; }
+  .nd-highlight-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .nd-photos-grid { grid-template-columns: repeat(2, 1fr); }
+  .nd-others-grid { grid-template-columns: repeat(2, 1fr); }
+  .nd-actions-grid .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .nd-summary-card { padding: 1.5rem 1rem; }
+  .nd-summary-name { font-size: 1.3rem; letter-spacing: 0.1em; }
+  .nd-summary-status { font-size: 0.7rem; letter-spacing: 0.22em; padding: 0.3rem 0.8rem; }
+  .nd-highlight-grid { grid-template-columns: 1fr; }
+  .nd-photos-grid { grid-template-columns: 1fr; }
+  .nd-others-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================
+   神明詳情頁 (deity-detail.html)
+   ========================================================== */
+
+.deity-banner {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(212, 168, 75, 0.22) 0%, transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(139, 28, 28, 0.30) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
+}
+
+/* === 神明摘要卡 === */
+.dd-summary-section { padding-top: 4rem; padding-bottom: 2rem; }
+
+.dd-summary-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.18) 0%, rgba(31, 20, 20, 0.85) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  padding: 3rem 3rem;
+  position: relative;
+}
+.dd-summary-card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212, 168, 75, 0.18);
+  pointer-events: none;
+}
+
+.dd-summary-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.dd-image-frame {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  background: var(--ink-soft);
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+.dd-image-frame::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  pointer-events: none;
+  z-index: 1;
+}
+.dd-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92) contrast(1.06);
+}
+.dd-summary-status {
+  padding: 0.4rem 1.2rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.8rem;
+  letter-spacing: 0.32em;
+  font-weight: 900;
+}
+
+.dd-summary-name {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  margin-left: 0.25em;
+  color: var(--paper);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+.dd-summary-aliases {
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  color: rgba(248, 243, 233, 0.55);
+  margin-bottom: 1.2rem;
+}
+.dd-summary-lead {
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+.dd-summary-desc {
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.85);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.6rem;
+}
+
+.dd-summary-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(212, 168, 75, 0.25);
+  padding-top: 1.2rem;
+}
+.dd-meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.2rem;
+  padding: 0.45rem 0;
+}
+.dd-meta-label {
+  font-size: 0.78rem;
+  color: rgba(248, 243, 233, 0.55);
+  letter-spacing: 0.25em;
+}
+.dd-meta-value {
+  font-size: 0.92rem;
+  color: var(--paper);
+  letter-spacing: 0.05em;
+}
+
+/* === 由來區（重用 ld-story-content） === */
+.dd-origin-section { padding-top: 4rem; padding-bottom: 4rem; }
+
+/* === 形象 ・ 神格 === */
+.dd-image-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(212, 168, 75, 0.05) 50%, transparent 100%);
+}
+.dd-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+}
+.dd-image-card {
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  padding: 1.8rem;
+  transition: all 0.4s ease;
+}
+.dd-image-card:hover {
+  border-color: var(--gold);
+  background: rgba(31, 20, 20, 0.8);
+  transform: translateY(-3px);
+}
+.dd-image-tag {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+.dd-image-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin-left: 0.18em;
+  color: var(--paper);
+  margin-bottom: 0.7rem;
+}
+.dd-image-desc {
+  font-size: 0.96rem;
+  line-height: 1.95;
+  color: rgba(248, 243, 233, 0.78);
+  letter-spacing: 0.04em;
+}
+
+/* === 信仰故事 === */
+.dd-legend-section { padding-top: 4rem; padding-bottom: 4rem; }
+.dd-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+}
+.dd-legend-card {
+  background: rgba(31, 20, 20, 0.6);
+  border-left: 3px solid var(--gold);
+  padding: 1.8rem 2rem;
+  transition: all 0.4s ease;
+}
+.dd-legend-card:hover {
+  background: rgba(31, 20, 20, 0.85);
+  transform: translateX(4px);
+}
+.dd-legend-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  margin-bottom: 0.8rem;
+}
+.dd-legend-desc {
+  font-size: 0.95rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.82);
+  letter-spacing: 0.04em;
+}
+
+/* === 本宮奉祀 === */
+.dd-temple-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 28, 28, 0.06) 50%, transparent 100%);
+}
+
+/* === 聖誕祭典 === */
+.dd-festival-section { padding-top: 2rem; padding-bottom: 4rem; }
+.dd-festival-card {
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.30) 0%, rgba(31, 20, 20, 0.9) 100%);
+  border: 1px solid var(--gold);
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.dd-festival-tag {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid rgba(212, 168, 75, 0.6);
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  letter-spacing: 0.32em;
+  margin-bottom: 1.2rem;
+}
+.dd-festival-date {
+  font-size: 1.4rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.dd-festival-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  margin-left: 0.2em;
+  color: var(--paper);
+  margin-bottom: 1rem;
+}
+.dd-festival-text {
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.85);
+  letter-spacing: 0.05em;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+.dd-festival-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* === 其他神明 === */
+.dd-others-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+}
+.dd-other-card {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0;
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.dd-other-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+}
+.dd-other-image {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--ink-soft);
+}
+.dd-other-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92);
+  transition: transform 0.6s ease;
+}
+.dd-other-card:hover .dd-other-image img {
+  transform: scale(1.06);
+}
+.dd-other-body {
+  padding: 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.dd-other-status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  color: var(--gold-light);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  align-self: flex-start;
+}
+.dd-other-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--paper);
+}
+.dd-other-aliases {
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  color: rgba(248, 243, 233, 0.55);
+}
+
+/* === RWD === */
+@media (max-width: 900px) {
+  .dd-summary-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .dd-summary-image { order: -1; }
+  .dd-image-frame { max-width: 240px; margin: 0 auto; }
+  .dd-summary-name { font-size: 1.9rem; letter-spacing: 0.18em; }
+  .dd-meta-row { grid-template-columns: 1fr; gap: 0.2rem; padding: 0.6rem 0; border-bottom: 1px dashed rgba(212, 168, 75, 0.15); }
+  .dd-meta-row:last-child { border-bottom: none; }
+  .dd-image-grid { grid-template-columns: 1fr; }
+  .dd-legend-grid { grid-template-columns: 1fr; }
+  .dd-festival-title { font-size: 1.3rem; letter-spacing: 0.15em; }
+  .dd-others-grid { grid-template-columns: 1fr; }
+  .dd-festival-actions .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .dd-summary-card { padding: 1.5rem 1rem; }
+  .dd-summary-name { font-size: 1.55rem; letter-spacing: 0.12em; }
+  .dd-summary-lead { font-size: 0.95rem; letter-spacing: 0.22em; }
+  .dd-summary-aliases { font-size: 0.82rem; letter-spacing: 0.15em; }
+  .dd-image-frame { max-width: 180px; }
+  .dd-festival-card { padding: 2rem 1rem; }
+  .dd-festival-date { font-size: 1.1rem; }
+  .dd-festival-title { font-size: 1.1rem; letter-spacing: 0.1em; }
+  .dd-other-card { grid-template-columns: 1fr 1.3fr; }
+}
+
+
+/* ==========================================================
+   神明詳情頁 ・ 第二批新增（placeholder、分類其他神明）
+   ========================================================== */
+
+/* Summary 圖框內的 placeholder（無神像時） */
+.dd-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.15) 0%, rgba(31, 20, 20, 0.7) 100%);
+  color: var(--gold);
+  font-family: "Noto Serif TC", serif;
+  font-size: 3.6rem;
+  font-weight: 900;
+  letter-spacing: 0.4em;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* 其他神明 ・ 分類版 */
+.dd-others-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  /* 覆寫先前的 grid 樣式 */
+  grid-template-columns: unset !important;
+}
+
+.dd-others-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.dd-others-group-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed rgba(212, 168, 75, 0.3);
+  text-align: center;
+}
+
+.dd-others-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+/* 縮小版 dd-other-card（重新定義） */
+.dd-other-card {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 0;
+  background: rgba(31, 20, 20, 0.5);
+  border: 1px solid rgba(212, 168, 75, 0.2);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.dd-other-card:hover {
+  border-color: var(--gold);
+  background: rgba(31, 20, 20, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+.dd-other-image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--ink-soft);
+}
+.dd-other-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92);
+  transition: transform 0.6s ease;
+}
+.dd-other-card:hover .dd-other-image img {
+  transform: scale(1.06);
+}
+.dd-other-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.15) 0%, rgba(31, 20, 20, 0.7) 100%);
+  color: var(--gold);
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  line-height: 1.3;
+  text-align: center;
+}
+.dd-other-body {
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.dd-other-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--paper);
+}
+.dd-other-aliases {
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  color: rgba(248, 243, 233, 0.55);
+  line-height: 1.5;
+}
+
+/* RWD */
+@media (max-width: 900px) {
+  .dd-image-placeholder { font-size: 2.6rem; letter-spacing: 0.25em; }
+  .dd-others-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .dd-image-placeholder { font-size: 2rem; letter-spacing: 0.18em; }
+  .dd-others-row { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================
+   歲時祭典 ・ 月曆超連結 → 時間軸
+   ========================================================== */
+
+.cal-name-link {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(248, 243, 233, 0.88);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.cal-name-link::after {
+  content: '↗';
+  display: inline-block;
+  margin-left: 0.4em;
+  font-size: 0.85em;
+  color: var(--gold);
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: all 0.3s ease;
+}
+
+.cal-name-link:hover {
+  color: var(--gold-light);
+}
+.cal-name-link:hover::after {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.cal-sub-link {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(248, 243, 233, 0.88);
+  transition: color 0.3s ease;
+}
+.cal-sub-link:hover {
+  color: var(--gold-light);
+}
+
+/* 時間軸目標 highlight */
+.th-event-highlight {
+  animation: thHighlight 2.2s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes thHighlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 168, 75, 0.6),
+                0 0 0 0 rgba(212, 168, 75, 0.4);
+    transform: translateY(0);
+  }
+  20% {
+    box-shadow: 0 0 0 4px rgba(212, 168, 75, 0.55),
+                0 16px 50px rgba(212, 168, 75, 0.3);
+    transform: translateY(-4px);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 168, 75, 0),
+                0 0 0 0 rgba(212, 168, 75, 0);
+    transform: translateY(0);
+  }
 }

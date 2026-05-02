@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>法會介紹｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮各式法會介紹：安太歲、補財庫、開燈安斗、聖誕千秋之功用、由來故事與祈文。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-ritual-detail">
+
+  <header class="site-header site-header-solid">
+    <div class="brand">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html" class="active">香客服務</a>
+      <a href="almanac.html">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner ritual-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag">法 ・ 會 ・ 介 ・ 紹</div>
+      <h1 class="banner-title" id="ritualTitle">法會</h1>
+      <div class="banner-sub" id="ritualSub">功用 ・ 由來 ・ 祈文</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="services.html">← 返回 香客服務 ・ 慶讚祈安</a>
+    </div>
+  </div>
+
+  <!-- 法會摘要 -->
+  <section class="content-section ld-summary-section">
+    <div class="section-inner">
+      <div class="ld-summary-card rd-summary-card">
+        <div class="ld-summary-icon" id="summaryIcon">壹</div>
+        <div class="ld-summary-body">
+          <h2 class="ld-summary-name" id="summaryName">法會</h2>
+          <div class="ld-summary-bless" id="summaryBless">慶讚祈安</div>
+          <p class="ld-summary-desc" id="summaryDesc"></p>
+          <div class="ld-summary-meta">
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">舉辦時間</div>
+              <div class="ld-meta-value" id="summaryDate">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">隨喜功德</div>
+              <div class="ld-meta-value ld-meta-price" id="summaryPrice">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">辦理方式</div>
+              <div class="ld-meta-value" id="summaryMode">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 功用 -->
+  <section class="content-section ld-purpose-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">法 會 功 用</div>
+        <h2 class="section-title">所祈何願</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-purpose-grid" id="purposeGrid"></div>
+    </div>
+  </section>
+
+  <!-- 由來故事 -->
+  <section class="content-section ld-story-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">由 來 ・ 故 事</div>
+        <h2 class="section-title">法會源流</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-story-content" id="storyContent"></div>
+    </div>
+  </section>
+
+  <!-- 祈文 / 奇文 -->
+  <section class="content-section rd-prayer-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">疏 文 ・ 祈 文</div>
+        <h2 class="section-title">虔誠所稟</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead" id="prayerLead">本宮於法會時，由執事人員代為稟疏</p>
+      </div>
+      <div class="rd-prayer-frame">
+        <div class="rd-prayer-inner">
+          <div class="rd-prayer-deco rd-prayer-deco-tl"></div>
+          <div class="rd-prayer-deco rd-prayer-deco-tr"></div>
+          <div class="rd-prayer-deco rd-prayer-deco-bl"></div>
+          <div class="rd-prayer-deco rd-prayer-deco-br"></div>
+          <div class="rd-prayer-text" id="prayerText"></div>
+          <div class="rd-prayer-stamp">建 安 宮</div>
+        </div>
+      </div>
+      <p class="rd-prayer-foot" id="prayerFoot">※ 以上為本宮疏文摘錄，實際法會由執事人員依當日科儀宣讀</p>
+    </div>
+  </section>
+
+  <!-- 辦理方式 -->
+  <section class="content-section ld-howto-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">辦 理 方 式</div>
+        <h2 class="section-title">如何參加</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-howto-grid" id="howtoGrid"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="content-section ld-cta-section">
+    <div class="section-inner">
+      <div class="ld-cta-card">
+        <div class="ld-cta-tag">線 上 登 記</div>
+        <h3 class="ld-cta-title" id="ctaTitle">誠邀十方信眾 ・ 共襄盛舉</h3>
+        <p class="ld-cta-text">填寫線上登記表，本宮人員將儘速與您聯絡確認。</p>
+        <div class="ld-cta-actions">
+          <a href="services.html#ritualForm" class="btn btn-primary btn-large">前往線上登記</a>
+          <a href="tel:0981142292" class="btn btn-secondary">致電 0981-142-292</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他法會 -->
+  <section class="content-section ld-others-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">其 他 法 會</div>
+        <h2 class="section-title">一同了解</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-others-grid rd-others-grid" id="othersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      const RITUALS = {
+        antaisui: {
+          icon: '歲',
+          title: '安太歲 ・ 點太歲燈',
+          bless: '化解犯沖 ・ 護佑平安',
+          desc: '為當年沖犯太歲、太歲坐沖之信眾安奉，化解犯沖、護佑全年平安順遂。本宮於春節期間統一登錄安奉，諸太歲星君護持一年。',
+          date: '農曆春節期間',
+          price: '$ 600 起',
+          mode: '本宮代為登記安奉',
+          purposes: [
+            { tag: '值太歲', title: '本命年護持', desc: '當年生肖與值年太歲相同（本命年），藉太歲星君護持，化解本命之厄。' },
+            { tag: '沖太歲', title: '化解相沖', desc: '與當年生肖正沖者，運勢起伏較大，宜安太歲以求平穩。' },
+            { tag: '刑害破', title: '化解三煞', desc: '刑、害、破太歲者，化解口舌、是非、暗損、官非等隱伏之厄。' },
+            { tag: '保平安', title: '一年平安', desc: '出入安康、家宅平安、諸事戒慎而順遂，趨吉避凶。' }
+          ],
+          story: [
+            '「太歲」一詞，古天文家以其虛擬之星與歲星（木星）反向而行，假以紀年。歲星十二年繞天一周，故有十二地支對應十二生肖之說。',
+            '道教將太歲神格化，奉為「六十甲子太歲星君」，每年輪值一位。當值之太歲星君，掌一年天下吉凶禍福；故凡與當值太歲生肖相同（值）、相對（沖）、相隔三位（刑）、相隔六位（破）、相隔七位（害）者，即所謂「犯太歲」。',
+            '俗語云：「太歲當頭坐，無喜恐有禍。」民間自唐代以降即有「安太歲」之俗，於春節期間至廟中為當值太歲星君點燈奉香、稟報生辰，以求一年護持。',
+            '本宮承此古制，於正月十二日「開燈安斗」之時，將值年太歲星君與諸神同奉於壇前，並將安太歲信眾之姓名、生辰、生肖一一登錄稟報，使之全年皆受太歲星君庇佑。',
+            '【2026 丙午年】值太歲為「馬」（且刑太歲），沖太歲為「鼠」、破太歲為「兔」、害太歲為「牛」——此四生肖建議安太歲。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　正月吉日',
+            '台北建安宮　艋舺雙園聖母會　謹具疏文',
+            '上奉　六十甲子值年太歲　文哲星君　御前',
+            '',
+            '今有信眾 ◯◯◯　民國◯年◯月◯日生　肖屬◯',
+            '虔誠跪拜　懇祈值年太歲星君慈光護持',
+            '化解流年沖犯　消弭口舌是非',
+            '佑護身心康泰　諸事順遂吉昌',
+            '出入平安　闔家如意',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '查對生肖', desc: '對照本宮公告之值、沖、刑、害、破生肖，確認是否需安太歲。' },
+            { num: '貳', title: '提供本人資訊', desc: '提供姓名、出生年月日、生肖即可，由本宮代為登錄。' },
+            { num: '參', title: '完成隨喜功德', desc: '每位 $600 起，可與元辰燈合奉以加強護持。' },
+            { num: '肆', title: '本宮代為祝禱', desc: '由本宮於太歲星君前每日祝禱，至年底謝太歲。' }
+          ]
+        },
+        bucaiku: {
+          icon: '財',
+          title: '補 財 庫',
+          bless: '玉皇賜財 ・ 修補財庫',
+          desc: '於玉皇大天尊聖誕前夕（農曆正月初八）子時 23:15 舉行，恭祝玉皇聖誕、天公賜福賜財。補財庫不僅是祈求財富，更是透過懺悔、修正來填補過去的漏財缺口。',
+          date: '農曆正月初八子時 23:15',
+          price: '$ 1,200 / 人',
+          mode: '本人到場 ・ 稟疏蓋印',
+          purposes: [
+            { tag: '補庫', title: '修補財庫', desc: '補回先天命中漏失之財庫，使財來有方、財去有節。' },
+            { tag: '懺漏', title: '懺悔漏財', desc: '反省過往揮霍、誤投、損財之因，藉懺悔轉化為惜福。' },
+            { tag: '聚財', title: '聚財不漏', desc: '化解小人破財、暗中漏財之相，使所得不致無故流失。' },
+            { tag: '賜福', title: '玉皇賜福', desc: '於玉皇聖誕前夕行此法，敬天賜福，得正財、惜正財。' }
+          ],
+          story: [
+            '「補財庫」之俗，源自道教「祿庫」與「受生債」之說。古經有云：人於投胎之初，從天曹冥府領「受生錢」（亦名「祿庫錢」）以為一生財祿之本——此即「先天財庫」。',
+            '人之一生，若揮霍無度、違誓失信、貪念過甚，皆會造成「庫錢漏損」；庫一漏，便覺財來財去、勞而無獲。故有「補財庫」之法，藉懺悔、稟疏、納庫等科儀，將漏失之祿補回。',
+            '本宮特擇農曆正月初八子時舉行——此為玉皇大天尊聖誕（正月初九）之前夕。子時為一日之始、正月初九為一年諸神朝賀玉皇之日；於此交界之際稟疏，最為靈驗。',
+            '法會程序：信眾須親至本宮，由執事人員引領至神前稟讀疏文、蓋手印（以證真誠），再焚化壽金、補運金、財庫金，象徵將補庫之願上達天聽。',
+            '補財庫之要旨，並非求一夕暴富，而是「補己之漏、惜既得之福」——財庫穩固，福報自綿。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　正月初八子時',
+            '台北建安宮　艋舺雙園聖母會　謹具補庫疏文',
+            '上奉　玉皇大天尊　玄穹高上帝　御前',
+            '恭值　玉皇聖誕　千秋萬壽　無極無疆',
+            '',
+            '今有信眾 ◯◯◯　民國◯年◯月◯日生',
+            '虔誠跪稟　今因往昔不知',
+            '揮霍漏失　財庫有缺　諸事勞碌',
+            '今特備財帛　稟疏蓋印　補回祿庫',
+            '懇祈玉皇大天尊　慈光普照',
+            '准予補庫　使正財來路無阻',
+            '事業順遂　家業興旺　福壽綿長',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '提前登記', desc: '建議於正月初八前完成登記，便於本宮備齊疏文、財庫金。' },
+            { num: '貳', title: '本人到場', desc: '須由本人親至本宮，於子時 23:15 入壇，代理者效力較弱。' },
+            { num: '參', title: '稟疏蓋印', desc: '由執事引領至壇前稟讀疏文、蓋手印（朱砂印），以證真誠。' },
+            { num: '肆', title: '焚化送庫', desc: '焚化壽金、補運金、財庫金，象徵將補庫之願送達天庭。' }
+          ]
+        },
+        kaideng: {
+          icon: '燈',
+          title: '開燈安斗法會',
+          bless: '補運添壽 ・ 闔家興旺',
+          desc: '本宮歲時祭典之一，於農曆正月十二日舉行。「開燈」為點燃本年度諸燈之科儀，「安斗」為禮敬星斗、祈本命光明之古制。為信眾補運添壽、佑護闔家興旺。',
+          date: '農曆正月十二日',
+          price: '$ 1,200 起',
+          mode: '本宮統一舉辦 ・ 信眾可到場',
+          purposes: [
+            { tag: '開燈', title: '燃點諸燈', desc: '正式點亮本年度光明燈、財利斗、元辰斗、太歲燈、平安總斗燈，神光自此普照一年。' },
+            { tag: '安斗', title: '禮敬星斗', desc: '禮敬北斗七元星君，奏疏稟報信眾本命，求星君照臨護持。' },
+            { tag: '補運', title: '補運添壽', desc: '為信眾補益元神、添延壽算，化解流年不利、運勢低迷。' },
+            { tag: '興家', title: '闔家興旺', desc: '安宅護家、佑護闔家身心康泰、人事和合、事業興盛。' }
+          ],
+          story: [
+            '「開燈安斗」為臺灣民間信仰最為莊嚴之歲時祭典之一，源自道教「禮斗科儀」。',
+            '所謂「斗」，原指北斗七星——古人觀北斗主掌人間生死禍福、壽夭窮達；故有「拜斗即拜本命」之說。道書《北斗經》云：「北斗注死，南斗注生；凡人受生，皆由斗府。」',
+            '「開燈」一儀，則為將本年度信眾所登記之諸燈（光明燈、財利斗、元辰斗、太歲燈、平安總斗燈）一同點燃——燈火相連，象徵神光普照，自此燈不熄、福不斷，至次年同日方止。',
+            '本宮擇定農曆正月十二日舉辦——此日介於玉皇聖誕（正月初九）與天官聖誕（正月十五）之間，乃天地交泰、神光最盛之時。',
+            '法會當日，由天上聖母領銜，諸神共同坐鎮；執事人員按古禮宣疏、誦經、上香、點燈、迴向，將信眾之祈願一一稟告諸神。整場法會莊嚴隆重，信眾可親至本宮觀禮、隨喜功德。',
+            '凡欲安平安總斗燈、光明燈、太歲燈、財利斗、元辰斗者，皆於此日正式安奉，神光相伴一年。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　正月十二日',
+            '台北建安宮　艋舺雙園聖母會　謹具開燈安斗疏文',
+            '上奉　北斗九皇　南斗六司　諸真星君　御前',
+            '伏惟　星君居天　主掌人間禍福壽夭',
+            '',
+            '今有本宮所登信眾　各具姓名生辰',
+            '虔誠跪拜　恭備斗燈　上奏星君',
+            '懇祈　北斗注壽　南斗注生',
+            '元辰光彩　本命長明',
+            '消災延壽　補運添福',
+            '闔家平安　諸事順遂',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '提前登記燈品', desc: '請於正月十二日之前登記欲安之燈品（總斗、光明、財利、元辰、太歲）。' },
+            { num: '貳', title: '法會當日', desc: '本宮統一舉辦、宣疏、點燈，信眾不一定須到場，惟到場者神光更直接。' },
+            { num: '參', title: '完成隨喜功德', desc: '依所登燈品之金額完成繳交，由本宮告知方式。' },
+            { num: '肆', title: '神光相伴一年', desc: '燈火自此日點亮，至次年正月十二日方熄，諸神護佑一年。' }
+          ]
+        },
+        shengdan: {
+          icon: '誕',
+          title: '聖誕千秋祝壽',
+          bless: '諸神聖誕 ・ 千秋萬壽',
+          desc: '本宮諸神聖誕日皆有祝壽科儀。天上聖母、玉皇大帝、關聖帝君、中壇元帥、濟公禪師、福德正神等聖誕日，可登記祝壽供品，隨喜功德。',
+          date: '諸神聖誕日（依年曆）',
+          price: '隨喜功德',
+          mode: '隨喜登記祝壽供品',
+          purposes: [
+            { tag: '祝壽', title: '為神祝壽', desc: '於諸神聖誕日備供品、稟疏文，以信眾名義恭祝千秋萬壽。' },
+            { tag: '結緣', title: '結神明緣', desc: '與所祈之神結深緣，受其護佑長遠。' },
+            { tag: '功德', title: '累積功德', desc: '為神明祝壽乃大功德，可迴向闔家、累世父母、冤親債主。' },
+            { tag: '感恩', title: '答謝神恩', desc: '一年之中蒙神護佑，藉聖誕日獻供以表答謝。' }
+          ],
+          story: [
+            '「聖誕千秋」為道教與民間信仰中最為莊嚴之祭典——指諸神之誕辰。古云：「神之有壽，所以示人不忘本也。」於神明聖誕之日，信徒備供品、誦經、稟疏、獻戲，藉以表敬與祈福。',
+            '本宮諸神聖誕，依年度依次舉辦：正月初九玉皇大帝、正月十五天官大帝、二月初一濟公禪師暨福德正神、二月十九觀音菩薩、三月二十三天上聖母、四月初八釋迦如來、五月十三關聖帝君、六月二十四關聖帝君飛昇、七月十五中元普渡、八月十五太陰娘娘、九月初九重陽（謝太歲將近）、九月十九觀音菩薩出家、十月十五水官大帝……等。',
+            '其中，三月二十三日「天上聖母聖誕」乃本宮最為隆重之大典——本宮主祀天上聖母，每年皆於聖誕當日舉辦祝壽大典，由委員會統籌，獻戲酬神、邀請友宮蒞臨參香，盛況非凡。',
+            '凡欲為諸神祝壽者，皆可至本宮登記祝壽供品（紅龜、麵線、壽桃、鮮花素果等），由本宮代為稟報、上供。',
+            '為神祝壽，亦是為己累積功德——可迴向闔家平安、累世父母、冤親債主，皆能受其餘澤。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　◯月◯日　◯◯聖誕',
+            '台北建安宮　艋舺雙園聖母會　謹具祝壽疏文',
+            '上奉　◯◯尊神　御前',
+            '伏惟　千秋聖誕　萬壽無疆',
+            '',
+            '今有信眾 ◯◯◯　暨闔家眷屬',
+            '虔誠備辦　壽桃壽麵　鮮花素果　香茗素饌',
+            '恭祝　尊神聖誕　千秋萬壽',
+            '伏祈　慈光普照　佑護蒼生',
+            '闔家平安　身心康泰　諸事順遂',
+            '迴向累世父母　冤親債主　同霑法益',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '查詢聖誕日', desc: '查本宮年曆或來電洽詢，確認所欲祝壽神明之聖誕日期。' },
+            { num: '貳', title: '登記供品', desc: '提早登記祝壽供品，本宮可代為準備（紅龜、麵線、鮮花素果等）。' },
+            { num: '參', title: '隨喜功德', desc: '無固定金額，依信眾心力隨喜，本宮以等值供品上供。' },
+            { num: '肆', title: '本宮代為稟疏', desc: '由本宮於聖誕當日於神前稟讀疏文，以信眾名義祝壽。' }
+          ]
+        }
+      };
+
+      const ORDER = ['antaisui', 'bucaiku', 'kaideng', 'shengdan'];
+
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('ritual');
+      if (!RITUALS[key]) key = 'antaisui';
+      const data = RITUALS[key];
+
+      // Banner
+      document.getElementById('ritualTitle').textContent = data.title;
+      document.getElementById('ritualSub').textContent = data.bless;
+      document.title = data.title + '｜台北建安宮 艋舺雙園聖母會';
+
+      // Summary
+      document.getElementById('summaryIcon').textContent = data.icon;
+      document.getElementById('summaryName').textContent = data.title;
+      document.getElementById('summaryBless').textContent = data.bless;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('summaryDate').textContent = data.date;
+      document.getElementById('summaryPrice').textContent = data.price;
+      document.getElementById('summaryMode').textContent = data.mode;
+
+      // 功用
+      document.getElementById('purposeGrid').innerHTML = data.purposes.map(p => `
+        <div class="ld-purpose-card">
+          <div class="ld-purpose-tag">${p.tag}</div>
+          <h3 class="ld-purpose-title">${p.title}</h3>
+          <p class="ld-purpose-desc">${p.desc}</p>
+        </div>
+      `).join('');
+
+      // 由來故事
+      document.getElementById('storyContent').innerHTML = data.story.map(p => `<p>${p}</p>`).join('');
+
+      // 祈文
+      document.getElementById('prayerText').innerHTML = data.prayer.map(line =>
+        line === '' ? '<div class="rd-prayer-spacer"></div>' : `<div class="rd-prayer-line">${line}</div>`
+      ).join('');
+
+      // 辦理方式
+      document.getElementById('howtoGrid').innerHTML = data.howto.map(h => `
+        <div class="ld-howto-card">
+          <div class="ld-howto-num">${h.num}</div>
+          <div class="ld-howto-title">${h.title}</div>
+          <p class="ld-howto-desc">${h.desc}</p>
+        </div>
+      `).join('');
+
+      // CTA
+      document.getElementById('ctaTitle').textContent = '誠邀十方信眾 ・ 共襄「' + data.title + '」';
+
+      // 其他法會
+      document.getElementById('othersGrid').innerHTML = ORDER
+        .filter(k => k !== key)
+        .map(k => {
+          const o = RITUALS[k];
+          return `
+            <a class="ld-other-card" href="ritual-detail.html?ritual=${k}">
+              <div class="ld-other-icon">${o.icon}</div>
+              <div class="ld-other-name">${o.title}</div>
+              <div class="ld-other-bless">${o.bless}</div>
+            </a>
+          `;
+        }).join('');
+
+      // 回到頂部
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>

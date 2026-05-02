@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>廟方公告詳情｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮各項公告、活動回顧與廟方動態詳細介紹。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-news-detail">
+
+  <header class="site-header site-header-solid">
+    <div class="brand">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html" class="active">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html">香客服務</a>
+      <a href="almanac.html">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner news-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag" id="newsTagBanner">廟 ・ 方 ・ 公 ・ 告</div>
+      <h1 class="banner-title" id="newsTitle">公告</h1>
+      <div class="banner-sub" id="newsSub">詳細介紹</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="about.html#news">← 返回 關於建安宮 ・ 廟方公告</a>
+    </div>
+  </div>
+
+  <!-- 公告摘要 -->
+  <section class="content-section nd-summary-section">
+    <div class="section-inner">
+      <div class="nd-summary-card">
+        <div class="nd-summary-status" id="summaryStatus">即將舉辦</div>
+        <div class="nd-summary-date" id="summaryDate">2026 ・ 05 ・ 09</div>
+        <div class="nd-summary-lunar" id="summaryLunar"></div>
+        <h2 class="nd-summary-name" id="summaryName">公告標題</h2>
+        <p class="nd-summary-desc" id="summaryDesc"></p>
+        <div class="nd-summary-meta" id="summaryMeta"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 詳細介紹 -->
+  <section class="content-section nd-intro-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">詳 細 介 紹</div>
+        <h2 class="section-title" id="introTitle">活動介紹</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-story-content nd-intro-content" id="introContent"></div>
+    </div>
+  </section>
+
+  <!-- 重點 / 流程 -->
+  <section class="content-section nd-highlight-section" id="highlightSection">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label" id="highlightLabel">活 動 重 點</div>
+        <h2 class="section-title" id="highlightTitle">流程要旨</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="nd-highlight-grid" id="highlightGrid"></div>
+    </div>
+  </section>
+
+  <!-- 圖片區（可選） -->
+  <section class="content-section nd-photos-section" id="photosSection" hidden>
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">活 動 紀 錄</div>
+        <h2 class="section-title">影像紀實</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="nd-photos-grid" id="photosGrid"></div>
+    </div>
+  </section>
+
+  <!-- CTA：相關資源 -->
+  <section class="content-section nd-actions-section">
+    <div class="section-inner">
+      <div class="nd-actions-card">
+        <h3 class="nd-actions-title" id="actionsTitle">相關資源</h3>
+        <p class="nd-actions-text" id="actionsText"></p>
+        <div class="nd-actions-grid" id="actionsGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他公告 -->
+  <section class="content-section ld-others-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">其 他 公 告</div>
+        <h2 class="section-title">一同了解</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="nd-others-grid" id="othersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      const KAIGUANG_DIR = '2026:04:25.26開光大典、恭迎謝范二將軍、回駕萬華繞境/';
+      const KAIDENG_DIR = '天運歲次丙午年正月十二日開燈安斗/';
+
+      function kaiguangPhoto(n) {
+        return KAIGUANG_DIR + 'LINE_ALBUM_20260425.26開光大典、恭迎謝范二將軍、回駕萬華繞境_260501_' + n + '.jpg';
+      }
+      function kaidengPhoto(n) {
+        return KAIDENG_DIR + 'LINE_ALBUM_天運歲次丙午年 正月十二日開燈 安斗_260501_' + n + '.jpg';
+      }
+
+      const NEWS = {
+        shengdan: {
+          status: '即 將 舉 辦',
+          statusClass: 'urgent',
+          date: '2026 ・ 05 ・ 09',
+          lunar: '農曆三月廿三 ・ 禮拜六',
+          title: '天上聖母聖誕千秋',
+          sub: '本宮主祀媽祖 ・ 年度盛典',
+          desc: '本宮主祀媽祖聖誕，年度盛典，敬邀十方信眾共同祝壽、共沐神恩。',
+          meta: [
+            { label: '舉辦日期', value: '2026 / 05 / 09 ・ 禮拜六' },
+            { label: '農曆', value: '丙午年三月廿三日' },
+            { label: '舉辦地點', value: '本宮 ・ 台北市萬華區德昌街132巷1號1樓' }
+          ],
+          intro: [
+            '農曆三月廿三日，乃天上聖母（媽祖）聖誕千秋之日，亦為本宮一年之中最為隆重盛大之祭典。',
+            '天上聖母俗姓林名默娘，宋太祖建隆元年三月廿三日生於福建莆田湄洲嶼。生而靈異，幼通文書，習法術，能濟世救人；後昇化為神，於海上顯聖救難，歷代帝王累封至「天上聖母」、「天后」之尊。',
+            '本宮為艋舺雙園地區之媽祖信仰中心，承奉天上聖母香火逾百年。每逢三月廿三聖誕，由委員會統籌，敬備鮮花素果、壽桃壽麵、香茗素饌，恭請諸神共同祝壽；並敬邀友宮蒞臨參香、獻戲酬神，盛況空前。',
+            '誠摯邀請十方信眾，於 2026 年 5 月 9 日（農曆三月廿三）共同蒞臨本宮，為聖母祝壽、共沐神恩。'
+          ],
+          highlightLabel: '當 日 流 程',
+          highlightTitle: '聖誕大典',
+          highlight: [
+            { num: '壹', title: '清晨啟壇', desc: '清晨敬備供品，由執事人員淨壇、上香、奏疏。' },
+            { num: '貳', title: '聖母祝壽', desc: '由宮主、執事領銜，諸委員恭敬獻供、宣讀祝壽疏文。' },
+            { num: '參', title: '友宮參香', desc: '友宮蒞臨參香交誼，本宮以禮相迎，會香共沐神恩。' },
+            { num: '肆', title: '信眾共沐', desc: '十方信眾自由參拜祝壽、領取平安米、結緣物。' }
+          ],
+          photos: [],
+          actionsTitle: '誠邀信眾共襄盛舉',
+          actionsText: '可線上登記祝壽供品、了解祝壽科儀、或來電洽詢。',
+          actions: [
+            { label: '線上登記祝壽', href: 'services.html#ritualForm', primary: true },
+            { label: '了解祝壽科儀', href: 'ritual-detail.html?ritual=shengdan' },
+            { label: '主祀神明介紹', href: 'deities.html' },
+            { label: '致電 0981-142-292', href: 'tel:0981142292' }
+          ]
+        },
+        kaiguang: {
+          status: '近 期 舉 辦',
+          statusClass: '',
+          date: '2026 ・ 04 ・ 25-26',
+          lunar: '農曆三月初九 ・ 三月初十',
+          title: '開光大典 ・ 恭迎謝范二將軍',
+          sub: '回駕萬華繞境 ・ 神威顯赫',
+          desc: '開光大典、恭迎謝范二將軍駐駕本宮，並回駕萬華繞境會香，盛況空前。',
+          meta: [
+            { label: '舉辦日期', value: '2026 / 04 / 25 - 04 / 26' },
+            { label: '主要活動', value: '開光大典、迎神駐駕、繞境' },
+            { label: '參與單位', value: '本宮委員、友宮、十方信眾' }
+          ],
+          intro: [
+            '謝范二將軍，俗稱「七爺八爺」、「黑白無常」，乃城隍爺座前神將。謝將軍諱必安，身形高瘦，俗稱七爺；范將軍諱無救，身形矮壯，俗稱八爺。二將軍生前義結金蘭，誓言生死同心，後昇化為神，奉旨輔助城隍爺巡視陰陽、賞善罰惡。',
+            '本宮於 2026 年 4 月 25、26 日（農曆三月初九、初十）舉行開光大典，恭迎謝范二將軍蒞臨駐駕，賜其神光、護佑信眾。',
+            '兩日活動由本宮委員會統籌：第一日舉行開光點眼科儀，由道長執禮，諸神見證，將神尊安奉於本宮；第二日回駕萬華繞境，遶行雙園地區，與友宮會香交誼、護佑沿途信眾。',
+            '感謝十方信眾、友宮共襄盛舉，本次大典圓滿成功，神威遠播。'
+          ],
+          highlightLabel: '兩 日 重 點',
+          highlightTitle: '大典實錄',
+          highlight: [
+            { num: '壹', title: '開光點眼', desc: '由道長執禮，敬備供品，誦經奏疏，行開光點眼科儀。' },
+            { num: '貳', title: '安座入廟', desc: '謝范二將軍神尊正式安奉本宮，與諸神共鎮一方。' },
+            { num: '參', title: '回駕繞境', desc: '第二日回駕萬華雙園地區，遶行各街道、護佑信眾。' },
+            { num: '肆', title: '會香交誼', desc: '與友宮會香交誼，互通神光，加深信仰連結。' }
+          ],
+          photos: [
+            kaiguangPhoto(1), kaiguangPhoto(5), kaiguangPhoto(10),
+            kaiguangPhoto(15), kaiguangPhoto(20), kaiguangPhoto(25),
+            kaiguangPhoto(30), kaiguangPhoto(35)
+          ],
+          actionsTitle: '更多開光大典紀錄',
+          actionsText: '查看完整相簿、了解神明介紹、或聯繫廟方。',
+          actions: [
+            { label: '查看完整相簿', href: 'events.html#section-album', primary: true },
+            { label: '神明介紹', href: 'deities.html' },
+            { label: '本宮活動年表', href: 'events.html' },
+            { label: '致電 0981-142-292', href: 'tel:0981142292' }
+          ]
+        },
+        kaideng: {
+          status: '已 舉 辦',
+          statusClass: '',
+          date: '2026 ・ 02 ・ 28',
+          lunar: '農曆正月十二日',
+          title: '開燈安斗 ・ 新春補運',
+          sub: '燃點諸燈 ・ 神光普照',
+          desc: '農曆正月十二日 ・ 燃點平安總斗、財利、元辰、光明、太歲燈，為信眾補運添壽。',
+          meta: [
+            { label: '舉辦日期', value: '2026 / 02 / 28（農曆正月十二日）' },
+            { label: '本年燈品', value: '平安總斗、財利、元辰、光明、太歲' },
+            { label: '本年法會', value: '本宮統一舉辦 ・ 圓滿落幕' }
+          ],
+          intro: [
+            '2026 年（丙午年）開燈安斗法會於 2 月 28 日（農曆正月十二日）於本宮隆重舉辦，圓滿落幕。',
+            '本年法會由天上聖母領銜、諸神共同坐鎮，由執事人員按古禮宣疏、誦經、上香、點燈、迴向。本宮為信眾燃點平安總斗燈、財利斗、元辰斗、光明燈、太歲燈共五式燈品，並進行祭改科儀，為運勢低迷之信眾消災解厄。',
+            '感謝十方信眾踴躍參與，使法會圓滿成功。所安奉之燈火將於本宮燈座上點亮一年，至次年正月十二日方止——一整年皆有諸神護佑相伴。',
+            '若您今年未能參與，亦可洽詢本宮中途加入安燈之可能；下一年度開燈安斗法會將於 2027 年農曆正月十二日舉辦。'
+          ],
+          highlightLabel: '本 年 燈 品',
+          highlightTitle: '燃點諸燈',
+          highlight: [
+            { num: '總', title: '平安總斗燈', desc: '一戶共安一燈，全家共沐神光（$3,600 / 戶 / 年）。' },
+            { num: '財', title: '財利 ・ 元辰斗', desc: '個人安奉，祈財運、本命光明（各 $1,500 / 人 / 年）。' },
+            { num: '光', title: '光明 ・ 太歲燈', desc: '最普及之祈福燈與安太歲燈（各 $500 / 人 / 年）。' },
+            { num: '祭', title: '祭改科儀', desc: '為運勢不順者改換運勢，由諸神共同加持（$600 / 位）。' }
+          ],
+          photos: [
+            kaidengPhoto(1), kaidengPhoto(5), kaidengPhoto(10),
+            kaidengPhoto(15), kaidengPhoto(20), kaidengPhoto(25),
+            kaidengPhoto(30), kaidengPhoto(35)
+          ],
+          actionsTitle: '了解點燈服務',
+          actionsText: '了解本宮各式燈品、補登記，或洽詢明年安燈時程。',
+          actions: [
+            { label: '前往點燈服務', href: 'services.html#lightForm', primary: true },
+            { label: '法會由來與祈文', href: 'ritual-detail.html?ritual=kaideng' },
+            { label: '六種燈品介紹', href: 'services.html#section-lights' },
+            { label: '致電 0981-142-292', href: 'tel:0981142292' }
+          ]
+        },
+        bucaiku: {
+          status: '已 舉 辦',
+          statusClass: '',
+          date: '2026 ・ 02 ・ 24',
+          lunar: '農曆正月初八子時',
+          title: '第一次補財庫',
+          sub: '玉皇大天尊聖誕前夕 ・ 天公賜財',
+          desc: '農曆正月初八子時 ・ 玉皇大天尊聖誕前夕，子時 23:15 入壇，天公賜福賜財。',
+          meta: [
+            { label: '舉辦日期', value: '2026 / 02 / 24 子時 23:15 入壇' },
+            { label: '農曆', value: '丙午年正月初八' },
+            { label: '本年法會', value: '本年第一場補財庫 ・ 圓滿落幕' }
+          ],
+          intro: [
+            '2026 年第一場補財庫法會於 2 月 24 日（農曆正月初八）子時 23:15 於本宮舉行，圓滿落幕。',
+            '此時為玉皇大天尊聖誕（正月初九）前夕，子時為一日之始，於此交界稟疏最為靈驗。本場法會由執事人員引領參加信眾至神前稟讀疏文、蓋手印（朱砂印），再焚化壽金、補運金、財庫金，象徵將補庫之願上達天聽。',
+            '補財庫不僅是祈求財富，更是透過懺悔、修正來填補過去因揮霍、誤投、違誓所造成的「祿庫漏損」——財庫穩固，福報自綿。',
+            '本宮一年之中將舉辦多次補財庫法會（玉皇聖誕前夕、五路財神聖誕、土地公聖誕等吉日），請密切關注本宮公告。'
+          ],
+          highlightLabel: '法 會 流 程',
+          highlightTitle: '補庫實錄',
+          highlight: [
+            { num: '壹', title: '提前登記', desc: '信眾提前向本宮登記，本宮代為準備疏文、財庫金。' },
+            { num: '貳', title: '子時入壇', desc: '正月初八子時 23:15 入壇，由執事人員引領至神前。' },
+            { num: '參', title: '稟疏蓋印', desc: '逐一稟讀疏文、蓋朱砂手印，以證真誠。' },
+            { num: '肆', title: '焚化送庫', desc: '焚化壽金、補運金、財庫金，補庫之願送達天庭。' }
+          ],
+          photos: [],
+          actionsTitle: '了解補財庫法會',
+          actionsText: '了解補財庫由來、祈文、或預約下一場補財庫。',
+          actions: [
+            { label: '法會由來與祈文', href: 'ritual-detail.html?ritual=bucaiku', primary: true },
+            { label: '線上登記法會', href: 'services.html#ritualForm' },
+            { label: '本宮活動年表', href: 'events.html' },
+            { label: '致電 0981-142-292', href: 'tel:0981142292' }
+          ]
+        },
+        website: {
+          status: '新 上 線',
+          statusClass: 'feature',
+          date: '本 宮 網 站',
+          lunar: '丙午年',
+          title: '丙午年農民曆 ・ 線上求籤',
+          sub: '本宮網站新功能上線',
+          desc: '115 年（丙午年）農民曆與線上求籤功能已上線，歡迎信眾線上請示天上聖母。',
+          meta: [
+            { label: '上線功能', value: '丙午年農民曆 ・ 線上求籤' },
+            { label: '使用方式', value: '電腦、手機、平板皆可使用' },
+            { label: '費用', value: '免費 ・ 隨喜功德' }
+          ],
+          intro: [
+            '本宮為使十方信眾更便利地參與宮務、知曉節慶吉日，特於本宮網站上線兩項全新功能：「丙午年農民曆」與「線上求籤」。',
+            '【丙午年農民曆】 完整收錄 2026 年（丙午年）一年之吉凶宜忌、節氣交接、本宮聖誕祭典、神明聖誕千秋、安太歲生肖、犯沖日期等。並可一鍵查詢任一日之黃道吉凶、宜婚嫁/出行/動土等事項。',
+            '【線上求籤】 承本宮天上聖母慈光普照，十方信眾無論身在何處，皆可隨時隨地於網路上請示聖母，求得本宮所傳統籤。每籤皆附籤詩、解籤、註解，幫助信眾解疑釋慮。',
+            '兩項新功能皆為本宮免費提供，不限時間、不限次數使用，惟誠摯希望信眾於有所感應時，能不吝隨喜功德、護持本宮。'
+          ],
+          highlightLabel: '功 能 介 紹',
+          highlightTitle: '網站新增',
+          highlight: [
+            { num: '曆', title: '完整年曆', desc: '收錄 2026 年所有節氣、吉凶、本宮祭典聖誕日期。' },
+            { num: '吉', title: '黃道宜忌', desc: '每日宜忌一鍵查詢，方便信眾擇吉行事。' },
+            { num: '籤', title: '線上求籤', desc: '虔誠請示聖母，得籤詩、解籤、註解。' },
+            { num: '解', title: '籤文解析', desc: '每籤附詳細白話解釋，助信眾理解神示。' }
+          ],
+          photos: [],
+          actionsTitle: '立即體驗新功能',
+          actionsText: '前往年曆查詢吉日，或誠心請示聖母求籤指點迷津。',
+          actions: [
+            { label: '查看丙午年農民曆', href: 'almanac.html', primary: true },
+            { label: '線上求籤', href: 'fortune.html', primary: true },
+            { label: '本宮主祀神明', href: 'deities.html' },
+            { label: '聯絡本宮', href: 'contact.html' }
+          ]
+        },
+        committee: {
+          status: '已 更 新',
+          statusClass: 'feature',
+          date: '115 ・ 02 ・ 28',
+          lunar: '丙午年正月十二日',
+          title: '委員會費繳交紀錄更新',
+          sub: '115 年度管理委員會 ・ 繳交紀錄',
+          desc: '115 年度管理委員會 23 位委員會費繳交紀錄已更新，公開透明。',
+          meta: [
+            { label: '更新日期', value: '115 / 02 / 28' },
+            { label: '本屆委員', value: '115 年度 ・ 共 23 位' },
+            { label: '會務狀況', value: '繳交紀錄 ・ 已公開於委員會頁' }
+          ],
+          intro: [
+            '本宮為求宮務透明、信眾信賴，於每年初皆會更新管理委員會之委員名冊、職位以及會費繳交紀錄。',
+            '115 年（丙午年）度管理委員會由共 23 位委員組成，包含宮主、副宮主、執事、總幹事、財務、稽核、各組組長、委員等職位，於 115 年 2 月 28 日（農曆正月十二日開燈安斗法會當日）正式公告繳交紀錄。',
+            '會費為本宮日常宮務、法會經費、廟舍維護之主要來源，委員會費繳交完整反映各委員對本宮之護持。本宮一切收支皆有專人管理、記錄，於委員會議中公開透明。',
+            '欲了解詳細委員名單、各委員職位、會費繳交紀錄者，請點選下方連結至「委員會」頁查看。'
+          ],
+          highlightLabel: '本 屆 重 點',
+          highlightTitle: '委員會結構',
+          highlight: [
+            { num: '主', title: '宮主領銜', desc: '由宮主領銜，副宮主、執事輔佐宮務。' },
+            { num: '事', title: '執事分工', desc: '總幹事、財務、稽核分掌行政、財務、監督。' },
+            { num: '組', title: '各組支援', desc: '神務、活動、總務、宣傳等各組組長分工合作。' },
+            { num: '員', title: '委員護持', desc: '23 位委員共同護持本宮、推動宮務。' }
+          ],
+          photos: [],
+          actionsTitle: '了解本宮治理',
+          actionsText: '查看完整委員名單、職位、繳交紀錄。',
+          actions: [
+            { label: '前往委員會頁', href: 'committee.html', primary: true },
+            { label: '本宮沿革', href: 'about.html#history' },
+            { label: '聯絡本宮', href: 'contact.html' }
+          ]
+        }
+      };
+
+      const ORDER = ['shengdan', 'kaiguang', 'kaideng', 'bucaiku', 'website', 'committee'];
+
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('news');
+      if (!NEWS[key]) key = 'shengdan';
+      const data = NEWS[key];
+
+      // Banner
+      document.getElementById('newsTitle').textContent = data.title;
+      document.getElementById('newsSub').textContent = data.sub;
+      document.title = data.title + '｜台北建安宮 艋舺雙園聖母會';
+
+      // Summary
+      const statusEl = document.getElementById('summaryStatus');
+      statusEl.textContent = data.status;
+      if (data.statusClass) statusEl.classList.add('nd-status-' + data.statusClass);
+      document.getElementById('summaryDate').textContent = data.date;
+      document.getElementById('summaryLunar').textContent = data.lunar || '';
+      document.getElementById('summaryName').textContent = data.title;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('summaryMeta').innerHTML = data.meta.map(m => `
+        <div class="nd-meta-row">
+          <div class="nd-meta-label">${m.label}</div>
+          <div class="nd-meta-value">${m.value}</div>
+        </div>
+      `).join('');
+
+      // 詳細介紹
+      document.getElementById('introTitle').textContent = data.title;
+      document.getElementById('introContent').innerHTML = data.intro.map(p => `<p>${p}</p>`).join('');
+
+      // 重點
+      document.getElementById('highlightLabel').textContent = data.highlightLabel;
+      document.getElementById('highlightTitle').textContent = data.highlightTitle;
+      document.getElementById('highlightGrid').innerHTML = data.highlight.map(h => `
+        <div class="nd-highlight-card">
+          <div class="nd-highlight-num">${h.num}</div>
+          <div class="nd-highlight-title">${h.title}</div>
+          <p class="nd-highlight-desc">${h.desc}</p>
+        </div>
+      `).join('');
+
+      // 圖片
+      if (data.photos && data.photos.length > 0) {
+        document.getElementById('photosSection').hidden = false;
+        document.getElementById('photosGrid').innerHTML = data.photos.map(src => `
+          <div class="nd-photo-frame">
+            <img src="${src}" alt="${data.title}" loading="lazy">
+          </div>
+        `).join('');
+      }
+
+      // Actions
+      document.getElementById('actionsTitle').textContent = data.actionsTitle;
+      document.getElementById('actionsText').textContent = data.actionsText;
+      document.getElementById('actionsGrid').innerHTML = data.actions.map(a => `
+        <a class="btn ${a.primary ? 'btn-primary' : 'btn-secondary'}" href="${a.href}">${a.label}</a>
+      `).join('');
+
+      // 其他公告
+      document.getElementById('othersGrid').innerHTML = ORDER
+        .filter(k => k !== key)
+        .map(k => {
+          const o = NEWS[k];
+          return `
+            <a class="nd-other-card" href="news-detail.html?news=${k}">
+              <div class="nd-other-status">${o.status}</div>
+              <div class="nd-other-date">${o.date}</div>
+              <div class="nd-other-name">${o.title}</div>
+            </a>
+          `;
+        }).join('');
+
+      // 回到頂部
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>

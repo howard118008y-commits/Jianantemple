@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>燈品介紹｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮各式祈福燈品介紹：平安總斗燈、財利斗、元辰斗、光明燈、太歲燈、祭改之功用與由來故事。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-light-detail">
+
+  <header class="site-header site-header-solid">
+    <div class="brand">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html" class="active">香客服務</a>
+      <a href="almanac.html">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner light-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag" id="lightTag">燈 ・ 品 ・ 介 ・ 紹</div>
+      <h1 class="banner-title" id="lightTitle">祈福燈</h1>
+      <div class="banner-sub" id="lightSub">功用 ・ 由來 ・ 故事</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="services.html">← 返回 香客服務 ・ 開燈安斗</a>
+    </div>
+  </div>
+
+  <!-- 燈品摘要 -->
+  <section class="content-section ld-summary-section">
+    <div class="section-inner">
+      <div class="ld-summary-card">
+        <div class="ld-summary-icon" id="summaryIcon">總</div>
+        <div class="ld-summary-body">
+          <h2 class="ld-summary-name" id="summaryName">平安總斗燈</h2>
+          <div class="ld-summary-bless" id="summaryBless">闔家平安 ・ 庇佑全家</div>
+          <p class="ld-summary-desc" id="summaryDesc"></p>
+          <div class="ld-summary-meta">
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">辦理單位</div>
+              <div class="ld-meta-value" id="summaryUnit">一戶</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">隨喜功德</div>
+              <div class="ld-meta-value ld-meta-price" id="summaryPrice">$ 3,600</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">期程</div>
+              <div class="ld-meta-value" id="summaryPeriod">一年</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 功用 -->
+  <section class="content-section ld-purpose-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">燈 之 功 用</div>
+        <h2 class="section-title" id="purposeTitle">所祈何願</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-purpose-grid" id="purposeGrid">
+        <!-- 動態生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 由來故事 -->
+  <section class="content-section ld-story-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">由 來 ・ 故 事</div>
+        <h2 class="section-title" id="storyTitle">燈火源流</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-story-content" id="storyContent">
+        <!-- 動態生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 點燈方式與須知 -->
+  <section class="content-section ld-howto-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">點 燈 方 式</div>
+        <h2 class="section-title">如何安奉</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-howto-grid" id="howtoGrid">
+        <!-- 動態生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 行動呼籲 -->
+  <section class="content-section ld-cta-section">
+    <div class="section-inner">
+      <div class="ld-cta-card">
+        <div class="ld-cta-tag">線 上 登 記</div>
+        <h3 class="ld-cta-title" id="ctaTitle">為自己 ・ 為家人 ・ 安奉一盞光明</h3>
+        <p class="ld-cta-text">填寫線上登記表，本宮人員將儘速與您聯絡確認。</p>
+        <div class="ld-cta-actions">
+          <a href="services.html#lightForm" class="btn btn-primary btn-large" id="ctaBtn">前往線上登記</a>
+          <a href="tel:0981142292" class="btn btn-secondary">致電 0981-142-292</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他燈品 -->
+  <section class="content-section ld-others-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">其 他 燈 品</div>
+        <h2 class="section-title">一同了解</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-others-grid" id="othersGrid">
+        <!-- 動態生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      // === 六盞燈的內容資料 ===
+      const LIGHTS = {
+        pingan: {
+          icon: '總',
+          title: '平安總斗燈',
+          bless: '闔家平安 ・ 庇佑全家',
+          desc: '本宮主要祈福燈，為一整戶所安奉，全家共沐神光。乃斗燈中之首，總領一戶福報，承自古禮「禮斗」之傳統。',
+          unit: '一戶 ・ 不限幾人',
+          price: '$ 3,600',
+          period: '一年（自開燈日至次年）',
+          purposes: [
+            { tag: '闔家', title: '闔家平安', desc: '一燈之安奉，全家共沐神光，無論長幼皆受庇佑。' },
+            { tag: '宅運', title: '宅運興旺', desc: '安奉家宅光明，趨吉避凶，鎮宅化煞，使家宅諸事順遂。' },
+            { tag: '元神', title: '元神安泰', desc: '一戶同住者元神俱受護持，身心康泰、災厄遠離。' },
+            { tag: '總領', title: '總領諸燈', desc: '為全家祈福之主燈，可與其他燈品（光明、財利、元辰）合奉，總領一年福報。' }
+          ],
+          story: [
+            '「斗燈」之制，源於道教禮斗科儀，自古帝王、士庶皆藉禮斗以祈延壽消災，敬拜星斗、本命元辰。',
+            '所謂「斗」，原指北斗七星——古人觀天象，知北斗主掌人之生死禍福、壽夭窮達；故燃燈於斗，象徵「點亮本命之光」、「上奏星君以求庇佑」。',
+            '而「總斗燈」者，為一整戶之主燈，總領全家成員之元辰光明。本宮自承祀以來，每於正月十二日「開燈安斗」之日，由天上聖母領銜，諸神共同坐鎮，為信眾闔家點燃此燈，象徵神光普照、一年平安。',
+            '安奉一座平安總斗燈，即代表此戶人家全年皆在聖母與諸神護佑之下，乃本宮最為重要、亦最為殊勝之祈福燈。'
+          ],
+          howto: [
+            { num: '壹', title: '線上或現場登記', desc: '可於本宮線上登記表填寫，或親自到廟、來電登記。' },
+            { num: '貳', title: '提供同住者資料', desc: '為一戶共同安奉，須為同住家人，提供姓名、生辰即可。' },
+            { num: '參', title: '完成隨喜功德', desc: '由本宮告知繳交方式（現場或匯款），完成後正式安奉。' },
+            { num: '肆', title: '本宮代為祈福', desc: '由本宮於諸神前安燈，全年代為早晚祝禱、護佑闔家。' }
+          ]
+        },
+        caili: {
+          icon: '財',
+          title: '財利斗（公斗）',
+          bless: '事業興旺 ・ 財源廣進',
+          desc: '奉請諸神護佑，事業順遂、財運亨通、招財進寶。為個人所安奉之公斗，專祈財祿。',
+          unit: '個人 ・ 不限額',
+          price: '$ 1,500',
+          period: '一年（自開燈日至次年）',
+          purposes: [
+            { tag: '事業', title: '事業順遂', desc: '工作職場諸事亨通、貴人相助、人際和合。' },
+            { tag: '財運', title: '財源廣進', desc: '正財、偏財並進，求財不漏，廣納四方財祿。' },
+            { tag: '生意', title: '生意興旺', desc: '商家、業務、自營者祈求業績興盛、客源綿延。' },
+            { tag: '招財', title: '招財進寶', desc: '化解漏財、破財之厄，招來吉祥之財，財庫穩固。' }
+          ],
+          story: [
+            '「財利斗」屬「公斗」之一，為個人所獨點之斗燈，奉於諸神壇前。古來商賈百業，無不以「財」為命脈，故有「點財燈以引財星」之俗。',
+            '財星者，掌人間財祿之神也。本宮主祀天上聖母，副祀關聖帝君、福德正神、五路財神等諸神，皆為信眾守護財運之主。',
+            '安奉一盞財利斗，即由本宮於諸神面前，以信眾姓名、生辰稟報疏文，懇請諸神護佑其事業順遂、財源不絕。',
+            '昔日商家於開春之際必至廟中點財燈，蓋以一年之計在於春，「燈火」象徵不滅之財運。今日無論受薪、自營、商號，皆可安奉此燈，以求一年事業順、財祿廣。'
+          ],
+          howto: [
+            { num: '壹', title: '個人填寫登記', desc: '提供本人姓名、生辰、聯絡方式。商號可額外註明字號。' },
+            { num: '貳', title: '可單獨或合奉', desc: '可與光明燈、總斗燈合奉；事業祈求者可同時登記補財庫。' },
+            { num: '參', title: '完成隨喜功德', desc: '依本宮指引完成繳費後，由執事人員確認安燈。' },
+            { num: '肆', title: '本宮代為稟報', desc: '由本宮於諸神前疏文上奏，全年代為祈求財運亨通。' }
+          ]
+        },
+        yuanchen: {
+          icon: '元',
+          title: '元辰斗（公斗）',
+          bless: '本命光明 ・ 諸事順遂',
+          desc: '為信眾本命元神祈福，照亮元辰、化解流年運勢之沖煞。古云「元辰光彩，諸事吉昌」。',
+          unit: '個人 ・ 不限額',
+          price: '$ 1,500',
+          period: '一年（自開燈日至次年）',
+          purposes: [
+            { tag: '元神', title: '元神光明', desc: '照亮本命元辰，使精神飽滿、心神安定。' },
+            { tag: '流年', title: '流年順遂', desc: '化解當年流年沖煞、不利之運，使一年諸事吉昌。' },
+            { tag: '健康', title: '身心康泰', desc: '元神穩固則身心俱安，可祈病體早癒、體魄康強。' },
+            { tag: '考運', title: '考運官運', desc: '考生、文職、求職者祈元辰光彩，思緒清明、貴人扶持。' }
+          ],
+          story: [
+            '「元辰」二字，道教謂之「人之本命真靈」。一人之元辰若明，則精神煥發、福壽綿長；若元辰晦暗，則百事不順、災病纏身。',
+            '故古來修真之士、士庶之家，皆於每年初春至廟中「點元辰燈」，以神光照亮本命之星，補益元神。',
+            '「元辰斗」即為此而設——於斗中燃一盞燈，由信眾稟報生辰八字，本宮在諸神前禮斗祈福，照亮其本命之光。',
+            '凡逢流年沖太歲、運勢起伏不定、心緒煩亂者，安奉一盞元辰燈，可助元神穩固、運勢回升。本宮於正月十二日開燈，即將此燈與信眾本命連結，至次年同日方止——一整年皆有神光相伴。'
+          ],
+          howto: [
+            { num: '壹', title: '提供本命資訊', desc: '須提供姓名、出生年月日（含時辰最佳），用以稟報元辰。' },
+            { num: '貳', title: '可合奉太歲燈', desc: '若當年值太歲、沖太歲，建議元辰燈與太歲燈合奉以加強護持。' },
+            { num: '參', title: '完成隨喜功德', desc: '依本宮指引完成繳費後，正式登入元辰燈名冊。' },
+            { num: '肆', title: '本宮代為祈福', desc: '由本宮於諸神前禮斗，全年早晚為信眾元辰祝禱。' }
+          ]
+        },
+        guangming: {
+          icon: '光',
+          title: '光明燈',
+          bless: '諸事光明 ・ 化解陰霾',
+          desc: '最為普及之祈福燈，象徵諸神光照，佑護全家身心安泰。一燈之微，承載一年之祈願。',
+          unit: '個人 ・ 不限額',
+          price: '$ 500',
+          period: '一年（自開燈日至次年）',
+          purposes: [
+            { tag: '光明', title: '諸事光明', desc: '前途明朗、心境開闊，使人生道路順遂無礙。' },
+            { tag: '化煞', title: '化解陰霾', desc: '化解低迷之氣、不順之厄，使陰霾退散。' },
+            { tag: '平安', title: '身心安泰', desc: '佑護身體健康、心神安定，避禍消災。' },
+            { tag: '入門', title: '入門首選', desc: '為最普及、最易發心之祈福燈，初學奉燈者最佳選擇。' }
+          ],
+          story: [
+            '「光明燈」之俗，為臺灣民間信仰中流傳最廣、歷時最久之點燈祈福制度。',
+            '其源可溯自佛教《華嚴經》「燈喻品」與道教科儀——燈，象徵「破除黑暗、照亮道路」。古人深信，於神明面前點燃一盞長明燈，可藉神光驅散運途之陰霾，使前途光明。',
+            '臺灣自清領時期以來，各地廟宇普建「光明燈座」，信眾於春節期間至廟登記，將姓名生辰書於燈牌之上，由廟方代為點燈、祝禱，一年不熄。',
+            '本宮承此古風，於每年正月十二日「開燈安斗」之日，由天上聖母領銜，將諸位信眾的光明燈一同點亮——燈火相連，象徵神光遍及一方信眾，使闔家身心安泰、諸事順遂。'
+          ],
+          howto: [
+            { num: '壹', title: '線上或現場登記', desc: '提供姓名、生辰、聯絡方式即可登記。' },
+            { num: '貳', title: '可為家人代點', desc: '可同時為家中長輩、子女登記多盞，逐一稟報。' },
+            { num: '參', title: '完成隨喜功德', desc: '每盞 $500，完成繳費後由本宮安奉於光明燈座。' },
+            { num: '肆', title: '本宮代為祝禱', desc: '由本宮於諸神前每日祝禱，至次年開燈日方止。' }
+          ]
+        },
+        taisui: {
+          icon: '歲',
+          title: '太歲燈',
+          bless: '化解犯沖 ・ 趨吉避凶',
+          desc: '為當年犯太歲、沖太歲、刑太歲、害太歲、破太歲信眾安奉。安太歲，化解年沖。',
+          unit: '個人 ・ 不限額',
+          price: '$ 500',
+          period: '一年（自開燈日至次年）',
+          purposes: [
+            { tag: '值太歲', title: '值太歲護持', desc: '當年生肖與太歲相同（本命年），祈太歲星君護持。' },
+            { tag: '沖太歲', title: '沖太歲化解', desc: '與當年生肖正沖者，化解運勢起伏、人事波折。' },
+            { tag: '刑害破', title: '刑害破化解', desc: '刑太歲、害太歲、破太歲者，化解口舌、是非、損失之厄。' },
+            { tag: '保平安', title: '保平安順遂', desc: '一年之中諸事戒慎、出入平安，趨吉避凶。' }
+          ],
+          story: [
+            '「太歲」一詞，源自古天文「歲星紀年」之法。歲星即木星，繞天一周約十二年，古人因觀其方位以紀年；後天文家為便於計算，假設一虛擬星辰與歲星反向而行，名曰「太歲」。',
+            '太歲所臨之方位，被視為當年最尊之神煞——順之則吉，逆之則凶。故有「太歲頭上不可動土」之諺。',
+            '道教將太歲神格化，奉為「六十甲子太歲星君」，每年輪值一位，主掌當年人間吉凶禍福。凡生肖與當值太歲相同（值太歲）、相沖（沖太歲）、相刑、相害、相破者，謂之「犯太歲」，運勢易有起伏。',
+            '「安太歲」之俗即由此而來——於春節期間，至廟中為當值太歲星君點燈奉香，以求一年護持平安。本宮於開燈安斗之日，將值年太歲星君與諸神同奉，並將安太歲信眾之姓名生辰一一稟報，使之全年皆受太歲君庇佑。',
+            '【2026 丙午年】 值太歲生肖為「馬」（且刑太歲），沖太歲為「鼠」、破太歲為「兔」、害太歲為「牛」——以上四生肖建議安太歲。'
+          ],
+          howto: [
+            { num: '壹', title: '確認生肖', desc: '查對當年值、沖、刑、害、破太歲之生肖；不確定可洽詢本宮。' },
+            { num: '貳', title: '提供本人資訊', desc: '提供姓名、生辰、生肖即可，由本宮代為登入太歲名冊。' },
+            { num: '參', title: '完成隨喜功德', desc: '每位 $500，建議與元辰燈合奉以加強護持。' },
+            { num: '肆', title: '本宮代為祝禱', desc: '由本宮於太歲星君前每日祝禱，至次年開燈日謝太歲。' }
+          ]
+        },
+        jigai: {
+          icon: '祭',
+          title: '祭 改',
+          bless: '改運化煞 ・ 重啟新局',
+          desc: '為信眾消災解厄、改換運勢，由本宮諸神共同加持。針對個人運勢低迷時行之。',
+          unit: '個人 ・ 每位辦理',
+          price: '$ 600',
+          period: '一次性 ・ 當場辦理',
+          purposes: [
+            { tag: '改運', title: '改換運勢', desc: '針對運勢低迷、諸事不順者，藉法事改換氣場。' },
+            { tag: '化煞', title: '化解煞氣', desc: '化解外來之煞、無形之擾，使心神安定。' },
+            { tag: '消災', title: '消災解厄', desc: '化解小人是非、官司口舌、健康陰霾。' },
+            { tag: '重啟', title: '重啟新局', desc: '重大事件前後（搬遷、轉職、病後）行之，以開新局。' }
+          ],
+          story: [
+            '「祭改」一稱「制改」、「補運」，為臺灣民間信仰中極具代表之解厄科儀。其源自道教「禳解」科儀與民俗「替身」之法。',
+            '古人深信，人之運途有起有伏；當運勢低迷、諸事不順、病痛纏身時，多因「身有所沖」、「魂魄不安」、「煞氣相侵」。故藉神明之力，行祭改之法以禳解。',
+            '其法之要：信眾備日常淺色衣物一件代表自身，由執事人員以衣物在信眾身上「掃掠」，將身上不潔、煞氣、衰運轉移至衣物之上；再由本宮諸神共同加持、燒化、送解，達到「祭去厄運、改換新運」之效。',
+            '本宮諸神——天上聖母領銜，關聖帝君、濟公禪師、福德正神、中壇元帥、謝范二將軍等共同坐鎮——故本宮祭改之法，可謂諸神共同加持，殊為靈驗。',
+            '凡逢流年不利、家中接連不順、病痛纏身、夢魘不寧、重大事件前後者，皆可至本宮辦理祭改，由執事人員當場為信眾加持。'
+          ],
+          howto: [
+            { num: '壹', title: '備日常淺色衣物', desc: '須備平時穿著之淺色（白、米、灰）衣物一件，作為祭改替身。' },
+            { num: '貳', title: '本人到場辦理', desc: '須由本人親至本宮辦理，由執事人員當場掃身加持。' },
+            { num: '參', title: '隨喜功德', desc: '每位 $600，包含疏文、加持、燒化等所有程序。' },
+            { num: '肆', title: '諸神共同加持', desc: '由天上聖母領銜，諸神共同加持，當場完成祭改科儀。' }
+          ]
+        }
+      };
+
+      const ORDER = ['pingan', 'caili', 'yuanchen', 'guangming', 'taisui', 'jigai'];
+
+      // === 取得 URL 參數 ===
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('light');
+      if (!LIGHTS[key]) key = 'pingan';
+      const data = LIGHTS[key];
+
+      // === 填入 Banner ===
+      document.getElementById('lightTitle').textContent = data.title;
+      document.getElementById('lightSub').textContent = data.bless;
+      document.title = data.title + '｜台北建安宮 艋舺雙園聖母會';
+
+      // === 填入 Summary ===
+      document.getElementById('summaryIcon').textContent = data.icon;
+      document.getElementById('summaryName').textContent = data.title;
+      document.getElementById('summaryBless').textContent = data.bless;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('summaryUnit').textContent = data.unit;
+      document.getElementById('summaryPrice').textContent = data.price;
+      document.getElementById('summaryPeriod').textContent = data.period;
+
+      // === 填入 功用 ===
+      const purposeGrid = document.getElementById('purposeGrid');
+      purposeGrid.innerHTML = data.purposes.map(p => `
+        <div class="ld-purpose-card">
+          <div class="ld-purpose-tag">${p.tag}</div>
+          <h3 class="ld-purpose-title">${p.title}</h3>
+          <p class="ld-purpose-desc">${p.desc}</p>
+        </div>
+      `).join('');
+
+      // === 填入 由來故事 ===
+      const storyContent = document.getElementById('storyContent');
+      storyContent.innerHTML = data.story.map(p => `<p>${p}</p>`).join('');
+
+      // === 填入 點燈方式 ===
+      const howtoGrid = document.getElementById('howtoGrid');
+      howtoGrid.innerHTML = data.howto.map(h => `
+        <div class="ld-howto-card">
+          <div class="ld-howto-num">${h.num}</div>
+          <div class="ld-howto-title">${h.title}</div>
+          <p class="ld-howto-desc">${h.desc}</p>
+        </div>
+      `).join('');
+
+      // === 填入 CTA ===
+      document.getElementById('ctaTitle').textContent =
+        '為自己 ・ 為家人 ・ 安奉一盞「' + data.title + '」';
+
+      // === 填入 其他燈品 ===
+      const othersGrid = document.getElementById('othersGrid');
+      othersGrid.innerHTML = ORDER
+        .filter(k => k !== key)
+        .map(k => {
+          const o = LIGHTS[k];
+          return `
+            <a class="ld-other-card" href="light-detail.html?light=${k}">
+              <div class="ld-other-icon">${o.icon}</div>
+              <div class="ld-other-name">${o.title}</div>
+              <div class="ld-other-bless">${o.bless}</div>
+            </a>
+          `;
+        }).join('');
+
+      // === 回到頂部 ===
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>
