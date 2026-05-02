@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>月令介紹｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮 丙午年十二月令介紹：每月節氣、本宮重要祭典、農時農俗與民俗節慶。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-month-detail">
+
+  <header class="site-header site-header-solid">
+    <a class="brand" href="index.html" onclick="if(history.length>1){history.back();return false}" aria-label="返回上一頁" title="返回上一頁">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html">香客服務</a>
+      <a href="almanac.html" class="active">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner month-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag">月 ・ 令 ・ 介 ・ 紹</div>
+      <h1 class="banner-title" id="monthTitle">月令</h1>
+      <div class="banner-sub" id="monthSub">節氣 ・ 祭典 ・ 民俗</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="almanac.html#section-monthly">← 返回 年曆 ・ 十二月令</a>
+    </div>
+  </div>
+
+  <!-- 月份摘要 -->
+  <section class="content-section md-summary-section">
+    <div class="section-inner">
+      <div class="md-summary-card">
+        <div class="md-summary-num" id="summaryNum">正</div>
+        <div class="md-summary-body">
+          <h2 class="md-summary-name" id="summaryName">正月</h2>
+          <div class="md-summary-alias" id="summaryAlias">端月</div>
+          <p class="md-summary-desc" id="summaryDesc"></p>
+          <div class="md-summary-meta">
+            <div class="md-meta-item">
+              <div class="md-meta-label">國曆對應</div>
+              <div class="md-meta-value" id="summarySolar">2026 / 02 / 17 起</div>
+            </div>
+            <div class="md-meta-item">
+              <div class="md-meta-label">節 氣</div>
+              <div class="md-meta-value md-meta-term" id="summaryTerm">立春 ・ 雨水</div>
+            </div>
+            <div class="md-meta-item">
+              <div class="md-meta-label">本月分類</div>
+              <div class="md-meta-value" id="summaryType">祭月</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 月之意涵 -->
+  <section class="content-section md-intro-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">月 之 意 涵</div>
+        <h2 class="section-title" id="introTitle">月令源流</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-story-content" id="introContent"></div>
+    </div>
+  </section>
+
+  <!-- 節氣介紹 -->
+  <section class="content-section md-terms-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">本 月 節 氣</div>
+        <h2 class="section-title">二十四節氣</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="md-terms-grid" id="termsGrid"></div>
+    </div>
+  </section>
+
+  <!-- 本月祭典 -->
+  <section class="content-section md-festivals-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">本 月 祭 典</div>
+        <h2 class="section-title" id="festivalTitle">本宮重要日</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="md-festivals-grid" id="festivalsGrid"></div>
+    </div>
+  </section>
+
+  <!-- 民俗風物 -->
+  <section class="content-section md-folk-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">民 俗 ・ 風 物</div>
+        <h2 class="section-title">月時月情</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="md-folk-content" id="folkContent"></div>
+    </div>
+  </section>
+
+  <!-- 12 月導航 -->
+  <section class="content-section md-nav-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">十 二 月 令</div>
+        <h2 class="section-title">逐月瀏覽</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="md-nav-grid" id="monthsNav"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      const MONTHS = {
+        1: {
+          num: '正', name: '正 月', alias: '端月 ・ 寅月 ・ 孟春',
+          solar: '2026 / 02 / 17 起',
+          term: '立春 ・ 雨水',
+          type: '祭月 ・ 一年之首',
+          desc: '農曆一年之始，亦稱「端月」。新春正月為一年運勢開端，本宮於此月舉辦多場法會，包含拜天公、開燈安斗，乃一年之中最為熱鬧莊嚴之月。',
+          intro: [
+            '正月，乃農曆一年之首月，俗稱「端月」、「孟春」、「初月」。地支屬寅，五行屬木——萬物復甦、生機勃發之始。',
+            '正月最重要之日為「春節」（正月初一），俗稱「過年」。古云：「一年之計在於春」，凡新一年之計畫、運勢、希望，皆於此月奠基。',
+            '本月節氣為「立春」、「雨水」——立春為廿四節氣之首，意萬物之初；雨水則為春雨初降、滋潤大地之始。',
+            '本宮於正月舉辦多場重要祭典：初八子時補財庫、初九恭祝玉皇大帝聖誕、十二日開燈安斗、十五日恭祝天官大帝聖誕——一連串科儀，使一年之始皆受神光普照。'
+          ],
+          terms: [
+            { name: '立春', date: '2026 / 02 / 04', desc: '春之始，萬物復甦。古有「咬春」（吃春餅）、「打春牛」之俗，象徵新春啟動、農耕將至。' },
+            { name: '雨水', date: '2026 / 02 / 19', desc: '春雨初降、滋潤萬物。北方仍有寒意，南方草木已青。古諺：「雨水有雨百陰、大春小春一片青」。' }
+          ],
+          festivals: [
+            { date: '正月初八子時', title: '補財庫', desc: '玉皇聖誕前夕子時舉行，恭祝玉皇、補回財庫。', link: 'ritual-detail.html?ritual=bucaiku' },
+            { date: '正月初九', title: '玉皇大帝聖誕（天公生）', desc: '天公生為臺灣最重要祭典之一。', link: 'deity-detail.html?deity=yuhuang' },
+            { date: '正月十二', title: '開燈安斗', desc: '本宮歲時祭典 ・ 點亮平安總斗、財利、元辰、光明、太歲燈。', link: 'ritual-detail.html?ritual=kaideng' },
+            { date: '正月十五', title: '天官大帝聖誕（上元節）', desc: '元宵節 ・ 天官賜福。', link: 'deity-detail.html?deity=tianguan' }
+          ],
+          folk: [
+            '【春節】 正月初一，闔家團圓、貼春聯、放鞭炮、包紅包、拜年。臺灣俗諺：「初一早、初二早、初三睏到飽」。',
+            '【元宵節】 正月十五，賞花燈、吃元宵、猜燈謎、放天燈。本宮以開燈安斗法會迎接此節，神光相伴。',
+            '【天公生】 正月初九，家家戶戶於子時拜天公。閩南俗諺：「天公疼憨人」——敬天行善必有福報。',
+            '【吃甘蔗】 正月初九拜天公必備甘蔗——傳鄭成功部下藏於甘蔗園倖免於難，事後以甘蔗祭天公答謝。'
+          ]
+        },
+        2: {
+          num: '二', name: '二 月', alias: '杏月 ・ 卯月 ・ 仲春',
+          solar: '2026 / 03 / 19 起',
+          term: '驚蟄 ・ 春分',
+          type: '祭月 ・ 春耕之始',
+          desc: '農曆二月，俗稱「杏月」（杏花開）。為春耕將始之月，本宮於二月初一同祀濟公禪師、濟公三禪師、福德正神三神聖誕，二月初二為土地公頭牙。',
+          intro: [
+            '二月為農曆春季第二月，俗稱「杏月」（杏花盛開）、「仲春」、「卯月」（地支屬卯）。',
+            '本月節氣為「驚蟄」、「春分」——驚蟄意春雷響起、蟄伏萬物驚醒；春分為晝夜均等、寒暑均平之日。',
+            '本月本宮重要祭典為「二月初一」濟公禪師、濟公三禪師、福德正神聖誕同日祝壽；以及「二月初二」福德正神聖誕（頭牙）——商家最重要之祭祀日。',
+            '二月亦為春耕之始，農諺云：「二月二、龍抬頭」——意土地公甦醒，農作將始。'
+          ],
+          terms: [
+            { name: '驚蟄', date: '2026 / 03 / 06', desc: '春雷響起、蟄蟲驚醒、萬物開始活動。古有「打小人」之俗，藉以驅除惡蟲。' },
+            { name: '春分', date: '2026 / 03 / 21', desc: '晝夜均等、寒暑均平。古云：「春分秋分、晝夜平分」。此後白晝漸長。' }
+          ],
+          festivals: [
+            { date: '二月初一', title: '濟公禪師聖誕', desc: '同祀濟公三禪師、福德正神 ・ 三神同日聖誕。', link: 'deity-detail.html?deity=jigong' },
+            { date: '二月初一', title: '濟公三禪師聖誕', desc: '濟公活佛分身 ・ 與禪師同日。', link: 'deity-detail.html?deity=jigong3' },
+            { date: '二月初一', title: '福德正神同祀', desc: '土地公與濟公同壇受祝壽。', link: 'deity-detail.html?deity=tudigong' },
+            { date: '二月初二', title: '福德正神聖誕（頭牙）', desc: '土地公生 ・ 頭牙 ・ 商家最重要祭日。', link: 'deity-detail.html?deity=tudigong' }
+          ],
+          folk: [
+            '【頭牙】 二月初二日為一年「頭牙」，商家於此日祭拜土地公，祈一整年生意興旺、財源廣進。',
+            '【二月二、龍抬頭】 古諺謂土地神甦醒。北方俗有「剃龍頭」（理髮）之俗，以求一年好運。',
+            '【花朝節】 二月十五為「花朝節」，賞花、踏青、插花。古云：「花朝月夕，世稱良辰」。'
+          ]
+        },
+        3: {
+          num: '三', name: '三 月', alias: '桃月 ・ 辰月 ・ 季春',
+          solar: '2026 / 04 / 17 起',
+          term: '清明 ・ 穀雨',
+          type: '主祀盛典 ・ 媽祖月',
+          desc: '農曆三月為本宮一年之中最盛大祭典之月——三月廿三日為主祀天上聖母（媽祖）聖誕千秋。亦為「清明祭祖」之月，乃春季最莊嚴之季月。',
+          intro: [
+            '三月為農曆春季最末月，俗稱「桃月」（桃花盛開）、「季春」、「辰月」。',
+            '本月節氣為「清明」、「穀雨」——清明為祭祖掃墓之日，穀雨為春雨潤穀、農時將至。',
+            '本宮一年之中最盛大祭典即為「三月廿三」天上聖母聖誕千秋。媽祖為本宮主祀神明，每逢聖誕，由委員會統籌、敬邀友宮蒞臨參香、獻戲酬神，盛況空前。',
+            '三月亦為「媽祖月」——臺灣各地媽祖廟皆於此月舉辦聖誕大典、進香遶境，為一年之中媽祖信仰最為熱鬧之時。'
+          ],
+          terms: [
+            { name: '清明', date: '2026 / 04 / 05', desc: '萬物清淨明潔之意。為廿四節氣中唯一兼具「節氣」與「節日」雙重意義之日，乃中華民族祭祖掃墓之日。' },
+            { name: '穀雨', date: '2026 / 04 / 20', desc: '春雨潤穀之意。古云：「穀雨前後，種瓜種豆」。是春季最後一個節氣，將入夏。' }
+          ],
+          festivals: [
+            { date: '三月廿三', title: '天上聖母聖誕（主祀）', desc: '本宮一年之中最盛大祭典 ・ 媽祖聖誕千秋。', link: 'deity-detail.html?deity=mazu' },
+            { date: '三月廿三', title: '聖誕祝壽大典', desc: '本年度活動詳情與登記。', link: 'news-detail.html?news=shengdan' }
+          ],
+          folk: [
+            '【清明節】 國定假日。掃墓、祭祖、踏青、放風箏。古有「清明前後種瓜種豆」、「植樹造林莫過清明」之諺。',
+            '【上巳節】 三月初三，古「禊」節（祓禊去除不祥）。後演變為踏青、賞花、宴飲之日。',
+            '【媽祖遶境】 三月廿三前後，臺灣各地媽祖廟舉辦遶境出巡，信眾隨駕步行——為臺灣最具代表之宗教盛事。',
+            '【吃潤餅】 清明節傳統食物。象徵慎終追遠、春日嚐新。'
+          ]
+        },
+        4: {
+          num: '四', name: '四 月', alias: '槐月 ・ 巳月 ・ 孟夏',
+          solar: '2026 / 05 / 17 起',
+          term: '立夏 ・ 小滿',
+          type: '平月 ・ 夏之始',
+          desc: '農曆四月，俗稱「槐月」（槐花盛開）。為夏季之始，本宮本月為平月（無重大祭典），但仍可至本宮參拜諸神。本月節氣為立夏與小滿。',
+          intro: [
+            '四月為農曆夏季第一月，俗稱「槐月」、「孟夏」、「巳月」。地支屬巳，五行屬火——天氣轉熱，萬物茂盛。',
+            '本月節氣為「立夏」、「小滿」——立夏為夏之始，小滿為麥穗將熟、未及全滿之意。',
+            '本月本宮無重大祭典，列為「平月」。但信眾仍可至本宮參拜諸神、安點諸燈、祈福求安。',
+            '佛教四月初八為「浴佛節」（釋迦牟尼佛聖誕），各佛寺舉辦浴佛法會。本宮雖以道教信仰為主，亦敬奉佛家精神。'
+          ],
+          terms: [
+            { name: '立夏', date: '2026 / 05 / 05', desc: '夏之始，萬物進入旺盛生長期。古有「立夏稱重」（測小兒體重）之俗，祈夏日不損身。' },
+            { name: '小滿', date: '2026 / 05 / 21', desc: '麥穗將滿、未及全滿。古諺：「小滿不滿、麥有一險」——小滿時節仍須警慎農作。' }
+          ],
+          festivals: [
+            { date: '四月初八', title: '釋迦牟尼佛聖誕（浴佛節）', desc: '佛教重要節日 ・ 各佛寺舉辦浴佛法會。', link: '' }
+          ],
+          folk: [
+            '【浴佛節】 四月初八為釋迦牟尼佛誕辰。佛寺以香湯沐浴佛像，象徵滌淨眾生之罪業。',
+            '【立夏稱重】 古有「立夏不下，犁耙高掛」之諺。意立夏不雨則乾旱影響農作。',
+            '【吃龜苓膏】 夏日將至，臺灣民間有吃涼補（龜苓膏、仙草等）之俗，以解夏熱。'
+          ]
+        },
+        5: {
+          num: '五', name: '五 月', alias: '榴月 ・ 午月 ・ 仲夏',
+          solar: '2026 / 06 / 15 起',
+          term: '芒種 ・ 夏至',
+          type: '民俗月 ・ 端午節',
+          desc: '農曆五月，俗稱「榴月」（石榴花盛開），為端午節之月。古以五月為「惡月」，需以艾草、菖蒲、雄黃等避邪驅毒。本月節氣為芒種與夏至。',
+          intro: [
+            '五月為農曆夏季第二月，俗稱「榴月」、「仲夏」、「午月」。地支屬午——夏至晝最長、夜最短。',
+            '本月節氣為「芒種」、「夏至」——芒種為麥熟收穫、稻將播種之時；夏至為一年白晝最長、陽氣最盛之日。',
+            '五月最重要之日為「五月初五端午節」——紀念屈原、賽龍舟、吃粽子、掛艾草。古以五月為「惡月」、初五為「惡日」，需以多種方式驅邪避毒。',
+            '本宮於五月舉辦端午平安祭，信眾可至本宮取得艾草、菖蒲，祈一夏平安、避邪驅毒。'
+          ],
+          terms: [
+            { name: '芒種', date: '2026 / 06 / 06', desc: '麥熟收穫、稻將播種。「芒」指麥穗之芒，「種」指稻作播種，乃農忙之時。' },
+            { name: '夏至', date: '2026 / 06 / 21', desc: '一年白晝最長、陽氣最盛之日。古有「冬至餃子、夏至麵」之俗。' }
+          ],
+          festivals: [
+            { date: '五月初五', title: '端午節', desc: '紀念屈原、賽龍舟、吃粽子、掛艾草避邪。', link: '' }
+          ],
+          folk: [
+            '【端午節】 五月初五，紀念戰國楚國詩人屈原投江。賽龍舟、吃粽子、掛艾草、佩香囊、繫五彩絲、喝雄黃酒。',
+            '【惡月驅邪】 古以五月為「惡月」（蛇蟲毒物孳生），五月初五為「惡日」。掛艾草菖蒲於門、佩香囊以驅邪。',
+            '【午時水】 端午節午時取水，相傳能治百病、洗去厄運。臺灣民間至今仍有此俗。',
+            '【立蛋】 端午午時立蛋，相傳能立穩者一年好運。'
+          ]
+        },
+        6: {
+          num: '六', name: '六 月', alias: '荷月 ・ 未月 ・ 季夏',
+          solar: '2026 / 07 / 14 起',
+          term: '小暑 ・ 大暑',
+          type: '祭月 ・ 武聖月',
+          desc: '農曆六月，俗稱「荷月」（荷花盛開）。為夏季最末月，亦為一年中最熱之月。本宮於六月廿四日恭祝關聖帝君聖誕，誠摯邀請信眾共襄盛舉。',
+          intro: [
+            '六月為農曆夏季最末月，俗稱「荷月」、「季夏」、「未月」。',
+            '本月節氣為「小暑」、「大暑」——小暑指天氣漸熱、未到極熱；大暑為一年中最熱之時。',
+            '本月本宮重要祭典為「六月廿四」恭祝關聖帝君聖誕千秋。關公為本宮開基同祀神尊之一，威鎮乾坤、調和正氣。',
+            '本月亦為佛教「觀音菩薩成道」之月（六月十九日），各佛寺舉辦慶典。'
+          ],
+          terms: [
+            { name: '小暑', date: '2026 / 07 / 07', desc: '天氣漸熱、未到極熱。古諺：「小暑大暑，上蒸下煮」。為農作物蓄勢生長之時。' },
+            { name: '大暑', date: '2026 / 07 / 23', desc: '一年中最熱之時。古云：「大暑前後熱死老牛」，意暑氣之盛。古有「曬伏」、「飲伏茶」之俗。' }
+          ],
+          festivals: [
+            { date: '六月廿四', title: '關聖帝君聖誕', desc: '武聖聖誕、本宮開基同祀神尊。', link: 'deity-detail.html?deity=guangong' },
+            { date: '六月十九', title: '觀音菩薩成道日', desc: '佛教重要節日。', link: '' }
+          ],
+          folk: [
+            '【三伏天】 大暑前後為一年最熱之「三伏天」，分頭伏、中伏、末伏。古有「冬病夏治」（三伏貼）之說。',
+            '【關公磨刀】 民間傳說六月廿四關公磨刀，磨刀霍霍向天，故此日多有大雨。臺灣俗稱「磨刀雨」。',
+            '【商家拜關公】 關公為武財神，商家尤重六月廿四祭拜，祈生意興隆、正氣護身。'
+          ]
+        },
+        7: {
+          num: '七', name: '七 月', alias: '巧月 ・ 申月 ・ 孟秋',
+          solar: '2026 / 08 / 13 起',
+          term: '立秋 ・ 處暑',
+          type: '盛典月 ・ 中元普渡',
+          desc: '農曆七月，俗稱「鬼月」、「巧月」。為本宮年度盛事「慶讚中元普渡法會」之月，冥陽兩利、超薦普渡。本月節氣為立秋與處暑，秋意漸現。',
+          intro: [
+            '七月為農曆秋季第一月，俗稱「巧月」、「孟秋」、「申月」。民間俗稱「鬼月」——傳七月初一鬼門開、七月廿九鬼門關。',
+            '本月節氣為「立秋」、「處暑」——立秋為秋之始，處暑指暑氣將盡、即將轉涼。',
+            '本月本宮最重要祭典為「中元普渡法會」——冥陽兩利、超薦普渡無主孤魂、祈求國泰民安、風調雨順。為本宮一年中最盛大法會之一。',
+            '七月初七為「七夕」（乞巧節），七月十五為「中元節」（地官赦罪之日）。'
+          ],
+          terms: [
+            { name: '立秋', date: '2026 / 08 / 07', desc: '秋之始。古有「立秋三場雨、秕稻變成米」之諺。立秋後天氣漸涼，農作物進入成熟期。' },
+            { name: '處暑', date: '2026 / 08 / 23', desc: '暑氣將盡、即將轉涼。「處」者，止也。古云：「處暑天還暑，好似秋老虎」，提示仍需防熱。' }
+          ],
+          festivals: [
+            { date: '七月十五', title: '中元節 ・ 慶讚普渡法會', desc: '本宮年度盛事 ・ 冥陽兩利、超薦普渡。', link: 'news-detail.html?news=shengdan' },
+            { date: '七月初七', title: '七夕（乞巧節）', desc: '牛郎織女相會 ・ 婦女乞巧之夜。', link: '' }
+          ],
+          folk: [
+            '【鬼月】 七月為「鬼月」，民間有諸多禁忌：不嫁娶、不搬家、不游泳、不夜歸。',
+            '【中元普渡】 七月十五為地官赦罪之日，家家戶戶備供品、燃普渡，使無主孤魂得享。',
+            '【七夕】 七月初七為「七夕」，牛郎織女相會之日。婦女乞巧、祈情緣，亦為「中國情人節」。',
+            '【放水燈】 中元節放水燈，引水中孤魂上岸受供。臺灣基隆、宜蘭等地至今仍有此俗。'
+          ]
+        },
+        8: {
+          num: '八', name: '八 月', alias: '桂月 ・ 酉月 ・ 仲秋',
+          solar: '2026 / 09 / 11 起',
+          term: '白露 ・ 秋分',
+          type: '民俗月 ・ 中秋節',
+          desc: '農曆八月，俗稱「桂月」（桂花盛開）。為中秋節之月，闔家團圓、賞月、吃月餅。本宮本月雖無大型法會，但為本宮土地公另一聖誕（八月十五）。',
+          intro: [
+            '八月為農曆秋季第二月，俗稱「桂月」、「仲秋」、「酉月」。地支屬酉，五行屬金。',
+            '本月節氣為「白露」、「秋分」——白露為晨間草木有露珠，秋意漸濃；秋分為晝夜均等之日，與春分相對。',
+            '本月最重要之日為「八月十五中秋節」——闔家團圓、賞月、吃月餅、烤肉（臺灣特有民俗）。',
+            '八月十五亦為福德正神（土地公）另一聖誕——農諺云：「春祈秋報」，春耕祈豐、秋收答謝。'
+          ],
+          terms: [
+            { name: '白露', date: '2026 / 09 / 07', desc: '晨間草木有露珠、秋意漸濃。古云：「白露白迷迷、秋分稻秀齊」。' },
+            { name: '秋分', date: '2026 / 09 / 23', desc: '晝夜均等、寒暑平分。秋分後白晝漸短，是收穫之時。' }
+          ],
+          festivals: [
+            { date: '八月十五', title: '中秋節', desc: '闔家團圓、賞月、吃月餅、臺灣有烤肉之俗。', link: '' },
+            { date: '八月十五', title: '福德正神（中秋祭土地）', desc: '春祈秋報 ・ 答謝土地神之豐收。', link: 'deity-detail.html?deity=tudigong' }
+          ],
+          folk: [
+            '【中秋節】 八月十五，三大傳統節日之一。賞月、吃月餅、嫦娥奔月、吳剛伐桂、玉兔搗藥之傳說。',
+            '【臺灣中秋烤肉】 1980 年代起臺灣特有之中秋習俗。源於廣告而成風尚，闔家戶外團聚，別有趣味。',
+            '【嫦娥奔月】 古神話 ・ 嫦娥服后羿不死藥、飛升月宮。是日舉家賞月即為紀念此傳說。',
+            '【秋報土地】 八月十五農作收穫之時，農家備供品答謝土地公，與二月初二「春祈」相對。'
+          ]
+        },
+        9: {
+          num: '九', name: '九 月', alias: '菊月 ・ 戌月 ・ 季秋',
+          solar: '2026 / 10 / 11 起',
+          term: '寒露 ・ 霜降',
+          type: '祭月 ・ 三太子月',
+          desc: '農曆九月，俗稱「菊月」（菊花盛開）、為秋季最末月。本宮於九月初九恭祝中壇元帥（三太子）聖誕千秋。九月初九亦為傳統「重陽節」，敬老登高之日。',
+          intro: [
+            '九月為農曆秋季最末月，俗稱「菊月」、「季秋」、「戌月」。',
+            '本月節氣為「寒露」、「霜降」——寒露為露水漸寒、即將結霜；霜降為秋之最末，意冬將至。',
+            '本月本宮重要祭典為「九月初九」恭祝中壇元帥（三太子）聖誕千秋。三太子為本宮開基同祀神尊之一，鎮守中營、護壇守境。',
+            '九月初九亦為傳統「重陽節」（雙陽節、敬老節、登高節）——古云「九九重陽」，乃陽氣至盛之日。'
+          ],
+          terms: [
+            { name: '寒露', date: '2026 / 10 / 08', desc: '露水漸寒、即將結霜。古云：「寒露不算冷、霜降變了天」。' },
+            { name: '霜降', date: '2026 / 10 / 23', desc: '秋之最末節氣、意冬將至。地表開始結霜，農作物進入收尾期。' }
+          ],
+          festivals: [
+            { date: '九月初九', title: '中壇元帥聖誕', desc: '三太子千秋、本宮開基同祀神尊。', link: 'deity-detail.html?deity=nezha' },
+            { date: '九月初九', title: '重陽節（敬老節）', desc: '登高、賞菊、敬老、佩茱萸。', link: '' }
+          ],
+          folk: [
+            '【重陽節】 九月初九，「九」為陽數，雙九重陽，故曰「重陽」。古有「登高」、「賞菊」、「佩茱萸」、「飲菊花酒」之俗。',
+            '【敬老節】 重陽節後現代化轉為「敬老節」、「老人節」，子女陪伴長輩、表達孝心。',
+            '【賞菊】 菊為「九月之花」、四君子之一。重陽賞菊，象徵高潔、長壽。',
+            '【拜契太子】 九月初九三太子聖誕，家有兒童者可至本宮為孩童拜契太子爺，求其終身護佑。'
+          ]
+        },
+        10: {
+          num: '十', name: '十 月', alias: '陽月 ・ 亥月 ・ 孟冬',
+          solar: '2026 / 11 / 09 起',
+          term: '立冬 ・ 小雪',
+          type: '平月 ・ 冬之始',
+          desc: '農曆十月，俗稱「陽月」、「孟冬」。為冬季之始，本宮本月為平月（無重大祭典）。本月節氣為立冬與小雪——天氣轉冷，民間有立冬「補冬」之俗。',
+          intro: [
+            '十月為農曆冬季第一月，俗稱「陽月」、「孟冬」、「亥月」。',
+            '本月節氣為「立冬」、「小雪」——立冬為冬之始，小雪意北方已有飄雪，天氣轉寒。',
+            '本月本宮無重大祭典，列為「平月」。但信眾仍可至本宮參拜諸神，特別是冬季祈福、家宅平安。',
+            '十月十五日為「下元節」（水官解厄之日）——三官大帝中之水官大帝聖誕，為一年中最末之三元節。'
+          ],
+          terms: [
+            { name: '立冬', date: '2026 / 11 / 07', desc: '冬之始，萬物收藏、進入蟄伏期。古有「立冬補冬」之俗，吃進補食物以禦寒。' },
+            { name: '小雪', date: '2026 / 11 / 22', desc: '北方已有飄雪、天氣轉寒。臺灣雖少雪，但氣溫顯著下降，宜開始增添衣物。' }
+          ],
+          festivals: [
+            { date: '十月十五', title: '下元節（水官解厄）', desc: '三官大帝之水官聖誕、解厄之日。', link: '' }
+          ],
+          folk: [
+            '【立冬補冬】 立冬之日吃麻油雞、薑母鴨、羊肉爐等溫補食物。臺灣俗云：「立冬補冬，補嘴空」。',
+            '【下元節】 十月十五為「下元節」，是三元節之最末。水官解厄，民間於此日祈消災、解厄。',
+            '【冬季祈福】 入冬之後，家宅平安、健康、保暖等需求增加，本宮信眾常於此月安點諸燈、祈一冬平安。'
+          ]
+        },
+        11: {
+          num: '冬', name: '十一月', alias: '葭月 ・ 子月 ・ 仲冬',
+          solar: '2026 / 12 / 09 起',
+          term: '大雪 ・ 冬至',
+          type: '節氣月 ・ 冬至',
+          desc: '農曆十一月，俗稱「葭月」（蘆葦花期）、「子月」、「仲冬」。本月最重要之節氣為「冬至」——一年中黑夜最長之日，古云「冬至大如年」。',
+          intro: [
+            '十一月為農曆冬季第二月，俗稱「葭月」、「仲冬」、「子月」。地支屬子，為一日之初。',
+            '本月節氣為「大雪」、「冬至」——大雪意降雪將大、寒冬將至；冬至為一年中黑夜最長、白晝最短之日。',
+            '冬至為廿四節氣中最重要之一日，古云「冬至大如年」。古以冬至為新年之始，至漢武帝改用太初曆方以正月初一為新年。',
+            '臺灣冬至有「搓湯圓」、「吃湯圓」之俗，俗云「吃了湯圓多一歲」——象徵新一年之開始。'
+          ],
+          terms: [
+            { name: '大雪', date: '2026 / 12 / 07', desc: '降雪將大、寒冬將至。古云：「大雪不凍、驚蟄不開」，意大雪不冷則來年農事不順。' },
+            { name: '冬至', date: '2026 / 12 / 22', desc: '一年中黑夜最長之日。古云「冬至一陽生」，自此白晝漸長，陽氣回升。' }
+          ],
+          festivals: [
+            { date: '十一月 ・ 冬至', title: '冬至', desc: '吃湯圓、祭祖、家庭團聚。古云「冬至大如年」。', link: '' }
+          ],
+          folk: [
+            '【冬至大如年】 古以冬至為新年之始。至漢武帝《太初曆》改以立春後正月初一為新年，但冬至仍受重視。',
+            '【吃湯圓】 冬至吃湯圓象徵團圓、添歲。臺灣俗云「冬至圓仔吃落加一歲」。',
+            '【冬至祭祖】 古有冬至祭祖之俗，南方稱「謝冬」、北方稱「送寒衣」（為祖先送禦寒衣物）。',
+            '【一陽生】 古云「冬至一陽生」——冬至雖為陰極，卻是陽氣回升之始。修道者於此日打坐養生、納陽。'
+          ]
+        },
+        12: {
+          num: '臘', name: '臘 月', alias: '梅月 ・ 丑月 ・ 季冬',
+          solar: '2027 / 01 / 08 起',
+          term: '小寒 ・ 大寒',
+          type: '盛典月 ・ 年末月',
+          desc: '農曆臘月，俗稱「梅月」（梅花盛開）。為一年最末月，本宮於臘月廿八「小年夜」舉辦拜天公、叩謝極無極聖祖。本月節氣為小寒與大寒，乃一年中最冷之月。',
+          intro: [
+            '臘月為農曆冬季最末月，亦為一年最末月。俗稱「梅月」、「季冬」、「丑月」。',
+            '本月節氣為「小寒」、「大寒」——小寒指天氣將冷未到極冷；大寒為一年中最冷之時。古諺：「小寒大寒、冷成冰團」。',
+            '本宮於臘月廿八「小年夜」舉辦拜天公、叩謝極無極聖祖科儀——一年將盡，叩謝聖祖一年護佑、迎接新春將臨。',
+            '臘月最重要之節日為「臘月廿三/廿四」送神（送灶神）、「除夕」（年三十）團圓飯、守歲、發紅包。'
+          ],
+          terms: [
+            { name: '小寒', date: '2027 / 01 / 06', desc: '天氣將冷、未到極冷。古諺：「小寒勝大寒，常見不見鮮」。' },
+            { name: '大寒', date: '2027 / 01 / 20', desc: '一年中最冷之時。古云：「大寒不寒、人馬不安」——意大寒不冷則來年瘟疫頻起。' }
+          ],
+          festivals: [
+            { date: '臘月廿八', title: '小年夜拜天公 ・ 叩謝極無極聖祖', desc: '一年將盡 ・ 叩謝聖祖一年護佑。', link: 'deity-detail.html?deity=wuji' },
+            { date: '臘月廿三/廿四', title: '送神（送灶）', desc: '灶神上天奏報、家家送神。', link: '' },
+            { date: '除夕（年三十）', title: '除夕團圓', desc: '團圓飯、守歲、發紅包、貼春聯。', link: '' }
+          ],
+          folk: [
+            '【小年夜】 臘月廿八（部分地區為廿三、廿四）為「小年」，家家準備過年事宜——大掃除、貼春聯、辦年貨。',
+            '【送神】 臘月廿三/廿四送灶神上天，奏報一家一年善惡。家家備湯圓、糖瓜（甜灶神之口、不奏惡言）。',
+            '【除夕】 年三十晚上，闔家團圓、吃年夜飯、守歲、發壓歲錢、貼春聯放鞭炮——迎接新年。',
+            '【年獸傳說】 古傳年獸出沒於除夕，怕紅、怕光、怕響——故有貼紅春聯、點燈守夜、放鞭炮之俗。'
+          ]
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      let key = parseInt(params.get('month'));
+      if (!MONTHS[key]) key = 1;
+      const data = MONTHS[key];
+
+      // Banner
+      document.getElementById('monthTitle').textContent = data.name;
+      document.getElementById('monthSub').textContent = data.term + ' ・ ' + data.alias.split(' ・ ')[0];
+      document.title = data.name + '｜農民曆 ・ 台北建安宮';
+
+      // Summary
+      document.getElementById('summaryNum').textContent = data.num;
+      document.getElementById('summaryName').textContent = data.name;
+      document.getElementById('summaryAlias').textContent = data.alias;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('summarySolar').textContent = data.solar;
+      document.getElementById('summaryTerm').textContent = data.term;
+      document.getElementById('summaryType').textContent = data.type;
+
+      // 月之意涵
+      document.getElementById('introTitle').textContent = data.name + ' ・ 月令源流';
+      document.getElementById('introContent').innerHTML = data.intro.map(p => `<p>${p}</p>`).join('');
+
+      // 節氣
+      document.getElementById('termsGrid').innerHTML = data.terms.map(t => `
+        <div class="md-term-card">
+          <div class="md-term-name">${t.name}</div>
+          <div class="md-term-date">${t.date}</div>
+          <p class="md-term-desc">${t.desc}</p>
+        </div>
+      `).join('');
+
+      // 本月祭典
+      const festivalsHtml = data.festivals.length
+        ? data.festivals.map(f => {
+            const linkHtml = f.link ? `<a class="md-festival-link" href="${f.link}">了解詳情 →</a>` : '';
+            return `
+              <div class="md-festival-card${f.link ? ' md-festival-card-clickable' : ''}">
+                <div class="md-festival-date">${f.date}</div>
+                <h3 class="md-festival-title">${f.title}</h3>
+                <p class="md-festival-desc">${f.desc}</p>
+                ${linkHtml}
+              </div>
+            `;
+          }).join('')
+        : '<div class="md-festival-empty">本月為平月 ・ 無重大祭典</div>';
+      document.getElementById('festivalsGrid').innerHTML = festivalsHtml;
+      document.getElementById('festivalTitle').textContent = data.festivals.length
+        ? '本宮重要日'
+        : '平月 ・ 平安';
+
+      // 民俗
+      document.getElementById('folkContent').innerHTML = data.folk.map(p => `<p>${p}</p>`).join('');
+
+      // 12 月導航
+      const navHtml = [];
+      for (let m = 1; m <= 12; m++) {
+        const o = MONTHS[m];
+        const active = m === key ? ' md-nav-active' : '';
+        navHtml.push(`
+          <a class="md-nav-card${active}" href="month-detail.html?month=${m}">
+            <div class="md-nav-num">${o.num}</div>
+            <div class="md-nav-name">${o.name}</div>
+            <div class="md-nav-term">${o.term}</div>
+          </a>
+        `);
+      }
+      document.getElementById('monthsNav').innerHTML = navHtml.join('');
+
+      // 回到頂部
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>

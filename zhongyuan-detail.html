@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中元普渡項目介紹｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮中元普渡法會 5 個登記項目：普渡桌、普渡米、九玄七祖、超渡嬰靈、超渡冤親債主之意義、由來、辦理方式與疏文。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-zhongyuan-detail">
+
+  <header class="site-header site-header-solid">
+    <a class="brand" href="index.html" onclick="if(history.length>1){history.back();return false}" aria-label="返回上一頁" title="返回上一頁">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="deities.html">神 明</a>
+      <a href="events.html">活 動</a>
+      <a href="services.html" class="active">香客服務</a>
+      <a href="almanac.html">年 曆</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner ritual-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag">中 ・ 元 ・ 普 ・ 渡</div>
+      <h1 class="banner-title" id="zyTitle">普渡項目</h1>
+      <div class="banner-sub" id="zySub">由來 ・ 意義 ・ 辦理方式</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="services.html#section-zhongyuan">← 返回 香客服務 ・ 中元普渡法會</a>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  <section class="content-section ld-summary-section">
+    <div class="section-inner">
+      <div class="ld-summary-card rd-summary-card">
+        <div class="ld-summary-icon" id="summaryIcon">壹</div>
+        <div class="ld-summary-body">
+          <h2 class="ld-summary-name" id="summaryName">項目</h2>
+          <div class="ld-summary-bless" id="summaryBless">中元普渡</div>
+          <p class="ld-summary-desc" id="summaryDesc"></p>
+          <div class="ld-summary-meta">
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">辦理單位</div>
+              <div class="ld-meta-value" id="summaryUnit">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">隨喜功德</div>
+              <div class="ld-meta-value ld-meta-price" id="summaryPrice">—</div>
+            </div>
+            <div class="ld-meta-item">
+              <div class="ld-meta-label">適合對象</div>
+              <div class="ld-meta-value" id="summaryWho">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 意義與功用 -->
+  <section class="content-section ld-purpose-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">意 義 與 功 用</div>
+        <h2 class="section-title">所祈何願</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-purpose-grid" id="purposeGrid"></div>
+    </div>
+  </section>
+
+  <!-- 由來故事 -->
+  <section class="content-section ld-story-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">由 來 ・ 故 事</div>
+        <h2 class="section-title">普渡源流</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-story-content" id="storyContent"></div>
+    </div>
+  </section>
+
+  <!-- 疏文範例 -->
+  <section class="content-section rd-prayer-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">疏 文 ・ 牌 位</div>
+        <h2 class="section-title">虔誠所稟</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead">本宮於普渡法會時，由執事人員代為稟疏</p>
+      </div>
+      <div class="rd-prayer-frame">
+        <div class="rd-prayer-inner">
+          <div class="rd-prayer-deco rd-prayer-deco-tl"></div>
+          <div class="rd-prayer-deco rd-prayer-deco-tr"></div>
+          <div class="rd-prayer-deco rd-prayer-deco-bl"></div>
+          <div class="rd-prayer-deco rd-prayer-deco-br"></div>
+          <div class="rd-prayer-text" id="prayerText"></div>
+          <div class="rd-prayer-stamp">建 安 宮</div>
+        </div>
+      </div>
+      <p class="rd-prayer-foot">※ 以上為本宮疏文摘錄，實際法會由執事人員依當日科儀宣讀</p>
+    </div>
+  </section>
+
+  <!-- 辦理方式 -->
+  <section class="content-section ld-howto-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">辦 理 方 式</div>
+        <h2 class="section-title">如何登記</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-howto-grid" id="howtoGrid"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="content-section ld-cta-section">
+    <div class="section-inner">
+      <div class="ld-cta-card">
+        <div class="ld-cta-tag">線 上 登 記</div>
+        <h3 class="ld-cta-title" id="ctaTitle">誠邀十方信眾 ・ 共襄中元盛事</h3>
+        <p class="ld-cta-text">填寫線上登記表，本宮人員將儘速與您聯絡確認。</p>
+        <div class="ld-cta-actions">
+          <a href="services.html#ritualForm" class="btn btn-primary btn-large">前往線上登記</a>
+          <a href="tel:0981142292" class="btn btn-secondary">致電 0981-142-292</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他普渡項目 -->
+  <section class="content-section ld-others-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">其 他 項 目</div>
+        <h2 class="section-title">一同了解</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-others-grid rd-others-grid" id="othersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value">0981-142-292</div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      const ITEMS = {
+        putuozhuo: {
+          icon: '壹',
+          title: '普 渡 桌',
+          bless: '家庭、公司行號報名',
+          desc: '中元普渡之主供品桌。一份普渡桌即一整桌豐盛供品，包含飯菜、糕粿、水果、糖果、飲料等，供奉「好兄弟」（無主孤魂），象徵主人家慈悲布施、冥陽兩利。',
+          unit: '一份 ・ 一整桌供品',
+          price: '$ 1,500 / 份',
+          who: '家庭、公司行號',
+          purposes: [
+            { tag: '布施', title: '慈悲布施', desc: '備辦豐盛供品布施好兄弟，體現「冥陽兩利」之精神。' },
+            { tag: '祈福', title: '闔家祈福', desc: '為一整戶家庭、或一整公司行號祈求平安、生意興旺。' },
+            { tag: '化解', title: '化解業障', desc: '透過布施、超薦，化解過往無形之業障與冤結。' },
+            { tag: '功德', title: '迴向功德', desc: '法會圓滿後，相關供品可分送慈善機構、增添爾等福報。' }
+          ],
+          story: [
+            '「普渡桌」為中元普渡法會中最為重要之供品配置，源自佛道兩教之「布施」與「施食」傳統。',
+            '佛教《盂蘭盆經》載：目連尊者見其母墮餓鬼道、不得飲食。釋迦牟尼佛教其於七月十五備百味飲食供養十方僧眾，藉僧眾威神之力，超薦其母得脫苦海——是為「盂蘭盆會」之始。',
+            '道教尊七月十五為「中元節」，乃地官大帝聖誕、赦罪之日。地官於此日下降人間，赦免一切亡魂罪過。民間於此日備供品、燃普渡，使無主孤魂得享一頓豐盛飲食、得安息超脫。',
+            '一份「普渡桌」涵蓋三牲（豬、雞、魚）、五齋（菜頭、芹菜、韭菜、蒜、芫荽）、糕粿（紅龜、發糕）、糖果（甜頭）、水果（旺來、蘋果）、飲料、檳榔、香菸、清水等，種類繁多、樣樣具足。',
+            '凡欲為一整戶家庭、或一整公司行號報名者，最為適合登記「普渡桌」——一份代表一個整體單位，向諸方好兄弟表達布施之誠意。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　七月中元',
+            '台北建安宮　艋舺雙園聖母會　謹具普渡疏文',
+            '上奉　地官赦罪大帝　御前',
+            '恭值　中元節　諸方好兄弟　齊集本宮',
+            '',
+            '今有信眾 ◯◯◯　暨闔家眷屬',
+            '（或：◯◯公司行號　暨全體同仁）',
+            '虔誠備辦　普渡桌一份　飯菜糕粿　樣樣俱全',
+            '香花素果　飲料茗茶　冥陽兩供',
+            '',
+            '懇祈　地官赦罪　諸方好兄弟享用',
+            '蒙此功德　化解業障　冤親解結',
+            '闔家平安　生意興旺　事業順遂',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '線上或現場登記', desc: '可於本宮線上登記表填寫，或親自到廟、來電登記。' },
+            { num: '貳', title: '提供報名單位', desc: '家庭請提供戶長姓名；公司行號請提供商號名稱與負責人姓名。' },
+            { num: '參', title: '完成隨喜功德', desc: '每份 $1,500，由本宮告知繳交方式（現場或匯款）。' },
+            { num: '肆', title: '本宮代為備辦', desc: '本宮代為備辦整桌供品，並於法會當日代為稟疏、奉供。' }
+          ]
+        },
+        putuomi: {
+          icon: '貳',
+          title: '普 渡 米',
+          bless: '10 斤為一個單位',
+          desc: '中元普渡法會中之米糧供品，象徵「米飯供養」、「布施糧食」。法會圓滿後，由本宮統一整理集中，分送慈善機構、獨居老人關懷、弱勢團體，增添信眾福報。',
+          unit: '10 斤為一單位',
+          price: '$ 35 / 斤',
+          who: '隨喜信眾 ・ 個人或家庭',
+          purposes: [
+            { tag: '布施', title: '糧食布施', desc: '以米為布施之具，象徵供養諸方眾生、無分有形無形。' },
+            { tag: '迴向', title: '慈善迴向', desc: '法會後米糧分送弱勢團體，使布施延續至人間有形之需要者。' },
+            { tag: '結緣', title: '廣結善緣', desc: '與十方眾生結米糧之緣，蒙佛菩薩護佑、福報綿延。' },
+            { tag: '功德', title: '雙重功德', desc: '冥陽兩利──超薦無主、又濟人世，乃「一施雙獲」之大功德。' }
+          ],
+          story: [
+            '「米」為東方民族之主食，象徵生存、養命、福祿。古云「民以食為天」，故供米一事，乃最為實用、亦最為重要之布施。',
+            '佛教《地藏菩薩本願經》：「布施一捧米於餓鬼道，得福如恆河沙。」民間信仰中，米代表「飽足」、「平安」、「綿延」——故每逢普渡，米糧為必備供品。',
+            '本宮普渡米之布施有兩層意義：',
+            '其一，於法會中以米奉供諸方好兄弟，使無主孤魂得享飽足。',
+            '其二，法會圓滿後，本宮將所有未取回之米糧統一整理，分送慈善機構、獨居老人、弱勢團體——此為「冥陽兩利」之具體實踐。',
+            '一斤 $35，10 斤為一個單位（$350）。可隨個人發心增減，多者愈得福報。古云：「一粒米，三升汗」——每一粒米都凝聚著農夫之辛勞，亦凝聚著布施者之慈心。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　七月中元',
+            '台北建安宮　艋舺雙園聖母會　謹具普渡疏文',
+            '上奉　地官赦罪大帝　御前',
+            '',
+            '今有信眾 ◯◯◯　虔誠備辦',
+            '普渡米 ◯◯ 斤',
+            '冥則奉供諸方好兄弟　使無主孤魂得享飽足',
+            '陽則迴向慈善機構　使弱勢者免於飢餒',
+            '',
+            '懇祈　地官赦罪　好兄弟蒙此飽足',
+            '蒙此功德　冥陽兩利　福報綿延',
+            '闔家平安　諸事順遂',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '線上或現場登記', desc: '可於本宮線上登記表填寫普渡米斤數，10 斤起跳。' },
+            { num: '貳', title: '指定斤數', desc: '依個人發心指定斤數（例：10、20、30 斤），不限上限。' },
+            { num: '參', title: '完成隨喜功德', desc: '每斤 $35，由本宮代為備辦或信眾自備白米送至本宮。' },
+            { num: '肆', title: '冥陽兩利', desc: '法會時奉供，圓滿後分送慈善機構，使布施延續到陽世。' }
+          ]
+        },
+        jiuxuan: {
+          icon: '參',
+          title: '九玄七祖',
+          bless: '堂上歷代 / 個人',
+          desc: '為自家「九玄七祖」（堂上歷代祖先）超薦祈福之牌位。一份含一支牌位、一份飯菜、一份銀箔，使祖先蒙此功德、福報綿延、闔家平安。',
+          unit: '一份 ・ 一支牌位 ・ 一份飯菜 ・ 一份銀箔',
+          price: '$ 1,000 / 份',
+          who: '為堂上歷代祖先超薦者',
+          purposes: [
+            { tag: '孝親', title: '盡孝報恩', desc: '為堂上歷代祖先超薦祈福，盡為人子孫之孝道。' },
+            { tag: '超薦', title: '超薦先靈', desc: '使祖先蒙此功德，超昇善道、福報綿延。' },
+            { tag: '護佑', title: '蔭庇後代', desc: '祖先得安，自然護佑闔家後代平安興旺。' },
+            { tag: '解結', title: '化解業緣', desc: '化解祖先因業未盡之困頓，使家族業力得清。' }
+          ],
+          story: [
+            '「九玄七祖」一詞源自道教，指堂上歷代祖先。「九玄」者，玄孫以下九代之子孫；「七祖」者，自父至遠祖共七代之先人。合稱「九玄七祖」，意即一個家族上下十六代、所有祖先之總稱。',
+            '道教《太上洞玄靈寶業報因緣經》云：「子孫敬奉先祖，先祖蒙福得超；先祖得超，子孫蒙蔭。」此即「祖德流芳」之古訓。',
+            '臺灣民間信仰中，每逢中元節必為堂上祖先備牌位、設供桌，使祖先蒙此功德。古云：「祭祖若在，事死如事生」——表達對祖先之敬重。',
+            '本宮所設「九玄七祖」牌位，由執事人員專業書寫——「奉祀  ◯氏堂上歷代祖先  神位」。一份包含：',
+            '一、 一支牌位（書寫祖先姓氏）',
+            '二、 一份飯菜（供祖先享用）',
+            '三、 一份銀箔（焚化以供祖先冥用）',
+            '法會中，本宮代為宣疏、誦經、迴向，使一家祖先共沐法益、超昇蓮界。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　七月中元',
+            '台北建安宮　艋舺雙園聖母會　謹具超薦疏文',
+            '上奉　地官赦罪大帝　御前',
+            '',
+            '今有信眾 ◯◯◯　虔誠超薦',
+            '◯氏堂上歷代祖先　九玄七祖之靈',
+            '',
+            '備辦　牌位一支　飯菜一份　銀箔一份',
+            '香花茗果　虔誠跪拜',
+            '',
+            '懇祈　地官赦罪　諸祖先蒙此功德',
+            '超昇善道　永離苦輪',
+            '蔭庇後代　闔家平安',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '線上或現場登記', desc: '可於本宮線上登記表填寫，或親自到廟登記。' },
+            { num: '貳', title: '提供祖先資訊', desc: '提供姓氏（如：陳氏、林氏堂上歷代祖先）；或可提供具體名諱。' },
+            { num: '參', title: '完成隨喜功德', desc: '每份 $1,000，由本宮代為書寫牌位、備飯菜、備銀箔。' },
+            { num: '肆', title: '本宮代為迴向', desc: '法會中本宮代為宣疏、誦經、焚化、迴向。' }
+          ]
+        },
+        yingling: {
+          icon: '肆',
+          title: '超 渡 嬰 靈',
+          bless: '一位 ・ 一支牌位',
+          desc: '為流產、夭折、未及出生之嬰兒（嬰靈）超薦超渡。一位含一支牌位、一份飯菜、一份銀箔，藉此化解嬰靈未盡之緣、使其得安息超昇。',
+          unit: '一位 ・ 一支牌位 ・ 一份飯菜 ・ 一份銀箔',
+          price: '$ 1,000 / 位',
+          who: '有流產、夭折、未及出生子女之信眾',
+          purposes: [
+            { tag: '超渡', title: '超渡嬰靈', desc: '使流產、夭折、未及出生之嬰兒得安息超昇、不再徘徊人間。' },
+            { tag: '解緣', title: '化解親緣', desc: '化解父母與嬰靈之未盡親緣，使雙方俱得安頓。' },
+            { tag: '懺悔', title: '懺悔之心', desc: '父母藉此表達懺悔之心，化解內心愧疚與業緣。' },
+            { tag: '安心', title: '心靈療癒', desc: '使父母得心靈療癒，重新展開人生、迎接新的福報。' }
+          ],
+          story: [
+            '「嬰靈」一詞，特指因流產、夭折、未及出生之嬰兒。其因生命未及完整、緣分未盡，往往徘徊於父母身邊、難以投生善道。',
+            '佛教與道教皆有為嬰靈超薦之傳統。佛教尤重「地藏王菩薩」之願力——地藏菩薩誓願：「地獄不空、誓不成佛；眾生度盡、方證菩提。」嬰靈亦在地藏菩薩慈悲之下，可得超昇。',
+            '道教則認為，嬰靈與父母有「未盡之緣」，需藉法會化解、使其得安頓。否則嬰靈或徘徊不去，影響父母之運勢、健康、子嗣。',
+            '本宮中元普渡法會中，可為嬰靈設牌位、備飯菜、備銀箔，由本宮代為超薦：',
+            '一、 一支牌位（可寫名諱或「無名嬰靈」）',
+            '二、 一份飯菜（嬰靈飲食）',
+            '三、 一份銀箔（冥用紙錢）',
+            '父母可藉此向嬰靈表達歉意、祝福、與超薦之願。法會圓滿後，嬰靈蒙此功德，可得安息超昇——父母亦可放下心中之牽掛，重新展開人生。',
+            '※ 嬰靈雖未及成形，仍有靈性。為其超薦，乃父母最深之慈悲與責任。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　七月中元',
+            '台北建安宮　艋舺雙園聖母會　謹具超渡疏文',
+            '上奉　地藏王菩薩　地官赦罪大帝　御前',
+            '',
+            '今有信眾 ◯◯◯　虔誠超渡',
+            '所失嬰靈 ◯◯（或：無名嬰靈一位）',
+            '',
+            '備辦　牌位一支　飯菜一份　銀箔一份',
+            '父母虔誠懺悔　慈悲超薦',
+            '',
+            '懇祈　地藏菩薩慈光普照',
+            '嬰靈蒙此功德　離苦得樂　超昇善道',
+            '父母心結得解　業緣得清',
+            '闔家平安　子嗣綿延',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '私下登記', desc: '可線上登記、來電、或親至本宮私下洽詢，本宮絕對保密。' },
+            { num: '貳', title: '提供資訊', desc: '若知名諱可提供，若不知可寫「無名嬰靈」。母親姓名為必填。' },
+            { num: '參', title: '完成隨喜功德', desc: '每位 $1,000。一位嬰靈一支牌位，多位需多份。' },
+            { num: '肆', title: '本宮代為超薦', desc: '法會中本宮代為宣疏、誦經、迴向。父母可親至或不到場。' }
+          ]
+        },
+        yuanqin: {
+          icon: '伍',
+          title: '超渡冤親債主',
+          bless: '一位 ・ 一支牌位',
+          desc: '為累世累劫所結之冤親債主超薦化解。一位含一支牌位、一份飯菜、一份銀箔，藉此化解冤結、債清業淨，使信眾運勢順遂、諸事吉昌。',
+          unit: '一位 ・ 一支牌位 ・ 一份飯菜 ・ 一份銀箔',
+          price: '$ 1,000 / 位',
+          who: '運勢低迷、諸事不順、感覺有冤結者',
+          purposes: [
+            { tag: '化解', title: '化解冤結', desc: '化解累世所結之冤仇、債務、糾葛，使業緣清淨。' },
+            { tag: '消災', title: '消災解厄', desc: '冤親債主得安頓，自然不再纏擾、運勢自然回升。' },
+            { tag: '懺悔', title: '懺悔之心', desc: '藉此表達對過往所造業之懺悔，重新展開新生。' },
+            { tag: '迴向', title: '功德迴向', desc: '將法會功德迴向冤親債主，使其離苦得樂、皆大歡喜。' }
+          ],
+          story: [
+            '「冤親債主」一詞源自佛道兩教，指累世累劫中與我等有恩、有怨、有債、有情之眾生。',
+            '佛教《地藏經》云：「眾生在六道中輪迴流轉、互為冤親。今世為親、來世為冤；今世受恩、來世討債——皆因業緣相牽。」',
+            '當我等運勢低迷、諸事不順、健康受擾、家庭不和時，多因冤親債主前來討債或纏擾。此時若以法會超薦、誦經迴向，使冤親債主蒙此功德、得安頓——則自然不再纏擾、運勢回升。',
+            '本宮為信眾設「超渡冤親債主」牌位之意義：',
+            '一、 牌位上書「奉祀  ◯◯◯ 之累世冤親債主」',
+            '二、 一份飯菜（讓冤親債主享用、表達誠意）',
+            '三、 一份銀箔（償還無形債務）',
+            '法會中本宮代為宣疏、誦經、迴向。冤親債主蒙此功德，可化解冤結、得安頓，從此放下糾葛、皆大歡喜。',
+            '※ 此項目尤適合：感覺諸事不順、健康受擾、家庭不和、夢魘不寧、或近期重大事件前後者。'
+          ],
+          prayer: [
+            '伏以　　天運歲次丙午　七月中元',
+            '台北建安宮　艋舺雙園聖母會　謹具超渡疏文',
+            '上奉　地藏王菩薩　地官赦罪大帝　御前',
+            '',
+            '今有信眾 ◯◯◯　虔誠懺悔',
+            '累世累劫　所結之冤親債主一位（或多位）',
+            '',
+            '備辦　牌位一支　飯菜一份　銀箔一份',
+            '誠心發願　願以此功德　迴向冤親',
+            '',
+            '懇祈　地藏菩薩慈光普照',
+            '冤親債主蒙此功德　離苦得樂　化解冤結',
+            '債清業淨　彼此放下',
+            '信眾運勢順遂　諸事吉昌',
+            '',
+            '謹具疏文　恭呈　御前',
+            '伏祈　昭鑒　虔誠百拜　上聞'
+          ],
+          howto: [
+            { num: '壹', title: '線上或現場登記', desc: '可線上登記、來電、或親至本宮登記，本宮絕對保密。' },
+            { num: '貳', title: '提供本人姓名', desc: '提供本人姓名、生辰即可，不必知道冤親債主之具體身分。' },
+            { num: '參', title: '完成隨喜功德', desc: '每位 $1,000。可一次超渡多位（建議一年一位以上）。' },
+            { num: '肆', title: '本宮代為迴向', desc: '法會中本宮代為宣疏、誦經、迴向。可親到或不到場。' }
+          ]
+        }
+      };
+
+      const ORDER = ['putuozhuo', 'putuomi', 'jiuxuan', 'yingling', 'yuanqin'];
+
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('item');
+      if (!ITEMS[key]) key = 'putuozhuo';
+      const data = ITEMS[key];
+
+      // Banner
+      document.getElementById('zyTitle').textContent = data.title;
+      document.getElementById('zySub').textContent = data.bless;
+      document.title = data.title + '｜中元普渡 ・ 台北建安宮';
+
+      // Summary
+      document.getElementById('summaryIcon').textContent = data.icon;
+      document.getElementById('summaryName').textContent = data.title;
+      document.getElementById('summaryBless').textContent = data.bless;
+      document.getElementById('summaryDesc').textContent = data.desc;
+      document.getElementById('summaryUnit').textContent = data.unit;
+      document.getElementById('summaryPrice').textContent = data.price;
+      document.getElementById('summaryWho').textContent = data.who;
+
+      // 意義
+      document.getElementById('purposeGrid').innerHTML = data.purposes.map(p => `
+        <div class="ld-purpose-card">
+          <div class="ld-purpose-tag">${p.tag}</div>
+          <h3 class="ld-purpose-title">${p.title}</h3>
+          <p class="ld-purpose-desc">${p.desc}</p>
+        </div>
+      `).join('');
+
+      // 由來
+      document.getElementById('storyContent').innerHTML = data.story.map(p => `<p>${p}</p>`).join('');
+
+      // 疏文
+      document.getElementById('prayerText').innerHTML = data.prayer.map(line =>
+        line === '' ? '<div class="rd-prayer-spacer"></div>' : `<div class="rd-prayer-line">${line}</div>`
+      ).join('');
+
+      // 辦理
+      document.getElementById('howtoGrid').innerHTML = data.howto.map(h => `
+        <div class="ld-howto-card">
+          <div class="ld-howto-num">${h.num}</div>
+          <div class="ld-howto-title">${h.title}</div>
+          <p class="ld-howto-desc">${h.desc}</p>
+        </div>
+      `).join('');
+
+      // CTA
+      document.getElementById('ctaTitle').textContent = '誠邀十方信眾 ・ 共襄「' + data.title + '」';
+
+      // 其他項目
+      document.getElementById('othersGrid').innerHTML = ORDER
+        .filter(k => k !== key)
+        .map(k => {
+          const o = ITEMS[k];
+          return `
+            <a class="ld-other-card" href="zhongyuan-detail.html?item=${k}">
+              <div class="ld-other-icon">${o.icon}</div>
+              <div class="ld-other-name">${o.title}</div>
+              <div class="ld-other-bless">${o.bless}</div>
+            </a>
+          `;
+        }).join('');
+
+      // 回到頂部
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>

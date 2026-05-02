@@ -13,10 +13,10 @@
 <body class="page-services">
 
   <header class="site-header site-header-solid">
-    <div class="brand">
+    <a class="brand" href="index.html" onclick="if(history.length>1){history.back();return false}" aria-label="返回上一頁" title="返回上一頁">
       <div class="brand-name-zh">台北建安宮</div>
       <div class="brand-name-sub">艋舺雙園聖母會</div>
-    </div>
+    </a>
     <nav class="site-nav">
       <a href="index.html">首 頁</a>
       <a href="about.html">關於建安宮</a>
@@ -278,7 +278,7 @@
   </section>
 
   <!-- 中元普渡專欄 -->
-  <section class="content-section section-zhongyuan">
+  <section class="content-section section-zhongyuan" id="section-zhongyuan">
     <div class="section-inner">
       <div class="section-head">
         <div class="section-label">慶 讚 中 元</div>
@@ -292,40 +292,45 @@
 
       <!-- 5 個項目 -->
       <div class="zy-items-grid">
-        <article class="zy-item zy-item-feature">
+        <a class="zy-item zy-item-feature" href="zhongyuan-detail.html?item=putuozhuo">
           <div class="zy-num">壹</div>
           <h3 class="zy-name">普 渡 桌</h3>
           <p class="zy-desc">家庭、公司行號報名</p>
           <div class="zy-price">$ 1,500 / 份</div>
-        </article>
+          <div class="zy-more">了解詳情 →</div>
+        </a>
 
-        <article class="zy-item zy-item-feature">
+        <a class="zy-item zy-item-feature" href="zhongyuan-detail.html?item=putuomi">
           <div class="zy-num">貳</div>
           <h3 class="zy-name">普 渡 米</h3>
           <p class="zy-desc">10 斤為一個單位</p>
           <div class="zy-price">$ 35 / 斤</div>
-        </article>
+          <div class="zy-more">了解詳情 →</div>
+        </a>
 
-        <article class="zy-item">
+        <a class="zy-item" href="zhongyuan-detail.html?item=jiuxuan">
           <div class="zy-num">參</div>
           <h3 class="zy-name">九玄七祖</h3>
           <p class="zy-desc">堂上歷代 / 個人<br>一份 ・ 一支牌位<br>一份飯菜 ・ 一份銀箔</p>
           <div class="zy-price">$ 1,000 / 份</div>
-        </article>
+          <div class="zy-more">了解詳情 →</div>
+        </a>
 
-        <article class="zy-item">
+        <a class="zy-item" href="zhongyuan-detail.html?item=yingling">
           <div class="zy-num">肆</div>
           <h3 class="zy-name">超渡嬰靈</h3>
           <p class="zy-desc">一位 ・ 一支牌位<br>一份飯菜 ・ 一份銀箔</p>
           <div class="zy-price">$ 1,000 / 位</div>
-        </article>
+          <div class="zy-more">了解詳情 →</div>
+        </a>
 
-        <article class="zy-item">
+        <a class="zy-item" href="zhongyuan-detail.html?item=yuanqin">
           <div class="zy-num">伍</div>
           <h3 class="zy-name">超渡冤親債主</h3>
           <p class="zy-desc">一位 ・ 一支牌位<br>一份飯菜 ・ 一份銀箔</p>
           <div class="zy-price">$ 1,000 / 位</div>
-        </article>
+          <div class="zy-more">了解詳情 →</div>
+        </a>
       </div>
 
       <!-- 公益說明 -->

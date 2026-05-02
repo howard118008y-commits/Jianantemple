@@ -13,10 +13,10 @@
 <body class="page-almanac">
 
   <header class="site-header site-header-solid">
-    <div class="brand">
+    <a class="brand" href="index.html" onclick="if(history.length>1){history.back();return false}" aria-label="返回上一頁" title="返回上一頁">
       <div class="brand-name-zh">台北建安宮</div>
       <div class="brand-name-sub">艋舺雙園聖母會</div>
-    </div>
+    </a>
     <nav class="site-nav">
       <a href="index.html">首 頁</a>
       <a href="about.html">關於建安宮</a>
@@ -101,54 +101,57 @@
           <div class="saint-cell">國 曆 對 應</div>
           <div class="saint-cell">備 註</div>
         </div>
-        <div class="saint-row">
+        <a class="saint-row saint-row-link" href="deity-detail.html?deity=yuhuang">
           <div class="saint-cell saint-name">玉皇大帝</div>
           <div class="saint-cell">正月 初九</div>
           <div class="saint-cell">2026 / 02 / 25</div>
           <div class="saint-cell saint-tag">補財庫前夕</div>
-        </div>
-        <div class="saint-row">
+        </a>
+        <a class="saint-row saint-row-link" href="deity-detail.html?deity=tianguan">
           <div class="saint-cell saint-name">天官大帝</div>
           <div class="saint-cell">正月 十五</div>
           <div class="saint-cell">2026 / 03 / 03</div>
           <div class="saint-cell saint-tag">上元節</div>
-        </div>
-        <div class="saint-row">
-          <div class="saint-cell saint-name">濟公禪師<br>濟公三禪師</div>
+        </a>
+        <div class="saint-row saint-row-split">
+          <div class="saint-cell saint-name saint-name-split">
+            <a href="deity-detail.html?deity=jigong">濟公禪師</a><br>
+            <a href="deity-detail.html?deity=jigong3">濟公三禪師</a>
+          </div>
           <div class="saint-cell">二月 初一</div>
           <div class="saint-cell">2026 / 03 / 19</div>
           <div class="saint-cell saint-tag">同祀福德正神</div>
         </div>
-        <div class="saint-row">
+        <a class="saint-row saint-row-link" href="deity-detail.html?deity=tudigong">
           <div class="saint-cell saint-name">福德正神</div>
           <div class="saint-cell">二月 初二</div>
           <div class="saint-cell">2026 / 03 / 20</div>
           <div class="saint-cell saint-tag">頭牙</div>
-        </div>
-        <div class="saint-row saint-row-feature">
+        </a>
+        <a class="saint-row saint-row-link saint-row-feature" href="deity-detail.html?deity=mazu">
           <div class="saint-cell saint-name">天上聖母</div>
           <div class="saint-cell">三月 廿三</div>
           <div class="saint-cell">2026 / 05 / 09</div>
           <div class="saint-cell saint-tag">主祀聖誕</div>
-        </div>
-        <div class="saint-row">
+        </a>
+        <a class="saint-row saint-row-link" href="deity-detail.html?deity=guangong">
           <div class="saint-cell saint-name">關聖帝君</div>
           <div class="saint-cell">六月 廿四</div>
           <div class="saint-cell">2026 / 08 / 06</div>
           <div class="saint-cell saint-tag">恩主公</div>
-        </div>
-        <div class="saint-row">
+        </a>
+        <a class="saint-row saint-row-link" href="deity-detail.html?deity=nezha">
           <div class="saint-cell saint-name">中壇元帥</div>
           <div class="saint-cell">九月 初九</div>
           <div class="saint-cell">2026 / 10 / 19</div>
           <div class="saint-cell saint-tag">三太子</div>
-        </div>
-        <div class="saint-row">
+        </a>
+        <a class="saint-row saint-row-link" href="deity-detail.html?deity=wuji">
           <div class="saint-cell saint-name">極無極聖祖</div>
           <div class="saint-cell">臘月 廿八</div>
           <div class="saint-cell">2027 / 02 / 04</div>
           <div class="saint-cell saint-tag">小年夜</div>
-        </div>
+        </a>
       </div>
 
       <p class="almanac-note-line">
@@ -158,7 +161,7 @@
   </section>
 
   <!-- 12 月份 + 廟方祭祀 -->
-  <section class="content-section section-monthly">
+  <section class="content-section section-monthly" id="section-monthly">
     <div class="section-inner">
       <div class="section-head">
         <div class="section-label">月 令 ・ 祭 典</div>
@@ -171,7 +174,7 @@
       </div>
 
       <div class="monthly-grid">
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=1">
           <div class="month-num">正 月</div>
           <div class="month-solar">2026 / 02 / 17 起</div>
           <div class="month-events">
@@ -181,9 +184,9 @@
             <div>十五 ・ 天官大帝聖誕</div>
           </div>
           <div class="month-solar-term">立春 ・ 雨水</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=2">
           <div class="month-num">二 月</div>
           <div class="month-solar">2026 / 03 / 19 起</div>
           <div class="month-events">
@@ -191,9 +194,9 @@
             <div>初二 ・ 福德正神聖誕</div>
           </div>
           <div class="month-solar-term">驚蟄 ・ 春分</div>
-        </article>
+        </a>
 
-        <article class="month-card month-card-feature">
+        <a class="month-card month-card-feature" href="month-detail.html?month=3">
           <div class="month-num">三 月</div>
           <div class="month-solar">2026 / 04 / 17 起</div>
           <div class="month-events">
@@ -201,36 +204,36 @@
             <div class="event-sub">本宮主祀 ・ 媽祖聖誕</div>
           </div>
           <div class="month-solar-term">清明 ・ 穀雨</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=4">
           <div class="month-num">四 月</div>
           <div class="month-solar">2026 / 05 / 17 起</div>
           <div class="month-events">
             <div class="month-quiet">— 平月 —</div>
           </div>
           <div class="month-solar-term">立夏 ・ 小滿</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=5">
           <div class="month-num">五 月</div>
           <div class="month-solar">2026 / 06 / 15 起</div>
           <div class="month-events">
             <div>初五 ・ 端午節</div>
           </div>
           <div class="month-solar-term">芒種 ・ 夏至</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=6">
           <div class="month-num">六 月</div>
           <div class="month-solar">2026 / 07 / 14 起</div>
           <div class="month-events">
             <div>廿四 ・ 關聖帝君聖誕</div>
           </div>
           <div class="month-solar-term">小暑 ・ 大暑</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=7">
           <div class="month-num">七 月</div>
           <div class="month-solar">2026 / 08 / 13 起</div>
           <div class="month-events">
@@ -238,18 +241,18 @@
             <div class="event-sub">本宮年度盛事</div>
           </div>
           <div class="month-solar-term">立秋 ・ 處暑</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=8">
           <div class="month-num">八 月</div>
           <div class="month-solar">2026 / 09 / 11 起</div>
           <div class="month-events">
             <div>十五 ・ 中秋節</div>
           </div>
           <div class="month-solar-term">白露 ・ 秋分</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=9">
           <div class="month-num">九 月</div>
           <div class="month-solar">2026 / 10 / 11 起</div>
           <div class="month-events">
@@ -257,27 +260,27 @@
             <div class="event-sub">三太子千秋</div>
           </div>
           <div class="month-solar-term">寒露 ・ 霜降</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=10">
           <div class="month-num">十 月</div>
           <div class="month-solar">2026 / 11 / 09 起</div>
           <div class="month-events">
             <div class="month-quiet">— 平月 —</div>
           </div>
           <div class="month-solar-term">立冬 ・ 小雪</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=11">
           <div class="month-num">十一月</div>
           <div class="month-solar">2026 / 12 / 09 起</div>
           <div class="month-events">
             <div>冬至</div>
           </div>
           <div class="month-solar-term">大雪 ・ 冬至</div>
-        </article>
+        </a>
 
-        <article class="month-card">
+        <a class="month-card" href="month-detail.html?month=12">
           <div class="month-num">臘 月</div>
           <div class="month-solar">2027 / 01 / 08 起</div>
           <div class="month-events">
@@ -285,7 +288,7 @@
             <div class="event-sub">叩謝極無極聖祖</div>
           </div>
           <div class="month-solar-term">小寒 ・ 大寒</div>
-        </article>
+        </a>
       </div>
     </div>
   </section>
