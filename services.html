@@ -120,6 +120,23 @@
         <div class="zhushou-deco zhushou-deco-bl"></div>
         <div class="zhushou-deco zhushou-deco-br"></div>
 
+        <!-- 祝壽倒數計時器 -->
+        <div class="zhushou-countdown" id="zhushouCountdown" data-target="2026-05-08T21:00:00+08:00" aria-live="polite">
+          <div class="zc-eyebrow">
+            <span class="zc-pulse"></span>
+            <span class="zc-label">距 ・ 祝 ・ 壽 ・ 開 始</span>
+          </div>
+          <div class="zc-clock">
+            <div class="zc-unit"><span class="zc-num" data-zc="d">--</span><span class="zc-tag">天</span></div>
+            <div class="zc-sep">：</div>
+            <div class="zc-unit"><span class="zc-num" data-zc="h">--</span><span class="zc-tag">時</span></div>
+            <div class="zc-sep">：</div>
+            <div class="zc-unit"><span class="zc-num" data-zc="m">--</span><span class="zc-tag">分</span></div>
+            <div class="zc-sep">：</div>
+            <div class="zc-unit"><span class="zc-num" data-zc="s">--</span><span class="zc-tag">秒</span></div>
+          </div>
+        </div>
+
         <div class="zhushou-head">
           <div class="zhushou-tag">前 夜 祝 壽</div>
           <h3 class="zhushou-name">天 上 聖 母 ・ 聖 誕 千 秋</h3>
@@ -738,6 +755,35 @@
   </div>
 
   <script>
+    // 媽祖聖誕祝壽倒數計時器
+    (function () {
+      const cd = document.getElementById('zhushouCountdown');
+      if (!cd) return;
+      const target = new Date(cd.dataset.target).getTime();
+      const elD = cd.querySelector('[data-zc="d"]');
+      const elH = cd.querySelector('[data-zc="h"]');
+      const elM = cd.querySelector('[data-zc="m"]');
+      const elS = cd.querySelector('[data-zc="s"]');
+      const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
+
+      function tick() {
+        const diff = Math.max(0, target - Date.now());
+        if (diff === 0) {
+          cd.classList.add('is-arrived');
+          [elD, elH, elM, elS].forEach(el => el.textContent = '00');
+          cd.querySelector('.zc-label').textContent = '祝 ・ 壽 ・ 進 ・ 行 ・ 中';
+          return;
+        }
+        const sec = Math.floor(diff / 1000);
+        elD.textContent = pad(Math.floor(sec / 86400));
+        elH.textContent = pad(Math.floor((sec % 86400) / 3600));
+        elM.textContent = pad(Math.floor((sec % 3600) / 60));
+        elS.textContent = pad(sec % 60);
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
     (function () {
       // 回到頂部
       const btn = document.getElementById('backTop');

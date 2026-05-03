@@ -7587,6 +7587,94 @@ button.lightbox-pill:hover {
 .zhushou-deco-bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
 .zhushou-deco-br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
 
+/* 倒數計時器（祝壽區內）*/
+.zhushou-countdown {
+  text-align: center;
+  padding: 1.6rem 1rem;
+  margin-bottom: 1.8rem;
+  background: linear-gradient(180deg, rgba(212, 168, 75, 0.06) 0%, transparent 100%);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+}
+.zc-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.zc-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+  animation: zcPulse 1.6s ease-in-out infinite;
+}
+@keyframes zcPulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+.zc-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  font-weight: 700;
+}
+.zc-clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.zc-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  padding: 0.7rem 0.5rem;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.4);
+}
+.zc-num {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+.zc-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+.zc-sep {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--gold);
+  opacity: 0.55;
+  margin-top: -0.6rem;
+}
+.zhushou-countdown.is-arrived {
+  background: linear-gradient(180deg, rgba(139, 28, 28, 0.25) 0%, transparent 100%);
+  border-color: var(--gold);
+}
+.zhushou-countdown.is-arrived .zc-num { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .zhushou-countdown { padding: 1.2rem 0.5rem; margin-bottom: 1.5rem; }
+  .zc-label { font-size: 0.7rem; letter-spacing: 0.3em; }
+  .zc-clock { gap: 0.25rem; }
+  .zc-unit { min-width: 0; flex: 1; padding: 0.5rem 0.2rem; }
+  .zc-num { font-size: 1.5rem; }
+  .zc-tag { font-size: 0.6rem; letter-spacing: 0.2em; margin-top: 0.3rem; }
+  .zc-sep { font-size: 1.1rem; margin-top: -0.4rem; }
+}
+
 .zhushou-head {
   text-align: center;
   margin-bottom: 2rem;
