@@ -106,59 +106,90 @@
       margin-top: 1.5rem;
     }
 
-    /* === 下次辦事倒數 === */
+    /* === 下次辦事倒數計時器（大型） === */
     .ws-next {
       max-width: 920px;
-      margin: 1.5rem auto 0;
-      padding: 1.4rem 1.5rem;
-      background: rgba(31, 20, 20, 0.7);
-      border: 1px solid rgba(212, 168, 75, 0.35);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
+      margin: 1.8rem auto 0;
+      padding: 2.2rem 1.5rem 2rem;
+      background: linear-gradient(180deg, rgba(212, 168, 75, 0.08) 0%, rgba(31, 20, 20, 0.85) 100%);
+      border: 1px solid rgba(212, 168, 75, 0.5);
+      text-align: center;
+      position: relative;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+    .ws-next-eyebrow {
+      display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .ws-next-pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px var(--gold);
+      animation: wsNextPulse 1.6s ease-in-out infinite;
+    }
+    @keyframes wsNextPulse {
+      0%, 100% { opacity: 0.55; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.15); }
     }
     .ws-next-label {
       font-size: 0.85rem;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.42em;
       color: var(--gold);
       font-weight: 700;
-      margin-bottom: 0.35rem;
     }
     .ws-next-date {
       font-family: "Noto Serif TC", serif;
-      font-size: 1.4rem;
+      font-size: 1.55rem;
       font-weight: 900;
       color: var(--gold-light);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+      margin: 0.2rem 0 1.4rem 0.12em;
+      line-height: 1.5;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
     }
     .ws-next-clock {
       display: flex;
-      gap: 0.4rem;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
     .ws-next-unit {
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 56px;
-      padding: 0.5rem 0.4rem;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(212, 168, 75, 0.35);
+      min-width: 78px;
+      padding: 0.85rem 0.5rem;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(212, 168, 75, 0.4);
     }
     .ws-next-num {
       font-family: "Noto Serif TC", serif;
-      font-size: 1.4rem;
+      font-size: 2.4rem;
       font-weight: 900;
       color: var(--gold-light);
       line-height: 1;
+      letter-spacing: 0.04em;
       font-variant-numeric: tabular-nums;
     }
     .ws-next-tag {
-      font-size: 0.62rem;
-      letter-spacing: 0.25em;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
       color: var(--gold);
-      margin-top: 0.3rem;
+      margin-top: 0.55rem;
       font-weight: 700;
+    }
+    .ws-next-sep {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0.55;
+      margin-top: -0.6rem;
     }
 
     /* === 通用解釋區塊 === */
@@ -252,11 +283,14 @@
       .ws-sched-time { font-size: 1.55rem; letter-spacing: 0.1em; }
       .ws-sched-sub { font-size: 0.88rem; letter-spacing: 0.12em; }
       .ws-sched-warning { font-size: 0.78rem; letter-spacing: 0.08em; }
-      .ws-next { grid-template-columns: 1fr; gap: 0.8rem; text-align: center; }
-      .ws-next-clock { justify-content: center; }
-      .ws-next-unit { min-width: 0; flex: 1; padding: 0.4rem 0.2rem; }
-      .ws-next-num { font-size: 1.15rem; }
-      .ws-next-tag { font-size: 0.55rem; letter-spacing: 0.18em; }
+      .ws-next { padding: 1.6rem 0.8rem 1.4rem; margin-top: 1.2rem; }
+      .ws-next-label { font-size: 0.7rem; letter-spacing: 0.32em; }
+      .ws-next-date { font-size: 1.05rem; letter-spacing: 0.06em; margin-bottom: 1rem; }
+      .ws-next-clock { gap: 0.25rem; }
+      .ws-next-unit { min-width: 0; flex: 1; padding: 0.55rem 0.2rem; }
+      .ws-next-num { font-size: 1.55rem; }
+      .ws-next-tag { font-size: 0.6rem; letter-spacing: 0.18em; margin-top: 0.35rem; }
+      .ws-next-sep { font-size: 1.2rem; margin-top: -0.4rem; }
       .ws-meaning-content p { font-size: 0.92rem; line-height: 1.95; }
       .ws-topics-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
       .ws-topic { padding: 1.1rem 0.85rem; }
@@ -330,16 +364,20 @@
         </div>
       </div>
 
-      <!-- 下次辦事倒數 -->
-      <div class="ws-next" id="wsNext">
-        <div>
-          <div class="ws-next-label">下 ・ 一 ・ 場 ・ 辦 事</div>
-          <div class="ws-next-date" id="wsNextDate">計算中…</div>
+      <!-- 下次辦事倒數計時器 -->
+      <div class="ws-next" id="wsNext" aria-live="polite">
+        <div class="ws-next-eyebrow">
+          <span class="ws-next-pulse"></span>
+          <span class="ws-next-label">下 ・ 一 ・ 場 ・ 辦 事</span>
         </div>
+        <div class="ws-next-date" id="wsNextDate">計算中…</div>
         <div class="ws-next-clock" id="wsNextClock">
           <div class="ws-next-unit"><span class="ws-next-num" data-ws="d">--</span><span class="ws-next-tag">天</span></div>
+          <div class="ws-next-sep">：</div>
           <div class="ws-next-unit"><span class="ws-next-num" data-ws="h">--</span><span class="ws-next-tag">時</span></div>
+          <div class="ws-next-sep">：</div>
           <div class="ws-next-unit"><span class="ws-next-num" data-ws="m">--</span><span class="ws-next-tag">分</span></div>
+          <div class="ws-next-sep">：</div>
           <div class="ws-next-unit"><span class="ws-next-num" data-ws="s">--</span><span class="ws-next-tag">秒</span></div>
         </div>
       </div>
