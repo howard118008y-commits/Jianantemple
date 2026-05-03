@@ -7480,6 +7480,34 @@ button.lightbox-pill:hover {
   padding: 5rem 1.5rem;
 }
 
+.zhushou-poster {
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+  padding: 8px;
+  border: 2px solid var(--gold);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+  position: relative;
+}
+.zhushou-poster::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(212, 168, 75, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+.zhushou-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .zhushou-poster { max-width: 100%; padding: 5px; margin-bottom: 1.8rem; }
+  .zhushou-poster::before { inset: 10px; }
+}
+
 .zhushou-card {
   max-width: 920px;
   margin: 0 auto;
