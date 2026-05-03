@@ -7471,6 +7471,199 @@ button.lightbox-pill:hover {
 }
 
 /* ============================================
+   媽祖聖誕祝壽香塔（services.html 特別活動）
+   ============================================ */
+.section-zhushou {
+  background:
+    radial-gradient(ellipse at center top, rgba(139, 28, 28, 0.18) 0%, transparent 70%),
+    var(--ink-soft);
+  padding: 5rem 1.5rem;
+}
+
+.zhushou-card {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.28) 0%, rgba(31, 14, 14, 0.95) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.6);
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.zhushou-deco {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--gold);
+}
+.zhushou-deco-tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.zhushou-deco-tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+.zhushou-deco-bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+.zhushou-deco-br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+.zhushou-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.zhushou-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.4em;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 0.32rem 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.zhushou-name {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: 0.2em;
+  margin: 0 0 0 0.2em;
+  line-height: 1.4;
+}
+
+.zhushou-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.zs-meta-item {
+  padding: 1rem 1.2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 168, 75, 0.25);
+}
+.zs-meta-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.zs-meta-value {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.05rem;
+  color: var(--paper);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+.zs-meta-highlight { color: var(--gold-light); font-size: 1.3rem; }
+.zs-meta-price { color: var(--gold-light); }
+
+.zhushou-note {
+  text-align: center;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  color: rgba(248, 243, 233, 0.8);
+  padding: 0.7rem 1rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(212, 168, 75, 0.08);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.zhushou-roster {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+}
+.zs-roster-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.25);
+}
+.zs-roster-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  font-weight: 700;
+}
+.zs-roster-count {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--gold);
+  background: rgba(212, 168, 75, 0.1);
+}
+.zs-roster-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.zs-roster-item {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.18);
+}
+.zs-roster-num {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  text-align: center;
+}
+.zs-roster-name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+}
+.zs-roster-qty {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(212, 168, 75, 0.4);
+}
+.zs-roster-foot {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: rgba(248, 243, 233, 0.55);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.zhushou-cta {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .section-zhushou { padding: 3rem 1rem; }
+  .zhushou-card { padding: 2rem 1.4rem; }
+  .zhushou-name { font-size: 1.4rem; letter-spacing: 0.15em; }
+  .zhushou-meta { grid-template-columns: 1fr; gap: 0.6rem; }
+  .zs-meta-value { font-size: 0.95rem; }
+  .zs-meta-highlight { font-size: 1.15rem; }
+  .zhushou-roster { padding: 1.2rem 1rem; }
+  .zs-roster-head { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .zs-roster-item { grid-template-columns: 32px 1fr auto; gap: 0.7rem; padding: 0.65rem 0.8rem; }
+  .zs-roster-name { font-size: 0.92rem; }
+  .zs-roster-qty { font-size: 0.75rem; padding: 0.2rem 0.55rem; }
+  .zhushou-cta .btn { flex: 1; min-width: 100%; }
+}
+
+/* ============================================
    委員會・加入會員 CTA
    ============================================ */
 .section-join-member {
