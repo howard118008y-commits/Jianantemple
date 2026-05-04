@@ -5699,8 +5699,9 @@ button.lightbox-pill:hover {
   }
   .brand-name-zh { font-size: 1.4rem; }
   .brand-name-sub { font-size: 0.7rem; }
-  /* 手機版：隱藏完整 nav，顯示漢堡按鈕 */
-  .site-nav { display: none; }
+  /* 手機版：nav 容器 transparent 化、隱藏所有 <a>，只露出漢堡按鈕 */
+  .site-nav { display: contents; }
+  .site-nav a { display: none; }
   .mm-toggle { display: flex; }
   .site-header { justify-content: space-between; align-items: center; }
   .site-header-solid { padding-right: 1rem; }
@@ -6031,8 +6032,9 @@ button.lightbox-pill:hover {
 @media (max-width: 480px) {
   .brand-name-zh { font-size: 1.2rem; }
 
-  /* 480px 以下也保持隱藏 site-nav 顯示漢堡 */
-  .site-nav { display: none; }
+  /* 480px 以下：續用 contents 透明容器，按鈕略縮小 */
+  .site-nav { display: contents; }
+  .site-nav a { display: none; }
   .mm-toggle { display: flex; width: 40px; height: 40px; }
   .mm-toggle span { width: 20px; }
 
