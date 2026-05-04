@@ -172,6 +172,62 @@ img { display: block; max-width: 100%; }
 .site-nav a.active { color: var(--gold-light); }
 
 /* ============================================
+   滾動入場動畫（scroll-reveal）
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* 使用者偏好減少動畫時，全部直接顯示 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================
+   首頁 hero 入場 stagger 階梯動畫
+   ============================================ */
+.hero-tagline,
+.hero-title,
+.hero-subtitle,
+.hero-desc,
+.hero-cta {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroEnter 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.hero-tagline { animation-delay: 0.15s; }
+.hero-title    { animation-delay: 0.30s; }
+.hero-subtitle { animation-delay: 0.45s; }
+.hero-desc     { animation-delay: 0.60s; }
+.hero-cta      { animation-delay: 0.78s; }
+
+@keyframes heroEnter {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tagline, .hero-title, .hero-subtitle, .hero-desc, .hero-cta {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ============================================
    行動裝置 ・ 漢堡選單
    ============================================ */
 
