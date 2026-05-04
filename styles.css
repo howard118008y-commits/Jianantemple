@@ -172,6 +172,252 @@ img { display: block; max-width: 100%; }
 .site-nav a.active { color: var(--gold-light); }
 
 /* ============================================
+   行動裝置 ・ 漢堡選單
+   ============================================ */
+
+/* 漢堡按鈕（桌機隱藏，手機顯示）*/
+.mm-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(212, 168, 75, 0.5);
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+.mm-toggle:hover {
+  background: rgba(212, 168, 75, 0.12);
+  border-color: var(--gold);
+}
+.mm-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold-light);
+  transition: all 0.3s ease;
+}
+
+/* 滿版選單 overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(12, 6, 6, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mm-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.4rem 1.4rem 2.5rem;
+  transform: translateY(-15px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1) 0.05s,
+              opacity 0.35s ease 0.08s;
+}
+.mobile-menu.is-open .mm-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 上方 brand + 關閉 */
+.mm-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.4rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.25);
+}
+.mm-brand {
+  text-decoration: none;
+  color: inherit;
+}
+.mm-brand-zh {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  margin-left: 0.18em;
+}
+.mm-brand-sub {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  margin-top: 0.3rem;
+  margin-left: 0.32em;
+}
+.mm-close {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  color: var(--gold-light);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+.mm-close:hover {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+
+/* Section（快速服務 / 完整選單）*/
+.mm-section {
+  margin-bottom: 1.6rem;
+}
+.mm-section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.45em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  padding-left: 0.2rem;
+}
+
+/* 快速服務 6 卡（3 欄 grid）*/
+.mm-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+}
+.mm-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.95rem 0.4rem;
+  background: rgba(31, 20, 20, 0.7);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+.mm-service:hover,
+.mm-service:active {
+  border-color: var(--gold);
+  background: rgba(31, 20, 20, 0.95);
+}
+.mm-service img {
+  width: 42px;
+  height: 42px;
+  display: block;
+}
+.mm-service-name {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--paper);
+  font-weight: 700;
+  margin-left: 0.18em;
+}
+
+/* 完整選單列 */
+.mm-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.mm-nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.95rem 1.1rem;
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.18);
+  text-decoration: none;
+  color: var(--paper);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  margin-left: 0.18em;
+  transition: all 0.25s ease;
+}
+.mm-nav a:hover,
+.mm-nav a:active {
+  border-color: var(--gold);
+  background: rgba(212, 168, 75, 0.1);
+  color: var(--gold-light);
+}
+.mm-arrow {
+  color: var(--gold);
+  font-size: 0.92rem;
+  margin-left: 0;
+  opacity: 0.7;
+}
+
+/* 聯絡 3 鍵 */
+.mm-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.4rem;
+}
+.mm-contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1.2rem;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.25) 0%, rgba(31, 14, 14, 0.85) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.5);
+  text-decoration: none;
+  color: var(--gold-light);
+}
+.mm-contact-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.mm-contact-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+/* 底部資訊 */
+.mm-foot {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 168, 75, 0.2);
+}
+.mm-foot-addr {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: rgba(248, 243, 233, 0.65);
+  margin-bottom: 0.4rem;
+}
+.mm-foot-copy {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: rgba(248, 243, 233, 0.4);
+}
+
+/* ============================================
    首頁 hero
    ============================================ */
 .hero {
@@ -5453,8 +5699,11 @@ button.lightbox-pill:hover {
   }
   .brand-name-zh { font-size: 1.4rem; }
   .brand-name-sub { font-size: 0.7rem; }
-  .site-nav { gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  .site-nav a { font-size: 0.78rem; letter-spacing: 0.1em; }
+  /* 手機版：隱藏完整 nav，顯示漢堡按鈕 */
+  .site-nav { display: none; }
+  .mm-toggle { display: flex; }
+  .site-header { justify-content: space-between; align-items: center; }
+  .site-header-solid { padding-right: 1rem; }
 
   .hero { min-height: auto; padding: 7rem 1.2rem 2rem; }
   .hero-title { font-size: 2.8rem; letter-spacing: 0.22em; margin-left: 0.22em; }
@@ -5782,9 +6031,10 @@ button.lightbox-pill:hover {
 @media (max-width: 480px) {
   .brand-name-zh { font-size: 1.2rem; }
 
-  /* nav 9 項在窄螢幕能完整 wrap */
-  .site-nav { gap: 0.55rem; flex-wrap: wrap; justify-content: center; row-gap: 0.5rem; max-width: 100%; }
-  .site-nav a { font-size: 0.7rem; letter-spacing: 0.05em; padding: 0.35rem 0; }
+  /* 480px 以下也保持隱藏 site-nav 顯示漢堡 */
+  .site-nav { display: none; }
+  .mm-toggle { display: flex; width: 40px; height: 40px; }
+  .mm-toggle span { width: 20px; }
 
   /* banner / hero 標題不切邊 */
   .hero-title { font-size: 2rem; letter-spacing: 0.15em; margin-left: 0.15em; }
