@@ -1810,6 +1810,20 @@ img { display: block; max-width: 100%; }
   padding: 5rem 1.5rem;
 }
 
+/* 委員會 CTA：墨綠色調區隔（與紅色系求籤對比）*/
+.section-committee-cta {
+  background:
+    radial-gradient(ellipse at top, rgba(60, 100, 60, 0.18) 0%, transparent 60%),
+    var(--ink);
+  padding: 5rem 1.5rem 6rem;
+}
+.committee-cta {
+  background: linear-gradient(135deg, rgba(60, 100, 60, 0.18) 0%, rgba(31, 14, 14, 0.92) 100%) !important;
+}
+.committee-cta:hover {
+  background: linear-gradient(135deg, rgba(60, 100, 60, 0.28) 0%, rgba(31, 14, 14, 0.95) 100%) !important;
+}
+
 .fortune-cta {
   max-width: 920px;
   margin: 0 auto;
