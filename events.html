@@ -1069,6 +1069,15 @@
         card.addEventListener('click', () => openAlbum(card.dataset.album));
       });
 
+      // 由其他頁透過 ?album=XXX 進來，自動開啟相簿
+      (function autoOpenFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const albumKey = params.get('album');
+        if (albumKey && albums[albumKey]) {
+          setTimeout(() => openAlbum(albumKey), 250);
+        }
+      })();
+
       // 時間軸事件點擊 → 開啟相簿
       document.querySelectorAll('.th-event[data-album]').forEach(item => {
         item.addEventListener('click', (e) => {

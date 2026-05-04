@@ -790,6 +790,30 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* 圖片 hover 顯示「查看相簿」覆蓋字 */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--gold-light);
+  font-size: 1rem;
+  letter-spacing: 0.32em;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
 }
 
 .gallery-img-frame {
