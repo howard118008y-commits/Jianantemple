@@ -143,6 +143,51 @@
     </div>
   </section>
 
+  <!-- 問事倒數 CTA -->
+  <section class="content-section section-wenshi-cta">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">神 ・ 明 ・ 辦 ・ 事</div>
+        <h2 class="section-title">下一場問事</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead">
+          每週一、三 晚上 8:00<br>
+          本宮神明降乩 ・ 為信眾解惑
+        </p>
+      </div>
+
+      <a class="wcd-card" href="wenshi.html" id="aboutWenshiCard" aria-label="前往問事頁">
+        <span class="wcd-corner wcd-tl"></span>
+        <span class="wcd-corner wcd-tr"></span>
+        <span class="wcd-corner wcd-bl"></span>
+        <span class="wcd-corner wcd-br"></span>
+
+        <div class="wcd-icon-wrap">
+          <img class="wcd-icon" src="assets/services/wenshi.svg" alt="">
+        </div>
+
+        <div class="wcd-eyebrow">
+          <span class="wcd-pulse"></span>
+          <span class="wcd-tag">距 ・ 下 ・ 一 ・ 場 ・ 辦 ・ 事</span>
+        </div>
+
+        <div class="wcd-date" id="aboutWsDate">計算中…</div>
+
+        <div class="wcd-clock">
+          <div class="wcd-unit"><span class="wcd-num" data-aws="d">--</span><span class="wcd-tag-label">天</span></div>
+          <div class="wcd-sep">：</div>
+          <div class="wcd-unit"><span class="wcd-num" data-aws="h">--</span><span class="wcd-tag-label">時</span></div>
+          <div class="wcd-sep">：</div>
+          <div class="wcd-unit"><span class="wcd-num" data-aws="m">--</span><span class="wcd-tag-label">分</span></div>
+          <div class="wcd-sep">：</div>
+          <div class="wcd-unit"><span class="wcd-num" data-aws="s">--</span><span class="wcd-tag-label">秒</span></div>
+        </div>
+
+        <span class="wcd-cta">前 往 問 事 詳 情 →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- 沿革 -->
   <section class="content-section section-history">
     <div class="section-inner">
@@ -447,6 +492,45 @@
   <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
 
   <script>
+    // 問事倒數：找下一個「週一或週三 20:00」並顯示倒數
+    (function () {
+      const dateEl = document.getElementById('aboutWsDate');
+      if (!dateEl) return;
+      const elD = document.querySelector('[data-aws="d"]');
+      const elH = document.querySelector('[data-aws="h"]');
+      const elM = document.querySelector('[data-aws="m"]');
+      const elS = document.querySelector('[data-aws="s"]');
+      const WEEK = ['週日','週一','週二','週三','週四','週五','週六'];
+      const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
+
+      function nextSession() {
+        const now = new Date();
+        for (let i = 0; i < 14; i++) {
+          const d = new Date(now);
+          d.setDate(now.getDate() + i);
+          d.setHours(20, 0, 0, 0);
+          const day = d.getDay();
+          if ((day === 1 || day === 3) && d > now) return d;
+        }
+        return null;
+      }
+
+      function tick() {
+        const next = nextSession();
+        if (!next) return;
+        dateEl.textContent =
+          (next.getMonth() + 1) + ' 月 ' + next.getDate() +
+          ' 日（' + WEEK[next.getDay()] + '）晚上 8:00';
+        const sec = Math.floor(Math.max(0, next.getTime() - Date.now()) / 1000);
+        elD.textContent = pad(Math.floor(sec / 86400));
+        elH.textContent = pad(Math.floor((sec % 86400) / 3600));
+        elM.textContent = pad(Math.floor((sec % 3600) / 60));
+        elS.textContent = pad(sec % 60);
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
     // 最新公告 ・ 動態時間濃淡（越近今日越鮮明、越遠越淡）
     (function () {
       const cards = document.querySelectorAll('.news-card[data-event-date], .news-card[data-fade]');

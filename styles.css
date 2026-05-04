@@ -1604,6 +1604,203 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================
+   問事倒數 CTA（about.html，沿革之上）
+   主題：四角榫角金邊框 + 中央光暈 + 古典時辰錶
+   ============================================ */
+.section-wenshi-cta {
+  background:
+    radial-gradient(ellipse at center top, rgba(212, 168, 75, 0.08) 0%, transparent 60%),
+    var(--ink-soft);
+  padding: 5rem 1.5rem;
+}
+
+.wcd-card {
+  position: relative;
+  display: block;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2.5rem;
+  background:
+    radial-gradient(ellipse at top, rgba(139, 28, 28, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(31, 14, 14, 0.85) 0%, rgba(18, 8, 8, 0.95) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.55);
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  overflow: hidden;
+}
+.wcd-card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212, 168, 75, 0.2);
+  pointer-events: none;
+}
+.wcd-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(212, 168, 75, 0.15);
+}
+
+/* 四角榫角裝飾 */
+.wcd-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--gold);
+  pointer-events: none;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+.wcd-tl { top: 14px; left: 14px;  border-right: none; border-bottom: none; }
+.wcd-tr { top: 14px; right: 14px; border-left: none;  border-bottom: none; }
+.wcd-bl { bottom: 14px; left: 14px;  border-right: none; border-top: none; }
+.wcd-br { bottom: 14px; right: 14px; border-left: none;  border-top: none; }
+.wcd-card:hover .wcd-corner {
+  width: 28px;
+  height: 28px;
+}
+
+/* 中央問事圖示 */
+.wcd-icon-wrap {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.2rem;
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  border-radius: 50%;
+  padding: 0.85rem;
+  background:
+    radial-gradient(circle, rgba(212, 168, 75, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%);
+  transition: transform 0.5s ease, border-color 0.4s ease;
+}
+.wcd-card:hover .wcd-icon-wrap {
+  transform: rotate(-6deg);
+  border-color: var(--gold);
+}
+.wcd-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.wcd-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+.wcd-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+  animation: wcdPulse 1.6s ease-in-out infinite;
+}
+@keyframes wcdPulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+.wcd-tag {
+  font-size: 0.85rem;
+  letter-spacing: 0.42em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.wcd-date {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: 0.15em;
+  margin: 0 0 1.6rem 0.15em;
+  line-height: 1.4;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+}
+
+.wcd-clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.8rem;
+}
+.wcd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 78px;
+  padding: 0.85rem 0.5rem;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.45);
+}
+.wcd-num {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.wcd-tag-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-top: 0.55rem;
+  font-weight: 700;
+}
+.wcd-sep {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--gold);
+  opacity: 0.55;
+  margin-top: -0.6rem;
+}
+
+.wcd-cta {
+  display: inline-block;
+  font-size: 0.95rem;
+  letter-spacing: 0.32em;
+  color: var(--gold-light);
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border: 1px solid var(--gold);
+  background: rgba(212, 168, 75, 0.08);
+  margin-left: 0.32em;
+  transition: all 0.3s ease;
+}
+.wcd-card:hover .wcd-cta {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .section-wenshi-cta { padding: 3rem 1rem; }
+  .wcd-card { padding: 2.2rem 1rem 1.8rem; }
+  .wcd-card::before { inset: 6px; }
+  .wcd-corner { width: 16px; height: 16px; }
+  .wcd-tl, .wcd-tr { top: 10px; }
+  .wcd-bl, .wcd-br { bottom: 10px; }
+  .wcd-tl, .wcd-bl { left: 10px; }
+  .wcd-tr, .wcd-br { right: 10px; }
+  .wcd-icon-wrap { width: 56px; height: 56px; padding: 0.65rem; }
+  .wcd-tag { font-size: 0.7rem; letter-spacing: 0.32em; }
+  .wcd-date { font-size: 1.05rem; letter-spacing: 0.06em; margin-bottom: 1.2rem; }
+  .wcd-clock { gap: 0.25rem; }
+  .wcd-unit { min-width: 0; flex: 1; padding: 0.55rem 0.2rem; }
+  .wcd-num { font-size: 1.4rem; }
+  .wcd-tag-label { font-size: 0.6rem; letter-spacing: 0.2em; margin-top: 0.35rem; }
+  .wcd-sep { font-size: 1.1rem; margin-top: -0.4rem; }
+  .wcd-cta { font-size: 0.78rem; letter-spacing: 0.22em; padding: 0.6rem 1.1rem; }
+}
+
+/* ============================================
    求籤 CTA（about.html 底部，原諸神共鎮位置）
    ============================================ */
 .section-fortune-cta {
