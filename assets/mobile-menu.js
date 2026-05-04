@@ -9,10 +9,10 @@
   const NAV = [
     { href: 'index.html',     label: '首 頁' },
     { href: 'about.html',     label: '關於建安宮' },
-    { href: 'deities.html',   label: '神 明' },
-    { href: 'events.html',    label: '活 動' },
     { href: 'services.html',  label: '香客服務' },
+    { href: 'events.html',    label: '活 動' },
     { href: 'almanac.html',   label: '年 曆' },
+    { href: 'deities.html',   label: '神 明' },
     { href: 'fortune.html',   label: '求 籤' },
     { href: 'wenshi.html',    label: '問 事' },
     { href: 'committee.html', label: '委 員 會' },
