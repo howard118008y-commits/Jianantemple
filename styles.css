@@ -5683,28 +5683,29 @@ button.lightbox-pill:hover {
     animation: none;
   }
 
+  /* 手機版：brand 在左、漢堡在右（橫向排列）*/
   .site-header {
-    padding: 0.9rem 1.2rem;
-    flex-direction: column;
+    padding: 0.7rem 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 0.6rem;
   }
   /* 手機版加大 brand 觸控區，避免誤點 */
   .brand {
-    padding: 0.4rem 1rem;
-    text-align: center;
+    padding: 0.3rem 0.4rem;
+    text-align: left;
     min-height: 44px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .brand-name-zh { font-size: 1.4rem; }
-  .brand-name-sub { font-size: 0.7rem; }
+  .brand-name-zh { font-size: 1.3rem; }
+  .brand-name-sub { font-size: 0.68rem; }
   /* 手機版：nav 容器 transparent 化、隱藏所有 <a>，只露出漢堡按鈕 */
   .site-nav { display: contents; }
   .site-nav a { display: none; }
-  .mm-toggle { display: flex; }
-  .site-header { justify-content: space-between; align-items: center; }
-  .site-header-solid { padding-right: 1rem; }
+  .mm-toggle { display: flex; margin-left: auto; }
 
   .hero { min-height: auto; padding: 7rem 1.2rem 2rem; }
   .hero-title { font-size: 2.8rem; letter-spacing: 0.22em; margin-left: 0.22em; }
