@@ -1533,6 +1533,9 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.25em;
   color: var(--paper);
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .deity-chip:hover {
@@ -1542,14 +1545,191 @@ img { display: block; max-width: 100%; }
   transform: translateY(-2px);
 }
 
-.deity-chip.more {
+.deity-chip.more,
+.deity-chip-more {
   background: transparent;
-  color: rgba(248, 243, 233, 0.5);
-  letter-spacing: 0.4em;
+  color: rgba(248, 243, 233, 0.55);
+  letter-spacing: 0.32em;
   font-size: 0.9rem;
-  cursor: default;
 }
-.deity-chip.more:hover { transform: none; }
+.deity-chip-more:hover {
+  color: var(--gold-light);
+  border-color: var(--gold);
+  background: rgba(212, 168, 75, 0.1);
+}
+
+/* === 開基三尊下方緊接的「廣納神尊」緊湊版 === */
+.extra-deities {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(212, 168, 75, 0.18);
+  text-align: center;
+}
+.extra-deities-head {
+  margin-bottom: 1.5rem;
+}
+.extra-deities-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.45em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 0.8rem;
+  margin-left: 0.45em;
+}
+.extra-deities-sub {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  color: rgba(248, 243, 233, 0.6);
+}
+.extra-deities-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+}
+.extra-deities-list .deity-chip {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+}
+
+@media (max-width: 768px) {
+  .extra-deities { margin-top: 2rem; padding-top: 1.8rem; }
+  .extra-deities-head { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem; }
+  .extra-deities-label { margin-right: 0; font-size: 0.7rem; letter-spacing: 0.36em; }
+  .extra-deities-sub { font-size: 0.72rem; letter-spacing: 0.1em; }
+  .extra-deities-list { gap: 0.4rem; }
+  .extra-deities-list .deity-chip { padding: 0.5rem 0.85rem; font-size: 0.8rem; letter-spacing: 0.12em; }
+}
+
+/* ============================================
+   求籤 CTA（about.html 底部，原諸神共鎮位置）
+   ============================================ */
+.section-fortune-cta {
+  background:
+    radial-gradient(ellipse at top, rgba(139, 28, 28, 0.18) 0%, transparent 60%),
+    var(--ink-soft);
+  padding: 5rem 1.5rem;
+}
+
+.fortune-cta {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 3rem 3rem;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.22) 0%, rgba(31, 14, 14, 0.92) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.55);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+.fortune-cta::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212, 168, 75, 0.2);
+  pointer-events: none;
+}
+.fortune-cta:hover {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.32) 0%, rgba(31, 14, 14, 0.95) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6);
+}
+
+.fortune-cta-icon {
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--gold);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem;
+  margin: 0 auto;
+  transition: transform 0.5s ease;
+}
+.fortune-cta:hover .fortune-cta-icon {
+  transform: rotate(-4deg) scale(1.04);
+}
+.fortune-cta-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.fortune-cta-body { padding: 0; }
+.fortune-cta-tag {
+  font-size: 0.82rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.fortune-cta-title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: 0.32em;
+  margin: 0 0 0 0.32em;
+  line-height: 1.2;
+}
+.fortune-cta-divider {
+  width: 50px;
+  height: 2px;
+  background: var(--gold);
+  margin: 1rem 0 1.2rem;
+  transition: width 0.4s ease;
+}
+.fortune-cta:hover .fortune-cta-divider {
+  width: 80px;
+}
+.fortune-cta-desc {
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.85);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+.fortune-cta-arrow {
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0.32em;
+  color: var(--gold-light);
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--gold);
+  background: rgba(212, 168, 75, 0.08);
+  margin-left: 0.32em;
+  transition: all 0.3s ease;
+}
+.fortune-cta:hover .fortune-cta-arrow {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .section-fortune-cta { padding: 3rem 1rem; }
+  .fortune-cta {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 2.2rem 1.5rem;
+    text-align: center;
+  }
+  .fortune-cta-icon { width: 130px; height: 130px; padding: 1rem; }
+  .fortune-cta-title { font-size: 1.8rem; letter-spacing: 0.22em; margin-left: 0.22em; }
+  .fortune-cta-divider { margin-left: auto; margin-right: auto; }
+  .fortune-cta-desc { font-size: 0.9rem; line-height: 1.85; }
+  .fortune-cta-arrow { padding: 0.6rem 1.1rem; font-size: 0.85rem; letter-spacing: 0.2em; margin-left: 0.2em; }
+}
 
 .deities-note {
   text-align: center;
