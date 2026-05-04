@@ -187,10 +187,24 @@ img { display: block; max-width: 100%; }
   transform: none;
 }
 
+/* 文字較多的區塊：較慢、距離較長的浮現，給眼睛時間進入閱讀狀態 */
+.reveal-slow {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1.6s ease,
+    transform 1.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal-slow.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 /* 使用者偏好減少動畫時，全部直接顯示 */
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal.is-visible {
+  .reveal, .reveal.is-visible,
+  .reveal-slow, .reveal-slow.is-visible {
     opacity: 1;
     transform: none;
     transition: none;
