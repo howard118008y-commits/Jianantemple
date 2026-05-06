@@ -4323,6 +4323,38 @@ img { display: block; max-width: 100%; }
   line-height: 1.85;
 }
 
+.saint-fulltable {
+  display: block;
+  margin: 1.6rem auto 0;
+  max-width: 880px;
+  border: 1px solid rgba(212, 168, 75, 0.32);
+  background: rgba(15, 9, 9, 0.55);
+  padding: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.saint-fulltable:hover {
+  border-color: rgba(212, 168, 75, 0.7);
+  background: rgba(31, 20, 20, 0.7);
+}
+
+.saint-fulltable img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.saint-fulltable-cap {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  color: rgba(248, 243, 233, 0.65);
+}
+
 /* 12 月令 */
 .section-monthly {
   background: var(--ink-soft);
