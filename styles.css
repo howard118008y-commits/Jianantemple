@@ -4209,7 +4209,7 @@ img { display: block; max-width: 100%; }
 
 .saint-row {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1fr 64px;
   border-bottom: 1px dashed rgba(212, 168, 75, 0.2);
   transition: background 0.3s ease;
 }
@@ -4312,6 +4312,48 @@ img { display: block; max-width: 100%; }
   font-size: 0.82rem;
   letter-spacing: 0.2em;
   color: rgba(248, 243, 233, 0.7);
+}
+
+/* 加入 Google 日曆按鈕 */
+.saint-cal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  border-radius: 6px;
+  background: rgba(248, 243, 233, 0.04);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.saint-cal-btn:hover,
+.saint-cal-btn:focus-visible {
+  background: rgba(248, 243, 233, 0.95);
+  border-color: var(--gold);
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgba(212, 168, 75, 0.35);
+  outline: none;
+}
+
+.saint-cal-btn svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.saint-cal-btn:active {
+  transform: scale(0.96);
+}
+
+/* 隱藏 saint-row-link 預設箭頭，改由日曆按鈕視覺主導 */
+.saint-row-link::after {
+  right: 76px;
 }
 
 .almanac-note-line {
@@ -6488,12 +6530,18 @@ button.lightbox-pill:hover {
   .ov-card-icon { width: 48px; height: 48px; margin-bottom: 0.5rem; }
   .overview-card-feature .ov-card-icon { width: 56px; height: 56px; }
 
-  .saint-row { grid-template-columns: 1fr 1fr; gap: 0; }
+  .saint-row { grid-template-columns: 1fr 1fr 52px; gap: 0; align-items: center; }
   .saint-row-head { display: none; }
   .saint-cell { padding: 0.7rem 0.8rem; font-size: 0.85rem; border-right: none; border-bottom: 1px solid rgba(212, 168, 75, 0.12); }
   .saint-name { font-size: 1rem; letter-spacing: 0.15em; }
-  .saint-cell:nth-child(3),
-  .saint-cell:nth-child(4) { background: rgba(0, 0, 0, 0.25); }
+  /* 手機版：神尊／聖誕 在第一列；國曆／備註 在第二列；日曆按鈕跨兩列置中於右 */
+  .saint-cell:nth-child(1) { grid-column: 1 / 2; grid-row: 1; }
+  .saint-cell:nth-child(2) { grid-column: 2 / 3; grid-row: 1; }
+  .saint-cell:nth-child(3) { grid-column: 1 / 2; grid-row: 2; background: rgba(0, 0, 0, 0.25); }
+  .saint-cell:nth-child(4) { grid-column: 2 / 3; grid-row: 2; background: rgba(0, 0, 0, 0.25); }
+  .saint-cal-btn { grid-column: 3 / 4; grid-row: 1 / 3; width: 36px; height: 36px; }
+  .saint-cal-btn svg { width: 22px; height: 22px; }
+  .saint-row-link::after { display: none; }
 
   .monthly-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
   .month-card { padding: 1.2rem 1rem; gap: 0.6rem; }
