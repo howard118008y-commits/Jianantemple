@@ -6488,8 +6488,12 @@ button.lightbox-pill:hover {
   .btn-large { padding: 0.9rem 1.5rem; }
 
   /* 香客服務頁 RWD */
-  .process-grid { grid-template-columns: 1fr; gap: 0.8rem; }
-  .process-arrow { transform: rotate(90deg); padding: 0.3rem 0; }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .process-arrow { display: none; }
+  .process-card { padding: 1.1rem 0.6rem; }
+  .process-num { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .process-title { font-size: 0.95rem; letter-spacing: 0.18em; margin-left: 0.18em; margin-bottom: 0.6rem; padding-bottom: 0.6rem; }
+  .process-desc { font-size: 0.72rem; line-height: 1.7; letter-spacing: 0.03em; }
 
   .lights-grid { grid-template-columns: 1fr; gap: 1rem; }
   .light-card { padding: 1.8rem 1.4rem; }
