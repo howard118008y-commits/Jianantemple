@@ -6167,6 +6167,81 @@ button.lightbox-pill:hover {
   pointer-events: none;
 }
 
+/* ==== 父相簿輯選擇器 ==== */
+.lightbox-grid:has(.lightbox-part-item) {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.2rem;
+  padding: 6rem 3.5rem 3.5rem;
+}
+.lightbox-part-item {
+  aspect-ratio: 4 / 3;
+  border: 2px solid rgba(212, 168, 75, 0.35);
+  background: rgba(31, 20, 20, 0.75);
+}
+.lightbox-part-item:hover {
+  border-color: var(--gold);
+}
+.lightbox-part-item img {
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+.lightbox-part-item:hover img {
+  filter: brightness(1.1);
+}
+.lightbox-part-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.lightbox-part-item:hover::after {
+  opacity: 0.7;
+}
+.lightbox-part-item .lightbox-part-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.2rem;
+  top: auto;
+  transform: none;
+  font-size: 1.7rem;
+  letter-spacing: 0.32em;
+  color: var(--paper);
+  background: transparent;
+  padding: 0 1rem;
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+  text-align: center;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.95), 0 0 18px rgba(0,0,0,0.7);
+  line-height: 1.5;
+  z-index: 2;
+}
+.lightbox-part-item .lightbox-part-count {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  color: var(--gold);
+  font-weight: 700;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .lightbox-grid:has(.lightbox-part-item) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 6rem 1.4rem 2.5rem;
+  }
+  .lightbox-part-item { aspect-ratio: 16 / 9; }
+  .lightbox-part-item .lightbox-part-label { font-size: 1.3rem; letter-spacing: 0.24em; }
+  .lightbox-part-item .lightbox-part-count { font-size: 0.78rem; letter-spacing: 0.18em; margin-top: 0.5rem; }
+}
+
 /* ==== 底部縮圖膠捲（Single mode）==== */
 .lightbox-strip {
   position: absolute;
