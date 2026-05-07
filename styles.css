@@ -2350,6 +2350,7 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.2em;
   color: var(--gold-light);
   margin-top: auto;
+  line-height: 1.7;
 }
 
 /* 完整名單提示 */
