@@ -150,7 +150,8 @@
           </div>
           <div class="card-actions card-actions-multi">
             <button class="btn btn-primary" id="btnAgain">重 新 請 籤</button>
-            <a href="tel:0981142292" class="btn btn-secondary">☎ 0981-142-292</a>
+            <a href="tel:0981142292" class="btn btn-secondary">☎ 宮主 0981-142-292</a>
+            <a href="tel:0930311370" class="btn btn-secondary">☎ 執事 0930-311-370</a>
             <a href="contact.html" class="btn btn-secondary">蒞 臨 本 宮</a>
           </div>
           <div class="card-share">
@@ -207,7 +208,10 @@
       </div>
       <div class="footer-col">
         <div class="footer-label">聯 絡</div>
-        <div class="footer-value">0981-142-292</div>
+        <div class="footer-value footer-contacts">
+          <div class="footer-contact"><span class="footer-contact-role">宮主 ・ 陳炫忖</span><a href="tel:0981142292" class="footer-contact-num">0981-142-292</a></div>
+          <div class="footer-contact"><span class="footer-contact-role">執事 ・ 陳俊宇</span><a href="tel:0930311370" class="footer-contact-num">0930-311-370</a></div>
+        </div>
         <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
       </div>
       <div class="footer-col">
@@ -315,7 +319,7 @@
           f.lines.join('\n') + '\n' +
           '━━━━━━━━━━\n' +
           '心誠則靈 ・ 神明賜示\n' +
-          '詳細解曰請洽 0981-142-292';
+          '詳細解曰請洽 宮主 0981-142-292 / 執事 0930-311-370';
         try {
           await navigator.clipboard.writeText(text);
           const btn = e.target;

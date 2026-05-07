@@ -70,7 +70,11 @@
         <div class="mm-contact">
           <a href="tel:0981142292" class="mm-contact-btn">
             <span class="mm-contact-icon">📞</span>
-            <span class="mm-contact-text">致電 0981-142-292</span>
+            <span class="mm-contact-text">致電宮主 0981-142-292</span>
+          </a>
+          <a href="tel:0930311370" class="mm-contact-btn">
+            <span class="mm-contact-icon">📞</span>
+            <span class="mm-contact-text">致電執事 0930-311-370</span>
           </a>
           <a href="https://share.google/DgsapuCFxv6GxUqh1" target="_blank" rel="noopener" class="mm-contact-btn">
             <span class="mm-contact-icon">📍</span>

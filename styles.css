@@ -660,6 +660,36 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.05em;
 }
 
+.info-item-contacts { padding-top: 0.9rem; padding-bottom: 0.9rem; }
+.info-contacts { display: flex; flex-direction: column; gap: 0.35rem; align-items: center; }
+.info-contact-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.18rem 0.7rem;
+  border: 1px solid rgba(212, 168, 75, 0.25);
+  transition: all 0.25s ease;
+}
+.info-contact-row:hover {
+  background: rgba(212, 168, 75, 0.12);
+  border-color: var(--gold);
+}
+.info-contact-role {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  opacity: 0.9;
+}
+.info-contact-num {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+}
+
 /* ============================================
    內頁：頂部 banner
    ============================================ */
@@ -3437,6 +3467,45 @@ img { display: block; max-width: 100%; }
   line-height: 1.4;
   font-family: "Noto Serif TC", serif;
 }
+
+.contact-value-phones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.6rem;
+  flex: 1;
+  justify-content: center;
+}
+.contact-phone-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+.contact-phone-role {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  color: var(--gold-light);
+  opacity: 0.9;
+}
+.contact-phone-num {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--paper);
+  font-family: "Noto Serif TC", serif;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contact-phone-num:hover { color: var(--gold); }
+.contact-cta-group {
+  display: flex;
+  gap: 0.6rem;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-cta-group .contact-cta { flex: 1 1 auto; min-width: 8rem; }
 
 .contact-floor {
   font-size: 0.78rem;
@@ -6229,6 +6298,25 @@ button.lightbox-pill:hover {
   line-height: 1.7;
 }
 
+.footer-contacts { display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-contact { display: flex; flex-direction: column; gap: 0.1rem; }
+.footer-contact-role {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  opacity: 0.85;
+}
+.footer-contact-num {
+  font-size: 0.95rem;
+  color: rgba(248, 243, 233, 0.92);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.footer-contact-num:hover { color: var(--gold); }
+
 .footer-link {
   display: inline-block;
   margin-top: 0.7rem;
@@ -6335,6 +6423,10 @@ button.lightbox-pill:hover {
   .info-item:last-child { border-bottom: none; }
   .info-label { font-size: 0.68rem; letter-spacing: 0.3em; margin-bottom: 0.25rem; }
   .info-value { font-size: 0.82rem; line-height: 1.4; }
+  .info-contacts { gap: 0.3rem; }
+  .info-contact-row { gap: 0.4rem; padding: 0.12rem 0.5rem; }
+  .info-contact-role { font-size: 0.62rem; letter-spacing: 0.12em; }
+  .info-contact-num { font-size: 0.82rem; }
 
   .page-banner { height: 50vh; min-height: 320px; }
   .banner-title { font-size: 2.6rem; letter-spacing: 0.22em; margin-left: 0.22em; }
@@ -6472,6 +6564,11 @@ button.lightbox-pill:hover {
   .contact-label { font-size: 0.85rem; letter-spacing: 0.4em; margin-bottom: 1rem; padding-bottom: 0.8rem; }
   .contact-value { font-size: 0.95rem; margin-bottom: 1.5rem; }
   .contact-value-large { font-size: 1.6rem; }
+  .contact-value-phones { gap: 0.9rem; margin-bottom: 1.2rem; }
+  .contact-phone-role { font-size: 0.7rem; letter-spacing: 0.25em; }
+  .contact-phone-num { font-size: 1.35rem; }
+  .contact-cta-group { gap: 0.5rem; }
+  .contact-cta-group .contact-cta { min-width: 6.5rem; padding: 0.7rem 0.9rem; font-size: 0.85rem; }
 
   .map-wrap iframe { height: 350px; }
 
