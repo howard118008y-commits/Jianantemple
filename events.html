@@ -1024,6 +1024,7 @@
 
       let currentAlbum = null;
       let currentParentKey = null;
+      let savedScrollY = 0;
 
       function buildPartsSelector(album) {
         grid.innerHTML = '';
@@ -1152,6 +1153,10 @@
       function openAlbum(id, parentKey = null) {
         const album = albums[id];
         if (!album) return;
+        // 第一次開啟時記住現在的滾動位置（子相簿切換不重複記）
+        if (lb.hidden) {
+          savedScrollY = window.scrollY || window.pageYOffset || 0;
+        }
         currentAlbum = album;
         currentParentKey = parentKey;
         titleEl.textContent = album.title;
@@ -1181,6 +1186,10 @@
         strip.innerHTML = '';
         currentAlbum = null;
         currentParentKey = null;
+        // 還原原本的滾動位置（避免跳到頁首）
+        if (savedScrollY) {
+          window.scrollTo(0, savedScrollY);
+        }
       }
 
       function updateCounter() {
