@@ -1,0 +1,72 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//建安宮行銷顧問//Marketing Calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:建安宮網站行銷追蹤
+X-WR-TIMEZONE:Asia/Taipei
+
+BEGIN:VTIMEZONE
+TZID:Asia/Taipei
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+
+BEGIN:VEVENT
+UID:jianan-weekly-report-001@taipeijianantemple.com.tw
+DTSTART;TZID=Asia/Taipei:20260511T090000
+DTEND;TZID=Asia/Taipei:20260511T093000
+RRULE:FREQ=WEEKLY;BYDAY=MO
+SUMMARY:【週報】GA4＋Search Console 流量查看
+DESCRIPTION:每週一早上 30 分鐘行銷追蹤\n\nGA4（analytics.google.com）：\n・本週訪客數 vs 上週\n・熱門頁面 Top 5\n・流量來源（搜尋 / 直接 / 社群）\n・有無異常波動\n\nSearch Console（search.google.com/search-console）：\n・曝光次數、點擊率趨勢\n・本週新出現的關鍵字\n・「台北建安宮」「建安宮問事」排名位置
+END:VEVENT
+
+BEGIN:VEVENT
+UID:jianan-monthly-audit-001@taipeijianantemple.com.tw
+DTSTART;TZID=Asia/Taipei:20260601T100000
+DTEND;TZID=Asia/Taipei:20260601T110000
+RRULE:FREQ=MONTHLY;BYMONTHDAY=1
+SUMMARY:【月報】網站成效分析＋下月內容規劃
+DESCRIPTION:每月1日 60 分鐘月報會議\n\n數據回顧：\n・GA4：月訪客趨勢、跳出率、平均停留時間\n・Search Console：關鍵字排名進退、哪些頁面曝光大增/大減\n・與上月相比整體成長率\n\n內容規劃（下個月）：\n・下月有哪些神明聖誕？提前更新首頁 Banner\n・是否有大型活動需要製作活動頁？\n・問事名額狀態確認\n・祝壽香塔報名是否需要更新
+END:VEVENT
+
+BEGIN:VEVENT
+UID:jianan-monthly-content-001@taipeijianantemple.com.tw
+DTSTART;TZID=Asia/Taipei:20260515T140000
+DTEND;TZID=Asia/Taipei:20260515T143000
+RRULE:FREQ=MONTHLY;BYMONTHDAY=15
+SUMMARY:【月中】網站內容＋活動頁面更新
+DESCRIPTION:每月15日 30 分鐘內容維護\n\n確認清單：\n・未來 30 天神明聖誕日期正確\n・活動頁面資訊是否最新\n・問事倒數頁是否需要更新名額/日期\n・祝壽香塔報名名單是否有新增\n・首頁公告欄有無需要更新的訊息\n\n社群同步：\n・FB 粉專有無重要貼文可連結到網站？
+END:VEVENT
+
+BEGIN:VEVENT
+UID:jianan-quarterly-seo-001@taipeijianantemple.com.tw
+DTSTART;TZID=Asia/Taipei:20260701T100000
+DTEND;TZID=Asia/Taipei:20260701T110000
+RRULE:FREQ=MONTHLY;INTERVAL=3;BYMONTHDAY=1
+SUMMARY:【季報】SEO 健診＋網站技術優化
+DESCRIPTION:每季 90 分鐘 SEO 全面健診\n\n技術檢查：\n・Google PageSpeed Insights 速度測試（目標分數 >80）\n・確認所有頁面連結正常（無 404 錯誤）\n・OG 圖片在 LINE / FB 分享預覽是否正常\n・HTTPS 憑證是否有效（GitHub Pages 自動續約）\n\n搜尋排名：\n・關鍵字「台北建安宮」Google 搜尋排名第幾？\n・關鍵字「建安宮問事」「台北廟宇問事」排名\n・Search Console 點擊率最高的 5 個查詢詞\n\n內容優化：\n・是否有頁面流量特別低？考慮加強內容\n・是否需要新增頁面（如：常見問題 FAQ）\n・圖片是否都有 alt 文字（有助 SEO）
+END:VEVENT
+
+BEGIN:VEVENT
+UID:jianan-annual-dates-2026@taipeijianantemple.com.tw
+DTSTART;TZID=Asia/Taipei:20270101T100000
+DTEND;TZID=Asia/Taipei:20270101T110000
+RRULE:FREQ=YEARLY;BYMONTHDAY=1;BYMONTH=1
+SUMMARY:【年度】更新全站神明聖誕日期表
+DESCRIPTION:每年元旦 確認新年度農曆對應國曆\n\n更新項目：\n・almanac.html 年曆表所有日期換算成新年度國曆\n・deity-detail.html 各神明聖誕日期確認\n・ICS 行事曆檔案重新產生\n・sitemap.xml 提交更新\n\n同時檢查：\n・是否有新增神明需要加入頁面\n・廟方聯絡資訊是否有異動\n・Google Analytics 年度報告截圖存檔
+END:VEVENT
+
+BEGIN:VEVENT
+UID:jianan-q2-review-2026@taipeijianantemple.com.tw
+DTSTART;TZID=Asia/Taipei:20260601T100000
+DTEND;TZID=Asia/Taipei:20260601T110000
+SUMMARY:【首月檢核】GA4 + Search Console 首次月報
+DESCRIPTION:網站上線第一個完整月報\n\n重點確認：\n・GA4 是否開始收到穩定數據（警告是否消失）\n・Search Console 網頁索引數量（目標 >20 頁）\n・「台北建安宮」在 Google 搜尋是否已出現\n・sitemap.xml 83頁中已索引幾頁？\n\n如果索引偏低（<30 頁）：\n→ 至 Search Console > 網頁 > 查看未索引原因
+END:VEVENT
+
+END:VCALENDAR
