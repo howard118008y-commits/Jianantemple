@@ -10271,3 +10271,116 @@ button.lightbox-pill:hover {
   .jq-item-poem p { font-size: 0.95rem; letter-spacing: 0.14em; }
   .jq-item-cats { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   加入 Google 日曆 ・ 展開列表
+   ============================================ */
+.gcal-panel {
+  width: 100%;
+}
+
+.gcal-panel > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.gcal-panel > summary::-webkit-details-marker { display: none; }
+
+.gcal-arrow {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 1.1rem;
+  transition: transform 0.25s ease;
+}
+.gcal-panel[open] .gcal-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.gcal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.gcal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  background: rgba(31, 20, 20, 0.5);
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.gcal-item:hover {
+  border-color: var(--gold);
+  background: rgba(212, 168, 75, 0.08);
+}
+
+.gcal-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.gcal-item-title {
+  font-size: 0.98rem;
+  letter-spacing: 0.1em;
+  color: var(--paper);
+  font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+}
+
+.gcal-item-date {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: rgba(212, 168, 75, 0.85);
+}
+
+.gcal-item-cta {
+  flex-shrink: 0;
+  padding: 0.4rem 0.85rem;
+  background: rgba(66, 133, 244, 0.18);
+  border: 1px solid rgba(66, 133, 244, 0.55);
+  color: #8fb6f5;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.gcal-item:hover .gcal-item-cta {
+  background: rgba(66, 133, 244, 0.35);
+  color: #ffffff;
+  border-color: #4285f4;
+}
+
+.ics-download-link {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+.ics-download-link:hover { color: var(--gold); }
+
+@media (max-width: 600px) {
+  .gcal-arrow { right: 0.8rem; }
+  .gcal-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.75rem 0.9rem;
+  }
+  .gcal-item-title { font-size: 0.92rem; }
+  .gcal-item-date { font-size: 0.74rem; }
+  .gcal-item-cta { text-align: center; padding: 0.5rem; }
+}

@@ -204,26 +204,30 @@
         ※ 以上為本宮主要祭典聖誕，完整列位尊神祭典日期表如下；國曆對應日期僅供參考，實際時程以本宮公告為準。
       </p>
 
-      <!-- 一鍵匯入聖誕千秋至行事曆 -->
+      <!-- 加入 Google 日曆 -->
       <div class="saint-ics-cta">
-        <button type="button" class="btn-saint-ics" id="saintIcsBtn" aria-label="一鍵匯入所有神尊聖誕日期到行事曆">
-          <svg class="btn-saint-ics-icon" viewBox="0 0 48 48" aria-hidden="true">
-            <rect x="6" y="6" width="36" height="36" fill="#fff"/>
-            <path d="M6 6h6v6H6z" fill="#fbbc04"/>
-            <path d="M42 6v6h-6V6z" fill="#ea4335"/>
-            <path d="M6 42v-6h6v6z" fill="#34a853"/>
-            <path d="M42 42h-6v-6h6z" fill="#4285f4"/>
-            <text x="24" y="32" font-size="16" font-weight="700" fill="#5f6368" text-anchor="middle" font-family="Arial,sans-serif">31</text>
-          </svg>
-          <span class="btn-saint-ics-text">
-            <span class="btn-saint-ics-title">一鍵匯入聖誕千秋至行事曆</span>
-            <span class="btn-saint-ics-sub">下載 .ics 檔 ・ Google／Apple／Outlook 通用</span>
-          </span>
-        </button>
-        <p class="btn-saint-ics-help">
-          ※ 點擊後下載「.ics」檔，雙擊開啟即可匯入您的行事曆 App；<br>
-          Google Calendar 用戶請至「設定 → 匯入與匯出」上傳此檔。
-        </p>
+        <details class="gcal-panel" id="gcalPanel">
+          <summary class="btn-saint-ics" aria-label="展開神尊聖誕、加入 Google 日曆">
+            <svg class="btn-saint-ics-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="6" y="6" width="36" height="36" fill="#fff"/>
+              <path d="M6 6h6v6H6z" fill="#fbbc04"/>
+              <path d="M42 6v6h-6V6z" fill="#ea4335"/>
+              <path d="M6 42v-6h6v6z" fill="#34a853"/>
+              <path d="M42 42h-6v-6h6z" fill="#4285f4"/>
+              <text x="24" y="32" font-size="16" font-weight="700" fill="#5f6368" text-anchor="middle" font-family="Arial,sans-serif">31</text>
+            </svg>
+            <span class="btn-saint-ics-text">
+              <span class="btn-saint-ics-title">加入 Google 日曆</span>
+              <span class="btn-saint-ics-sub">點擊展開 ・ 一鍵把聖誕日期加入您的 Google 日曆</span>
+            </span>
+            <span class="gcal-arrow" aria-hidden="true">▾</span>
+          </summary>
+          <div class="gcal-list" id="gcalList"></div>
+          <p class="btn-saint-ics-help">
+            ※ 點任一聖誕的 Google 日曆按鈕，會在新分頁開啟 Google 日曆並詢問您是否加入。<br>
+            其他行事曆（Apple Calendar、Outlook）請改用 <a href="#" id="saintIcsDownload" class="ics-download-link">下載 .ics 檔</a>。
+          </p>
+        </details>
       </div>
 
       <a class="saint-fulltable" href="assets/notices/列位尊神祭典日期表.jpg" target="_blank" rel="noopener">
@@ -710,8 +714,43 @@
         setTimeout(() => URL.revokeObjectURL(url), 1500);
       }
 
-      const btn = document.getElementById('saintIcsBtn');
-      if (btn) btn.addEventListener('click', downloadICS);
+      // 產生單一活動的 Google Calendar 加入網址（全天事件）
+      function gcalUrl(ev) {
+        const desc = '台北建安宮 ・ ' + ev.lunar + (ev.note ? ' ・ ' + ev.note : '');
+        const params = new URLSearchParams({
+          action: 'TEMPLATE',
+          text: ev.title,
+          dates: ev.date + '/' + nextDay(ev.date),
+          details: desc,
+          location: HOME,
+          ctz: 'Asia/Taipei'
+        });
+        return 'https://calendar.google.com/calendar/render?' + params.toString();
+      }
+
+      function fmtSolarDate(yyyymmdd) {
+        return yyyymmdd.slice(0,4) + ' / ' + yyyymmdd.slice(4,6) + ' / ' + yyyymmdd.slice(6,8);
+      }
+
+      // 渲染 Google 日曆列表
+      function renderGcalList() {
+        const list = document.getElementById('gcalList');
+        if (!list) return;
+        list.innerHTML = EVENTS.map(ev => `
+          <a class="gcal-item" href="${gcalUrl(ev)}" target="_blank" rel="noopener">
+            <div class="gcal-item-info">
+              <div class="gcal-item-title">${ev.title}</div>
+              <div class="gcal-item-date">${fmtSolarDate(ev.date)} ・ ${ev.lunar}${ev.note ? ' ・ ' + ev.note : ''}</div>
+            </div>
+            <span class="gcal-item-cta">＋ 加入 Google 日曆</span>
+          </a>
+        `).join('');
+      }
+
+      renderGcalList();
+
+      const dl = document.getElementById('saintIcsDownload');
+      if (dl) dl.addEventListener('click', (e) => { e.preventDefault(); downloadICS(); });
     })();
   </script>
 </body>

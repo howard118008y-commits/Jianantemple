@@ -268,26 +268,30 @@
           <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="btn btn-secondary">FB 私訊本宮</a>
         </div>
 
-        <!-- 一鍵匯入聖誕千秋至行事曆 -->
+        <!-- 加入 Google 日曆 -->
         <div class="saint-ics-cta zhushou-ics-cta">
-          <button type="button" class="btn-saint-ics" id="zhushouIcsBtn" aria-label="一鍵匯入所有神尊聖誕日期到行事曆">
-            <svg class="btn-saint-ics-icon" viewBox="0 0 48 48" aria-hidden="true">
-              <rect x="6" y="6" width="36" height="36" fill="#fff"/>
-              <path d="M6 6h6v6H6z" fill="#fbbc04"/>
-              <path d="M42 6v6h-6V6z" fill="#ea4335"/>
-              <path d="M6 42v-6h6v6z" fill="#34a853"/>
-              <path d="M42 42h-6v-6h6z" fill="#4285f4"/>
-              <text x="24" y="32" font-size="16" font-weight="700" fill="#5f6368" text-anchor="middle" font-family="Arial,sans-serif">31</text>
-            </svg>
-            <span class="btn-saint-ics-text">
-              <span class="btn-saint-ics-title">一鍵匯入聖誕千秋至行事曆</span>
-              <span class="btn-saint-ics-sub">下載 .ics 檔 ・ Google／Apple／Outlook 通用</span>
-            </span>
-          </button>
-          <p class="btn-saint-ics-help">
-            ※ 點擊後下載「.ics」檔，雙擊開啟即可匯入您的行事曆 App；<br>
-            Google Calendar 用戶請至「設定 → 匯入與匯出」上傳此檔。
-          </p>
+          <details class="gcal-panel" id="zhushouGcalPanel">
+            <summary class="btn-saint-ics" aria-label="展開神尊聖誕、加入 Google 日曆">
+              <svg class="btn-saint-ics-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="6" width="36" height="36" fill="#fff"/>
+                <path d="M6 6h6v6H6z" fill="#fbbc04"/>
+                <path d="M42 6v6h-6V6z" fill="#ea4335"/>
+                <path d="M6 42v-6h6v6z" fill="#34a853"/>
+                <path d="M42 42h-6v-6h6z" fill="#4285f4"/>
+                <text x="24" y="32" font-size="16" font-weight="700" fill="#5f6368" text-anchor="middle" font-family="Arial,sans-serif">31</text>
+              </svg>
+              <span class="btn-saint-ics-text">
+                <span class="btn-saint-ics-title">加入 Google 日曆</span>
+                <span class="btn-saint-ics-sub">點擊展開 ・ 一鍵把聖誕日期加入您的 Google 日曆</span>
+              </span>
+              <span class="gcal-arrow" aria-hidden="true">▾</span>
+            </summary>
+            <div class="gcal-list" id="zhushouGcalList"></div>
+            <p class="btn-saint-ics-help">
+              ※ 點任一聖誕的 Google 日曆按鈕，會在新分頁開啟 Google 日曆並詢問您是否加入。<br>
+              其他行事曆（Apple Calendar、Outlook）請改用 <a href="#" id="zhushouIcsDownload" class="ics-download-link">下載 .ics 檔</a>。
+            </p>
+          </details>
         </div>
       </div>
     </div>
@@ -1076,8 +1080,40 @@
         setTimeout(() => URL.revokeObjectURL(url), 1500);
       }
 
-      const btn = document.getElementById('zhushouIcsBtn');
-      if (btn) btn.addEventListener('click', downloadICS);
+      function gcalUrl(ev) {
+        const desc = '台北建安宮 ・ ' + ev.lunar + (ev.note ? ' ・ ' + ev.note : '');
+        const params = new URLSearchParams({
+          action: 'TEMPLATE',
+          text: ev.title,
+          dates: ev.date + '/' + nextDay(ev.date),
+          details: desc,
+          location: HOME,
+          ctz: 'Asia/Taipei'
+        });
+        return 'https://calendar.google.com/calendar/render?' + params.toString();
+      }
+
+      function fmtSolarDate(yyyymmdd) {
+        return yyyymmdd.slice(0,4) + ' / ' + yyyymmdd.slice(4,6) + ' / ' + yyyymmdd.slice(6,8);
+      }
+
+      function renderGcalList() {
+        const list = document.getElementById('zhushouGcalList');
+        if (!list) return;
+        list.innerHTML = EVENTS.map(ev => `
+          <a class="gcal-item" href="${gcalUrl(ev)}" target="_blank" rel="noopener">
+            <div class="gcal-item-info">
+              <div class="gcal-item-title">${ev.title}</div>
+              <div class="gcal-item-date">${fmtSolarDate(ev.date)} ・ ${ev.lunar}${ev.note ? ' ・ ' + ev.note : ''}</div>
+            </div>
+            <span class="gcal-item-cta">＋ 加入 Google 日曆</span>
+          </a>
+        `).join('');
+      }
+      renderGcalList();
+
+      const dl = document.getElementById('zhushouIcsDownload');
+      if (dl) dl.addEventListener('click', (e) => { e.preventDefault(); downloadICS(); });
     })();
   </script>
 </body>
