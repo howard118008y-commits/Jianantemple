@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>活動專頁｜台北建安宮 艋舺雙園聖母會</title>
+  <meta name="description" content="台北建安宮活動專頁。逐場活動概要、影像紀錄、儀式說明，完整呈現本宮年度祭典與盛事。">
+  <link rel="canonical" href="https://howard118008y-commits.github.io/Jianantemple/event-detail.html">
+  <meta name="theme-color" content="#1f1414">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="台北建安宮 ・ 艋舺雙園聖母會">
+  <meta property="og:image" content="https://howard118008y-commits.github.io/Jianantemple/assets/og/og-cover.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/brand-back.js" defer></script>
+  <script src="assets/mobile-menu.js" defer></script>
+  <script src="assets/scroll-reveal.js" defer></script>
+</head>
+<body class="page-event-detail">
+
+  <header class="site-header site-header-solid">
+    <a class="brand" href="index.html" aria-label="返回上一頁" title="返回上一頁">
+      <div class="brand-name-zh">台北建安宮</div>
+      <div class="brand-name-sub">艋舺雙園聖母會</div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">首 頁</a>
+      <a href="about.html">關於建安宮</a>
+      <a href="services.html">香客服務</a>
+      <a href="wenshi.html">問 事</a>
+      <a href="events.html" class="active">活 動</a>
+      <a href="almanac.html">年 曆</a>
+      <a href="deities.html">神 明</a>
+      <a href="fortune.html">求 籤</a>
+      <a href="committee.html">委 員 會</a>
+      <a href="contact.html">聯絡我們</a>
+      <button class="mm-toggle" aria-label="開啟選單" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner ed-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-tag" id="edEyebrow">活 ・ 動 ・ 紀 錄</div>
+      <h1 class="banner-title" id="edTitle">活動</h1>
+      <div class="banner-sub" id="edSub">日期 ・ 摘要</div>
+    </div>
+  </section>
+
+  <!-- 麵包屑 -->
+  <div class="ld-breadcrumb">
+    <div class="section-inner">
+      <a href="events.html">← 返回 活動總覽</a>
+    </div>
+  </div>
+
+  <!-- 活動概要 -->
+  <section class="content-section ed-summary-section">
+    <div class="section-inner">
+      <div class="ed-summary-grid">
+        <div class="ed-summary-meta">
+          <div class="ed-meta-item">
+            <div class="ed-meta-label">國 曆</div>
+            <div class="ed-meta-value" id="edSolar">—</div>
+          </div>
+          <div class="ed-meta-item">
+            <div class="ed-meta-label">農 曆</div>
+            <div class="ed-meta-value" id="edLunar">—</div>
+          </div>
+          <div class="ed-meta-item">
+            <div class="ed-meta-label">活 動 性 質</div>
+            <div class="ed-meta-value" id="edType">—</div>
+          </div>
+          <div class="ed-meta-item">
+            <div class="ed-meta-label">影 像 數</div>
+            <div class="ed-meta-value" id="edPhotoCount">—</div>
+          </div>
+        </div>
+        <div class="ed-summary-lead" id="edLead">
+          <p>—</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 活動內容 -->
+  <section class="content-section ed-story-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label" id="edStoryLabel">活 動 內 容</div>
+        <h2 class="section-title" id="edStoryTitle">本宮盛事</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ld-story-content" id="edStoryContent"></div>
+    </div>
+  </section>
+
+  <!-- 影像紀錄 -->
+  <section class="content-section ed-photos-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">影 像 紀 錄</div>
+        <h2 class="section-title">活動實錄</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead" id="edPhotosLead">活動現場珍貴影像，逐張完整呈現</p>
+      </div>
+      <div class="ed-photos-grid" id="edPhotosGrid"></div>
+    </div>
+  </section>
+
+  <!-- 相關連結 / CTA -->
+  <section class="content-section ed-related-section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">延 ・ 伸 ・ 閱 ・ 讀</div>
+        <h2 class="section-title">相關連結</h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="ed-related-buttons" id="edRelated"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="footer-name">台北建安宮</div>
+          <div class="footer-sub">艋舺雙園聖母會</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">廟 址</div>
+        <div class="footer-value">台北市萬華區<br>德昌街132巷1號1樓</div>
+        <a href="https://share.google/DgsapuCFxv6GxUqh1" target="_blank" rel="noopener" class="footer-link">📍 Google Maps →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">聯 絡</div>
+        <div class="footer-value footer-contacts">
+          <div class="footer-contact"><span class="footer-contact-role">宮主 ・ 陳炫忖</span><a href="tel:0981142292" class="footer-contact-num">0981-142-292</a></div>
+          <div class="footer-contact"><span class="footer-contact-role">執事 ・ 陳俊宇</span><a href="tel:0930311370" class="footer-contact-num">0930-311-370</a></div>
+        </div>
+        <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="footer-link">FB 粉絲專頁 →</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">主 祀</div>
+        <div class="footer-value">天上聖母</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 台北建安宮 ・ 艋舺雙園聖母會
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
+
+  <script>
+    (function () {
+      // ============ 活動資料 ============
+      const EVENTS = {
+        zhongyuan: {
+          title: '慶讚中元普渡 ・ 法會',
+          eyebrow: '中 ・ 元 ・ 普 ・ 渡',
+          solarDate: '2025 / 08 / 30（禮拜六）',
+          lunarDate: '乙巳年 ・ 七月初八',
+          type: '年度大典 ・ 法會 ・ 普渡',
+          subtitle: '冥陽兩利 ・ 超薦先靈 ・ 普施孤魂',
+          lead: '<p>農曆七月為中元月，乃道教三元節中之「中元」，地官大帝聖誕於七月十五日，職司赦罪超度。本宮承襲傳統，每年於中元月舉辦「慶讚中元普渡法會」，由委員會統籌、信眾共襄盛舉，以最莊嚴之科儀普施十方孤魂、超薦累世先靈。</p>',
+          storyLabel: '法 ・ 會 ・ 緣 ・ 起',
+          storyTitle: '慶讚中元 ・ 冥陽兩利',
+          story: [
+            '中元普渡乃台灣民俗中最重要的祭祀之一。源自道教三官信仰：上元天官賜福、中元地官赦罪、下元水官解厄。地官大帝慈悲為懷，於農曆七月開地獄門，使陰間眾生得以重返陽世享用供品、領取功德。',
+            '本宮中元普渡法會由委員會統籌，廣邀十方信眾共襄盛舉。法會當日由道長執禮，誦經、奏疏、上供、施食，依次進行各項科儀。供桌排列莊嚴、供品豐盛，鮮花、素果、糕粿、米麵一應俱全，另備普施筵席供養孤魂。',
+            '信眾可於本宮報名「中元普渡牌位」，登記累世父母、冤親債主、嬰靈、無祀孤魂等，由本宮代為稟報、超薦超度。法會結束後，所有牌位於壇前焚化，功德迴向諸方善信。',
+            '中元普渡之深層意義，在於「慈悲」與「感恩」——對先人之追思、對孤魂之憐憫、對神明之敬畏。本宮於每年此時，與信眾一同行善積福、累世迴向，是為本宮一年中最為盛大、最具人文厚度之祭典之一。'
+          ],
+          photoFolder: '2025年114乙巳年8月30台北建安宮慶讚中元普渡',
+          photoPrefix: 'LINE_ALBUM_2025年114乙巳年8月30台北建安宮慶讚中元普渡_260501_',
+          photoCount: 49,
+          related: [
+            { label: '了解地官大帝（中元赦罪）', href: 'deity-detail.html?deity=diguan' },
+            { label: '本宮活動年表 →', href: 'events.html' },
+            { label: '線上登記點燈祈福 →', href: 'services.html', primary: true }
+          ]
+        },
+
+        gongqing: {
+          title: '建安宮 ・ 宮慶活動',
+          eyebrow: '宮 ・ 慶 ・ 周 ・ 年',
+          solarDate: '2025 / 10 / 06（禮拜一）',
+          lunarDate: '乙巳年 ・ 八月十五',
+          type: '本宮年度盛事 ・ 信眾共聚',
+          subtitle: '香火相承四十年 ・ 信眾共聚同慶',
+          lead: '<p>建安宮宮慶為本宮一年中信眾共聚的重要日子，香火相承四十餘載，逢宮慶之日，委員、信眾、友宮同聚一堂，共慶建安宮歲歲平安、年年興旺。</p>',
+          storyLabel: '宮 ・ 慶 ・ 之 ・ 緣',
+          storyTitle: '香火相承 ・ 信眾同慶',
+          story: [
+            '本宮宮慶為紀念建安宮設壇至今的重要日子。自一群南部兄弟北上萬華打拚、奉祀媽祖以來，香火延續逾四十載，宮慶即為這段歷史的年度紀念。',
+            '宮慶當日，委員會統籌祭祀活動，恭請諸神蒞臨，獻戲酬神、敬備供品。信眾自四方雲集，與本宮共度團圓佳節，亦藉此凝聚信仰向心、感念聖母護佑。',
+            '友宮亦於此日蒞臨參香，互相交誼、香火往來，是建安宮與台灣各地宮廟「香火相承」精神的具體展現。'
+          ],
+          photoFolder: '1141006宮慶活動',
+          photoPrefix: 'LINE_ALBUM_106宮慶活動_260501_',
+          photoCount: 25,
+          related: [
+            { label: '本宮沿革故事 →', href: 'about.html#section-history' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        'nanfangao-hui': {
+          title: '南方澳 ・ 南天宮會香',
+          eyebrow: '會 ・ 香 ・ 交 ・ 誼',
+          solarDate: '2025 / 11 / 29（禮拜六）',
+          lunarDate: '乙巳年 ・ 十月初十',
+          type: '出訪會香 ・ 香火交誼',
+          subtitle: '出訪南方澳 ・ 友宮會香',
+          lead: '<p>本宮率信眾出訪宜蘭蘇澳南方澳南天宮，與友宮會香交誼、香火相承。南天宮為東部最著名的媽祖廟之一，出訪會香乃本宮年度交流盛事。</p>',
+          storyLabel: '會 ・ 香 ・ 之 ・ 行',
+          storyTitle: '南方澳 ・ 香火往來',
+          story: [
+            '南方澳南天宮主祀天上聖母，以「金媽祖」、「玉媽祖」、「珊瑚媽祖」聞名全台，為宜蘭蘇澳重要媽祖信仰中心。',
+            '本宮信眾隨駕出訪，敬上香條、誦經奏疏，與南天宮諸神結下香火之緣。會香活動體現宮廟之間的「香火往來、相互護持」傳統，是台灣媽祖信仰文化的重要展現。',
+            '當日活動由本宮委員會統籌，信眾乘車前往，遊覽南方澳漁港風光、共敘宮廟交誼，圓滿達成會香之行。'
+          ],
+          photoFolder: '1141129南方澳南天宮',
+          photoPrefix: 'LINE_ALBUM_1129 南方澳南天宮_260501_',
+          photoCount: 25,
+          related: [
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        ruanshen: {
+          title: '軟身聖母 ・ 換新衣帽',
+          eyebrow: '換 ・ 衣 ・ 新 ・ 帽',
+          solarDate: '2025 / 114 年度',
+          lunarDate: '乙巳年',
+          type: '神尊整妝 ・ 莊嚴儀典',
+          subtitle: '本宮軟身聖母 ・ 年度換衣帽',
+          lead: '<p>本宮主祀天上聖母為珍貴的「軟身聖母」，每年依例為聖母換上新衣新帽，重整莊嚴聖容，敬獻心意、迎接新一年的護佑。</p>',
+          storyLabel: '軟 ・ 身 ・ 聖 ・ 母',
+          storyTitle: '神尊整妝 ・ 心意敬獻',
+          story: [
+            '「軟身神尊」為台灣傳統雕刻工藝中最珍貴、技術最高深的一種——關節可活動，神尊穿戴衣帽如同真人，肢體線條柔和，氣韻生動。本宮天上聖母即為珍貴軟身聖母，傳承多年，香火日盛。',
+            '為聖母換衣帽，乃本宮年度重要儀典。委員與信眾於吉日恭請聖母離座，由婦女信眾以最莊敬之心，為聖母卸去舊衣、整理金飾、更換新衣新帽。整個過程伴隨誦經、唸咒，全程莊嚴肅穆。',
+            '新衣多為信眾還願敬獻，材質精選、繡工細緻，象徵信眾對聖母的虔誠敬意。換衣後的聖母煥然一新、神光普照，再度安座本宮主龕，繼續護佑萬民。'
+          ],
+          photoFolder: '114年度軟身聖母換新衣帽',
+          photoPrefix: 'LINE_ALBUM_114年度 軟身聖母換新衣帽_260501_',
+          photoCount: 12,
+          related: [
+            { label: '了解天上聖母（本宮主祀）→', href: 'deity-detail.html?deity=mazu' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        'nanfangao-bin': {
+          title: '南方澳南天宮 ・ 蒞臨參香指導',
+          eyebrow: '貴 ・ 賓 ・ 蒞 ・ 臨',
+          solarDate: '2026 / 01 / 12（禮拜一）',
+          lunarDate: '乙巳年 ・ 十一月廿三',
+          type: '友宮參香 ・ 貴賓蒞臨',
+          subtitle: '南天宮各貴賓長官 ・ 蒞臨參香指導',
+          lead: '<p>南方澳南天宮各貴賓長官與眾執事人員蒞臨本宮參香指導，是兩宮「香火相承、互相護持」之具體展現。</p>',
+          storyLabel: '參 ・ 香 ・ 指 ・ 導',
+          storyTitle: '貴賓蒞臨 ・ 香火相承',
+          story: [
+            '南方澳南天宮為東部著名媽祖廟之一，本日貴賓長官、執事人員一行蒞臨本宮，與本宮委員會聯誼、共敘媽祖信仰之承傳。',
+            '貴賓於本宮主龕前敬上頭香、誦經奏疏，本宮委員亦熱情接待、分享建安宮設壇緣起與年度盛事。',
+            '此次蒞臨象徵兩宮香火相承、信仰互通，是台灣媽祖文化深厚交流的展現之一。'
+          ],
+          photoFolder: '115年1月12日南方澳南天宮各貴賓長官及中執事人員蒞臨參香指導',
+          photoPrefix: 'LINE_ALBUM_115年1月12日南方澳南天宮各貴賓長官及眾執事人員蒞臨參香指導_260501_',
+          photoCount: 12,
+          related: [
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        jitiantai: {
+          title: '祭 ・ 天 ・ 台',
+          eyebrow: '祭 ・ 天 ・ 之 ・ 儀',
+          solarDate: '2026 / 丙午年',
+          lunarDate: '中華民國 115 年',
+          type: '本宮典禮 ・ 祭天科儀',
+          subtitle: '中華民國115年 ・ 天運歲次丙午年',
+          lead: '<p>祭天台乃本宮重要科儀之一，敬天地、謝神恩，於丙午年依例舉行，由委員會主持，誦經獻供、莊嚴肅穆。</p>',
+          storyLabel: '祭 ・ 天 ・ 之 ・ 心',
+          storyTitle: '敬天地 ・ 謝神恩',
+          story: [
+            '祭天乃中華傳統信仰中最為莊重之科儀。古云：「天地者，萬物之父母也」——對天地之敬畏、對神明之感念，皆體現於祭天儀典中。',
+            '本宮於丙午年舉行祭天台，由委員會統籌，搭設祭天高台，敬備三牲、果品、清茶、淨水、鮮花，由道長執禮，誦疏文、敬天地、謝神恩。',
+            '祭天台之建立，亦象徵本宮與十方信眾共同的祈願——願天地賜福、家國安康、香火相傳。'
+          ],
+          photoFolder: '台北建安宮．中華民國115年天運歲次丙午年祭天台',
+          photoPrefix: 'LINE_ALBUM_⛩台北建安宮⛩中華民國115年 天運歲次 丙午年  祭天台_260501_',
+          photoCount: 11,
+          related: [
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        songxiang: {
+          title: '送香條 ・ 新營太子宮 ・ 笨港口港口宮',
+          eyebrow: '送 ・ 香 ・ 條',
+          solarDate: '2026 / 01 / 30（禮拜五）',
+          lunarDate: '丙午年 ・ 正月十二',
+          type: '進香前奏 ・ 送香條',
+          subtitle: '向祖廟送香條 ・ 進香前奏',
+          lead: '<p>進香之前，必先「送香條」——派員至祖廟告知本宮信眾將前往進香的日期，請祖廟神明預作準備，是台灣進香傳統的重要前奏。</p>',
+          storyLabel: '送 ・ 香 ・ 之 ・ 禮',
+          storyTitle: '向祖廟告知 ・ 進香前奏',
+          story: [
+            '本宮主祀天上聖母自嘉義東石笨港口港口宮分靈而來；中壇元帥三太子則與新營太子宮淵源深厚。每年進香之前，本宮派員恭奉香條（書有進香日期、宮名、信眾數）親送祖廟，是為「送香條」。',
+            '送香條之意：一表敬意，告知祖廟即將前往進香、敬請預作準備；二表香火相承，象徵分靈宮廟與祖廟之血脈聯繫永不斷絕。',
+            '此次本宮分赴新營太子宮、笨港口港口宮兩處祖廟送香條，為 2026 年 4 月 25-26 日的進香盛事揭開序幕。'
+          ],
+          photoFolder: '20260130新營太子宮．笨港口港口宮．送香條',
+          photoPrefix: 'LINE_ALBUM_20260130 新營太子宮.笨港口港口宮 送香條_260501_',
+          photoCount: 11,
+          related: [
+            { label: '了解天上聖母（本宮主祀）→', href: 'deity-detail.html?deity=mazu' },
+            { label: '了解中壇元帥 →', href: 'deity-detail.html?deity=nezha' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        'qing-tun': {
+          title: '清 ・ 囤',
+          eyebrow: '年 ・ 終 ・ 清 ・ 囤',
+          solarDate: '2026 / 02 / 07（禮拜六）',
+          lunarDate: '丙午年 ・ 正月二十',
+          type: '年終整肅 ・ 清囤淨爐',
+          subtitle: '年終清囤淨爐 ・ 整肅本宮',
+          lead: '<p>年終「清囤」乃本宮重要傳統儀典，整肅本宮、清理香爐、整理供桌，迎接新春神明回駕，象徵新一年潔淨無垢、重新出發。</p>',
+          storyLabel: '清 ・ 囤 ・ 之 ・ 意',
+          storyTitle: '潔淨無垢 ・ 整肅本宮',
+          story: [
+            '清囤又稱「清屯」、「清香爐」，是台灣傳統年俗中於小年夜後、過年前進行的廟宇整潔活動。',
+            '本宮於丙午年正月期間舉行清囤，由委員、信眾共同參與。先恭請諸神離座暫安，再依次清理香爐、整理供桌、擦拭神龕、整肅環境。',
+            '清囤畢，恭請諸神回駕安座，並重新點燃香火、奏疏稟告。象徵新一年潔淨無垢、香火再起、神光普照。'
+          ],
+          photoFolder: '20260207清囤',
+          photoPrefix: 'LINE_ALBUM_20260207清囤_260501_',
+          photoCount: 20,
+          related: [
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        baitiangong: {
+          title: '小年夜拜天公 ・ 叩謝宇宙無極聖祖',
+          eyebrow: '叩 ・ 謝 ・ 萬 ・ 壽',
+          solarDate: '2026 / 02 / 15（禮拜日）',
+          lunarDate: '乙巳年 ・ 臘月廿八',
+          type: '年度科儀 ・ 叩謝聖祖',
+          subtitle: '小年夜 ・ 拜天公 ・ 叩謝聖祖',
+          lead: '<p>農曆臘月廿八小年夜，本宮舉辦「拜天公 ・ 叩謝宇宙無極聖祖」科儀。一年將盡，叩謝聖祖一年護佑、迎接新春將臨。</p>',
+          storyLabel: '叩 ・ 謝 ・ 聖 ・ 祖',
+          storyTitle: '小年夜拜天公 ・ 叩謝萬壽',
+          story: [
+            '宇宙無極聖祖為道家最高境界之神，本源至尊，乃萬法之源、宇宙之始。本宮於正月初一恭祝聖祖聖誕千秋；另於臘月廿八小年夜舉辦「叩謝聖祖」科儀。',
+            '叩謝乃年終感恩之意——一年將盡，叩謝聖祖一年護佑、答謝諸神慈悲。本科儀為本宮一年中最為神祕、最為莊嚴之儀典之一，代表「敬本溯源」之至高敬意。',
+            '當日由委員會主持、道長執禮，敬備天公爐、設壇敬天，誦經奏疏、上供、敬獻萬壽金。信眾雲集、虔誠致敬，是本宮歲末最重要的祭典之一。'
+          ],
+          photoFolder: '天運歲次乙巳年農曆臘月二十八小年夜拜天公叩謝天公極無極聖祖聖誕萬壽祝壽',
+          photoPrefix: 'LINE_ALBUM_天運歲次 乙巳年 農曆臘月二十八 小年夜 拜天公 叩謝天公  及無極聖祖 聖誕萬壽 _260501_',
+          photoCount: 16,
+          related: [
+            { label: '了解宇宙無極聖祖 →', href: 'deity-detail.html?deity=wuji' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        yuhuang: {
+          title: '玉皇大帝聖誕千秋',
+          eyebrow: '玉 ・ 皇 ・ 聖 ・ 誕',
+          solarDate: '2026 / 02 / 25（禮拜三）',
+          lunarDate: '丙午年 ・ 正月初九',
+          type: '聖誕千秋 ・ 補財庫',
+          subtitle: '丙午年正月初九 ・ 聖誕千秋',
+          lead: '<p>農曆正月初九為玉皇大帝聖誕千秋（俗稱「天公生」），玉皇大帝乃道教中之至高神，統御諸天諸神、職司天地人三界。本宮於此日恭祝聖誕、補財庫祈福。</p>',
+          storyLabel: '天 ・ 公 ・ 聖 ・ 誕',
+          storyTitle: '至高神祇 ・ 統御三界',
+          story: [
+            '玉皇大帝（天公）為道教中至高之神，民間俗稱「天公」、「玉帝」。職司統御諸天諸神、賜福消災、判決萬民功過。',
+            '台灣俗諺：「天公生比過年更重要」——民間於正月初九前夕子時開始拜天公，準備天公爐、設供桌、敬獻三牲五果、誦經奏疏，為一年之中最重要的祭祀之一。',
+            '本宮於丙午年正月初九恭祝玉皇大帝聖誕千秋，並結合「補財庫」科儀，由道長執禮，信眾雲集、虔誠敬拜，祈一年財運亨通、家業興旺。'
+          ],
+          photoFolder: '天運歲次丙午年正月初九日恭祝玉皇大帝聖誕千秋',
+          photoPrefix: 'LINE_ALBUM_天運歲次丙午年正月初九日 恭祝玉皇大帝聖誕千秋_260501_',
+          photoCount: 17,
+          related: [
+            { label: '了解玉皇大帝 →', href: 'deity-detail.html?deity=yuhuang' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        kaideng: {
+          title: '開燈安斗 ・ 新春補運',
+          eyebrow: '開 ・ 燈 ・ 安 ・ 斗',
+          solarDate: '2026 / 02 / 28（禮拜六）',
+          lunarDate: '丙午年 ・ 正月十二',
+          type: '年度科儀 ・ 開燈安斗',
+          subtitle: '丙午年正月十二 ・ 燃點諸燈',
+          lead: '<p>新春之初，本宮舉辦「開燈安斗」儀典，燃點平安總斗、財利、元辰、光明、太歲燈，為信眾補運祈福、迎接新一年。</p>',
+          storyLabel: '開 ・ 燈 ・ 補 ・ 運',
+          storyTitle: '燃點諸燈 ・ 新春祈福',
+          story: [
+            '「開燈安斗」為台灣傳統廟宇於新春之初為信眾補運的重要科儀。「斗」象徵北斗，職司人之壽命；「燈」為光明，象徵命運亨通。',
+            '本宮於丙午年正月十二日舉辦開燈安斗，由道長執禮，依次燃點：平安總斗、財利燈、元辰燈、光明燈、太歲燈。每盞燈各有專司，信眾依需求登記，由本宮代為點燃、奉於主龕前，整年常明不熄。',
+            '開燈之後，本宮為登記信眾稟告諸神、書寫疏文，整年於聖誕、節氣等重要日子持續迴向，使信眾一年之中神光護佑、平安順遂。'
+          ],
+          photoFolder: '天運歲次丙午年正月十二日開燈安斗',
+          photoPrefix: 'LINE_ALBUM_天運歲次丙午年 正月十二日開燈 安斗_260501_',
+          photoCount: 32,
+          related: [
+            { label: '線上登記點燈祈福 →', href: 'services.html', primary: true },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        tianguan: {
+          title: '天官大帝聖誕千秋',
+          eyebrow: '上 ・ 元 ・ 賜 ・ 福',
+          solarDate: '2026 / 03 / 03（禮拜二）',
+          lunarDate: '丙午年 ・ 正月十五',
+          type: '聖誕千秋 ・ 上元節',
+          subtitle: '丙午年正月十五 ・ 上元節',
+          lead: '<p>農曆正月十五為「上元節」，亦為天官大帝聖誕千秋。天官大帝為三官大帝之首，職司上元賜福，本宮於此日恭祝聖誕、為信眾祈福賜安。</p>',
+          storyLabel: '上 ・ 元 ・ 之 ・ 神',
+          storyTitle: '天官賜福 ・ 慈憫眾生',
+          story: [
+            '三官大帝為道教中尊崇的三位天界大帝：上元天官賜福、中元地官赦罪、下元水官解厄。三者掌管天、地、水三界，於人間萬事各有所司。',
+            '上元天官於正月十五聖誕，亦適值元宵佳節。古云：「天官降福、賜福萬民」——本日民間有提燈、祭祀、賞元宵之俗，本宮亦依例舉辦聖誕千秋祭典。',
+            '當日道長執禮，敬獻供品、誦經奏疏，信眾雲集本宮，恭祝天官聖壽、祈一年福祉滿盈、平安順遂。'
+          ],
+          photoFolder: '天運歲次丙午年115年正月十五日恭祝天官大帝聖誕．聖誕千秋萬壽無疆',
+          photoPrefix: 'LINE_ALBUM_天運歲次丙午年 115年正月十五日㊗️恭祝㊗️⛩天官大帝聖誕⛩聖誕千秋   萬壽_260501_',
+          photoCount: 27,
+          related: [
+            { label: '了解天官大帝 →', href: 'deity-detail.html?deity=tianguan' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        jigong: {
+          title: '濟公禪師聖誕 ・ 福德正神得道飛昇',
+          eyebrow: '禪 ・ 師 ・ 聖 ・ 誕',
+          solarDate: '2026 / 03 / 19（禮拜四）',
+          lunarDate: '丙午年 ・ 二月初一',
+          type: '聖誕千秋 ・ 同日合慶',
+          subtitle: '濟公活佛聖誕 ・ 同日合慶福德正神得道飛昇',
+          lead: '<p>農曆二月初二為濟公禪師聖誕千秋，亦為福德正神（土地公）得道飛昇日。本宮同日合慶，敬奉兩位慈憫護民之神尊。</p>',
+          storyLabel: '同 ・ 日 ・ 合 ・ 慶',
+          storyTitle: '濟公活佛 ・ 福德正神',
+          story: [
+            '濟公禪師俗名李修緣，南宋高僧，以瘋癲率性、扶危濟困聞名後世。其「酒肉穿腸過、佛祖心中留」之精神，為台灣民間最廣受尊崇的活佛之一。',
+            '同日為福德正神得道飛昇日，亦稱「頭牙」。福德正神為地方守護神，鎮守土地、賜福添財，最為親近萬民。商家於頭牙祭拜土地公，祈一整年生意興旺。',
+            '本宮於本日敬辦祭典，恭祝濟公禪師聖誕、同慶福德正神得道飛昇，由道長執禮，信眾共襄盛舉。'
+          ],
+          photoFolder: '國曆3月19日禮拜四農曆二月初一恭祝本宮濟公禪師濟公三禪師福德正神聖誕千秋',
+          photoPrefix: 'LINE_ALBUM_天運歲次丙午年 115年正月十五日㊗️恭祝㊗️⛩天官大帝聖誕⛩聖誕千秋   萬壽_260501_',
+          photoCount: 9,
+          related: [
+            { label: '了解濟公禪師 →', href: 'deity-detail.html?deity=jigong' },
+            { label: '了解福德正神 →', href: 'deity-detail.html?deity=tudigong' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        },
+
+        // ============ 115 年進香（父頁，含 25 輯）============
+        'jinxiang-115': {
+          title: '115 年進香 ・ 隨駕南下 ・ 萬華繞境',
+          eyebrow: '隨 ・ 駕 ・ 南 ・ 下',
+          solarDate: '2026 / 04 / 25-26（禮拜五-禮拜六）',
+          lunarDate: '丙午年 ・ 三月初九 至 三月初十',
+          type: '年度盛事 ・ 進香 ・ 開光 ・ 繞境',
+          subtitle: '影像 677 張 ・ 分二十五輯',
+          lead: '<p>2026 年（丙午年）4 月 25-26 日，本宮信眾隨駕南下進香——謁笨港口港口宮、新營太子宮，恭迎謝范二將軍駐駕本宮並舉行開光大典，回駕途中於萬華繞境。整段行程歷時兩日、影像紀錄 677 張，依時序分為 25 輯呈現。</p>',
+          storyLabel: '進 ・ 香 ・ 之 ・ 行',
+          storyTitle: '隨駕南下 ・ 萬華繞境',
+          story: [
+            '本宮主祀天上聖母自嘉義東石笨港口港口宮分靈而來。每年依例南下進香，敬謁祖廟、請火相承——是台灣媽祖信仰中最重要的儀典之一。',
+            '2026 年進香格外殊勝——本宮恭迎謝范二將軍（七爺八爺）駐駕本宮，於進香期間舉行開光點眼大典；並於回駕途中萬華繞境，遍及雙園地區，與友宮會香交誼，盛況空前。',
+            '本相簿收錄全程影像紀錄共 677 張，分 25 輯依時序呈現：自開光大典、進香啟程、抵達祖廟、回駕萬華繞境到圓滿結束，逐一展現本宮信眾隨駕的虔誠心意。'
+          ],
+          parts: Array.from({length: 25}, (_, i) => `jinxiang-115-${i+1}`),
+          related: [
+            { label: '了解天上聖母（本宮主祀）→', href: 'deity-detail.html?deity=mazu' },
+            { label: '了解謝范二將軍 →', href: 'deity-detail.html?deity=xiefan' },
+            { label: '本宮活動年表 →', href: 'events.html' }
+          ]
+        }
+      };
+
+      // ============ 自動生成 25 輯子事件 ============
+      (function buildJinxiangParts() {
+        const ordinals = ['一','二','三','四','五','六','七','八','九','十',
+                          '十一','十二','十三','十四','十五','十六','十七','十八','十九','二十',
+                          '二十一','二十二','二十三','二十四','二十五'];
+        for (let i = 1; i <= 25; i++) {
+          const cnt = i < 25 ? 28 : 5;
+          const start = (i-1)*28 + 1;
+          const end = start + cnt - 1;
+          EVENTS[`jinxiang-115-${i}`] = {
+            title: `115 年進香 ・ 第 ${ordinals[i-1]} 輯`,
+            eyebrow: '進 ・ 香 ・ 影 ・ 像',
+            solarDate: '2026 / 04 / 25-26（禮拜五-禮拜六）',
+            lunarDate: '丙午年 ・ 三月初九 至 三月初十',
+            type: `影像紀錄 ・ 第 ${ordinals[i-1]} 輯`,
+            subtitle: `影像 ${start}-${end} ・ 全 ${cnt} 張`,
+            lead: `<p>2026 年 4 月 25-26 日（丙午年三月初九、初十），本宮信眾隨駕南下進香、謁祖請火，並恭迎謝范二將軍開光、回駕萬華繞境。本輯為其中第 ${ordinals[i-1]} 輯，含影像第 ${start}-${end} 張，共 ${cnt} 張珍貴紀錄。</p>`,
+            storyLabel: '進 ・ 香 ・ 行 ・ 旅',
+            storyTitle: '隨駕南下 ・ 香火相承',
+            story: [
+              '本宮主祀天上聖母自嘉義東石笨港口港口宮分靈而來；中壇元帥三太子則與新營太子宮淵源深厚。每年依例南下進香，謁祖請火、結下香火之緣。',
+              '2026 年進香另逢「開光大典」——恭迎謝范二將軍駐駕本宮，並於回駕途中萬華繞境，盛況空前。整個行程歷時兩日，從開光、進香、回駕繞境到圓滿結束，是本宮年度最盛大、最圓滿的盛事。'
+            ],
+            photoFolder: `assets/jinxiang-115/part-${i}`,
+            photoPrefix: 'jx-',
+            photoPad: 3,
+            photoCount: cnt,
+            related: i < 25 ? [
+              { label: '← 回到 進香總覽（25 輯選擇）', href: 'event-detail.html?event=jinxiang-115' },
+              { label: `下一輯 ・ 第 ${ordinals[i]} 輯 →`, href: `event-detail.html?event=jinxiang-115-${i+1}`, primary: true }
+            ] : [
+              { label: '← 回到 進香總覽（25 輯選擇）', href: 'event-detail.html?event=jinxiang-115' },
+              { label: '回到 第 一 輯 ・ 重新瀏覽 →', href: 'event-detail.html?event=jinxiang-115-1', primary: true }
+            ]
+          };
+        }
+      })();
+
+      // ============ 取得 ?event=XXX ============
+      const params = new URLSearchParams(window.location.search);
+      let key = params.get('event');
+      if (!EVENTS[key]) key = 'zhongyuan';
+      const data = EVENTS[key];
+
+      // ============ Banner ============
+      document.title = `${data.title}｜台北建安宮`;
+      document.getElementById('edEyebrow').textContent = data.eyebrow;
+      document.getElementById('edTitle').textContent = data.title.split(' ・ ')[0];
+      document.getElementById('edSub').textContent = `${data.solarDate} ・ ${data.lunarDate}`;
+
+      // ============ 概要 ============
+      document.getElementById('edSolar').textContent = data.solarDate;
+      document.getElementById('edLunar').textContent = data.lunarDate;
+      document.getElementById('edType').textContent = data.type;
+      document.getElementById('edPhotoCount').textContent = `${data.photoCount} 張`;
+      document.getElementById('edLead').innerHTML = data.lead;
+
+      // ============ 活動內容 ============
+      document.getElementById('edStoryLabel').textContent = data.storyLabel;
+      document.getElementById('edStoryTitle').textContent = data.storyTitle;
+      document.getElementById('edStoryContent').innerHTML = data.story.map(p => `<p>${p}</p>`).join('');
+
+      // ============ 概要：張數 / 父頁特殊處理 ============
+      if (data.parts) {
+        document.getElementById('edPhotoCount').textContent = `${data.parts.length} 輯`;
+        document.querySelector('.ed-photos-section .section-head h2').textContent = '逐輯瀏覽';
+        document.getElementById('edPhotosLead').textContent = `共 ${data.parts.length} 輯，依序為 2026 年 4 月 25-26 日進香影像紀錄`;
+      }
+
+      // ============ 影像 feed / 父頁輯選擇 ============
+      const photosGrid = document.getElementById('edPhotosGrid');
+      photosGrid.innerHTML = '';
+      const padNum = (n, pad) => pad ? String(n).padStart(pad, '0') : n;
+
+      if (data.parts) {
+        // 父頁：顯示輯卡
+        photosGrid.classList.add('ed-parts-grid');
+        data.parts.forEach((subKey, idx) => {
+          const sub = EVENTS[subKey];
+          if (!sub) return;
+          const card = document.createElement('a');
+          card.className = 'ed-part-card';
+          card.href = `event-detail.html?event=${subKey}`;
+          const img = document.createElement('img');
+          img.src = `${sub.photoFolder}/${sub.photoPrefix}${padNum(1, sub.photoPad)}.jpg`;
+          img.alt = sub.title;
+          img.loading = idx < 6 ? 'eager' : 'lazy';
+          const overlay = document.createElement('div');
+          overlay.className = 'ed-part-overlay';
+          overlay.innerHTML = `
+            <div class="ed-part-title">${sub.title.replace('115 年進香 ・ ', '')}</div>
+            <div class="ed-part-count">${sub.photoCount} 張</div>
+          `;
+          card.appendChild(img);
+          card.appendChild(overlay);
+          photosGrid.appendChild(card);
+        });
+      } else {
+        // 子頁/一般頁：顯示 photo feed
+        for (let i = 1; i <= data.photoCount; i++) {
+          const item = document.createElement('figure');
+          item.className = 'ed-photo-item';
+          const img = document.createElement('img');
+          img.src = `${data.photoFolder}/${data.photoPrefix}${padNum(i, data.photoPad)}.jpg`;
+          img.alt = `${data.title} #${i}`;
+          img.loading = i <= 6 ? 'eager' : 'lazy';
+          const cap = document.createElement('figcaption');
+          cap.className = 'ed-photo-num';
+          cap.textContent = `${i} / ${data.photoCount}`;
+          item.appendChild(img);
+          item.appendChild(cap);
+          photosGrid.appendChild(item);
+        }
+      }
+
+      // ============ 相關連結 ============
+      const relatedEl = document.getElementById('edRelated');
+      relatedEl.innerHTML = data.related.map(r => {
+        const cls = r.primary ? 'btn btn-primary btn-large' : 'btn btn-secondary';
+        return `<a href="${r.href}" class="${cls}">${r.label}</a>`;
+      }).join('');
+
+      // ============ 回到頂部 ============
+      const btn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('show', window.scrollY > 400);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>

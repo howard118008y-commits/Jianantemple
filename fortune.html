@@ -29,6 +29,7 @@
   <script src="assets/brand-back.js" defer></script>
   <script src="assets/mobile-menu.js" defer></script>
   <script src="assets/scroll-reveal.js" defer></script>
+  <script src="assets/jieqian-data.js" defer></script>
 </head>
 <body class="page-fortune">
 
@@ -141,11 +142,26 @@
             <p></p>
           </div>
           <div class="card-divider"></div>
+
+          <!-- 籤等 + 詩意 -->
+          <div class="result-jieqian" id="resultJieqian">
+            <div class="rj-grade-row">
+              <span class="rj-grade-label">籤 等</span>
+              <span class="rj-grade-value" id="rjGrade">—</span>
+            </div>
+            <div class="rj-meaning">
+              <div class="rj-meaning-label">詩 意</div>
+              <p class="rj-meaning-text" id="rjMeaning">—</p>
+            </div>
+            <div class="rj-categories" id="rjCategories"></div>
+          </div>
+
+          <div class="card-divider"></div>
           <div class="result-meta">
             <div class="meta-line">心誠則靈 ・ 神明賜示</div>
             <p class="meta-note">
-              詳細解曰請洽本宮執事人員<br>
-              或親至本宮，由執事代為解籤
+              如有疑惑請洽本宮執事人員<br>
+              或親至本宮，由執事代為深入解籤
             </p>
           </div>
           <div class="card-actions card-actions-multi">
@@ -189,6 +205,137 @@
           <p>籤詩為天上聖母慈悲提示，宜誠心修身、行善積德，神明自然護佑。</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 解 ・ 籤 -->
+  <section class="content-section section-jieqian">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">解 ・ 籤 ・ 指 ・ 引</div>
+        <h2 class="section-title">解籤之道</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead">
+          神明賜籤、信眾解之 ・ 心誠意正<br>
+          以下為「六十甲子媽祖靈籤」的解讀指引
+        </p>
+      </div>
+
+      <!-- 籤等說明 -->
+      <div class="jq-block">
+        <h3 class="jq-block-title">籤 ・ 等 ・ 對 ・ 照</h3>
+        <p class="jq-block-lead">
+          六十甲子靈籤依吉凶分為四等。籤等僅為神明對「當下處境」之提示，<br>
+          縱抽下下籤，亦可藉誠心修德、敬神持齋、化解災厄。
+        </p>
+        <div class="jq-grades">
+          <div class="jq-grade jq-grade-best">
+            <div class="jq-grade-name">上 上 ・ 上 吉</div>
+            <div class="jq-grade-desc">最為吉祥之籤、諸事大吉。神明明示福澤已至、可大膽前行；惟須持感恩之心，不可驕縱、不可揮霍善緣。</div>
+          </div>
+          <div class="jq-grade jq-grade-good">
+            <div class="jq-grade-name">中 ・ 吉</div>
+            <div class="jq-grade-desc">吉中帶慎之籤。事可成，但需循序漸進、盡力而為；忌操之過急、過於驕傲，留心細節即可圓滿。</div>
+          </div>
+          <div class="jq-grade jq-grade-mid">
+            <div class="jq-grade-name">中 ・ 平</div>
+            <div class="jq-grade-desc">不吉不凶、平穩之兆。處事需保守、勿冒進。維持原狀、按部就班，自有平安順遂之機。</div>
+          </div>
+          <div class="jq-grade jq-grade-bad">
+            <div class="jq-grade-name">下 ・ 下</div>
+            <div class="jq-grade-desc">提醒謹慎之籤。並非絕對凶兆，乃神明慈悲示警，提示近期諸事不順、宜避鋒芒；多行善積德、誠心懺悔，可化險為夷。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 各項問事解讀 -->
+      <div class="jq-block">
+        <h3 class="jq-block-title">問 ・ 事 ・ 解 ・ 讀</h3>
+        <p class="jq-block-lead">
+          籤詩為神明對信眾「當下心問」的回應，依問題類別解讀方向不同。<br>
+          請於請示前默念一個明確問題，再依下表對照解讀。
+        </p>
+        <div class="jq-categories">
+          <div class="jq-category">
+            <div class="jq-cat-icon">事</div>
+            <div class="jq-cat-body">
+              <div class="jq-cat-name">事業 ・ 工作</div>
+              <p>關注「動」與「靜」、「進」與「守」之提示。籤中若見動勢字眼（行、轉、動、求），多宜進取；若見守靜字眼（守、待、止、安），則宜暫時觀望、勿輕舉妄動。</p>
+            </div>
+          </div>
+          <div class="jq-category">
+            <div class="jq-cat-icon">財</div>
+            <div class="jq-cat-body">
+              <div class="jq-cat-name">財運 ・ 投資</div>
+              <p>關注「財」、「利」、「得」、「失」、「貴人」等字眼。籤詩多以自然意象比喻——「水」象徵流動財、「土」象徵不動產、「月」象徵盈虧得失。投資宜守不宜攻、量力而為。</p>
+            </div>
+          </div>
+          <div class="jq-category">
+            <div class="jq-cat-icon">姻</div>
+            <div class="jq-cat-body">
+              <div class="jq-cat-name">姻緣 ・ 婚配</div>
+              <p>關注「合」、「分」、「待」、「逢」、「貴人引」等字眼。籤中見「春暖花開」、「鳳凰來儀」多為良緣將至；若見「孤雁」、「霜雪」、「離別」，則建議再等時機、修身養性。</p>
+            </div>
+          </div>
+          <div class="jq-category">
+            <div class="jq-cat-icon">健</div>
+            <div class="jq-cat-body">
+              <div class="jq-cat-name">健康 ・ 疾病</div>
+              <p>關注「醫」、「藥」、「平安」、「轉」、「貴人」等字眼。籤詩多提示「就醫」與「修身」並行——求醫莫疑、規律生活、心安神寧，自有康復之機。</p>
+            </div>
+          </div>
+          <div class="jq-category">
+            <div class="jq-cat-icon">訟</div>
+            <div class="jq-cat-body">
+              <div class="jq-cat-name">訴訟 ・ 是非</div>
+              <p>關注「和」、「爭」、「貴人」、「化解」等字眼。籤詩多勸「以和為貴」——化解勝於對抗、退讓勝於強爭。多請貴人居中協調，可避是非、護自身平安。</p>
+            </div>
+          </div>
+          <div class="jq-category">
+            <div class="jq-cat-icon">行</div>
+            <div class="jq-cat-body">
+              <div class="jq-cat-name">出行 ・ 遷移</div>
+              <p>關注「行」、「歸」、「平安」、「貴人」等字眼。籤詩若見「順風」、「平安」、「貴人助」，多宜出行；若見「阻」、「滯」、「霧雨」，則建議延期，待時機成熟再行。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 解籤 CTA -->
+      <div class="jq-cta-card">
+        <div class="jq-cta-eyebrow">心 ・ 有 ・ 疑 ・ 惑</div>
+        <h3 class="jq-cta-title">本宮代為解籤</h3>
+        <p class="jq-cta-desc">
+          籤詩深奧，常一籤多解；信眾如有疑惑，<br>
+          歡迎致電本宮、或親至本宮敬奉香火，<br>
+          由本宮執事人員協助解籤、指點迷津。
+        </p>
+        <div class="jq-cta-buttons">
+          <a href="tel:0981142292" class="btn btn-primary btn-large">☎ 致電宮主 ・ 陳炫忖</a>
+          <a href="tel:0930311370" class="btn btn-primary btn-large">☎ 致電執事 ・ 陳俊宇</a>
+          <a href="https://www.facebook.com/TaipeiJianGong/" target="_blank" rel="noopener" class="btn btn-secondary">FB 私訊本宮</a>
+          <a href="contact.html" class="btn btn-secondary">蒞 臨 本 宮</a>
+        </div>
+        <p class="jq-cta-foot">
+          ※ 本宮 平日均開放 ・ 信眾可隨時蒞臨參拜、求籤、解籤
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 全 60 首 ・ 完整解籤 -->
+  <section class="content-section section-jieqian-list">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">全 ・ 六 ・ 十 ・ 首 ・ 解 ・ 籤</div>
+        <h2 class="section-title">完整對照</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead">
+          下方為六十甲子靈籤逐首解籤，依籤號排列。<br>
+          點開任一首，即可看到該籤的籤詩、籤等、詩意、各項問事解讀。
+        </p>
+      </div>
+      <div class="jq-list" id="jqList"></div>
     </div>
   </section>
 
@@ -289,6 +436,35 @@
         });
         // 儲存當前籤詩供複製
         poemEl._current = f;
+
+        // === 解籤 ===
+        if (window.JIEQIAN) {
+          const jq = window.JIEQIAN.find(x => x.num === f.num);
+          if (jq) {
+            document.getElementById('rjGrade').textContent = jq.grade;
+            document.getElementById('rjGrade').className = 'rj-grade-value rj-grade-' + jq.grade.replace(/\s/g, '');
+            document.getElementById('rjMeaning').textContent = jq.meaning;
+            const cats = [
+              { icon: '事', name: '事業', text: jq.career },
+              { icon: '財', name: '求財', text: jq.wealth },
+              { icon: '姻', name: '姻緣', text: jq.love },
+              { icon: '健', name: '健康', text: jq.health },
+              { icon: '訟', name: '訴訟', text: jq.lawsuit },
+              { icon: '行', name: '出行', text: jq.travel }
+            ];
+            const catEl = document.getElementById('rjCategories');
+            catEl.innerHTML = '';
+            cats.forEach(c => {
+              const item = document.createElement('div');
+              item.className = 'rj-cat';
+              item.innerHTML = `
+                <div class="rj-cat-head"><span class="rj-cat-icon">${c.icon}</span><span class="rj-cat-name">${c.name}</span></div>
+                <p class="rj-cat-text">${c.text}</p>
+              `;
+              catEl.appendChild(item);
+            });
+          }
+        }
       };
 
       // 開始
@@ -329,6 +505,48 @@
           setTimeout(() => { btn.textContent = ori; btn.disabled = false; }, 1800);
         } catch (err) { /* fallback noop */ }
       });
+
+      // === 渲染 60 首一覽（可摺疊）===
+      (function renderJqList() {
+        const list = document.getElementById('jqList');
+        if (!list || !window.JIEQIAN) return;
+        list.innerHTML = fortunes.map(f => {
+          const jq = window.JIEQIAN.find(x => x.num === f.num) || {};
+          const ganzhi = f.title.replace(/^第[一二三四五六七八九十]+籤\s*/, '');
+          const gradeClass = (jq.grade || '').replace(/\s/g, '');
+          return `
+            <details class="jq-item">
+              <summary class="jq-item-head">
+                <span class="jq-item-num">${numLabel(f.num)}</span>
+                <span class="jq-item-ganzhi">${ganzhi}</span>
+                <span class="jq-item-grade rj-grade-${gradeClass}">${jq.grade || ''}</span>
+                <span class="jq-item-arrow">▾</span>
+              </summary>
+              <div class="jq-item-body">
+                <div class="jq-item-poem">
+                  ${f.lines.map(l => `<p>${l}</p>`).join('')}
+                </div>
+                <div class="jq-item-meaning">
+                  <span class="jq-item-mlabel">詩 意</span>
+                  <p>${jq.meaning || ''}</p>
+                </div>
+                <div class="jq-item-cats">
+                  ${[
+                    ['事','事業',jq.career],['財','求財',jq.wealth],
+                    ['姻','姻緣',jq.love],['健','健康',jq.health],
+                    ['訟','訴訟',jq.lawsuit],['行','出行',jq.travel]
+                  ].map(([ic,nm,tx]) => `
+                    <div class="jq-item-cat">
+                      <span class="jq-item-cat-icon">${ic}</span>
+                      <div><div class="jq-item-cat-name">${nm}</div><p>${tx||''}</p></div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </details>
+          `;
+        }).join('');
+      })();
     })();
   </script>
 </body>

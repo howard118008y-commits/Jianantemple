@@ -2535,6 +2535,8 @@ img { display: block; max-width: 100%; }
   align-items: center;
   padding: 0 0.7rem;
   pointer-events: auto;
+  text-decoration: none;
+  color: inherit;
 }
 
 .th-event[data-album] { cursor: pointer; }
@@ -3222,6 +3224,8 @@ img { display: block; max-width: 100%; }
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
 .event-card:hover {
@@ -9589,4 +9593,681 @@ button.lightbox-pill:hover {
   .sticky-cta { display: flex; }
   /* 留空間給 sticky 不擋內容 */
   body.page-home { padding-bottom: 76px; }
+}
+
+/* ============================================
+   活動專頁 ・ event-detail.html
+   ============================================ */
+.page-event-detail .page-banner {
+  background: linear-gradient(135deg, rgba(30, 12, 12, 0.95), rgba(54, 22, 12, 0.85));
+}
+
+.ed-banner {
+  height: 50vh;
+  min-height: 320px;
+}
+
+.ed-summary-section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.ed-summary-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ed-summary-meta {
+  background: rgba(31, 20, 20, 0.65);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  padding: 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.ed-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.18);
+}
+.ed-meta-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.ed-meta-label {
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.ed-meta-value {
+  font-size: 1rem;
+  color: var(--paper);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 500;
+}
+
+.ed-summary-lead {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.88);
+  letter-spacing: 0.05em;
+}
+.ed-summary-lead p { margin: 0 0 1rem; }
+
+.ed-story-section {
+  background: var(--ink);
+}
+
+.ed-photos-section {
+  background: linear-gradient(180deg, var(--ink) 0%, #0c0606 100%);
+}
+
+.ed-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1.6rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ed-photo-item {
+  margin: 0;
+  position: relative;
+  background: rgba(20, 12, 12, 0.85);
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.ed-photo-item:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.ed-photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ed-photo-num {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.55rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.ed-related-section {
+  background: var(--ink-soft);
+}
+
+.ed-related-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .ed-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .ed-photos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ed-banner { height: 38vh; min-height: 260px; }
+  .ed-summary-meta { padding: 1.3rem 1.1rem; gap: 0.8rem; }
+  .ed-meta-label { font-size: 0.68rem; letter-spacing: 0.24em; }
+  .ed-meta-value { font-size: 0.92rem; }
+  .ed-summary-lead { font-size: 0.95rem; line-height: 1.85; }
+}
+
+/* 活動專頁父頁：25 輯選擇器 */
+.ed-parts-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  gap: 1.4rem !important;
+}
+
+.ed-part-card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  text-decoration: none;
+  color: inherit;
+  background: rgba(20, 12, 12, 0.85);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.ed-part-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.ed-part-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease;
+}
+.ed-part-card:hover img {
+  filter: brightness(1);
+}
+.ed-part-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  pointer-events: none;
+}
+.ed-part-title {
+  font-size: 1.4rem;
+  letter-spacing: 0.28em;
+  color: var(--paper);
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95);
+  margin-bottom: 0.4rem;
+}
+.ed-part-count {
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  font-weight: 700;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+}
+
+@media (max-width: 600px) {
+  .ed-parts-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.7rem !important;
+  }
+  .ed-part-card { aspect-ratio: 1; }
+  .ed-part-title { font-size: 1rem; letter-spacing: 0.16em; margin-bottom: 0.2rem; }
+  .ed-part-count { font-size: 0.7rem; letter-spacing: 0.12em; }
+}
+
+/* ============================================
+   求籤頁 ・ 解籤指引
+   ============================================ */
+.section-jieqian {
+  background: linear-gradient(180deg, var(--ink) 0%, #150a0a 100%);
+}
+
+.jq-block {
+  max-width: 1100px;
+  margin: 0 auto 3.5rem;
+}
+.jq-block:last-of-type { margin-bottom: 4rem; }
+
+.jq-block-title {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+  margin: 0 0 0.8rem;
+}
+
+.jq-block-lead {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: rgba(248, 243, 233, 0.75);
+  letter-spacing: 0.06em;
+  margin: 0 0 2rem;
+}
+
+/* 籤等對照 */
+.jq-grades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.jq-grade {
+  background: rgba(31, 20, 20, 0.65);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.jq-grade-name {
+  font-size: 1.1rem;
+  letter-spacing: 0.32em;
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+  text-align: center;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.2);
+}
+
+.jq-grade-desc {
+  font-size: 0.86rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.82);
+  letter-spacing: 0.04em;
+}
+
+.jq-grade-best { border-color: rgba(255, 215, 0, 0.6); background: rgba(70, 40, 12, 0.6); }
+.jq-grade-best .jq-grade-name { color: #ffd76a; }
+
+.jq-grade-good { border-color: rgba(212, 168, 75, 0.5); }
+.jq-grade-good .jq-grade-name { color: var(--gold); }
+
+.jq-grade-mid .jq-grade-name { color: var(--paper); }
+
+.jq-grade-bad { border-color: rgba(150, 100, 70, 0.5); background: rgba(40, 22, 18, 0.7); }
+.jq-grade-bad .jq-grade-name { color: rgba(220, 175, 140, 0.95); }
+
+/* 問事解讀 */
+.jq-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.jq-category {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  padding: 1.3rem 1.3rem;
+}
+
+.jq-cat-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139, 28, 28, 0.5);
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  font-family: "Noto Serif TC", serif;
+}
+
+.jq-cat-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jq-cat-name {
+  font-size: 1.05rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: var(--gold);
+  font-family: "Noto Serif TC", serif;
+}
+
+.jq-cat-body p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.82);
+  letter-spacing: 0.04em;
+}
+
+/* 解籤 CTA 卡 */
+.jq-cta-card {
+  max-width: 720px;
+  margin: 4rem auto 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(139, 28, 28, 0.18) 0%, rgba(31, 20, 20, 0.85) 100%);
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  padding: 2.6rem 2rem 2.2rem;
+}
+
+.jq-cta-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-light);
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
+
+.jq-cta-title {
+  font-size: 1.7rem;
+  letter-spacing: 0.3em;
+  color: var(--paper);
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+  margin: 0 0 1rem;
+}
+
+.jq-cta-desc {
+  font-size: 0.95rem;
+  line-height: 2;
+  color: rgba(248, 243, 233, 0.85);
+  letter-spacing: 0.05em;
+  margin: 0 0 1.8rem;
+}
+
+.jq-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+
+.jq-cta-foot {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  color: rgba(212, 168, 75, 0.65);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .jq-block { margin-bottom: 2.5rem; }
+  .jq-block-title { font-size: 1.15rem; letter-spacing: 0.28em; }
+  .jq-block-lead { font-size: 0.85rem; line-height: 1.85; }
+  .jq-grades { grid-template-columns: 1fr; gap: 0.8rem; }
+  .jq-grade { padding: 1.2rem 1.1rem; }
+  .jq-grade-name { font-size: 1rem; letter-spacing: 0.22em; }
+  .jq-grade-desc { font-size: 0.82rem; }
+  .jq-categories { grid-template-columns: 1fr; }
+  .jq-category { padding: 1rem; gap: 0.9rem; }
+  .jq-cat-icon { width: 42px; height: 42px; font-size: 1.2rem; }
+  .jq-cat-name { font-size: 0.95rem; letter-spacing: 0.16em; }
+  .jq-cta-card { padding: 1.8rem 1.2rem 1.4rem; margin-top: 2.5rem; }
+  .jq-cta-title { font-size: 1.3rem; letter-spacing: 0.22em; }
+  .jq-cta-desc { font-size: 0.88rem; line-height: 1.85; }
+  .jq-cta-buttons .btn { width: 100%; }
+}
+
+/* ============================================
+   求籤頁 ・ 抽到籤後的解籤顯示
+   ============================================ */
+.result-jieqian {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.2rem 0;
+}
+
+.rj-grade-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.rj-grade-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  color: var(--gold-light);
+}
+.rj-grade-value {
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+  padding: 0.3rem 1.2rem;
+  border: 1px solid rgba(212, 168, 75, 0.5);
+}
+.rj-grade-上上 { color: #ffd76a; border-color: #ffd76a; background: rgba(70, 40, 12, 0.5); }
+.rj-grade-上吉 { color: var(--gold); border-color: rgba(212, 168, 75, 0.7); }
+.rj-grade-中吉 { color: var(--gold-light); }
+.rj-grade-中平 { color: var(--paper); }
+.rj-grade-中下 { color: rgba(220, 175, 140, 0.95); border-color: rgba(180, 130, 90, 0.5); }
+.rj-grade-下下 { color: rgba(220, 175, 140, 0.95); border-color: rgba(180, 130, 90, 0.5); background: rgba(40, 22, 18, 0.5); }
+
+.rj-meaning {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.rj-meaning-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.rj-meaning-text {
+  font-size: 0.98rem;
+  line-height: 1.95;
+  color: rgba(248, 243, 233, 0.92);
+  letter-spacing: 0.06em;
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+}
+
+.rj-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+.rj-cat {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(212, 168, 75, 0.18);
+  padding: 0.7rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.rj-cat-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.rj-cat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(139, 28, 28, 0.5);
+  color: var(--gold-light);
+  font-size: 0.95rem;
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+}
+.rj-cat-name {
+  font-size: 0.88rem;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  font-weight: 700;
+}
+.rj-cat-text {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: rgba(248, 243, 233, 0.85);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .rj-categories { grid-template-columns: 1fr; }
+  .rj-grade-value { font-size: 1.2rem; padding: 0.25rem 1rem; }
+  .rj-meaning-text { font-size: 0.92rem; }
+}
+
+/* ============================================
+   求籤頁 ・ 全 60 首解籤一覽
+   ============================================ */
+.section-jieqian-list {
+  background: linear-gradient(180deg, #150a0a 0%, var(--ink) 100%);
+}
+
+.jq-list {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jq-item {
+  background: rgba(31, 20, 20, 0.55);
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  transition: border-color 0.25s ease;
+}
+.jq-item[open] { border-color: rgba(212, 168, 75, 0.55); }
+.jq-item:hover { border-color: rgba(212, 168, 75, 0.4); }
+
+.jq-item-head {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1.2rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: "Noto Serif TC", serif;
+}
+.jq-item-head::-webkit-details-marker { display: none; }
+
+.jq-item-num {
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-weight: 700;
+}
+.jq-item-ganzhi {
+  font-size: 0.92rem;
+  letter-spacing: 0.4em;
+  color: var(--paper);
+  font-weight: 700;
+}
+.jq-item-grade {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  padding: 0.18rem 0.6rem;
+  border: 1px solid rgba(212, 168, 75, 0.4);
+  font-weight: 700;
+  color: var(--gold-light);
+}
+.jq-item-arrow {
+  color: var(--gold);
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+.jq-item[open] .jq-item-arrow { transform: rotate(180deg); }
+
+.jq-item-body {
+  padding: 0.5rem 1.2rem 1.4rem;
+  border-top: 1px solid rgba(212, 168, 75, 0.18);
+  margin-top: 0.5rem;
+}
+
+.jq-item-poem {
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed rgba(212, 168, 75, 0.2);
+}
+.jq-item-poem p {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  color: rgba(248, 243, 233, 0.95);
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.7;
+}
+
+.jq-item-meaning {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.jq-item-mlabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.jq-item-meaning p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.9);
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+.jq-item-cats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+.jq-item-cat {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(212, 168, 75, 0.15);
+}
+.jq-item-cat-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139, 28, 28, 0.45);
+  color: var(--gold-light);
+  font-size: 0.95rem;
+  font-weight: 900;
+  font-family: "Noto Serif TC", serif;
+}
+.jq-item-cat-name {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.jq-item-cat p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: rgba(248, 243, 233, 0.82);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 600px) {
+  .jq-item-head { grid-template-columns: 1fr auto auto; gap: 0.6rem; padding: 0.8rem 0.9rem; }
+  .jq-item-num { font-size: 0.9rem; letter-spacing: 0.12em; }
+  .jq-item-ganzhi { font-size: 0.82rem; letter-spacing: 0.28em; }
+  .jq-item-grade { font-size: 0.7rem; padding: 0.1rem 0.45rem; }
+  .jq-item-arrow { display: none; }
+  .jq-item-body { padding: 0.3rem 0.9rem 1rem; }
+  .jq-item-poem p { font-size: 0.95rem; letter-spacing: 0.14em; }
+  .jq-item-cats { grid-template-columns: 1fr; }
 }
