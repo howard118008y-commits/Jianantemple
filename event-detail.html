@@ -592,6 +592,7 @@
           photoFolder: '媽祖生日1150508',
           photoPrefix: 'LINE_ALBUM_202658_260510_',
           photoCount: 27,
+          photoFiles2: { folder: '媽祖生日照片２', files: ['DSC00336.JPG','DSC00338.JPG','DSC00347.JPG','DSC00348.JPG','DSC00351.JPG','DSC00353.JPG','DSC00354.JPG','DSC00356.JPG','DSC00357.JPG','DSC00359.JPG','DSC00360.JPG','DSC00361.JPG','DSC00363.JPG','DSC00365.JPG','DSC00372.JPG','DSC00373.JPG','DSC00375.JPG','DSC00377.JPG','DSC00380.JPG'] },
           related: [
             { label: '了解天上聖母（本宮主祀）→', href: 'deity-detail.html?deity=mazu', primary: true },
             { label: '本宮香客服務 →', href: 'services.html' },
@@ -731,6 +732,7 @@
         });
       } else {
         // 子頁/一般頁：顯示 photo feed
+        const totalCount = data.photoCount + (data.photoFiles2 ? data.photoFiles2.files.length : 0);
         for (let i = 1; i <= data.photoCount; i++) {
           const item = document.createElement('figure');
           item.className = 'ed-photo-item';
@@ -740,10 +742,28 @@
           img.loading = i <= 6 ? 'eager' : 'lazy';
           const cap = document.createElement('figcaption');
           cap.className = 'ed-photo-num';
-          cap.textContent = `${i} / ${data.photoCount}`;
+          cap.textContent = `${i} / ${totalCount}`;
           item.appendChild(img);
           item.appendChild(cap);
           photosGrid.appendChild(item);
+        }
+        if (data.photoFiles2) {
+          data.photoFiles2.files.forEach((fname, idx) => {
+            const num = data.photoCount + idx + 1;
+            const item = document.createElement('figure');
+            item.className = 'ed-photo-item';
+            const img = document.createElement('img');
+            img.src = `${data.photoFiles2.folder}/${fname}`;
+            img.alt = `${data.title} #${num}`;
+            img.loading = 'lazy';
+            const cap = document.createElement('figcaption');
+            cap.className = 'ed-photo-num';
+            cap.textContent = `${num} / ${totalCount}`;
+            item.appendChild(img);
+            item.appendChild(cap);
+            photosGrid.appendChild(item);
+          });
+          document.getElementById('edPhotoCount').textContent = `${totalCount} 張`;
         }
       }
 
