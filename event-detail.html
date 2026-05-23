@@ -655,7 +655,12 @@
               'IMG_6724.jpg',
               'IMG_6727.jpg',
               'IMG_6730.jpg',
-              'IMG_6731.JPG',
+              'IMG_6731.JPG'
+            ]
+          },
+          photoFiles3: {
+            folder: '千順將軍木吒二太子生日照片',
+            files: [
               'LINE_ALBUM_恭㊗️本宮 千里眼將軍順風耳將軍（聖誕日：四月初七日）木吒二元帥 （聖誕日_260524_1.jpg',
               'LINE_ALBUM_恭㊗️本宮 千里眼將軍順風耳將軍（聖誕日：四月初七日）木吒二元帥 （聖誕日_260524_2.jpg',
               'LINE_ALBUM_恭㊗️本宮 千里眼將軍順風耳將軍（聖誕日：四月初七日）木吒二元帥 （聖誕日_260524_3.jpg',
@@ -776,8 +781,8 @@
       photosGrid.innerHTML = '';
       const padNum = (n, pad) => pad ? String(n).padStart(pad, '0') : n;
 
-      // 若無相簿且非父頁且無 photoFiles2 → 隱藏整個影像區塊
-      if (!data.photoCount && !data.parts && !data.photoFiles2) {
+      // 若無相簿且非父頁且無 photoFiles2/3 → 隱藏整個影像區塊
+      if (!data.photoCount && !data.parts && !data.photoFiles2 && !data.photoFiles3) {
         const photosSection = document.querySelector('.ed-photos-section');
         if (photosSection) photosSection.style.display = 'none';
       } else if (data.parts) {
@@ -825,7 +830,7 @@
             photosGrid.appendChild(item);
           });
         }
-        const totalCount = data.photoCount + (data.photoFiles2 ? data.photoFiles2.files.length : 0);
+        const totalCount = data.photoCount + (data.photoFiles2 ? data.photoFiles2.files.length : 0) + (data.photoFiles3 ? data.photoFiles3.files.length : 0);
         for (let i = 1; i <= data.photoCount; i++) {
           const item = document.createElement('figure');
           item.className = 'ed-photo-item';
@@ -856,6 +861,26 @@
             item.appendChild(cap);
             photosGrid.appendChild(item);
           });
+        }
+        if (data.photoFiles3) {
+          const offset2 = data.photoCount + (data.photoFiles2 ? data.photoFiles2.files.length : 0);
+          data.photoFiles3.files.forEach((fname, idx) => {
+            const num = offset2 + idx + 1;
+            const item = document.createElement('figure');
+            item.className = 'ed-photo-item';
+            const img = document.createElement('img');
+            img.src = `${data.photoFiles3.folder}/${fname}`;
+            img.alt = `${data.title} #${num}`;
+            img.loading = 'lazy';
+            const cap = document.createElement('figcaption');
+            cap.className = 'ed-photo-num';
+            cap.textContent = `${num} / ${totalCount}`;
+            item.appendChild(img);
+            item.appendChild(cap);
+            photosGrid.appendChild(item);
+          });
+        }
+        if (data.photoFiles2 || data.photoFiles3) {
           document.getElementById('edPhotoCount').textContent = `${totalCount} 張`;
         }
       }
