@@ -641,6 +641,9 @@
           `,
           story: [],
           photoCount: 0,
+          videoFiles: [
+            { folder: '千順將軍木吒二太子生日照片', file: '錢母影片.mp4', label: '錢母影片' }
+          ],
           photoFiles2: {
             folder: '千順將軍木吒二太子生日照片',
             files: [
@@ -801,7 +804,27 @@
           photosGrid.appendChild(card);
         });
       } else {
-        // 子頁/一般頁：顯示 photo feed
+        // 子頁/一般頁：影片格（第一格起）＋ photo feed
+        if (data.videoFiles) {
+          data.videoFiles.forEach(vf => {
+            const item = document.createElement('figure');
+            item.className = 'ed-photo-item ed-video-item';
+            const video = document.createElement('video');
+            video.controls = true;
+            video.preload = 'metadata';
+            video.style.cssText = 'width:100%;height:auto;display:block;border-radius:4px;';
+            const source = document.createElement('source');
+            source.src = `${vf.folder}/${vf.file}`;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+            const cap = document.createElement('figcaption');
+            cap.className = 'ed-photo-num';
+            cap.textContent = vf.label || '影片';
+            item.appendChild(video);
+            item.appendChild(cap);
+            photosGrid.appendChild(item);
+          });
+        }
         const totalCount = data.photoCount + (data.photoFiles2 ? data.photoFiles2.files.length : 0);
         for (let i = 1; i <= data.photoCount; i++) {
           const item = document.createElement('figure');
