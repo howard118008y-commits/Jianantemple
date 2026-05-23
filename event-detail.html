@@ -864,6 +864,10 @@
         }
         if (data.photoFiles3) {
           const offset2 = data.photoCount + (data.photoFiles2 ? data.photoFiles2.files.length : 0);
+          const sectionLabel = document.createElement('div');
+          sectionLabel.style.cssText = 'grid-column:1/-1;text-align:center;padding:2rem 0 0.5rem;font-size:0.75rem;letter-spacing:0.2em;color:var(--accent);font-weight:700;';
+          sectionLabel.textContent = '照 片 ２';
+          photosGrid.appendChild(sectionLabel);
           data.photoFiles3.files.forEach((fname, idx) => {
             const num = offset2 + idx + 1;
             const item = document.createElement('figure');
