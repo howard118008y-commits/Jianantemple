@@ -572,9 +572,18 @@
             <textarea name="祈求" rows="3" placeholder="例如：闔家平安、考運順利、姻緣早成、業績興旺..." class="form-textarea"></textarea>
           </div>
 
+          <div class="form-privacy">
+            <span class="form-privacy-icon">🔒</span>
+            <div>
+              <strong>本宮尊重您的隱私</strong>
+              本表單僅作為點燈登記、寄送祈福符令之用，不對外公開、不作他途。
+            </div>
+          </div>
+
           <div class="form-actions">
             <button type="submit" class="btn btn-primary btn-large">送出登記資料</button>
-            <p class="form-hint">送出後將顯示登記內容供您複製，本宮將儘速與您聯絡</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="form-hint">送出後將直接寄至本宮信箱，本宮將儘速與您電話聯繫確認</p>
           </div>
         </form>
       </div>
@@ -616,7 +625,7 @@
           <div class="zy-num">參</div>
           <h3 class="zy-name">九玄七祖</h3>
           <p class="zy-desc">堂上歷代 / 個人<br>一份 ・ 一支牌位<br>一份飯菜 ・ 一份銀箔</p>
-          <div class="zy-price">$ 1,000 / 份</div>
+          <div class="zy-price">$ 1,200 / 份</div>
           <div class="zy-more">了解詳情 →</div>
         </a>
 
@@ -624,7 +633,7 @@
           <div class="zy-num">肆</div>
           <h3 class="zy-name">超渡嬰靈</h3>
           <p class="zy-desc">一位 ・ 一支牌位<br>一份飯菜 ・ 一份銀箔</p>
-          <div class="zy-price">$ 1,000 / 位</div>
+          <div class="zy-price">$ 1,200 / 位</div>
           <div class="zy-more">了解詳情 →</div>
         </a>
 
@@ -632,7 +641,7 @@
           <div class="zy-num">伍</div>
           <h3 class="zy-name">超渡冤親債主</h3>
           <p class="zy-desc">一位 ・ 一支牌位<br>一份飯菜 ・ 一份銀箔</p>
-          <div class="zy-price">$ 1,000 / 位</div>
+          <div class="zy-price">$ 1,200 / 位</div>
           <div class="zy-more">了解詳情 →</div>
         </a>
       </div>
@@ -751,16 +760,16 @@
                 <span>普渡米 ・ $ 35 / 斤 (10斤一單位)</span>
               </label>
               <label class="check-item">
-                <input type="checkbox" name="項目" value="九玄七祖 $1000/份">
-                <span>九玄七祖 ・ $ 1,000 / 份</span>
+                <input type="checkbox" name="項目" value="九玄七祖 $1200/份">
+                <span>九玄七祖 ・ $ 1,200 / 份</span>
               </label>
               <label class="check-item">
-                <input type="checkbox" name="項目" value="超渡嬰靈 $1000/位">
-                <span>超渡嬰靈 ・ $ 1,000 / 位</span>
+                <input type="checkbox" name="項目" value="超渡嬰靈 $1200/位">
+                <span>超渡嬰靈 ・ $ 1,200 / 位</span>
               </label>
               <label class="check-item">
-                <input type="checkbox" name="項目" value="超渡冤親債主 $1000/位">
-                <span>超渡冤親債主 ・ $ 1,000 / 位</span>
+                <input type="checkbox" name="項目" value="超渡冤親債主 $1200/位">
+                <span>超渡冤親債主 ・ $ 1,200 / 位</span>
               </label>
               <label class="check-item">
                 <input type="checkbox" name="項目" value="補財庫 $1200/人">
@@ -814,9 +823,19 @@
             <textarea name="備註" rows="3" placeholder="如有其他需求，請於此說明" class="form-textarea"></textarea>
           </div>
 
+          <div class="form-privacy">
+            <span class="form-privacy-icon">🔒</span>
+            <div>
+              <strong>本宮尊重您的隱私</strong>
+              本表單僅作為法會登記之用、不對外公開。超渡／祈求對象姓名為選填，
+              若不便填寫全名，可將中間字以「<strong>Ｏ</strong>」匿名（例：<strong>王 Ｏ 仁</strong>）。
+            </div>
+          </div>
+
           <div class="form-actions">
             <button type="submit" class="btn btn-primary btn-large">送出登記資料</button>
-            <p class="form-hint">送出後將顯示登記內容供您複製，本宮將儘速與您聯絡</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="form-hint">送出後將直接寄至本宮信箱，本宮將儘速與您電話聯繫確認</p>
           </div>
         </form>
       </div>
@@ -1038,14 +1057,72 @@
         document.body.style.overflow = '';
       }
 
-      // 綁定兩個 form
+      // === 送出：FormSubmit.co AJAX，直接寄信到本宮信箱（免後端、不跳轉）===
+      const INBOX = ['chenmon628', 'gmail.com'].join('@');
+
+      function groupedData(form) {
+        const data = new FormData(form);
+        const grouped = {};
+        for (const [key, value] of data.entries()) {
+          const v = (value || '').toString().trim();
+          if (!v) continue;
+          (grouped[key] = grouped[key] || []).push(v);
+        }
+        return grouped;
+      }
+
       ['lightForm', 'ritualForm'].forEach(id => {
         const f = document.getElementById(id);
         if (!f) return;
-        f.addEventListener('submit', (e) => {
+        const statusEl = f.querySelector('.form-status');
+        const submitBtn = f.querySelector('button[type="submit"]');
+
+        f.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const msg = buildMessage(f);
-          openModal(msg, f.dataset.service);
+          if (!f.reportValidity()) return;
+
+          const service = f.dataset.service;
+          const grouped = groupedData(f);
+          const name = grouped['姓名'] ? grouped['姓名'][0] : '';
+
+          const payload = {
+            _subject: `🪷 ${service} — ${name || '線上登記'}`,
+            _template: 'table',
+            _captcha: 'false',
+            登記類別: service
+          };
+          for (const [key, values] of Object.entries(grouped)) {
+            payload[key] = values.join('、');
+          }
+          payload['登記摘要'] = buildMessage(f);
+          payload['來源頁面'] = '香客服務 ・ ' + service;
+
+          statusEl.className = 'form-status is-loading';
+          statusEl.textContent = '正在送出，請稍候…';
+          const originalText = submitBtn.textContent;
+          submitBtn.disabled = true;
+          submitBtn.textContent = '送出中…';
+
+          try {
+            const res = await fetch('https://formsubmit.co/ajax/' + INBOX, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const result = await res.json();
+            if (res.ok && (result.success === 'true' || result.success === true)) {
+              f.querySelectorAll('input, select, textarea, button').forEach(el => { el.disabled = true; });
+              statusEl.className = 'form-status is-success';
+              statusEl.innerHTML = '🙏 登記已送出！本宮收到後將主動以電話與您聯繫確認。感謝您的護持。';
+            } else {
+              throw new Error(result.message || '送出失敗');
+            }
+          } catch (err) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            statusEl.className = 'form-status is-error';
+            statusEl.innerHTML = '⚠️ 送出失敗，請改用電話登記：宮主 陳炫忖 <a href="tel:0981142292">0981-142-292</a>。';
+          }
         });
       });
 
