@@ -9905,6 +9905,30 @@ button.lightbox-pill:hover {
   line-height: 1.9;
   color: rgba(248, 243, 233, 0.9);
 }
+.ld-story-content .ed-zhushou-link {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.3em;
+  margin: 1.1rem auto 0.2rem;
+  padding: 0.5rem 1.2rem;
+  text-indent: 0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  border-radius: 999px;
+  background: rgba(212, 168, 75, 0.06);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.ld-story-content .ed-zhushou-link:hover {
+  background: rgba(212, 168, 75, 0.18);
+  border-color: var(--gold);
+  color: #fff;
+  transform: translateY(-1px);
+}
 .ld-story-content .ed-zhushou-closing {
   text-align: center;
   text-indent: 0;
