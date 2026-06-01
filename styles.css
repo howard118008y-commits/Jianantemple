@@ -5780,6 +5780,45 @@ img { display: block; max-width: 100%; }
   margin-top: 1rem;
 }
 
+/* 表單隱私聲明 */
+.form-privacy {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+  padding: 1.1rem 1.3rem;
+  background: rgba(139, 28, 28, 0.16);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.88);
+  letter-spacing: 0.04em;
+}
+.form-privacy-icon { font-size: 1.3rem; flex-shrink: 0; line-height: 1.4; }
+.form-privacy strong { color: var(--gold-light); }
+
+/* 送出狀態 */
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  min-height: 1.2em;
+}
+.form-status:empty { display: none; }
+.form-status a { color: var(--gold-light); text-decoration: underline; }
+.form-status.is-loading { color: rgba(248, 243, 233, 0.7); }
+.form-status.is-error { color: #f0a8a8; }
+.form-status.is-success {
+  color: var(--gold-light);
+  padding: 1rem 1.2rem;
+  background: rgba(139, 28, 28, 0.2);
+  border: 1px solid rgba(212, 168, 75, 0.35);
+  border-radius: 4px;
+}
+
 /* 注意事項 */
 .section-notice {
   background: linear-gradient(180deg, var(--ink-soft) 0%, var(--ink) 100%);
