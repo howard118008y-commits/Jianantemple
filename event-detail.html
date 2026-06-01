@@ -105,6 +105,137 @@
     </div>
   </section>
 
+  <!-- 線上報名表單（僅 115 中元普渡顯示） -->
+  <section class="content-section ed-form-section" id="edFormSection" style="display:none;">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-label">線 ・ 上 ・ 報 ・ 名</div>
+        <h2 class="section-title">普渡登記表單</h2>
+        <div class="title-divider"></div>
+        <p class="section-lead">填妥下列表單即可線上報名，本宮收到後將主動與您聯繫確認 🙏</p>
+      </div>
+
+      <div class="ed-form-privacy">
+        <span class="ed-form-privacy-icon">🔒</span>
+        <div>
+          <strong>本宮尊重您的隱私</strong>
+          本表單僅作為中元普渡登記之用，不對外公開、不作他途。
+          「普渡對象姓名」為<strong>選填</strong>，若不便填寫全名，
+          可將中間字以「<strong>Ｏ</strong>」匿名，例如：<strong>王 Ｏ 仁</strong>。
+        </div>
+      </div>
+
+      <form class="ed-form" id="edForm" novalidate>
+        <div class="ed-form-row">
+          <label class="ed-form-field">
+            <span class="ed-form-label">報名人姓名 <em>*</em></span>
+            <input type="text" name="報名人姓名" required autocomplete="name" placeholder="您的大名">
+          </label>
+          <label class="ed-form-field">
+            <span class="ed-form-label">聯絡電話 <em>*</em></span>
+            <input type="tel" name="聯絡電話" required autocomplete="tel" placeholder="0900-000-000" inputmode="tel">
+          </label>
+        </div>
+
+        <fieldset class="ed-form-items">
+          <legend class="ed-form-label">報名項目（可複選，請填份數）</legend>
+
+          <div class="ed-item-row" data-price="1500">
+            <div class="ed-item-info">
+              <span class="ed-item-name">1️⃣ 祈安普渡讚普供品</span>
+              <span class="ed-item-price">每份 1,500 元（普品及銀箔）</span>
+            </div>
+            <div class="ed-item-qty">
+              <button type="button" class="ed-qty-btn" data-step="-1" aria-label="減少">－</button>
+              <input type="number" name="qty_祈安普渡讚普供品" class="ed-qty-input" value="0" min="0" max="99" inputmode="numeric">
+              <span class="ed-qty-unit">份</span>
+              <button type="button" class="ed-qty-btn" data-step="1" aria-label="增加">＋</button>
+            </div>
+          </div>
+
+          <div class="ed-item-sub" id="edReturnWrap" hidden>
+            <span class="ed-item-sub-label">讚普供品處理方式</span>
+            <label class="ed-radio"><input type="radio" name="讚普供品處理" value="領回"><span>自行領回</span></label>
+            <label class="ed-radio"><input type="radio" name="讚普供品處理" value="捐贈需要單位"><span>捐贈需要的單位</span></label>
+          </div>
+
+          <div class="ed-item-row" data-price="350">
+            <div class="ed-item-info">
+              <span class="ed-item-name">2️⃣ 普渡白米認捐</span>
+              <span class="ed-item-price">每單位 350 元（10 斤，統一捐贈）</span>
+            </div>
+            <div class="ed-item-qty">
+              <button type="button" class="ed-qty-btn" data-step="-1" aria-label="減少">－</button>
+              <input type="number" name="qty_普渡白米認捐" class="ed-qty-input" value="0" min="0" max="99" inputmode="numeric">
+              <span class="ed-qty-unit">單位</span>
+              <button type="button" class="ed-qty-btn" data-step="1" aria-label="增加">＋</button>
+            </div>
+          </div>
+
+          <div class="ed-item-row" data-price="1200">
+            <div class="ed-item-info">
+              <span class="ed-item-name">3️⃣ 九玄七祖（堂上歷代及個人）</span>
+              <span class="ed-item-price">每份 1,200 元（牌位・飯菜・銀箔）</span>
+            </div>
+            <div class="ed-item-qty">
+              <button type="button" class="ed-qty-btn" data-step="-1" aria-label="減少">－</button>
+              <input type="number" name="qty_九玄七祖" class="ed-qty-input" value="0" min="0" max="99" inputmode="numeric">
+              <span class="ed-qty-unit">份</span>
+              <button type="button" class="ed-qty-btn" data-step="1" aria-label="增加">＋</button>
+            </div>
+          </div>
+
+          <div class="ed-item-row" data-price="1200">
+            <div class="ed-item-info">
+              <span class="ed-item-name">4️⃣ 超渡嬰靈</span>
+              <span class="ed-item-price">每位 1,200 元（牌位・飯菜・銀箔）</span>
+            </div>
+            <div class="ed-item-qty">
+              <button type="button" class="ed-qty-btn" data-step="-1" aria-label="減少">－</button>
+              <input type="number" name="qty_超渡嬰靈" class="ed-qty-input" value="0" min="0" max="99" inputmode="numeric">
+              <span class="ed-qty-unit">位</span>
+              <button type="button" class="ed-qty-btn" data-step="1" aria-label="增加">＋</button>
+            </div>
+          </div>
+
+          <div class="ed-item-row" data-price="1200">
+            <div class="ed-item-info">
+              <span class="ed-item-name">5️⃣ 超渡冤親債主</span>
+              <span class="ed-item-price">每人 1,200 元（牌位・飯菜・銀箔）</span>
+            </div>
+            <div class="ed-item-qty">
+              <button type="button" class="ed-qty-btn" data-step="-1" aria-label="減少">－</button>
+              <input type="number" name="qty_超渡冤親債主" class="ed-qty-input" value="0" min="0" max="99" inputmode="numeric">
+              <span class="ed-qty-unit">人</span>
+              <button type="button" class="ed-qty-btn" data-step="1" aria-label="增加">＋</button>
+            </div>
+          </div>
+
+          <div class="ed-form-total">
+            <span>預估金額合計</span>
+            <strong id="edFormTotal">NT$ 0</strong>
+          </div>
+        </fieldset>
+
+        <label class="ed-form-field">
+          <span class="ed-form-label">普渡對象姓名（選填）</span>
+          <textarea name="普渡對象姓名" rows="3" placeholder="例：王 Ｏ 仁（中間字以 Ｏ 匿名）。多位可逐行填寫，亦可留空。"></textarea>
+        </label>
+
+        <label class="ed-form-field">
+          <span class="ed-form-label">其他備註（選填）</span>
+          <textarea name="其他備註" rows="2" placeholder="如有特殊需求或補充說明，請填於此處。"></textarea>
+        </label>
+
+        <div class="ed-form-actions">
+          <button type="submit" class="btn btn-primary btn-large" id="edFormSubmit">送出報名 🙏</button>
+          <p class="ed-form-status" id="edFormStatus" role="status" aria-live="polite"></p>
+        </div>
+        <p class="ed-form-fineprint">送出即表示同意本宮為普渡登記目的使用以上資料。本宮收到後將以電話與您確認金額及繳費方式。</p>
+      </form>
+    </div>
+  </section>
+
   <!-- 影像紀錄 -->
   <section class="content-section ed-photos-section">
     <div class="section-inner">
@@ -1034,6 +1165,133 @@
         const cls = r.primary ? 'btn btn-primary btn-large' : 'btn btn-secondary';
         return `<a href="${r.href}" class="${cls}">${r.label}</a>`;
       }).join('');
+
+      // ============ 線上報名表單（僅 115 中元普渡）============
+      if (key === 'zhongyuan-1150815') {
+        const formSection = document.getElementById('edFormSection');
+        const form = document.getElementById('edForm');
+        const totalEl = document.getElementById('edFormTotal');
+        const statusEl = document.getElementById('edFormStatus');
+        const submitBtn = document.getElementById('edFormSubmit');
+        const returnWrap = document.getElementById('edReturnWrap');
+        const fmt = n => 'NT$ ' + n.toLocaleString('en-US');
+
+        if (formSection && form) {
+          formSection.style.display = '';
+
+          const qtyInputs = Array.from(form.querySelectorAll('.ed-qty-input'));
+          const zanpuInput = form.querySelector('[name="qty_祈安普渡讚普供品"]');
+
+          const recalc = () => {
+            let total = 0;
+            form.querySelectorAll('.ed-item-row').forEach(row => {
+              const price = parseInt(row.dataset.price, 10) || 0;
+              const qty = Math.max(0, parseInt(row.querySelector('.ed-qty-input').value, 10) || 0);
+              total += price * qty;
+            });
+            totalEl.textContent = fmt(total);
+            // 讚普供品有份數時才顯示「領回／捐贈」
+            const showReturn = (parseInt(zanpuInput.value, 10) || 0) > 0;
+            returnWrap.hidden = !showReturn;
+          };
+
+          // 加減按鈕
+          form.querySelectorAll('.ed-qty-btn').forEach(b => {
+            b.addEventListener('click', () => {
+              const input = b.parentElement.querySelector('.ed-qty-input');
+              const step = parseInt(b.dataset.step, 10);
+              const next = Math.min(99, Math.max(0, (parseInt(input.value, 10) || 0) + step));
+              input.value = next;
+              recalc();
+            });
+          });
+          qtyInputs.forEach(i => i.addEventListener('input', recalc));
+          recalc();
+
+          // 送出
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusEl.className = 'ed-form-status';
+            statusEl.textContent = '';
+
+            const name = form.querySelector('[name="報名人姓名"]').value.trim();
+            const phone = form.querySelector('[name="聯絡電話"]').value.trim();
+            if (!name || !phone) {
+              statusEl.classList.add('is-error');
+              statusEl.textContent = '⚠️ 請填寫姓名與聯絡電話。';
+              return;
+            }
+
+            // 整理報名項目
+            const items = [];
+            let total = 0;
+            form.querySelectorAll('.ed-item-row').forEach(row => {
+              const price = parseInt(row.dataset.price, 10) || 0;
+              const input = row.querySelector('.ed-qty-input');
+              const qty = Math.max(0, parseInt(input.value, 10) || 0);
+              if (qty > 0) {
+                const label = row.querySelector('.ed-item-name').textContent.replace(/^[0-9️⃣]+\s*/, '').trim();
+                const unit = row.querySelector('.ed-qty-unit').textContent;
+                const sub = price * qty;
+                total += sub;
+                items.push(`${label} × ${qty} ${unit}（${fmt(sub)}）`);
+              }
+            });
+            if (items.length === 0) {
+              statusEl.classList.add('is-error');
+              statusEl.textContent = '⚠️ 請至少選擇一項報名項目並填入數量。';
+              return;
+            }
+
+            const target = form.querySelector('[name="普渡對象姓名"]').value.trim();
+            const note = form.querySelector('[name="其他備註"]').value.trim();
+            const ret = (form.querySelector('[name="讚普供品處理"]:checked') || {}).value || '';
+
+            const payload = {
+              _subject: `🪷 中元普渡報名 — ${name}`,
+              _template: 'table',
+              _captcha: 'false',
+              報名人姓名: name,
+              聯絡電話: phone,
+              報名項目: items.join('\n'),
+              預估金額合計: fmt(total),
+              讚普供品處理方式: ret || '（未選或未報名讚普）',
+              普渡對象姓名: target || '（未填）',
+              其他備註: note || '（無）',
+              來源頁面: '115 慶讚中元普渡孤幽法會 報名表單'
+            };
+
+            submitBtn.disabled = true;
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '送出中…';
+            statusEl.classList.add('is-loading');
+            statusEl.textContent = '正在送出，請稍候…';
+
+            // FormSubmit.co：免後端、直接寄信到信箱（AJAX 不跳轉）
+            const inbox = ['chenmon628', 'gmail.com'].join('@');
+            try {
+              const res = await fetch('https://formsubmit.co/ajax/' + inbox, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+              const dataRes = await res.json();
+              if (res.ok && (dataRes.success === 'true' || dataRes.success === true)) {
+                form.querySelectorAll('input, textarea, button').forEach(el => { el.disabled = true; });
+                statusEl.className = 'ed-form-status is-success';
+                statusEl.innerHTML = '🙏 報名已送出！本宮收到後將主動以電話與您聯繫確認。感謝您的護持。';
+              } else {
+                throw new Error(dataRes.message || '送出失敗');
+              }
+            } catch (err) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+              statusEl.className = 'ed-form-status is-error';
+              statusEl.innerHTML = '⚠️ 送出失敗，請改用電話報名：宮主 陳炫忖 <a href="tel:0981142292">0981-142-292</a>。';
+            }
+          });
+        }
+      }
 
       // ============ 回到頂部 ============
       const btn = document.getElementById('backTop');

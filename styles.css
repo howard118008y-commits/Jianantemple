@@ -9945,6 +9945,214 @@ button.lightbox-pill:hover {
 }
 
 /* ============================================
+   活動頁 ・ 線上報名表單（中元普渡）
+   ============================================ */
+.ed-form-section {
+  background: linear-gradient(180deg, var(--ink) 0%, #150a0a 100%);
+}
+.ed-form,
+.ed-form-privacy {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 隱私聲明 */
+.ed-form-privacy {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 2rem;
+  background: rgba(139, 28, 28, 0.16);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.88);
+  letter-spacing: 0.04em;
+}
+.ed-form-privacy-icon { font-size: 1.3rem; flex-shrink: 0; line-height: 1.4; }
+.ed-form-privacy strong { color: var(--gold-light); }
+
+/* 表單欄位 */
+.ed-form-field { display: block; margin-bottom: 1.5rem; }
+.ed-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.ed-form-row .ed-form-field { margin-bottom: 1.5rem; }
+.ed-form-label {
+  display: block;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin-bottom: 0.55rem;
+}
+.ed-form-label em { color: var(--red); font-style: normal; font-weight: 700; }
+
+.ed-form input[type="text"],
+.ed-form input[type="tel"],
+.ed-form textarea {
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  background: rgba(20, 12, 12, 0.6);
+  border: 1px solid rgba(212, 168, 75, 0.28);
+  border-radius: 4px;
+  color: var(--paper);
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ed-form textarea { resize: vertical; line-height: 1.7; }
+.ed-form input::placeholder,
+.ed-form textarea::placeholder { color: rgba(248, 243, 233, 0.38); }
+.ed-form input:focus,
+.ed-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 168, 75, 0.18);
+}
+
+/* 報名項目 */
+.ed-form-items {
+  border: 1px solid rgba(212, 168, 75, 0.22);
+  border-radius: 4px;
+  padding: 1.4rem 1.5rem 1.5rem;
+  margin-bottom: 1.6rem;
+  background: rgba(20, 12, 12, 0.45);
+}
+.ed-form-items legend {
+  padding: 0 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.ed-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.14);
+  flex-wrap: wrap;
+}
+.ed-item-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.ed-item-name {
+  font-size: 1rem;
+  color: var(--paper);
+  letter-spacing: 0.05em;
+}
+.ed-item-price {
+  font-size: 0.82rem;
+  color: rgba(248, 243, 233, 0.6);
+  letter-spacing: 0.04em;
+}
+.ed-item-qty { display: flex; align-items: center; gap: 0.45rem; flex-shrink: 0; }
+.ed-qty-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(212, 168, 75, 0.45);
+  background: rgba(212, 168, 75, 0.08);
+  color: var(--gold-light);
+  border-radius: 4px;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+.ed-qty-btn:hover { background: rgba(212, 168, 75, 0.22); border-color: var(--gold); }
+.ed-qty-input {
+  width: 50px;
+  text-align: center;
+  padding: 0.5rem 0.2rem;
+  background: rgba(20, 12, 12, 0.6);
+  border: 1px solid rgba(212, 168, 75, 0.28);
+  border-radius: 4px;
+  color: var(--paper);
+  font-family: inherit;
+  font-size: 1rem;
+  -moz-appearance: textfield;
+}
+.ed-qty-input::-webkit-outer-spin-button,
+.ed-qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.ed-qty-unit { font-size: 0.85rem; color: rgba(248, 243, 233, 0.65); min-width: 1.8em; }
+
+/* 領回／捐贈 */
+.ed-item-sub {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 0 0.95rem 1rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.14);
+}
+.ed-item-sub[hidden] { display: none; }
+.ed-item-sub-label { font-size: 0.88rem; color: var(--gold); letter-spacing: 0.08em; }
+.ed-radio { display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.92rem; color: rgba(248, 243, 233, 0.88); }
+.ed-radio input { accent-color: var(--gold); width: 16px; height: 16px; }
+
+/* 金額合計 */
+.ed-form-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: rgba(248, 243, 233, 0.8);
+}
+.ed-form-total strong {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+}
+
+/* 送出 */
+.ed-form-actions { text-align: center; margin-top: 0.8rem; }
+.ed-form-actions .btn { cursor: pointer; border: none; }
+.ed-form-actions .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.ed-form-status {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  min-height: 1.2em;
+}
+.ed-form-status a { color: var(--gold-light); text-decoration: underline; }
+.ed-form-status.is-loading { color: rgba(248, 243, 233, 0.7); }
+.ed-form-status.is-error { color: #f0a8a8; }
+.ed-form-status.is-success {
+  color: var(--gold-light);
+  padding: 1rem 1.2rem;
+  background: rgba(139, 28, 28, 0.2);
+  border: 1px solid rgba(212, 168, 75, 0.35);
+  border-radius: 4px;
+}
+.ed-form-fineprint {
+  margin-top: 1.4rem;
+  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: rgba(248, 243, 233, 0.45);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .ed-form-row { grid-template-columns: 1fr; gap: 0; }
+  .ed-form-items { padding: 1.1rem 1rem 1.2rem; }
+  .ed-item-row { padding: 0.85rem 0; }
+  .ed-item-name { font-size: 0.94rem; }
+  .ed-form-total strong { font-size: 1.3rem; }
+  .ed-form-privacy { font-size: 0.86rem; padding: 0.95rem 1rem; }
+}
+
+/* ============================================
    求籤頁 ・ 解籤指引
    ============================================ */
 .section-jieqian {
