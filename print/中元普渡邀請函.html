@@ -72,7 +72,7 @@
       linear-gradient(210deg, #2e1a0c 0%, #4a2f14 38%, #3a2413 62%, #241307 100%);
   }
   .back-frame {
-    position: absolute; inset: 6mm;
+    position: absolute; inset: 16mm;
     border: .35mm solid rgba(212,168,75,.85); border-radius: 1.5mm;
     pointer-events: none;
   }
@@ -96,7 +96,7 @@
   .couplet-r { right: 24mm; }
   /* 封底底部飾線 */
   .back-orn {
-    position: absolute; left: 50%; bottom: 21mm; transform: translateX(-50%);
+    position: absolute; left: 50%; bottom: 28mm; transform: translateX(-50%);
     color: var(--gold-deep); font-size: 8pt; letter-spacing: .2em; white-space: nowrap;
   }
   .wax-seal {
@@ -124,13 +124,13 @@
   }
   /* 左右下角 QR 籤牌 */
   .qr-block {
-    position: absolute; bottom: 11mm; width: 33mm;
+    position: absolute; bottom: 20mm; width: 33mm;
     background: var(--paper); border: .45mm solid var(--gold-deep); border-radius: 1.5mm;
     text-align: center; overflow: hidden; padding-bottom: 2.4mm;
     box-shadow: 0 1.5mm 4mm rgba(0,0,0,.45);
   }
-  .qr-corner-l { left: 11mm; }
-  .qr-corner-r { right: 11mm; }
+  .qr-corner-l { left: 20mm; }
+  .qr-corner-r { right: 20mm; }
   .qr-block .qr-head {
     background: linear-gradient(135deg, var(--red), var(--red-deep));
     color: var(--gold-light); font-size: 8.5pt; font-weight: 700;
@@ -152,7 +152,7 @@
     color: var(--paper);
   }
   .cover-frame {
-    position: absolute; inset: 6mm;
+    position: absolute; inset: 16mm;
     border: .35mm solid rgba(212,168,75,.85); border-radius: 1.5mm;
   }
   .cover-frame::after {
@@ -160,7 +160,7 @@
     border: .15mm solid rgba(212,168,75,.5); border-radius: 1mm;
   }
   .cover-inner {
-    position: absolute; inset: 10mm; display: flex; justify-content: center; gap: 8mm;
+    position: absolute; inset: 18mm; display: flex; justify-content: center; gap: 8mm;
     z-index: 1;
   }
   /* 封面宮印水印（襯在宮名之後） */
@@ -182,7 +182,7 @@
   .greet-r { right: 24mm; }
   /* 封面底部飾線 */
   .cover-orn {
-    position: absolute; left: 50%; bottom: 37mm; transform: translateX(-50%);
+    position: absolute; left: 50%; bottom: 46mm; transform: translateX(-50%);
     color: var(--gold-deep); font-size: 8pt; letter-spacing: .2em; white-space: nowrap;
   }
   /* 直式宮名（置中，兩側不壓字） */
@@ -191,16 +191,16 @@
     font-size: 36pt; font-weight: 900; letter-spacing: .3em;
     background: linear-gradient(180deg, var(--gold-light), var(--gold) 55%, var(--gold-deep));
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    margin-top: 8mm; height: 122mm;
+    margin-top: 4mm; height: 116mm;
   }
   .cover-sub-vert {
     writing-mode: vertical-rl; text-orientation: upright;
     font-size: 10pt; letter-spacing: .48em; color: var(--gold-light);
-    opacity: .92; margin-top: 22mm; height: 96mm;
+    opacity: .92; margin-top: 16mm; height: 92mm;
   }
   /* 中元普渡 印章 */
   .cover-seal {
-    position: absolute; top: 2mm; right: 2mm;
+    position: absolute; top: 16mm; right: 16mm;
     writing-mode: vertical-rl; text-orientation: upright;
     background: linear-gradient(160deg, var(--red), var(--red-deep));
     color: var(--gold-light); border: .4mm solid var(--gold);
@@ -213,7 +213,7 @@
   }
   /* 宮資訊（置中，收在金框內） */
   .cover-info {
-    position: absolute; left: 12mm; bottom: 13mm; right: 12mm;
+    position: absolute; left: 18mm; bottom: 19mm; right: 18mm;
     text-align: center;
     font-family: "Noto Sans TC", sans-serif; font-size: 9pt; line-height: 1.9;
     color: var(--gold-light); letter-spacing: .08em;
@@ -223,7 +223,7 @@
     color: var(--gold); letter-spacing: .35em; text-indent: .35em; margin-bottom: 1.5mm;
   }
   /* 燈籠裝飾（貼角落，不壓文字） */
-  .lanterns { position: absolute; top: 0; left: 11mm; display: flex; gap: 7mm; z-index: 0; }
+  .lanterns { position: absolute; top: 16mm; left: 17mm; display: flex; gap: 4.5mm; z-index: 0; }
   .lantern { display: flex; flex-direction: column; align-items: center; }
   .lantern .string { width: .4mm; background: var(--gold-deep); }
   .lantern .body {
@@ -247,17 +247,17 @@
       radial-gradient(circle at 100% 0%, rgba(241,217,144,.14), transparent 38%),
       radial-gradient(circle at 0% 100%, rgba(212,168,75,.12), transparent 42%),
       linear-gradient(160deg, #2e1a0c 0%, #4a2f14 40%, #3a2413 65%, #241307 100%);
-    display: flex; flex-direction: column; padding: 11mm 12mm 9mm; color: var(--paper);
+    display: flex; flex-direction: column; padding: 16mm 17mm 16mm; color: var(--paper);
   }
   /* 內頁四角金飾角 */
-  .in-corner { position: absolute; width: 9mm; height: 9mm; opacity: .85; }
-  .c-tl { top: 6mm; left: 6mm; border-top: .4mm solid var(--gold); border-left: .4mm solid var(--gold); }
-  .c-tr { top: 6mm; right: 6mm; border-top: .4mm solid var(--gold); border-right: .4mm solid var(--gold); }
-  .c-bl { bottom: 6mm; left: 6mm; border-bottom: .4mm solid var(--gold); border-left: .4mm solid var(--gold); }
-  .c-br { bottom: 6mm; right: 6mm; border-bottom: .4mm solid var(--gold); border-right: .4mm solid var(--gold); }
-  .in-header { display: flex; align-items: center; gap: 7mm; margin-bottom: 4.5mm; }
+  .in-corner { position: absolute; width: 8mm; height: 8mm; opacity: .85; }
+  .c-tl { top: 15mm; left: 15mm; border-top: .4mm solid var(--gold); border-left: .4mm solid var(--gold); }
+  .c-tr { top: 15mm; right: 15mm; border-top: .4mm solid var(--gold); border-right: .4mm solid var(--gold); }
+  .c-bl { bottom: 15mm; left: 15mm; border-bottom: .4mm solid var(--gold); border-left: .4mm solid var(--gold); }
+  .c-br { bottom: 15mm; right: 15mm; border-bottom: .4mm solid var(--gold); border-right: .4mm solid var(--gold); }
+  .in-header { display: flex; align-items: center; gap: 7mm; margin-bottom: 3.5mm; }
   .header-mazu {
-    height: 30mm; width: auto; display: block; border-radius: 2mm;
+    height: 26mm; width: auto; display: block; border-radius: 2mm;
     border: .4mm solid var(--gold-deep); box-shadow: 0 .8mm 2.5mm rgba(18,9,9,.15);
   }
   .in-title {
@@ -279,15 +279,15 @@
   .in-dates .date-line small { font-size: 10.5pt; color: rgba(248,243,233,.85); font-weight: 500; }
   .in-intro {
     font-size: 9.5pt; line-height: 1.8; color: rgba(248,243,233,.92); letter-spacing: .05em;
-    border-left: 1mm solid var(--gold); padding-left: 4mm; margin-bottom: 4.5mm;
+    border-left: 1mm solid var(--gold); padding-left: 4mm; margin-bottom: 3.5mm;
   }
   .in-section-title {
     text-align: center; font-size: 14pt; font-weight: 900; letter-spacing: .5em;
-    color: var(--gold); margin-bottom: 4.5mm;
+    color: var(--gold); margin-bottom: 3.5mm;
   }
   .in-section-title::before, .in-section-title::after { content: "──"; color: var(--gold-deep); margin: 0 3mm; font-weight: 400; }
 
-  .items { display: flex; gap: 4mm; margin-bottom: 5.5mm; flex: 1; }
+  .items { display: flex; gap: 4mm; margin-bottom: 4mm; flex: 1; }
   .item-card {
     flex: 1; background: var(--paper); border: .35mm solid var(--gold-deep); border-radius: 2.5mm;
     overflow: hidden; box-shadow: 0 1.5mm 4mm rgba(0,0,0,.45);
@@ -300,7 +300,7 @@
   }
   .item-card .card-head small { display: block; font-size: 7.5pt; font-weight: 600; letter-spacing: .3em; color: var(--gold); margin-bottom: 1mm; }
   .item-card .card-img {
-    display: block; width: 100%; height: 15mm; object-fit: cover;
+    display: block; width: 100%; height: 12mm; object-fit: cover;
     border-bottom: .2mm solid rgba(168,132,46,.45);
   }
   .item-card .card-price {
@@ -344,7 +344,7 @@
   .charity h3 { font-size: 11.5pt; color: var(--gold-deep); letter-spacing: .3em; font-weight: 900; margin-bottom: 2.5mm; }
 
   .in-footer {
-    margin-top: 5mm; background: linear-gradient(160deg, var(--red), var(--red-deep));
+    margin-top: 4mm; background: linear-gradient(160deg, var(--red), var(--red-deep));
     color: var(--gold-light); border-radius: 1.5mm; border: .3mm solid var(--gold-deep);
     text-align: center; padding: 3mm 2mm;
     font-size: 10pt; font-weight: 700; letter-spacing: .3em;
@@ -355,7 +355,7 @@
 
 <div class="no-print">
   <strong>列印說明：</strong>A4 橫式・雙面列印（<strong>短邊翻頁</strong>）・滿版無邊距・彩色。
-  印出後沿中線<strong>左右對折</strong>：金褐色宮名面為封面、QR 面自動成為封底、攤開即為中元普渡活動內頁。虛線僅為螢幕摺線示意，不會印出。
+  版面已預留 1.5cm 裁切安全邊（250 磅銅西・壓線後自行對折）。印出後沿中線<strong>左右對折</strong>：金褐色宮名面為封面、QR 面自動成為封底、攤開即為中元普渡活動內頁。虛線僅為螢幕摺線示意，不會印出。
 </div>
 
 <!-- ═══════════ 第 1 面：外側（封底＋封面） ═══════════ -->
