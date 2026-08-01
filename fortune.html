@@ -521,7 +521,9 @@
       });
 
       // === 渲染 60 首一覽（可摺疊）===
-      (function renderJqList() {
+      // jieqian-data.js 以 defer 載入，會晚於本 inline script 執行，
+      // 須等 DOMContentLoaded 後 window.JIEQIAN 才存在
+      const renderJqList = () => {
         const list = document.getElementById('jqList');
         if (!list || !window.JIEQIAN) return;
         list.innerHTML = fortunes.map(f => {
@@ -560,7 +562,9 @@
             </details>
           `;
         }).join('');
-      })();
+      };
+      if (window.JIEQIAN) renderJqList();
+      else document.addEventListener('DOMContentLoaded', renderJqList);
     })();
   </script>
 </body>
