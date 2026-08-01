@@ -10468,6 +10468,15 @@ button.lightbox-pill:hover {
   font-family: "Noto Serif TC", serif;
 }
 
+.rj-plain {
+  margin-top: 0.8rem;
+}
+.rj-plain-text {
+  font-size: 0.92rem;
+  color: rgba(248, 243, 233, 0.82);
+  font-family: inherit;
+}
+
 .rj-story {
   margin-top: 0.9rem;
   padding: 1rem 1.1rem;
