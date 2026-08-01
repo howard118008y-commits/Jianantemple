@@ -39,7 +39,7 @@
   <script src="assets/mobile-menu.js" defer></script>
   <script src="assets/scroll-reveal.js" defer></script>
   <script src="assets/random-jinxiang-poster.js" defer></script>
-  <script src="assets/jieqian-data.js?v=1150802" defer></script>
+  <script src="assets/jieqian-data.js?v=1150802b" defer></script>
   <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
@@ -167,15 +167,15 @@
               <div class="rj-meaning-label">詩 意</div>
               <p class="rj-meaning-text" id="rjMeaning">—</p>
             </div>
-            <div class="rj-meaning rj-plain" id="rjPlainBox" hidden>
-              <div class="rj-meaning-label">白 話 解 說</div>
-              <p class="rj-meaning-text rj-plain-text" id="rjPlain"></p>
-            </div>
             <div class="rj-story" id="rjStory" hidden>
               <div class="rj-story-label">籤 詩 典 故</div>
               <div class="rj-story-title" id="rjStoryTitle"></div>
               <p class="rj-story-text" id="rjStoryText"></p>
               <div class="rj-story-source" id="rjStorySource"></div>
+            </div>
+            <div class="rj-story rj-plain" id="rjPlainBox" hidden>
+              <div class="rj-story-label">白 話 故 事</div>
+              <p class="rj-story-text rj-plain-text" id="rjPlain"></p>
             </div>
             <div class="rj-categories" id="rjCategories"></div>
           </div>
@@ -577,11 +577,6 @@
                   <span class="jq-item-mlabel">詩 意</span>
                   <p>${jq.meaning || ''}</p>
                 </div>
-                ${jq.plain ? `
-                <div class="jq-item-meaning jq-item-plain">
-                  <span class="jq-item-mlabel">白 話</span>
-                  <p>${jq.plain}</p>
-                </div>` : ''}
                 ${jq.storyTitle && jq.story ? `
                 <div class="jq-item-story">
                   <div class="jq-item-story-head">
@@ -590,6 +585,13 @@
                   </div>
                   <p>${jq.story}</p>
                   ${jq.storySource ? `<div class="jq-item-story-source">典故出處：${jq.storySource}</div>` : ''}
+                </div>` : ''}
+                ${jq.plain ? `
+                <div class="jq-item-story jq-item-plain">
+                  <div class="jq-item-story-head">
+                    <span class="jq-item-story-label">白話故事</span>
+                  </div>
+                  <p>${jq.plain}</p>
                 </div>` : ''}
                 <div class="jq-item-cats">
                   ${[
