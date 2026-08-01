@@ -10468,6 +10468,42 @@ button.lightbox-pill:hover {
   font-family: "Noto Serif TC", serif;
 }
 
+.rj-story {
+  margin-top: 0.9rem;
+  padding: 1rem 1.1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(212, 168, 75, 0.18);
+  text-align: left;
+}
+.rj-story-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 0.55rem;
+}
+.rj-story-title {
+  font-size: 1.02rem;
+  letter-spacing: 0.14em;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.rj-story-text {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: rgba(248, 243, 233, 0.88);
+  letter-spacing: 0.04em;
+}
+.rj-story-source {
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  color: rgba(212, 168, 75, 0.75);
+}
+
 .rj-categories {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -10538,6 +10574,21 @@ button.lightbox-pill:hover {
   background: rgba(31, 20, 20, 0.55);
   border: 1px solid rgba(212, 168, 75, 0.22);
   transition: border-color 0.25s ease;
+}
+/* 本次抽中的籤：在完整對照清單中淡淡發亮 */
+.jq-item-drawn {
+  border-color: rgba(212, 168, 75, 0.6);
+  animation: jqDrawnGlow 2.8s ease-in-out infinite;
+}
+.jq-item-drawn .jq-item-num {
+  color: var(--gold-light);
+}
+@keyframes jqDrawnGlow {
+  0%, 100% { box-shadow: 0 0 6px rgba(212, 168, 75, 0.12); background: rgba(31, 20, 20, 0.55); }
+  50% { box-shadow: 0 0 20px rgba(212, 168, 75, 0.35); background: rgba(48, 32, 20, 0.6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jq-item-drawn { animation: none; box-shadow: 0 0 14px rgba(212, 168, 75, 0.3); }
 }
 .jq-item[open] { border-color: rgba(212, 168, 75, 0.55); }
 .jq-item:hover { border-color: rgba(212, 168, 75, 0.4); }
@@ -10623,6 +10674,46 @@ button.lightbox-pill:hover {
   color: rgba(248, 243, 233, 0.9);
   letter-spacing: 0.05em;
   flex: 1;
+}
+
+.jq-item-story {
+  margin-bottom: 1rem;
+  padding: 0.8rem 0.9rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(212, 168, 75, 0.15);
+}
+.jq-item-story-head {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.jq-item-story-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.jq-item-story-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+}
+.jq-item-story p {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 233, 0.86);
+  letter-spacing: 0.03em;
+}
+.jq-item-story-source {
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: rgba(212, 168, 75, 0.72);
 }
 
 .jq-item-cats {

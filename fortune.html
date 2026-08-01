@@ -167,6 +167,12 @@
               <div class="rj-meaning-label">詩 意</div>
               <p class="rj-meaning-text" id="rjMeaning">—</p>
             </div>
+            <div class="rj-story" id="rjStory" hidden>
+              <div class="rj-story-label">籤 詩 典 故</div>
+              <div class="rj-story-title" id="rjStoryTitle"></div>
+              <p class="rj-story-text" id="rjStoryText"></p>
+              <div class="rj-story-source" id="rjStorySource"></div>
+            </div>
             <div class="rj-categories" id="rjCategories"></div>
           </div>
 
@@ -451,6 +457,11 @@
         // 儲存當前籤詩供複製
         poemEl._current = f;
 
+        // 完整對照清單：抽中的籤淡淡發亮，一眼可找到
+        document.querySelectorAll('#jqList .jq-item-drawn').forEach(el => el.classList.remove('jq-item-drawn'));
+        const drawnEl = document.querySelector('#jqList .jq-item[data-num="' + f.num + '"]');
+        if (drawnEl) drawnEl.classList.add('jq-item-drawn');
+
         // === 解籤 ===
         if (window.JIEQIAN) {
           const jq = window.JIEQIAN.find(x => x.num === f.num);
@@ -458,6 +469,15 @@
             document.getElementById('rjGrade').textContent = jq.grade;
             document.getElementById('rjGrade').className = 'rj-grade-value rj-grade-' + jq.grade.replace(/\s/g, '');
             document.getElementById('rjMeaning').textContent = jq.meaning;
+            const storyBox = document.getElementById('rjStory');
+            if (jq.storyTitle && jq.story) {
+              document.getElementById('rjStoryTitle').textContent = jq.storyTitle;
+              document.getElementById('rjStoryText').textContent = jq.story;
+              document.getElementById('rjStorySource').textContent = jq.storySource ? '典故出處：' + jq.storySource : '';
+              storyBox.hidden = false;
+            } else {
+              storyBox.hidden = true;
+            }
             const cats = [
               { icon: '事', name: '事業', text: jq.career },
               { icon: '財', name: '求財', text: jq.wealth },
@@ -531,7 +551,7 @@
           const ganzhi = f.title.replace(/^第[一二三四五六七八九十]+籤\s*/, '');
           const gradeClass = (jq.grade || '').replace(/\s/g, '');
           return `
-            <details class="jq-item">
+            <details class="jq-item" data-num="${f.num}">
               <summary class="jq-item-head">
                 <span class="jq-item-num">${numLabel(f.num)}</span>
                 <span class="jq-item-ganzhi">${ganzhi}</span>
@@ -546,6 +566,15 @@
                   <span class="jq-item-mlabel">詩 意</span>
                   <p>${jq.meaning || ''}</p>
                 </div>
+                ${jq.storyTitle && jq.story ? `
+                <div class="jq-item-story">
+                  <div class="jq-item-story-head">
+                    <span class="jq-item-story-label">典 故</span>
+                    <span class="jq-item-story-title">${jq.storyTitle}</span>
+                  </div>
+                  <p>${jq.story}</p>
+                  ${jq.storySource ? `<div class="jq-item-story-source">典故出處：${jq.storySource}</div>` : ''}
+                </div>` : ''}
                 <div class="jq-item-cats">
                   ${[
                     ['事','事業',jq.career],['財','求財',jq.wealth],
