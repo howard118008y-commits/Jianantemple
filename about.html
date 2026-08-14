@@ -498,8 +498,9 @@
         <h2 class="section-title">下一場問事</h2>
         <div class="title-divider"></div>
         <p class="section-lead">
-          每週一、三 晚上 8:00<br>
-          本宮神明降乩 ・ 為信眾解惑
+          每週一、三 晚上 8:30<br>
+          本宮神明降乩 ・ 為信眾解惑<br>
+          農曆七月（鬼月）全月不辦事
         </p>
       </div>
 
@@ -586,7 +587,7 @@
 
         <h3>六、現況：萬華信仰中心</h3>
         <p>
-          台北建安宮現址位於<strong>台北市萬華區德昌街 132 巷 1 號 1 樓</strong>，為萬華區重要的媽祖信仰中心。本宮提供安太歲、點光明燈、補財庫、中元普渡、線上求籤、問事等多項服務，每週一、三晚上 8:00 定期舉辦問事，由神明降乩為信眾解惑指引。香煙裊裊，神光普照，建安宮持續以開放、親民的姿態，守護萬華地方信眾逾四十年。
+          台北建安宮現址位於<strong>台北市萬華區德昌街 132 巷 1 號 1 樓</strong>，為萬華區重要的媽祖信仰中心。本宮提供安太歲、點光明燈、補財庫、中元普渡、線上求籤、問事等多項服務，每週一、三晚上 8:30 定期舉辦問事（農曆七月停辦），由神明降乩為信眾解惑指引。香煙裊裊，神光普照，建安宮持續以開放、親民的姿態，守護萬華地方信眾逾四十年。
         </p>
 
       </div>
@@ -957,7 +958,7 @@
   <a href="#top" class="back-top" id="backTop" aria-label="回到頂部">↑</a>
 
   <script>
-    // 問事倒數：找下一個「週一或週三 20:00」並顯示倒數
+    // 問事倒數：找下一個「週一或週三 20:30」並顯示倒數（跳過農曆七月）
     (function () {
       const dateEl = document.getElementById('aboutWsDate');
       if (!dateEl) return;
@@ -968,14 +969,24 @@
       const WEEK = ['週日','週一','週二','週三','週四','週五','週六'];
       const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
 
+      // 農曆七月（鬼月）停辦區間 ・ 國曆起訖，每年須新增一筆
+      // 2026（丙午）農曆七月初一 = 8/13、七月廿九 = 9/10
+      const GHOST_MONTHS = [
+        { start: '2026-08-13', end: '2026-09-10' }
+      ];
+      const inGhost = (d) => {
+        const ymd = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+        return GHOST_MONTHS.some((g) => ymd >= g.start && ymd <= g.end);
+      };
+
       function nextSession() {
         const now = new Date();
-        for (let i = 0; i < 14; i++) {
+        for (let i = 0; i < 60; i++) {
           const d = new Date(now);
           d.setDate(now.getDate() + i);
-          d.setHours(20, 0, 0, 0);
+          d.setHours(20, 30, 0, 0);
           const day = d.getDay();
-          if ((day === 1 || day === 3) && d > now) return d;
+          if ((day === 1 || day === 3) && d > now && !inGhost(d)) return d;
         }
         return null;
       }
@@ -985,7 +996,7 @@
         if (!next) return;
         dateEl.textContent =
           (next.getMonth() + 1) + ' 月 ' + next.getDate() +
-          ' 日（' + WEEK[next.getDay()] + '）晚上 8:00';
+          ' 日（' + WEEK[next.getDay()] + '）晚上 8:30';
         const sec = Math.floor(Math.max(0, next.getTime() - Date.now()) / 1000);
         elD.textContent = pad(Math.floor(sec / 86400));
         elH.textContent = pad(Math.floor((sec % 86400) / 3600));
