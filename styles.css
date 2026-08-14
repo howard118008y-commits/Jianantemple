@@ -10056,6 +10056,13 @@ button.lightbox-pill:hover {
   margin-bottom: 0.55rem;
 }
 .ed-form-label em { color: var(--red); font-style: normal; font-weight: 700; }
+.ed-form-hint {
+  font-size: 0.82rem;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: rgba(248, 243, 233, 0.72);
+  margin: -0.2rem 0 1.1rem;
+}
 
 .ed-form input[type="text"],
 .ed-form input[type="tel"],
