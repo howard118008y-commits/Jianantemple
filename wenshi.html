@@ -670,10 +670,16 @@
       const WEEK_DAYS = ['週日', '週一', '週二', '週三', '週四', '週五', '週六'];
       const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
 
-      // 農曆七月（鬼月）停辦區間 ・ 國曆起訖，每年須新增一筆
-      // 2026（丙午）農曆七月初一 = 8/13、七月廿九 = 9/10
+      // 農曆七月（鬼月）停辦區間 ・ 國曆起訖，農曆七月初一～月底
+      // 2032 之後須續補；查法：農曆七月初一與該月最末日對應之國曆
       const GHOST_MONTHS = [
-        { start: '2026-08-13', end: '2026-09-10' }
+        { start: '2026-08-13', end: '2026-09-10' },
+        { start: '2027-08-02', end: '2027-08-31' },
+        { start: '2028-08-20', end: '2028-09-18' },
+        { start: '2029-08-10', end: '2029-09-07' },
+        { start: '2030-07-30', end: '2030-08-28' },
+        { start: '2031-08-18', end: '2031-09-16' },
+        { start: '2032-08-06', end: '2032-09-04' }
       ];
 
       function inGhostMonth(d) {
@@ -681,10 +687,11 @@
         return GHOST_MONTHS.some((g) => ymd >= g.start && ymd <= g.end);
       }
 
-      function getNextWenshi() {
+      function getNextWenshi(fakeNow) {
         // 找下一個「週一或週三 20:30」（從現在往未來找，跳過農曆七月）
-        const now = new Date();
-        for (let i = 0; i < 60; i++) {
+        // 鬼月結束後自動回到正常倒數，毋須人工切換
+        const now = fakeNow ? new Date(fakeNow) : new Date();
+        for (let i = 0; i < 70; i++) {
           const d = new Date(now);
           d.setDate(now.getDate() + i);
           d.setHours(20, 30, 0, 0);
@@ -726,6 +733,9 @@
 
       tick();
       setInterval(tick, 1000);
+
+      // 供驗證用（可傳入假的當下時間測試鬼月前後行為）
+      window.__wenshiDebug = { getNextWenshi, inGhostMonth, GHOST_MONTHS };
     })();
 
     // 回到頂部
