@@ -561,9 +561,9 @@
           eyebrow: '中 ・ 元 ・ 普 ・ 渡',
           solarDate: '2026 / 08 / 15（禮拜六）',
           lunarDate: '丙午年 ・ 七月初三',
-          type: '年度大典 ・ 法會 ・ 普渡 ・ 報名中',
-          subtitle: '⛩️ 台北建安宮 ・ 慶讚中元普渡孤幽法會 ⛩️',
-          lead: '<p>謹訂於天運歲次丙午年 ・ 中華民國 115 年國曆 <strong>8 月 15 日（禮拜六）</strong>、農曆 7 月初三，台北建安宮舉辦「<strong>慶讚中元普渡孤幽法會</strong>」——冥陽兩利、超薦先靈、普施孤魂。本宮現正接受信眾報名，敬邀十方善信踴躍參加。</p>',
+          type: '年度大典 ・ 法會 ・ 普渡 ・ 圓滿落幕',
+          subtitle: '⛩️ 台北建安宮 ・ 慶讚中元普渡孤幽法會 ・ 圓滿 ⛩️',
+          lead: '<p>天運歲次丙午年 ・ 中華民國 115 年國曆 <strong>8 月 15 日（禮拜六）</strong>、農曆 7 月初三，台北建安宮「<strong>慶讚中元普渡孤幽法會</strong>」已<strong>圓滿完成</strong>——冥陽兩利、超薦先靈、普施孤魂。感謝十方善信大德發心參與、護持成就。</p>',
           storyLabel: '法 ・ 會 ・ 項 ・ 目',
           storyTitle: '🪷 普渡登記 ・ 五項收費 🪷',
           storyHtml: `
@@ -751,14 +751,23 @@
 
             <hr class="ed-zhushou-divider">
 
+            <div class="ed-zhushou-block">
+              <h4 class="ed-zhushou-heading">🙏 敬謝十方善信大德</h4>
+              <p>感謝每一位發心參與的善信大德——無論是參與普渡、贊普供品、超薦祖先、九玄七祖、冤親債主、嬰靈，或親自到場奉香；也感謝法會前置作業、場地布置、物資準備，以及當日現場協助的每一位委員、幹部與志工。</p>
+              <p>因為有大家的一份心、一份力，法會才能順利圓滿。</p>
+              <p class="ed-zhushou-note">🙏 一份善心，廣結善緣</p>
+              <p class="ed-zhushou-note">🙏 一份功德，冥陽兩利</p>
+              <p class="ed-zhushou-note">🙏 一份護持，共成福田</p>
+              <p>本宮秉持「敬天、禮神、慎終追遠、廣結善緣」之心，延續傳統民俗文化，為自身、家人及歷代先賢祈求平安順遂、福慧增長。此次法會若有安排不周之處，敬請各位善信大德海涵。</p>
+              <p>願以今日法會功德，迴向十方眾生、歷代先賢、九玄七祖、冤親債主及有緣眾生，離苦得樂、往生善處；亦祈願所有參與及護持的善信大德：<strong>闔家平安 ・ 身心安康 ・ 事業順利 ・ 財源廣進 ・ 諸事圓滿 ・ 福氣常在</strong>。</p>
+            </div>
+
             <p class="ed-zhushou-closing">
-              有意參加敬請儘早報名，以便後續作業 🙏<br>
-              贊普 ・ 白米陸續統計中<br>
-              如還有善信欲共同參加，煩請私訊告知，以便統計 ・ 感謝大家 🙏
+              感恩有您，福德共修、善緣共結 🙏
             </p>
 
             <div class="ed-zhushou-block">
-              <h4 class="ed-zhushou-heading">📞 報名聯繫人</h4>
+              <h4 class="ed-zhushou-heading">📞 聯繫本宮</h4>
               <ul class="ed-donor-list">
                 <li>宮主 陳炫忖 ・ 0981-142-292</li>
                 <li>執事 陳俊宇 ・ 0930-311-370</li>
@@ -766,8 +775,8 @@
             </div>
 
             <p class="ed-zhushou-sign">
-              #慶讚中元 #普渡孤幽<br>
-              台北建安宮管理委員會 ・ 敬邀<br>
+              #慶讚中元 #普渡孤幽 #圓滿<br>
+              台北建安宮管理委員會 ・ 敬謝十方善信大德<br>
               廟址：台北市萬華區德昌街 132 巷 1 號 1 樓 🙏
             </p>
           `,
@@ -1485,8 +1494,10 @@
         return `<a href="${r.href}" class="${cls}">${r.label}</a>`;
       }).join('');
 
-      // ============ 線上報名表單（僅 115 中元普渡）============
-      if (key === 'zhongyuan-1150815') {
+      // ============ 線上報名表單（僅 115 中元普渡 ・ 法會前開放）============
+      // 2026-08-15 法會已圓滿，報名表單自動收起（保留邏輯以便日後沿用）
+      const ZHONGYUAN_1150815_SIGNUP_CLOSE = new Date('2026-08-15T23:59:59+08:00');
+      if (key === 'zhongyuan-1150815' && new Date() <= ZHONGYUAN_1150815_SIGNUP_CLOSE) {
         const formSection = document.getElementById('edFormSection');
         const form = document.getElementById('edForm');
         const totalEl = document.getElementById('edFormTotal');
