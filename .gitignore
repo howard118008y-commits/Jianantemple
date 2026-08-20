@@ -35,3 +35,9 @@ __pycache__/
 1150816普渡照片/_originals/
 1150816普渡照片/IMG_*.JPG
 1150816普渡照片/IMG_*.MOV
+
+# 辦事公告原稿 PNG（已壓成 1150821辦事公告/辦事公告.jpg 進 repo，原稿不進）
+辦事公告.png
+
+# Playwright MCP 截圖暫存
+.playwright-mcp/
