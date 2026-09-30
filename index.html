@@ -782,7 +782,8 @@
             const id = ev.id;
             const tagFeature = ev.querySelector('.th-tag-feature')?.textContent.trim();
             const linkInner = ev.querySelector('.th-link');
-            const link = linkInner ? linkInner.getAttribute('href') : (id ? `events.html#${id}` : 'events.html');
+            // 整張卡片是 <a> 時 href 在外層，內層 .th-link 只是 <span>
+            const link = (linkInner && linkInner.getAttribute('href')) || ev.getAttribute('href') || (id ? `events.html#${id}` : 'events.html');
             const linkText = linkInner ? linkInner.textContent.trim() : '查看詳情 →';
             const { md, year } = formatDateParts(dateRaw);
 
