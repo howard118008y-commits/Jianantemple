@@ -762,7 +762,10 @@
         .then(html => {
           const doc = new DOMParser().parseFromString(html, 'text/html');
           // 排除已有首頁專屬公告區的活動（data-home-skip），避免重複露出
-          const futures = Array.from(doc.querySelectorAll('.th-event.th-future:not([data-home-skip])'));
+          // DOMParser 不跑 timeline-marker.js，靜態 th-future 不會自動過期 → 同規則依 data-date 判斷
+          const today = new Date(); today.setHours(0, 0, 0, 0);
+          const futures = Array.from(doc.querySelectorAll('.th-event[data-date]:not([data-home-skip])'))
+            .filter(ev => new Date(ev.dataset.date + 'T00:00:00').getTime() >= today.getTime());
           const upcoming = futures.slice(0, 2);
 
           if (upcoming.length === 0) {
